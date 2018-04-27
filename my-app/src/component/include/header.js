@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../assets/img/logo.png';
+import 'normalize.css/normalize.css'
 
 class Header extends React.Component {
 	render() {
@@ -43,13 +44,13 @@ class Header extends React.Component {
 						</nav>
 					</div>
 					<div className="row">
-						<div className="col">
+						<div className="col-12 col-sm-6 col-md-4">
 							<div className="post-stick"><a>One piece chap 902 TVcd</a></div>
 						</div>
-						<div className="col">
+						<div className="col-12 col-sm-6 col-md-4">
 							<div className="post-stick"><a>One piece chap 902 TVcd</a></div>
 						</div>
-						<div className="col">
+						<div className="col-12 col-sm-12 col-md-4">
 							<div className="post-stick"><a>One piece chap 902 TVcd</a></div>
 						</div>
 					</div>

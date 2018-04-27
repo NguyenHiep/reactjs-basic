@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 import Header from "../include/header";
-import Sidebar from "../include/sidebar";
+import SidebarHome from "../include/sidebarhome";
 import Footer from "../include/footer";
 import SliderHome from "../include/slider";
 
@@ -83,9 +83,7 @@ class Home extends React.Component {
 										<div className="media mainpage-manga">
 											<div className="media-left cover-manga">
 												<a href="http://truyentranh.net/Quy-Sai" className="tooltips">
-													<img
-														src="http://cdn.truyentranh.net/upload/image/comic/20180321/Quy-Sai-5ab256ef6fc5f-thumbnail-176x264.jpg"
-														alt="opm" className="media-object"/>
+													<img src="http://cdn.truyentranh.net/upload/image/comic/20180321/Quy-Sai-5ab256ef6fc5f-thumbnail-176x264.jpg" alt="opm" className="media-object"/>
 													<span>
 														<img src="http://cdn.truyentranh.net/frontend/images/callout.gif" className="callout"/>
 														<p className="description">
@@ -1248,7 +1246,9 @@ class Home extends React.Component {
 								</div>
 							</div>
 							<div className="col-4">
-								<Sidebar/>
+							 	<div className="row">
+									<SidebarHome/>
+								</div>
 							</div>
 						</div>
 					</div>

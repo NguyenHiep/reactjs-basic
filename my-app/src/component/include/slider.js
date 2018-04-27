@@ -9,8 +9,8 @@ class SliderHome extends Component {
 			dots: true,
 			infinite: false,
 			speed: 500,
-			slidesToShow: 4,
-			slidesToScroll: 4,
+			slidesToShow: 6,
+			slidesToScroll: 6,
 			initialSlide: 0,
 			responsive: [
 				{
@@ -42,34 +42,48 @@ class SliderHome extends Component {
 		return (
 			<div className="home-slider">
 				<div className="container">
-					<div className="row">
-						<Slider {...settings}>
-							<div>
-								<h3>1</h3>
-							</div>
-							<div>
-								<h3>2</h3>
-							</div>
-							<div>
-								<h3>3</h3>
-							</div>
-							<div>
-								<h3>4</h3>
-							</div>
-							<div>
-								<h3>5</h3>
-							</div>
-							<div>
-								<h3>6</h3>
-							</div>
-							<div>
-								<h3>7</h3>
-							</div>
-							<div>
-								<h3>8</h3>
-							</div>
-						</Slider>
-					</div>
+					<Slider {...settings}>
+						<div>
+							<a href=""><img src="http://cdn.truyentranh.net/upload/image/comic/20180320/Layers-of-Fear-5ab11540b2140-5ac9d77f26d8d-thumbnail-176x264.jpg" alt=""/></a>
+							<h3><a href="">Nguyen Hiep</a></h3>
+							<p><a href="">Nguyen HIep chap 002</a></p>
+						</div>
+						<div>
+							<a href=""><img src="http://cdn.truyentranh.net/upload/image/comic/20180320/Layers-of-Fear-5ab11540b2140-5ac9d77f26d8d-thumbnail-176x264.jpg" alt=""/></a>
+							<h3><a href="">Nguyen Hiep 2</a></h3>
+							<p><a href="">Nguyen HIep chap 002</a></p>
+						</div>
+						<div>
+							<a href=""><img src="http://cdn.truyentranh.net/upload/image/comic/20180320/Layers-of-Fear-5ab11540b2140-5ac9d77f26d8d-thumbnail-176x264.jpg" alt=""/></a>
+							<h3><a href="">Nguyen Hiep 3</a></h3>
+							<p><a href="">Nguyen HIep chap 002</a></p>
+						</div>
+						<div>
+							<a href=""><img src="http://cdn.truyentranh.net/upload/image/comic/20180320/Layers-of-Fear-5ab11540b2140-5ac9d77f26d8d-thumbnail-176x264.jpg" alt=""/></a>
+							<h3><a href="">Nguyen Hiep 4</a></h3>
+							<p><a href="">Nguyen HIep chap 002</a></p>
+						</div>
+						<div>
+							<a href=""><img src="http://cdn.truyentranh.net/upload/image/comic/20180320/Layers-of-Fear-5ab11540b2140-5ac9d77f26d8d-thumbnail-176x264.jpg" alt=""/></a>
+							<h3><a href="">Nguyen Hiep 5</a></h3>
+							<p><a href="">Nguyen HIep chap 002</a></p>
+						</div>
+						<div>
+							<a href=""><img src="http://cdn.truyentranh.net/upload/image/comic/20180320/Layers-of-Fear-5ab11540b2140-5ac9d77f26d8d-thumbnail-176x264.jpg" alt=""/></a>
+							<h3><a href="">Nguyen Hiep 6</a></h3>
+							<p><a href="">Nguyen HIep chap 002</a></p>
+						</div>
+						<div>
+							<a href=""><img src="http://cdn.truyentranh.net/upload/image/comic/20180320/Layers-of-Fear-5ab11540b2140-5ac9d77f26d8d-thumbnail-176x264.jpg" alt=""/></a>
+							<h3><a href="">Nguyen Hiep 7</a></h3>
+							<p><a href="">Nguyen HIep chap 002</a></p>
+						</div>
+						<div>
+							<a href=""><img src="http://cdn.truyentranh.net/upload/image/comic/20180320/Layers-of-Fear-5ab11540b2140-5ac9d77f26d8d-thumbnail-176x264.jpg" alt=""/></a>
+							<h3><a href="">Nguyen Hiep 8</a></h3>
+							<p><a href="">Nguyen HIep chap 002</a></p>
+						</div>
+					</Slider>
 				</div>
 			</div>
 		);
