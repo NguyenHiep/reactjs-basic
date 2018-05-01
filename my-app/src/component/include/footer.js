@@ -12,7 +12,7 @@ class Footer extends React.Component {
 									<div className="col-md-6">
 										<div className="row">
 											<div className="col-md-3">
-												<div className="vechai-icon"><a href="http://truyentranh.net"><img src="http://cdn.truyentranh.net/frontend/images/logo_2.png" alt="Đọc truyện tranh online | TruyenTranh.net" /></a></div>
+												<div className="logo-footer-icon"><a href="http://truyentranh.net"><img src="http://cdn.truyentranh.net/frontend/images/logo_2.png" alt="Đọc truyện tranh online | TruyenTranh.net"/></a></div>
 											</div>
 											<div className="col-md-9">
 												<p className="vechai-intro"><span>TruyenTranh.net</span> là điểm kết nối giữa các team dịch truyện với Fan truyện tranh trên toàn Việt Nam, hoạt động hoàn toàn miễn phí.</p>
