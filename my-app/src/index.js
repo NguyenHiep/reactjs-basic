@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 /*import reducer from './reducers'*/
@@ -12,7 +12,21 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 
 
 import registerServiceWorker from './registerServiceWorker';
-import Home from './component/home/index'
+/*import Home from './component/home/index'*/
 
-ReactDOM.render(<Home />, document.getElementById('root'));
+import LoginPage from './component/login/index.jsx';
+import HomePage from './component/home/index';
+import { Switch, Route } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
+
+const Roster = () => (
+  <Switch>
+      <Route path='/' component={HomePage} />
+      <Route path="/login" component={LoginPage} />
+  </Switch>
+)
+render(
+  <BrowserRouter>
+      <Roster/>
+</BrowserRouter>, document.getElementById('root'));
 registerServiceWorker();
