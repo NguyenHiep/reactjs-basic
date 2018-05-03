@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import './project01.css';
 import Header from '../include/header';
 import SidebarHome from '../include/sidebarhome';
 import Footer from '../include/footer';
@@ -808,8 +809,15 @@ class Home extends React.Component {
         },
       ]
     }
+
+    this.onAddProduct = this.onAddProduct.bind(this);
 	}
-	
+
+	onAddProduct()
+	{
+		console.log(this.refs.product_name.value);
+	}
+
 	render() {
 		let elements_new = this.state.items_new.map( ( items, index) => {
 		  let result = '';
@@ -847,46 +855,40 @@ class Home extends React.Component {
 			return result;
 		});
 		return (
-			<div className="wrapper">
-				<Header/>
-				<SliderHome/>
-				<main id="content">
-					<div className="container">
-						<div className="row">
-							{/*<Sidebar/>*/}
-							<article className="col-12">
-						</article>
-							<div className="col-xs-12 col-lg-8">
-								<h3 className="title-body">Truyện mới đăng</h3>
-								<div className="row">
+      <article>
+        <SliderHome/>
+        <main id="content">
+          <div className="container">
+            <div className="row">
+              <div className="col-xs-12 col-lg-8">
+                <h3 className="title-body">Truyện mới đăng</h3>
+                <div className="row">
 									{ elements_new}
-								</div> {/* end truyện mới đăng */}
-								<h3 className="title-body">Truyện mới nhất</h3>
-								<div className="row">
+                </div> {/* end truyện mới đăng */}
+                <h3 className="title-body">Truyện mới nhất</h3>
+                <div className="row">
 									{ elements}
-								</div>
-							</div>
-							<div className="col-xs-12 col-lg-4">
-								<div className="row">
-									<div className="col-md-12">
-										<div className="history-read">
-											<p className="save-manga">
-												<a href="http://truyentranh.net/dang-nhap.html?ref=http%3A%2F%2Ftruyentranh.net%2F">
-													<img src="http://cdn.truyentranh.net/frontend/images/clockfix.png" /> Xem lịch sử đọc truyện của bạn</a>
-											</p>
-										</div>
-									</div>
-								</div>
-							 	<div className="row">
-									<SidebarHome/>
-								</div>
-							</div>
-						</div>
-					</div>
-				</main>
-				<Footer/>
-			</div>
-
+                </div>
+              </div>
+              <div className="col-xs-12 col-lg-4">
+                <div className="row">
+                  <div className="col-md-12">
+                    <div className="history-read">
+                      <p className="save-manga">
+                        <a href="http://truyentranh.net/dang-nhap.html?ref=http%3A%2F%2Ftruyentranh.net%2F">
+                          <img src="http://cdn.truyentranh.net/frontend/images/clockfix.png" /> Xem lịch sử đọc truyện của bạn</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <SidebarHome/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </article>
 		);
 	}
 }

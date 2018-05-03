@@ -1,0 +1,8 @@
+.color-picker span{
+	width: 60px;
+	height: 60px;
+	display: block;
+	float: left;
+	background: red;
+	margin-right: 5px;
+}

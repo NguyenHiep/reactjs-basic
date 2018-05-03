@@ -207,7 +207,7 @@ h3.manga-title:hover
 {
 	opacity: 1;
 }
-.slick-item .chapter > a{
+.chapter > a{
 	color: #fff;
 	text-align: center;
 	margin-bottom: 0;
@@ -217,8 +217,9 @@ h3.manga-title:hover
 	-ms-transition: opacity .3s ease-in-out;
 	-o-transition: opacity .3s ease-in-out;
 	transition: opacity .3s ease-in-out;
+	display: block;
 }
-.slick-item .chapter:hover > a{
+.chapter:hover > a{
 	opacity: 1;
 }
 /** Begin style category */
