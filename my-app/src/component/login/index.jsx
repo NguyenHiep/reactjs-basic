@@ -1,10 +1,5 @@
 import React from 'react';
-import Header from '../include/header';
-import SidebarHome from '../include/sidebarhome';
-import Footer from '../include/footer';
-
 class Login extends React.Component {
-  
   // State create
   constructor(props){
     super(props);
@@ -15,23 +10,34 @@ class Login extends React.Component {
     return (
       <main id="content">
         <div className="container">
-          <div className="row">
-            <div className="col-xs-12 col-lg-8">
-              <h1>Login </h1>
-            </div>
-            <div className="col-xs-12 col-lg-4">
-              <div className="row">
-                <div className="col-md-12">
-                  <div className="history-read">
-                    <p className="save-manga">
-                      <a href="http://truyentranh.net/dang-nhap.html?ref=http%3A%2F%2Ftruyentranh.net%2F">
-                        <img src="http://cdn.truyentranh.net/frontend/images/clockfix.png" /> Xem lịch sử đọc truyện của bạn</a>
-                    </p>
-                  </div>
+          <div className="row mb-3">
+            <div className="col-xs-12 col-lg-6">
+              <h1 className="title-body">Đăng nhập</h1>
+              <div className="login-form">
+                <div className="form-group">
+                  <label htmlFor="email">Email address:</label>
+                  <input type="email" className="form-control" id="email" />
                 </div>
+                <div className="form-group">
+                  <label htmlFor="pwd">Password:</label>
+                  <input type="password" className="form-control" id="pwd" />
+                </div>
+                <div className="form-group form-check">
+                  <label className="form-check-label">
+                    <input className="form-check-input" type="checkbox" /> Remember me
+                  </label>
+                </div>
+                <button type="submit" className="btn btn-primary">Submit</button>
               </div>
-              <div className="row">
-                <SidebarHome/>
+            </div>
+            <div className="col-xs-12 col-lg-6">
+              <h2 className="title-body">Đăng nhập nhanh</h2>
+              <div className="login-socical">
+                <ul className="list-unstyled">
+                  <li><a className="btn btn-facebook mb-2">Đăng nhập bằng facebook</a></li>
+                  <li><a className="btn btn-google-plus mb-2">Đăng nhập bằng google plus</a></li>
+                  <li><a className="btn btn-twitter mb-2">Đăng nhập bằng twitter</a></li>
+                </ul>
               </div>
             </div>
           </div>
