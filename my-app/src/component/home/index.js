@@ -1,6 +1,5 @@
 import React from 'react';
 import './index.css';
-import './project01.css';
 import Header from '../include/header';
 import SidebarHome from '../include/sidebarhome';
 import Footer from '../include/footer';

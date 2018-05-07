@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 class Login extends React.Component {
   // State create
   constructor(props){
@@ -15,19 +16,19 @@ class Login extends React.Component {
               <h1 className="title-body">Đăng nhập</h1>
               <div className="login-form">
                 <div className="form-group">
-                  <label htmlFor="email">Email address:</label>
+                  <label htmlFor="email">Tên đăng nhập / Email</label>
                   <input type="email" className="form-control" id="email" />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="pwd">Password:</label>
+                  <label htmlFor="pwd">Mật khẩu:</label>
                   <input type="password" className="form-control" id="pwd" />
                 </div>
                 <div className="form-group form-check">
                   <label className="form-check-label">
-                    <input className="form-check-input" type="checkbox" /> Remember me
+                    <input className="form-check-input" type="checkbox" /> Nhớ mật khẩu
                   </label>
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Đăng nhập</button>
               </div>
             </div>
             <div className="col-xs-12 col-lg-6">
