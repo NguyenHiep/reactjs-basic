@@ -1,8 +1,6 @@
 import React from 'react';
 import './index.css';
-import Header from '../include/header';
 import SidebarHome from '../include/sidebarhome';
-import Footer from '../include/footer';
 import SliderHome from '../include/slider';
 import ItemsNew from './items_new';
 import ItemsHot from './items_hot';
