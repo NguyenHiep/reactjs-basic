@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Apis;
 
 use Illuminate\Http\Request;
 use App\Article;
+use App\Http\Controllers\AppBaseController;
 
-class ArticleController extends Controller
+class ArticleController extends AppBaseController
 {
     public function index()
     {
-        return Article::all();
+        return Article::paginate(15);
     }
 
     public function show(Article $article)
