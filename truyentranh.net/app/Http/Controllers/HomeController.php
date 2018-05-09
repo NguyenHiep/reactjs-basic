@@ -24,8 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //dd(Auth::guard('web')->check());
-        //dd(Auth::guard('api')->check());
         return view('home');
     }
 }

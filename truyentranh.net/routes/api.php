@@ -27,5 +27,5 @@ Route::group(['middleware' => 'auth:api'], function() {
 });
 
 Route::post('register', 'Auth\RegisterController@register');
-Route::post('login', 'Auth\LoginController@login');
-Route::post('logout', 'Auth\LoginController@logout');
+Route::post('login', 'Auth\LoginApiController@login');
+Route::post('logout', 'Auth\LoginApiController@logout');
