@@ -15,7 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+## Begin routes backend
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/manage', 'ManageController@index')->name('manage');
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('manage')->group(function () {
+        Route::get('/', 'ManageController@index')->name('manage');
+        Route::namespace('Manage')->group(function () {
+            Route::resource('sliders', 'SlidersController');
+
+        });
+    });
+});
+
+

@@ -33,7 +33,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><i class="fa fa-cogs"></i> Quản trị hệ thống</a>
+        <a class="navbar-brand" href="{{ route('manage') }}"><i class="fa fa-cogs"></i> Quản trị hệ thống</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -60,11 +60,9 @@
 </nav>
     <div class="clearfix">
       <div id="sidebar-bg"></div>
-      @include('_includes.sidebar')
+      @include('manage._includes.sidebar')
       @yield('content')
       <!--END #main-->
     </div>
-    
-   
 </body>
 </html>

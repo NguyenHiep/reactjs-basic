@@ -28,7 +28,7 @@
         </a>
       </li>
       <li class="list-group-item">
-        <a href="slider.html">
+        <a href="{{ route('sliders.index') }}">
           <i class="fa fa-picture-o"></i> <span>Slider</span>
         </a>
       </li>
