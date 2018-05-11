@@ -7,7 +7,7 @@
     </ol>
     <div class="col-xs-12">
       <div class="menu">
-        <a href="index.html" class="col-md-2 col-sm-5 col-xs-5">
+        <a href="{{ route('manage') }}" class="col-md-2 col-sm-5 col-xs-5">
           <i class="fa fa-home"></i><br> <span>Trang quản trị</span>
         </a>
         <a href="post.html" class="col-md-2 col-sm-5 col-xs-5">
@@ -22,7 +22,7 @@
         <a href="contact.html" class="col-md-2 col-sm-5 col-xs-5">
           <i class="fa fa-envelope-o"></i><br> <span>Phản hồi</span>
         </a>
-        <a href="slider.html" class="col-md-2 col-sm-5 col-xs-5">
+        <a href="{{ route('sliders.index') }}" class="col-md-2 col-sm-5 col-xs-5">
           <i class="fa fa-picture-o"></i><br> <span>Slider</span>
         </a>
         <a href="user.html" class="col-md-2 col-sm-5 col-xs-5">

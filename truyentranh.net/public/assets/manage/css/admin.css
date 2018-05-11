@@ -165,3 +165,21 @@ a:hover{color: #16775c;}
   background-color: #fcfade !important;
   cursor: pointer;
 }
+.panel-layout{
+  position: relative;
+}
+.panel-layout > li{
+  display: inline-block;
+}
+.toggel-btn-fade{
+  width: 450px;
+  position: absolute;
+  padding: 20px 10px 10px 10px;
+  background: #fafafa;
+  z-index: 10;
+  top: 45px;
+  box-sizing: border-box;
+  box-shadow: 0 0 6px 4px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 0 0 6px 4px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 0 0 6px 4px rgba(0, 0, 0, .25);
+}

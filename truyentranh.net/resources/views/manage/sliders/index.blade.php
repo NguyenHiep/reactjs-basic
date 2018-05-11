@@ -2,27 +2,66 @@
 @section('content')
   <div id="main">
     <ol class="breadcrumb">
-      <li><a href="index.html"><i class="fa fa-home"></i> Trang quản trị</a></li>
-      <li class="active"><a href="{{ route('sliders.index') }}">Slider</a></li>
+      <li><a href="{{ route('manage') }}"><i class="fa fa-home"></i> Trang quản trị</a></li>
+      <li class="active">Slider</li>
     </ol>
     <div class="col-xs-12">
-      <form id="admin-form" method="post" action="" role="form">
+      <form id="admin-form" method="GET" action="{{ route('sliders.index') }}" role="form">
         <div class="col-xs-12">
-          <div class="form-group">
-            <!-- Single button -->
-            <div class="btn-group">
-              <select id="task" name="task" class="form-control">
-                <option>Tác vụ</option>
-                <option value="delete">Xóa</option>
-                <option value="deactive">Ẩn</option>
-                <option value="active">Hiện</option>
-              </select>
-            </div>
-            <a href="{{ route('sliders.create') }}" class="btn btn-submit"><small><i class="fa fa-plus"></i></small> Thêm mới</a>
-            <div class="btn-group pull-right hidden-xs" id="div-search">
-              <input id="search" name="search" type="text" value="" class="form-control" placeholder="Tìm kiếm">
-              <span class="fa fa-search"></span>
-            </div>
+          <div class="form-group" id="accordion_toolbar">
+            <ul class="list-unstyled panel-layout">
+              <li>
+                <div class="btn-group">
+                  <select id="task" name="task" class="form-control">
+                    <option>Tác vụ</option>
+                    <option value="delete">Xóa</option>
+                    <option value="deactive">Ẩn</option>
+                    <option value="active">Hiện</option>
+                  </select>
+                </div>
+                <button class="btn btn-submit js-action-list-batch" type="button"><small><i class="fa fa-save"></i></small> Thực thi</button>
+              </li>
+              <li>
+                <div class="toggel-box">
+                  <a class="btn btn-default" data-toggle="collapse" data-parent="#accordion_toolbar" href="#search_advanced"><small><i class="fa fa-search"></i></small> Tìm kiếm</a>
+                  <div class="collapse toggel-btn-fade" id="search_advanced">
+                    <div class="form-group clearfix">
+                      <label class="control-label col-sm-3" for="id">Id:</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" name="id"/>
+                      </div>
+                    </div>
+                    <div class="form-group clearfix">
+                      <label class="control-label col-sm-3" for="content">Nội dung:</label>
+                      <div class="col-sm-9">
+                        <input id="content" type="text" class="form-control" name="content"/>
+                      </div>
+                    </div>
+                    <div class="form-group clearfix">
+                      <label class="control-label col-sm-3">Trạng thái:</label>
+                      <div class="col-sm-9">
+                        <label class="checkbox-inline"><input type="checkbox" name="status"/>Hiển thị</label>
+                        <label class="checkbox-inline"><input type="checkbox" name="status"/> Không hiển thị </label>
+                      </div>
+                    </div>
+                    <div class="form-group clearfix">
+                      <label class="control-label col-sm-3" for="created_at">Ngày tạo:</label>
+                      <div class="col-sm-9">
+                        <input id="created_at" type="text" class="form-control" name="created_at"/>
+                      </div>
+                    </div>
+                    <div class="form-group clearfix text-right">
+                      <a class="btn btn-default" data-toggle="collapse" data-parent="#accordion_toolbar" href="#search_advanced"><small><i class="fa fa-window-close"></i></small>Đóng lại</a>
+                      <button class="btn btn-primary" type="submit"><small><i class="fa fa-search"></i></small>Tìm kiếm</button>
+                    </div>
+                    
+                  </div>
+                </div>
+              </li>
+              <li class="pull-right">
+                <a href="{{ route('sliders.create') }}" class="btn btn-primary"><small><i class="fa fa-edit"></i></small> Thêm mới</a>
+              </li>
+            </ul>
           </div>
           <table class="table table-bordered table-hover">
             <thead>
@@ -34,6 +73,7 @@
               <th class="hidden-xs">Vị trí</th>
               <th>Sửa</th>
               <th>Tình trạng</th>
+              <th>Ngày tạo</th>
             </tr>
             </thead>
             <tbody>
@@ -55,88 +95,13 @@
                   <td>
                     <i class="fa fa-check  @if( $record->status == 1) text-success @else text-danger @endif" data-toggle="tooltip" data-placement="top" title="@if( $record->status == 1) Đang hiển thị @else Đã ẩn với người dùng @endif"></i>
                   </td>
+                  <td>{{ $record->created_at }}</td>
                 </tr>
               @endforeach
             @endif
-           {{-- <tr>
-              <td>
-                <input name="id[]" type="checkbox" value="1">
-              </td>
-              <td class="hidden-xs">1</td>
-              <td>
-                <a href="new-slider.html"><img class="img-thumbnail" src="../uploads/images/1.jpg" alt=""></a>
-              </td>
-              <td class="hidden-sm hidden-xs">Đoạn nội dung trình bày trên slider 1</td>
-              <td class="hidden-xs">Trang sản phẩm</td>
-              <td>
-                <a href="new-slider.html"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="Sửa slide"></i></a>
-              </td>
-              <td>
-                <i class="fa fa-check text-success" data-toggle="tooltip" data-placement="top" title="Đang hiển thị"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input name="id[]" type="checkbox" value="2">
-              </td>
-              <td class="hidden-xs">2</td>
-              <td>
-                <a href="new-slider.html"><img class="img-thumbnail" src="../uploads/images/2.jpg" alt=""></a>
-              </td>
-              <td class="hidden-sm hidden-xs">Đoạn nội dung trình bày trên slider 2</td>
-              <td class="hidden-xs">Trang chủ</td>
-              <td>
-                <a href="new-slider.html"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="Sửa slide"></i></a>
-              </td>
-              <td>
-                <i class="fa fa-check text-success" data-toggle="tooltip" data-placement="top" title="Đang hiển thị"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input name="id[]" type="checkbox" value="3">
-              </td>
-              <td class="hidden-xs">3</td>
-              <td>
-                <a href="new-slider.html"><img class="img-thumbnail" src="../uploads/images/3.jpg" alt=""></a>
-              </td>
-              <td class="hidden-sm hidden-xs">Đoạn nội dung trình bày trên slider 3</td>
-              <td class="hidden-xs">Trang sản phẩm</td>
-              <td>
-                <a href="new-slider.html"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="Sửa slide"></i></a>
-              </td>
-              <td>
-                <i class="fa fa-times text-danger" data-toggle="tooltip" data-placement="top" title="Đã ẩn với người dùng"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input name="id[]" type="checkbox" value="4">
-              </td>
-              <td class="hidden-xs">4</td>
-              <td>
-                <a href="new-slider.html"><img class="img-thumbnail" src="../uploads/images/4.jpg" alt=""></a>
-              </td>
-              <td class="hidden-sm hidden-xs">Đoạn nội dung trình bày trên slider 4</td>
-              <td class="hidden-xs">Trang chủ</td>
-              <td>
-                <a href="new-slider.html"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="Sửa slide"></i></a>
-              </td>
-              <td>
-                <i class="fa fa-times text-danger" data-toggle="tooltip" data-placement="top" title="Đã ẩn với người dùng"></i>
-              </td>
-            </tr>--}}
             </tbody>
           </table>
-          <div class="text-right">
-            <ul class="pagination" id="step5">
-              <li class="disabled"><span>«</span></li>
-              <li class="active"><span>1</span></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">»</a></li>
-            </ul>
-          </div>
+          <div class="text-right">{{ $records->appends(request()->query())->links()  }}</div>
           <p><strong><i class="fa fa-bookmark"></i>Ghi chú: </strong></p>
           <p class="note-items"><i class="fa fa-check text-success"></i> Hiển thị với người dùng.</p>
           <p class="note-items"><i class="fa fa-times text-danger"></i> Ẩn với người dùng</p>

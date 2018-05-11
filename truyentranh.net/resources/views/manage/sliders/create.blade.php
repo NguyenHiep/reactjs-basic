@@ -2,17 +2,19 @@
 @section('content')
   <div id="main">
     <ol class="breadcrumb">
-      <li><a href="index.html"><i class="fa fa-home"></i> Trang quản trị</a></li>
-      <li class="active"><a href="slider.html">Slider</a></li>
-      <li class="active"><a href="new-slider.html">Thêm slider mới</a></li>
+      <li><a href="{{ route('manage') }}"><i class="fa fa-home"></i> Trang quản trị</a></li>
+      <li><a href="{{ route('sliders.index') }}">Slider</a></li>
+      <li class="active">Thêm slider mới</li>
     </ol>
     <div class="col-xs-12">
-      <form id="admin-form" class="form-horizontal col-xl-9 col-lg-10 col-md-12 col-sm-12" method="post" action="#" enctype="multipart/form-data" role="form">
-        <input name="id" type="hidden" value="0">
+      <form id="admin-form" class="form-horizontal col-xl-9 col-lg-10 col-md-12 col-sm-12" method="post" action="{{ route('sliders.store') }}" enctype="multipart/form-data" role="form">
+        {{ csrf_field() }}
+        @php $key = 'content'; @endphp
         <div class="form-group">
           <label for="content" class="col-sm-2 control-label required">Nội dung</label>
           <div class="col-sm-10">
-            <textarea name="content" rows="5" class="form-control" id="content" placeholder="Nội dung cho hình ảnh ( ~ 120 ký tự )" ></textarea>
+            {!! Form::textarea($key,  old($key), ['class' => 'form-control ', 'rows' => '5', 'placeholder' => 'Nội dung cho hình ảnh ( ~ 120 ký tự )']) !!}
+            @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
         </div>
         <div class="form-group">

@@ -37,7 +37,7 @@ class SlidersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
