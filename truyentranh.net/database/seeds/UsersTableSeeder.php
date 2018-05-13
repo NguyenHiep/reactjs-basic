@@ -20,11 +20,11 @@ class UsersTableSeeder extends Seeder
         // Let's make sure everyone has the same password and
         // let's hash it before the loop, or else our seeder
         // will be too slow.
-        $password = Hash::make('toptal');
+        $password = Hash::make('admin123');
 
         User::create([
             'name' => 'Administrator',
-            'email' => 'admin@test.com',
+            'email' => 'admin@gmail.com',
             'password' => $password,
         ]);
 

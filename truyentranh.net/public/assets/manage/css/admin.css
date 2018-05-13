@@ -183,3 +183,6 @@ a:hover{color: #16775c;}
   -moz-box-shadow: 0 0 6px 4px rgba(0, 0, 0, .25);
   -webkit-box-shadow: 0 0 6px 4px rgba(0, 0, 0, .25);
 }
+.help-block{
+  color: #ec2121;
+}

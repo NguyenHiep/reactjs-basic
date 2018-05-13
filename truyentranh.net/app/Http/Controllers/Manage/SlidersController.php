@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers\Manage;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Requests\Sliders as Request;
+use App\Http\Controllers\AppBaseController;
 use App\Sliders;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
-class SlidersController extends Controller
+class SlidersController extends AppBaseController
 {
+    protected $sliders;
+
+    public function __construct(Sliders $sliders) {
+        $this->sliders = $sliders;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -37,7 +45,25 @@ class SlidersController extends Controller
      */
     public function store(Request $request)
     {
+        $inputs = $request->all();
+        try {
+            DB::beginTransaction();
+            $this->sliders->fill($inputs);
+            $this->sliders->save();
+            DB::commit();
+            return redirect()->route('sliders.index')->with([
+                'message' => __('system.message.create'),
+                'status'  => self::CTRL_MESSAGE_SUCCESS,
+            ]);
 
+        } catch (\Exception $e) {
+            DB::rollBack();
+            Log::error([$e->getMessage(), __METHOD__]);
+        }
+        return redirect()->back()->withInput($inputs)->with([
+            'message' => __('system.message.errors', ['errors' => 'Create sliders is failed']),
+            'status'  => self::CTRL_MESSAGE_ERROR,
+        ]);
     }
 
     /**

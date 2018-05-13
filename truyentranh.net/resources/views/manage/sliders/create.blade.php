@@ -9,6 +9,14 @@
     <div class="col-xs-12">
       <form id="admin-form" class="form-horizontal col-xl-9 col-lg-10 col-md-12 col-sm-12" method="post" action="{{ route('sliders.store') }}" enctype="multipart/form-data" role="form">
         {{ csrf_field() }}
+        @php $key = 'title'; @endphp
+        <div class="form-group">
+          <label for="content" class="col-sm-2 control-label required">Tiêu đề</label>
+          <div class="col-sm-10">
+            {!! Form::text($key,  old($key), ['class' => 'form-control ', 'placeholder' => 'Nội dung cho hình ảnh ( ~ 120 ký tự )']) !!}
+            @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
+          </div>
+        </div>
         @php $key = 'content'; @endphp
         <div class="form-group">
           <label for="content" class="col-sm-2 control-label required">Nội dung</label>
@@ -17,17 +25,23 @@
             @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
         </div>
+        @php $key = 'url'; @endphp
+        <div class="form-group">
+          <label for="content" class="col-sm-2 control-label required">URL</label>
+          <div class="col-sm-10">
+            {!! Form::text($key,  old($key), ['class' => 'form-control ', 'placeholder' => 'Link liên kết']) !!}
+            @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
+          </div>
+        </div>
+        @php $key = 'position'; @endphp
         <div class="form-group">
           <label for="status" class="col-sm-2 control-label required">Vị trí</label>
           <div class="col-sm-10">
-            <div class="btn-group" data-toggle="buttons">
-              <label class="btn btn-primary active">
-                <input type="radio" name="status" value="1" checked=""> Trang chủ
-              </label>
-              <label class="btn btn-primary">
-                <input type="radio" name="status" value="0"> Trang sản phẩm
-              </label>
+            <div class="btn-group">
+              <label for="home"> {!! Form::radio($key, 1, (old($key) == '1') ? true : null, ['id' => 'home']) !!}Trang chủ</label>
+              <label for="product">{!! Form::radio($key, 2, (old($key) == '2') ? true : null, ['id' => 'product']) !!} Trang sản phẩm</label>
             </div>
+            @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
         </div>
         <div class="form-group" >
@@ -38,26 +52,47 @@
               <li><a href="#img-url" role="tab" data-toggle="tab">Lấy từ URL</a></li>
             </ul>
             <div class="tab-content" style="margin-top: 15px; min-height: 100px;">
+              @php $key = 'image_path'; @endphp
               <div class="tab-pane active" id="img-file">
                 <label for="image" class="col-sm-3 control-label">Từ máy tính</label>
                 <div class="col-sm-9">
-                  <input name="image" type="file" class="form-control" id="image" accept="image/*">
+                  {!! Form::file($key, ['class' => 'form-control', 'accept' => 'image/*']) !!}
+                  @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
                 </div>
               </div>
+              @php $key = 'image_link'; @endphp
               <div class="tab-pane" id="img-url">
                 <label for="url" class="col-sm-3 control-label"> Từ URL</label>
                 <div class="col-sm-9">
-                  <input name="image" type="text" value="" class="form-control" id="url" placeholder="Đường dẫn tới hình ảnh" maxlength="255">
+                  {!! Form::text($key, old($key), ['class' => 'form-control', 'placeholder' => 'Đường dẫn tới hình ảnh']) !!}
+                  @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        @php $key = 'target';@endphp
+        <div class="form-group">
+          <label class="col-sm-2 control-label required">Target</label>
+          <div class="col-sm-10">
+            {!! Form::select($key, [1=>'_blank', 2 => '_self'], old($key), ['class' => 'form-control']) !!}
+            @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
+          </div>
+        </div>
+        @php $key = 'status';@endphp
+        <div class="form-group">
+          <label class="col-sm-2 control-label required">Trạng thái</label>
+          <div class="col-sm-10">
+            <label for="enable">{!! Form::radio($key, 1, null, ['id' => 'enable']) !!}Hiển thị</label>
+            <label for="disable">{!! Form::radio($key, 2, true, ['id' => 'disable']) !!}Ẩn</label>
+            @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-submit"><small><i class="fa fa-plus"></i></small> Thêm mới</button>
             <button type="submit" class="btn btn-danger"><small><i class="fa fa-save"></i></small> Lưu nháp</button>
-            <a class="btn btn-warning" href="#"><small><i class="fa fa-reply"></i></small> Trở về</a>
+            <a class="btn btn-warning" href="{{ route('sliders.index') }}"><small><i class="fa fa-reply"></i></small> Trở về</a>
           </div>
         </div>
       </form>
