@@ -1,9 +1,6 @@
 import React from 'react';
 import './index.css';
-import axios from 'axios'
-import configs from '../../configs';
-
-class Login extends React.Component {
+class Register extends React.Component {
   // State create
   constructor(props){
     super(props);
@@ -19,28 +16,6 @@ class Login extends React.Component {
     alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
   }
-	componentDidMount() {
-		var baseURL = 'http://api.dev.nguyenhiep';
-		const data = {
-			origin: ["*"],
-			headers: ["Access-Control-Allow-Origin","Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type", "application/json"],
-			credentials: true,
-			grant_type: 'password',
-			client_id: '2',
-			client_secret: 't5woNCp01EJFjmjpRSZqiHVnubl6ooqwji96xQy1',
-			username: 'admin@gmail.com',
-			password: 'admin123',
-			scopes: []
-		};
-
-		axios.post(baseURL+'/oauth/token', data)
-			.then(response => {
-				console.log(response);
-			})
-			.catch (response => {
-				// List errors on response...
-			});
-	}
 
   render() {
     return (
@@ -48,26 +23,29 @@ class Login extends React.Component {
         <div className="container">
           <div className="row mb-3">
             <div className="col-xs-12 col-lg-6">
-              <h1 className="title-body">Đăng nhập</h1>
+              <h1 className="title-body">Đăng ký tài khoản</h1>
               <form onSubmit={this.handleSubmit}>
                 <div className="login-form">
                   <div className="form-group">
-                    <label htmlFor="email">Tên đăng nhập / Email</label>
-                    <input type="email" className="form-control" id="email" value={this.state.value} onChange={this.handleChange}/>
+                    <label htmlFor="email">Email</label>
+                    <input type="email" className="form-control" id="email" value={this.state.value} onChange={this.handleChange} placeholder="VD: truyentranh@gmail.com"/>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="username">Tên đăng nhập</label>
+                    <input type="username" className="form-control" id="username" value=""/>
                   </div>
                   <div className="form-group">
                     <label htmlFor="pwd">Mật khẩu:</label>
                     <input type="password" className="form-control" id="pwd" />
                   </div>
-                  <div className="form-group form-check">
-                    <label className="form-check-label">
-                      <input className="form-check-input" type="checkbox" /> Nhớ mật khẩu
-                    </label>
+                  <div className="form-group">
+                    <label htmlFor="repwd">Nhập lại khẩu:</label>
+                    <input type="password" className="form-control" id="repwd" />
                   </div>
-                  <button type="submit" className="btn btn-primary">Đăng nhập</button>
+                  <button type="submit" className="btn btn-primary">Đăng ký</button>
                 </div>
               </form>
-							<p className="link-register"> Bạn chưa có tài khoản? <a href="/register"> Đăng ký ngay</a> / <a href="">Quên mật khẩu</a></p>
+							<p className="link-register"> Bạn có tài khoản rồi? <a href="/login"> Đăng nhập</a> / <a href="">Quên mật khẩu</a></p>
             </div>
             <div className="col-xs-12 col-lg-6">
               <h2 className="title-body">Đăng nhập nhanh</h2>
@@ -85,5 +63,5 @@ class Login extends React.Component {
     );
   }
 }
-export default Login;
+export default Register;
 

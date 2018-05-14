@@ -24,6 +24,12 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::post('articles', 'Apis\ArticleController@store');
     Route::put('articles/{article}', 'Apis\ArticleController@update');
     Route::delete('articles/{article}', 'Apis\ArticleController@delete');
+
+    Route::get('sliders', 'Apis\SlidersController@index');
+    Route::get('sliders/{slider}', 'Apis\SlidersController@show');
+    Route::post('sliders', 'Apis\SlidersController@store');
+    Route::put('sliders/{slider}', 'Apis\SlidersController@update');
+    Route::delete('sliders/{slider}', 'Apis\SlidersController@delete');
 });
 
 Route::post('register', 'Auth\RegisterController@register');
