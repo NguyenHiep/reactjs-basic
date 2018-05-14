@@ -6,6 +6,7 @@
       <li class="active">Slider</li>
     </ol>
     <div class="col-xs-12">
+      @include('manage._includes.message')
       <form id="admin-form" method="GET" action="{{ route('sliders.index') }}" role="form">
         <div class="col-xs-12">
           <div class="form-group" id="accordion_toolbar">
@@ -90,7 +91,7 @@
                   <td class="hidden-sm hidden-xs">{!! Str::words($record->content, 7,'...')  !!}</td>
                   <td class="hidden-xs">{{ $record->position }}</td>
                   <td>
-                    <a href="{{ route('sliders.show',$record->id) }}"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="Sửa slide"></i></a>
+                    <a href="{{ route('sliders.edit',$record->id) }}"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="Sửa slide"></i></a>
                   </td>
                   <td>
                     <i class="fa fa-check  @if( $record->status == 1) text-success @else text-danger @endif" data-toggle="tooltip" data-placement="top" title="@if( $record->status == 1) Đang hiển thị @else Đã ẩn với người dùng @endif"></i>

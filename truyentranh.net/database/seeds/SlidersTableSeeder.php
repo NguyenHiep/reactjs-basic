@@ -18,7 +18,7 @@ class SlidersTableSeeder extends Seeder
         $faker = \Faker\Factory::create();
 
         // And now, let's create a few articles in our database:
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 1; $i++) {
             Sliders::create([
                 'image_path' => $faker->imageUrl($width = 640, $height = 480),
                 'image_link' => $faker->image($dir = null, $width = 640, $height = 480) ,

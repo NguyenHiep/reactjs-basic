@@ -85,7 +85,12 @@ class SlidersController extends AppBaseController
      */
     public function edit($id)
     {
-        return view('manage.sliders.edit');
+        $data['record'] = $this->sliders->find($id);
+        if(empty($data['record']))
+        {
+            return abort(404);
+        }
+        return view('manage.sliders.edit', $data);
     }
 
     /**
