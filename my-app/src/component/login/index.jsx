@@ -1,7 +1,6 @@
 import React from 'react';
 import './index.css';
 import axios from 'axios'
-import configs from '../../configs';
 
 class Login extends React.Component {
   // State create
@@ -22,12 +21,9 @@ class Login extends React.Component {
 	componentDidMount() {
 		var baseURL = 'http://api.dev.nguyenhiep';
 		const data = {
-			origin: ["*"],
-			headers: ["Access-Control-Allow-Origin","Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type", "application/json"],
-			credentials: true,
 			grant_type: 'password',
-			client_id: '2',
-			client_secret: 't5woNCp01EJFjmjpRSZqiHVnubl6ooqwji96xQy1',
+			client_id: '1',
+			client_secret: 'tMHBwB66egqRLXMmmxDNHEkQ2OeVyEc53nnyTV6Y',
 			username: 'admin@gmail.com',
 			password: 'admin123',
 			scopes: []
@@ -35,7 +31,7 @@ class Login extends React.Component {
 
 		axios.post(baseURL+'/oauth/token', data)
 			.then(response => {
-				console.log(response);
+				console.log(response.data);
 			})
 			.catch (response => {
 				// List errors on response...
