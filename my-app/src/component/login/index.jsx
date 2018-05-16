@@ -6,16 +6,28 @@ class Login extends React.Component {
   // State create
   constructor(props){
     super(props);
-    this.state = {value: ''}
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+    	username : '',
+			password : '',
+			remember : false
+		};
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit      = this.handleSubmit.bind(this);
   }
-  handleChange(event) {
-    this.setState({value: event.target.value});
+  handleInputChange(event) {
+  	const target   = event.target;
+  	const password = target.password;
+  	const username = target.username;
+  	const remember = target.type === 'checkbox' ? target.checked : target.remember;
+    this.setState({
+			username : username,
+			password : password,
+			remember : remember
+		});
   }
   
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    alert('A name was submitted: ' + this.state.username + 'Pass:' + this.state.password + 'check:' + this.state.remember);
     event.preventDefault();
   }
 	componentDidMount() {
@@ -37,7 +49,7 @@ class Login extends React.Component {
 				// List errors on response...
 			});
 	}
-
+	//https://lorenstewart.me/2016/10/31/react-js-forms-controlled-components/
   render() {
     return (
       <main id="content">
@@ -48,16 +60,33 @@ class Login extends React.Component {
               <form onSubmit={this.handleSubmit}>
                 <div className="login-form">
                   <div className="form-group">
-                    <label htmlFor="email">Tên đăng nhập / Email</label>
-                    <input type="email" className="form-control" id="email" value={this.state.value} onChange={this.handleChange}/>
+                    <label htmlFor="username">Tên đăng nhập / Email</label>
+                    <input
+											name="username"
+											type="text"
+											className="form-control"
+											id="username"
+											value={this.state.username}
+											onChange={this.handleInputChange}/>
                   </div>
                   <div className="form-group">
                     <label htmlFor="pwd">Mật khẩu:</label>
-                    <input type="password" className="form-control" id="pwd" />
+                    <input
+											name="password"
+											type="password"
+											className="form-control"
+											id="pwd"
+											value={this.state.password}
+											onChange={this.handleInputChange}/>
                   </div>
                   <div className="form-group form-check">
                     <label className="form-check-label">
-                      <input className="form-check-input" type="checkbox" /> Nhớ mật khẩu
+                      <input
+												name="remember"
+												type="checkbox"
+												className="form-check-input"
+												checked={this.state.remember}
+												onChange={this.handleInputChange}/> Nhớ mật khẩu
                     </label>
                   </div>
                   <button type="submit" className="btn btn-primary">Đăng nhập</button>
