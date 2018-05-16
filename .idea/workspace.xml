@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0696b65d-6a36-4141-a2f3-50c2dddd9415" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/my-app/src/component/register/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/my-app/src/component/register/index.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/my-app/src/configs.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Apis/SlidersController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my-app/package.json" afterPath="$PROJECT_DIR$/my-app/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my-app/src/component/home/index.js" afterPath="$PROJECT_DIR$/my-app/src/component/home/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my-app/src/component/login/index.jsx" afterPath="$PROJECT_DIR$/my-app/src/component/login/index.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my-app/src/routes.jsx" afterPath="$PROJECT_DIR$/my-app/src/routes.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truyentranh.net/composer.lock" afterPath="$PROJECT_DIR$/truyentranh.net/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truyentranh.net/routes/api.php" afterPath="$PROJECT_DIR$/truyentranh.net/routes/api.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truyentranh.net/truyentranh-access.log" afterPath="$PROJECT_DIR$/truyentranh.net/truyentranh-access.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,78 +18,84 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/my-app/src/component/login/index.jsx">
+      <file leaf-file-name="SlidersController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="22" column="46" lean-forward="false" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+            <state relative-caret-position="86">
+              <caret line="92" column="48" lean-forward="false" selection-start-line="92" selection-start-column="43" selection-end-line="92" selection-end-column="48" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#47#88#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="configs.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/src/configs.jsx">
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my-app/src/component/login/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="36">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/src/index.js">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/my-app/src/component/home/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="817" column="31" lean-forward="false" selection-start-line="817" selection-start-column="31" selection-end-line="817" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#411#1525#0" expanded="false" />
+                <element signature="e#1545#27547#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my-app/src/component/include/header.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="slider_items.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my-app/src/component/home/slider_items.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArticleController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Apis/ArticleController.php">
+      <file leaf-file-name="project01.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my-app/src/component/home/project01.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SlidersController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Apis/SlidersController.php">
+      <file leaf-file-name="items_new.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my-app/src/component/home/items_new.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-              <folding>
-                <element signature="e#45#73#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/truyentranh.net/routes/api.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="27" column="49" lean-forward="false" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-              <caret line="28" column="58" lean-forward="false" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
-              <caret line="29" column="50" lean-forward="false" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
-              <caret line="30" column="58" lean-forward="false" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
-              <caret line="31" column="61" lean-forward="false" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/package.json">
+      <file leaf-file-name="items_hot.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my-app/src/component/home/items_hot.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -106,32 +107,18 @@
       <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my-app/src/component/register/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/src/component/home/index.js">
+      <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/truyentranh.net/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-14747">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/src/routes.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="19" />
+            <state relative-caret-position="342">
+              <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -166,8 +153,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/truyentranh.net/app/Article.php" />
-        <option value="$PROJECT_DIR$/truyentranh.net/app/Providers/AuthServiceProvider.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Auth/LoginController.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Api/ArticleController.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Apis/ArticleController.php" />
@@ -197,7 +182,6 @@
         <option value="$PROJECT_DIR$/truyentranh.net/resources/lang/vi/validation.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/public/assets/manage/css/admin.css" />
         <option value="$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/AppBaseController.php" />
-        <option value="$PROJECT_DIR$/truyentranh.net/config/app.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/storage/logs/laravel.log" />
         <option value="$PROJECT_DIR$/truyentranh.net/resources/views/manage/sliders/create.blade.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/app/Http/Requests/Sliders.php" />
@@ -213,10 +197,13 @@
         <option value="$PROJECT_DIR$/truyentranh.net/resources/views/manage/sliders/edit.blade.php" />
         <option value="$PROJECT_DIR$/my-app/src/routes.jsx" />
         <option value="$PROJECT_DIR$/my-app/src/component/register/index.jsx" />
-        <option value="$PROJECT_DIR$/truyentranh.net/routes/api.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Apis/SlidersController.php" />
         <option value="$PROJECT_DIR$/my-app/src/configs.jsx" />
+        <option value="$PROJECT_DIR$/truyentranh.net/config/app.php" />
+        <option value="$PROJECT_DIR$/truyentranh.net/app/Http/Kernel.php" />
+        <option value="$PROJECT_DIR$/truyentranh.net/routes/api.php" />
         <option value="$PROJECT_DIR$/my-app/src/component/login/index.jsx" />
+        <option value="$PROJECT_DIR$/my-app/src/component/home/index.js" />
       </list>
     </option>
   </component>
@@ -242,8 +229,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1456" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -289,21 +276,21 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -313,11 +300,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -331,11 +318,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -349,33 +336,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="truyentranh.net" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -390,18 +355,14 @@
               <option name="myItemId" value="Http" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -420,18 +381,14 @@
               <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Apis" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -441,11 +398,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -459,11 +416,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -481,11 +438,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs_coban" />
+              <option name="myItemId" value="reactjs-basic" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -502,6 +459,58 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="login" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my-app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="component" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="include" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my-app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="component" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -656,11 +665,12 @@
       <workItem from="1526175105155" duration="4039000" />
       <workItem from="1526206037119" duration="4825000" />
       <workItem from="1526228310338" duration="5430000" />
+      <workItem from="1526439251578" duration="13003000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240384000" />
+    <option name="totallyTimeSpent" value="258513000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -672,41 +682,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27272728" sideWeight="0.48657718" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25931233" sideWeight="0.48657718" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724252" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52491695" sideWeight="0.37212864" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52491695" sideWeight="0.62787133" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24961714" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56478405" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56345886" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3116386" sideWeight="0.51342285" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724252" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52491695" sideWeight="0.37212864" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32885906" sideWeight="0.49693722" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3116386" sideWeight="0.51342285" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52491695" sideWeight="0.62787133" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56478405" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25267994" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="876" y="99" width="339" height="596" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3116386" sideWeight="0.51342285" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26818183" sideWeight="0.48657718" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32838285" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24961714" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3116386" sideWeight="0.51342285" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724252" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -750,272 +750,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/config/session.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2907">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1598">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/config/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/public/assets/manage/css/admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3162">
-          <caret line="186" column="17" lean-forward="false" selection-start-line="186" selection-start-column="17" selection-end-line="186" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3222">
-          <caret line="179" column="51" lean-forward="false" selection-start-line="179" selection-start-column="51" selection-end-line="179" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-59">
-          <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/storage/logs/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="959" column="32" lean-forward="false" selection-start-line="959" selection-start-column="32" selection-end-line="959" selection-end-column="32" />
-          <folding>
-            <element signature="e#834#1332#0#PHP" expanded="false" />
-            <element signature="e#872#1207#0#PHP" expanded="false" />
-            <element signature="e#1212#1330#0#PHP" expanded="false" />
-            <element signature="e#1334#1942#0#PHP" expanded="false" />
-            <element signature="e#1375#1773#0#PHP" expanded="false" />
-            <element signature="e#1778#1940#0#PHP" expanded="false" />
-            <element signature="e#1863#1934#0#PHP" expanded="false" />
-            <element signature="e#1944#2566#0#PHP" expanded="false" />
-            <element signature="e#1989#2391#0#PHP" expanded="false" />
-            <element signature="e#2396#2564#0#PHP" expanded="false" />
-            <element signature="e#2485#2558#0#PHP" expanded="false" />
-            <element signature="e#2568#2935#0#PHP" expanded="false" />
-            <element signature="e#2607#2792#0#PHP" expanded="false" />
-            <element signature="e#2797#2933#0#PHP" expanded="false" />
-            <element signature="e#2937#3394#0#PHP" expanded="false" />
-            <element signature="e#2973#3160#0#PHP" expanded="false" />
-            <element signature="e#3165#3392#0#PHP" expanded="false" />
-            <element signature="e#3234#3314#0#PHP" expanded="false" />
-            <element signature="e#3396#3673#0#PHP" expanded="false" />
-            <element signature="e#3437#3553#0#PHP" expanded="false" />
-            <element signature="e#3558#3671#0#PHP" expanded="false" />
-            <element signature="e#3675#3970#0#PHP" expanded="false" />
-            <element signature="e#3713#3864#0#PHP" expanded="false" />
-            <element signature="e#3869#3968#0#PHP" expanded="false" />
-            <element signature="e#3972#4414#0#PHP" expanded="false" />
-            <element signature="e#4009#4226#0#PHP" expanded="false" />
-            <element signature="e#4231#4412#0#PHP" expanded="false" />
-            <element signature="e#4274#4350#0#PHP" expanded="false" />
-            <element signature="e#4416#4826#0#PHP" expanded="false" />
-            <element signature="e#4453#4677#0#PHP" expanded="false" />
-            <element signature="e#4682#4824#0#PHP" expanded="false" />
-            <element signature="e#4828#5114#0#PHP" expanded="false" />
-            <element signature="e#4870#4987#0#PHP" expanded="false" />
-            <element signature="e#4992#5112#0#PHP" expanded="false" />
-            <element signature="e#5116#5395#0#PHP" expanded="false" />
-            <element signature="e#5155#5286#0#PHP" expanded="false" />
-            <element signature="e#5291#5393#0#PHP" expanded="false" />
-            <element signature="e#5397#5696#0#PHP" expanded="false" />
-            <element signature="e#5439#5584#0#PHP" expanded="false" />
-            <element signature="e#5589#5694#0#PHP" expanded="false" />
-            <element signature="e#5698#6777#0#PHP" expanded="false" />
-            <element signature="e#5736#6024#0#PHP" expanded="false" />
-            <element signature="e#6029#6775#0#PHP" expanded="false" />
-            <element signature="e#6099#6166#0#PHP" expanded="false" />
-            <element signature="e#6176#6293#0#PHP" expanded="false" />
-            <element signature="e#6303#6491#0#PHP" expanded="false" />
-            <element signature="e#6501#6677#0#PHP" expanded="false" />
-            <element signature="e#6779#7378#0#PHP" expanded="false" />
-            <element signature="e#6818#7103#0#PHP" expanded="false" />
-            <element signature="e#7108#7376#0#PHP" expanded="false" />
-            <element signature="e#7168#7232#0#PHP" expanded="false" />
-            <element signature="e#7242#7318#0#PHP" expanded="false" />
-            <element signature="e#7380#7666#0#PHP" expanded="false" />
-            <element signature="e#7424#7528#0#PHP" expanded="false" />
-            <element signature="e#7533#7664#0#PHP" expanded="false" />
-            <element signature="e#7668#8516#0#PHP" expanded="false" />
-            <element signature="e#7707#8119#0#PHP" expanded="false" />
-            <element signature="e#8124#8514#0#PHP" expanded="false" />
-            <element signature="e#8340#8399#0#PHP" expanded="false" />
-            <element signature="e#8518#8801#0#PHP" expanded="false" />
-            <element signature="e#8561#8666#0#PHP" expanded="false" />
-            <element signature="e#8671#8799#0#PHP" expanded="false" />
-            <element signature="e#8803#9189#0#PHP" expanded="false" />
-            <element signature="e#8846#8959#0#PHP" expanded="false" />
-            <element signature="e#8964#9187#0#PHP" expanded="false" />
-            <element signature="e#9036#9106#0#PHP" expanded="false" />
-            <element signature="e#9191#9432#0#PHP" expanded="false" />
-            <element signature="e#9237#9336#0#PHP" expanded="false" />
-            <element signature="e#9341#9430#0#PHP" expanded="false" />
-            <element signature="e#9434#9669#0#PHP" expanded="false" />
-            <element signature="e#9474#9576#0#PHP" expanded="false" />
-            <element signature="e#9581#9667#0#PHP" expanded="false" />
-            <element signature="e#9671#9949#0#PHP" expanded="false" />
-            <element signature="e#9712#9865#0#PHP" expanded="false" />
-            <element signature="e#9870#9947#0#PHP" expanded="false" />
-            <element signature="e#9951#10301#0#PHP" expanded="false" />
-            <element signature="e#9996#10170#0#PHP" expanded="false" />
-            <element signature="e#10175#10299#0#PHP" expanded="false" />
-            <element signature="e#10303#11388#0#PHP" expanded="false" />
-            <element signature="e#10342#10546#0#PHP" expanded="false" />
-            <element signature="e#10551#11386#0#PHP" expanded="false" />
-            <element signature="e#10677#10993#0#PHP" expanded="false" />
-            <element signature="e#10822#10983#0#PHP" expanded="false" />
-            <element signature="e#11039#11151#0#PHP" expanded="false" />
-            <element signature="e#11205#11288#0#PHP" expanded="false" />
-            <element signature="e#11390#11624#0#PHP" expanded="false" />
-            <element signature="e#11430#11531#0#PHP" expanded="false" />
-            <element signature="e#11536#11622#0#PHP" expanded="false" />
-            <element signature="e#11626#11945#0#PHP" expanded="false" />
-            <element signature="e#11664#11852#0#PHP" expanded="false" />
-            <element signature="e#11857#11943#0#PHP" expanded="false" />
-            <element signature="e#11947#12661#0#PHP" expanded="false" />
-            <element signature="e#11987#12212#0#PHP" expanded="false" />
-            <element signature="e#12217#12659#0#PHP" expanded="false" />
-            <element signature="e#12338#12608#0#PHP" expanded="false" />
-            <element signature="e#12497#12608#0#PHP" expanded="false" />
-            <element signature="e#12663#12947#0#PHP" expanded="false" />
-            <element signature="e#12700#12844#0#PHP" expanded="false" />
-            <element signature="e#12849#12945#0#PHP" expanded="false" />
-            <element signature="e#12949#13364#0#PHP" expanded="false" />
-            <element signature="e#12988#13163#0#PHP" expanded="false" />
-            <element signature="e#13168#13362#0#PHP" expanded="false" />
-            <element signature="e#13236#13301#0#PHP" expanded="false" />
-            <element signature="e#13366#13713#0#PHP" expanded="false" />
-            <element signature="e#13411#13573#0#PHP" expanded="false" />
-            <element signature="e#13578#13711#0#PHP" expanded="false" />
-            <element signature="e#13715#15374#0#PHP" expanded="false" />
-            <element signature="e#13751#13964#0#PHP" expanded="false" />
-            <element signature="e#13969#15372#0#PHP" expanded="false" />
-            <element signature="e#14061#14139#0#PHP" expanded="false" />
-            <element signature="e#14149#14288#0#PHP" expanded="false" />
-            <element signature="e#14298#14656#0#PHP" expanded="false" />
-            <element signature="e#14448#14583#0#PHP" expanded="false" />
-            <element signature="e#14745#15025#0#PHP" expanded="false" />
-            <element signature="e#14799#14921#0#PHP" expanded="false" />
-            <element signature="e#15083#15297#0#PHP" expanded="false" />
-            <element signature="e#15203#15287#0#PHP" expanded="false" />
-            <element signature="e#15376#15651#0#PHP" expanded="false" />
-            <element signature="e#15412#15575#0#PHP" expanded="false" />
-            <element signature="e#15580#15649#0#PHP" expanded="false" />
-            <element signature="e#15653#15936#0#PHP" expanded="false" />
-            <element signature="e#15689#15823#0#PHP" expanded="false" />
-            <element signature="e#15828#15934#0#PHP" expanded="false" />
-            <element signature="e#15938#16246#0#PHP" expanded="false" />
-            <element signature="e#15977#16149#0#PHP" expanded="false" />
-            <element signature="e#16154#16244#0#PHP" expanded="false" />
-            <element signature="e#16248#16569#0#PHP" expanded="false" />
-            <element signature="e#16292#16403#0#PHP" expanded="false" />
-            <element signature="e#16408#16567#0#PHP" expanded="false" />
-            <element signature="e#16571#17116#0#PHP" expanded="false" />
-            <element signature="e#16612#16878#0#PHP" expanded="false" />
-            <element signature="e#16883#17114#0#PHP" expanded="false" />
-            <element signature="e#16973#17038#0#PHP" expanded="false" />
-            <element signature="e#17118#17534#0#PHP" expanded="false" />
-            <element signature="e#17157#17261#0#PHP" expanded="false" />
-            <element signature="e#17266#17532#0#PHP" expanded="false" />
-            <element signature="e#17308#17467#0#PHP" expanded="false" />
-            <element signature="e#17536#18128#0#PHP" expanded="false" />
-            <element signature="e#17576#17794#0#PHP" expanded="false" />
-            <element signature="e#17799#18126#0#PHP" expanded="false" />
-            <element signature="e#17860#17925#0#PHP" expanded="false" />
-            <element signature="e#17935#18013#0#PHP" expanded="false" />
-            <element signature="e#18130#18555#0#PHP" expanded="false" />
-            <element signature="e#18169#18336#0#PHP" expanded="false" />
-            <element signature="e#18341#18553#0#PHP" expanded="false" />
-            <element signature="e#18407#18547#0#PHP" expanded="false" />
-            <element signature="e#18455#18547#0#PHP" expanded="false" />
-            <element signature="e#18557#18779#0#PHP" expanded="false" />
-            <element signature="e#18597#18710#0#PHP" expanded="false" />
-            <element signature="e#18715#18777#0#PHP" expanded="false" />
-            <element signature="e#18781#19037#0#PHP" expanded="false" />
-            <element signature="e#18827#18941#0#PHP" expanded="false" />
-            <element signature="e#18946#19035#0#PHP" expanded="false" />
-            <element signature="e#19039#19621#0#PHP" expanded="false" />
-            <element signature="e#19080#19348#0#PHP" expanded="false" />
-            <element signature="e#19353#19619#0#PHP" expanded="false" />
-            <element signature="e#19485#19552#0#PHP" expanded="false" />
-            <element signature="e#19623#19984#0#PHP" expanded="false" />
-            <element signature="e#19661#19843#0#PHP" expanded="false" />
-            <element signature="e#19848#19982#0#PHP" expanded="false" />
-            <element signature="e#19986#20233#0#PHP" expanded="false" />
-            <element signature="e#20031#20151#0#PHP" expanded="false" />
-            <element signature="e#20156#20231#0#PHP" expanded="false" />
-            <element signature="e#20235#20540#0#PHP" expanded="false" />
-            <element signature="e#20278#20431#0#PHP" expanded="false" />
-            <element signature="e#20436#20538#0#PHP" expanded="false" />
-            <element signature="e#20542#21171#0#PHP" expanded="false" />
-            <element signature="e#20582#20892#0#PHP" expanded="false" />
-            <element signature="e#20897#21169#0#PHP" expanded="false" />
-            <element signature="e#20958#21023#0#PHP" expanded="false" />
-            <element signature="e#21033#21110#0#PHP" expanded="false" />
-            <element signature="e#21173#21462#0#PHP" expanded="false" />
-            <element signature="e#21218#21330#0#PHP" expanded="false" />
-            <element signature="e#21335#21460#0#PHP" expanded="false" />
-            <element signature="e#21464#21745#0#PHP" expanded="false" />
-            <element signature="e#21502#21665#0#PHP" expanded="false" />
-            <element signature="e#21670#21743#0#PHP" expanded="false" />
-            <element signature="e#21747#22229#0#PHP" expanded="false" />
-            <element signature="e#21785#22008#0#PHP" expanded="false" />
-            <element signature="e#22013#22227#0#PHP" expanded="false" />
-            <element signature="e#22086#22154#0#PHP" expanded="false" />
-            <element signature="e#22231#22679#0#PHP" expanded="false" />
-            <element signature="e#22276#22506#0#PHP" expanded="false" />
-            <element signature="e#22511#22677#0#PHP" expanded="false" />
-            <element signature="e#22681#23032#0#PHP" expanded="false" />
-            <element signature="e#22716#22893#0#PHP" expanded="false" />
-            <element signature="e#22898#23030#0#PHP" expanded="false" />
-            <element signature="e#23034#23530#0#PHP" expanded="false" />
-            <element signature="e#23070#23291#0#PHP" expanded="false" />
-            <element signature="e#23296#23528#0#PHP" expanded="false" />
-            <element signature="e#23371#23447#0#PHP" expanded="false" />
-            <element signature="e#23532#24149#0#PHP" expanded="false" />
-            <element signature="e#23574#23819#0#PHP" expanded="false" />
-            <element signature="e#23824#24147#0#PHP" expanded="false" />
-            <element signature="e#23997#24064#0#PHP" expanded="false" />
-            <element signature="e#24151#24683#0#PHP" expanded="false" />
-            <element signature="e#24188#24429#0#PHP" expanded="false" />
-            <element signature="e#24434#24681#0#PHP" expanded="false" />
-            <element signature="e#24550#24617#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/storage/framework/cache/data/8d/d1/8dd18ead70e096ebeef87f16ce49d5b00e1cf00e" />
     <entry file="file://$PROJECT_DIR$/truyentranh.net/storage/framework/views/1e523b6b83d2f7b99da184e5add34d24a15dfbda.php" />
     <entry file="file://$PROJECT_DIR$/truyentranh.net/storage/framework/views/50e427924b209eac2c5cf1443472a56851e94a1e.php" />
     <entry file="file://$PROJECT_DIR$/truyentranh.net/storage/framework/views/5ce1928c238cb4b31f3e50b1467abb0a89fe949c.php" />
@@ -1100,7 +834,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truyentranh.net/database/seeds/UsersTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
+        <state relative-caret-position="378">
           <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
         </state>
       </provider>
@@ -1114,7 +848,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truyentranh.net/resources/views/manage/sliders/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
+        <state relative-caret-position="1170">
           <caret line="65" column="38" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="100" selection-end-column="11" />
         </state>
       </provider>
@@ -1137,22 +871,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="93" column="51" lean-forward="false" selection-start-line="93" selection-start-column="51" selection-end-line="93" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="92" column="48" lean-forward="false" selection-start-line="92" selection-start-column="43" selection-end-line="92" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/truyentranh.net/resources/views/manage/sliders/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
+        <state relative-caret-position="266">
           <caret line="87" column="91" lean-forward="false" selection-start-line="87" selection-start-column="91" selection-end-line="87" selection-end-column="91" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1160,7 +885,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1168,7 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1176,7 +899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="38" column="15" lean-forward="false" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1184,7 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1192,7 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1200,7 +920,56 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Providers/BroadcastServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Apis/ArticleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Providers/AppServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Apis/SlidersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/routes.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/configs.jsx" />
+    <entry file="file://$PROJECT_DIR$/truyentranh.net/config/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1212,7 +981,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Providers/BroadcastServiceProvider.php">
+    <entry file="file://$PROJECT_DIR$/truyentranh.net/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3222">
+          <caret line="179" column="51" lean-forward="false" selection-start-line="179" selection-start-column="51" selection-end-line="179" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truyentranh.net/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="43" column="45" lean-forward="false" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truyentranh.net/config/cors.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1220,96 +1013,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Apis/ArticleController.php">
+    <entry file="file://$PROJECT_DIR$/my-app/src/component/register/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Providers/AppServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="306">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/truyentranh.net/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="27" column="49" lean-forward="false" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-          <caret line="28" column="58" lean-forward="false" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
-          <caret line="29" column="50" lean-forward="false" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
-          <caret line="30" column="58" lean-forward="false" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
-          <caret line="31" column="61" lean-forward="false" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
+        <state relative-caret-position="342">
+          <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Apis/SlidersController.php">
+    <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+        <state relative-caret-position="86">
+          <caret line="92" column="48" lean-forward="false" selection-start-line="92" selection-start-column="43" selection-end-line="92" selection-end-column="48" />
           <folding>
-            <element signature="e#45#73#0#PHP" expanded="true" />
+            <element signature="e#47#88#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/component/home/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14747">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/component/register/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/routes.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/index.js">
+    <entry file="file://$PROJECT_DIR$/my-app/src/component/home/slider_items.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/configs.jsx">
+    <entry file="file://$PROJECT_DIR$/my-app/src/component/home/project01.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/component/home/items_new.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/component/home/items_hot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/component/include/header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my-app/src/component/login/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="22" column="46" lean-forward="false" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+        <state relative-caret-position="36">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/component/home/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="817" column="31" lean-forward="false" selection-start-line="817" selection-start-column="31" selection-end-line="817" selection-end-column="31" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#411#1525#0" expanded="false" />
+            <element signature="e#1545#27547#0" expanded="false" />
           </folding>
         </state>
       </provider>

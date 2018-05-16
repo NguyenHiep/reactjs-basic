@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+import axios from 'axios'
 import './index.css';
 import SidebarHome from '../include/sidebarhome';
 import SliderHome from '../include/slider';
@@ -806,14 +808,20 @@ class Home extends React.Component {
         },
       ]
     }
-
-    this.onAddProduct = this.onAddProduct.bind(this);
+  
+    this.getListSlider = this.getListSlider.bind(this);
 	}
 
-	onAddProduct()
-	{
-		console.log(this.refs.product_name.value);
-	}
+	getListSlider(){
+    axios.get('http://api.dev.nguyenhiep/api/sliders')
+    .then(response => {
+      console.log(response.data)
+    })
+  }
+  
+  componentDidMount() {
+    this.getListSlider();
+  }
 
 	render() {
 		let elements_new = this.state.items_new.map( ( items, index) => {
@@ -872,8 +880,8 @@ class Home extends React.Component {
                   <div className="col-md-12">
                     <div className="history-read">
                       <p className="save-manga">
-                        <a href="http://truyentranh.net/dang-nhap.html?ref=http%3A%2F%2Ftruyentranh.net%2F">
-                          <img src="http://cdn.truyentranh.net/frontend/images/clockfix.png" /> Xem lịch sử đọc truyện của bạn</a>
+                        <Link to='/login'>
+                          <img src="http://cdn.truyentranh.net/frontend/images/clockfix.png" /> Xem lịch sử đọc truyện của bạn</Link>
                       </p>
                     </div>
                   </div>
