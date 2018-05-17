@@ -179,3 +179,1055 @@ PHP message: PHP  48. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(
 PHP message: PHP  49. Illuminate\Routing\Router->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
 PH
 2018/05/13 10:22:02 [error] 1217#1217: *87 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders/create HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep", referrer: "http://api.dev.nguyenhiep/manage/sliders/create"
+2018/05/17 07:37:05 [error] 1303#1303: *43 FastCGI sent in stderr: "PHP message: PHP ParseError:  syntax error, unexpected ';', expecting ',' or ')' in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 27
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Founda
+2018/05/17 07:37:05 [error] 1303#1303: *43 FastCGI sent in stderr: "uting\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/
+2018/05/17 07:37:11 [error] 1303#1303: *43 FastCGI sent in stderr: "PHP message: PHP TypeError:  Argument 1 passed to Illuminate\Database\Eloquent\Model::fill() must be of the type array, none given, called in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 27 in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 219
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipe
+2018/05/17 07:37:11 [error] 1303#1303: *43 FastCGI sent in stderr: " Fideloper\Proxy\TrustProxies->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  20. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/tru
+2018/05/17 07:37:13 [error] 1303#1303: *43 FastCGI sent in stderr: "inate/Session/Middleware/StartSession.php:63
+PHP message: PHP  40. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  41. Illuminate\View\Middleware\ShareErrorsFromSession->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  42. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php:49
+PHP message: PHP  43. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  44. Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  45. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:67
+PHP message: PHP  46. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  47. Illuminate\Auth\Middleware\Authenticate->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  48. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php:43
+PHP message: PHP  49. Illuminate\Pipeline\Pipeline
+2018/05/17 07:37:13 [error] 1303#1303: *43 FastCGI sent in stderr: "ctjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php:27" while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?page=5 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep", referrer: "http://api.dev.nguyenhiep/manage/sliders?page=4"
+2018/05/17 08:11:16 [error] 1303#1303: *73 FastCGI sent in stderr: "PHP message: PHP Warning:  Unexpected character in input:  ' in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Sliders.php on line 30
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle() /mnt/h
+2018/05/17 08:11:16 [error] 1303#1303: *73 FastCGI sent in stderr: "fs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminat
+2018/05/17 08:11:16 [error] 1303#1303: *73 FastCGI sent in stderr: "coban/truyentranh.net/app/Sliders.php on line 30
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline
+2018/05/17 08:11:16 [error] 1303#1303: *73 FastCGI sent in stderr: "P message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:671
+PHP message: PHP  31. Illuminate\Routing\Route->controllerMiddleware() /m
+2018/05/17 08:11:16 [error] 1303#1303: *73 FastCGI sent in stderr: "1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  11. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(
+2018/05/17 08:11:16 [error] 1303#1303: *73 FastCGI sent in stderr: "ace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:671
+PHP message: PHP  31. Illuminate\Routing\Route->controllerMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Rout
+2018/05/17 08:11:16 [error] 1303#1303: *73 FastCGI sent in stderr: ": PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  11. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/
+2018/05/17 08:11:16 [error] 1303#1303: *73 FastCGI sent in stderr: "hp:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:671
+PHP message: PHP  31. Illuminate\Routing\Route->controllerMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Route.php:757
+PHP message: PHP  32. Illuminate\Routing\Route->getController() /mnt/hgfs/worksp
+2018/05/17 08:55:49 [error] 1303#1303: *320 FastCGI sent in stderr: "PHP message: PHP Error:  Class 'App\Http\Controllers\Manage\Collection' not found in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 47
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foun
+2018/05/17 08:55:49 [error] 1303#1303: *320 FastCGI sent in stderr: "outing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:660
+PHP message: PHP  30. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_cob
+2018/05/17 08:55:49 [error] 1303#1303: *320 FastCGI sent in stderr: "vel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  41. Illuminate\View\Middleware\ShareErrorsFromSession->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  42. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php:49
+PHP message: PHP  43. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  44. Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  45. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:67
+PHP message: PHP  46. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  47. Illuminate\Auth\Middleware\Authenticate->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  48. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php:43
+PHP message: PHP  49. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  50. Illuminate\Routing\
+2018/05/17 08:55:49 [error] 1303#1303: *320 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?search_id=13&search_content=&search_created_at=2018-05-18 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep", referrer: "http://api.dev.nguyenhiep/manage/sliders"
+2018/05/17 08:55:59 [error] 1303#1303: *320 FastCGI sent in stderr: "PHP message: PHP Error:  Class 'App\Http\Controllers\Manage\Collection' not found in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 47
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foun
+2018/05/17 08:55:59 [error] 1303#1303: *320 FastCGI sent in stderr: "outing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:660
+PHP message: PHP  30. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_cob
+2018/05/17 08:56:00 [error] 1303#1303: *320 FastCGI sent in stderr: "vel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  41. Illuminate\View\Middleware\ShareErrorsFromSession->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  42. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php:49
+PHP message: PHP  43. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  44. Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  45. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:67
+PHP message: PHP  46. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  47. Illuminate\Auth\Middleware\Authenticate->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  48. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php:43
+PHP message: PHP  49. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  50. Illuminate\Routing\
+2018/05/17 08:56:00 [error] 1303#1303: *320 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?search_id=13&search_content=&search_created_at=2018-05-18 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep", referrer: "http://api.dev.nguyenhiep/manage/sliders"
+2018/05/17 08:57:25 [error] 1303#1303: *325 FastCGI sent in stderr: "PHP message: PHP Error:  Class 'App\Http\Controllers\Manage\Input' not found in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 50
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundatio
+2018/05/17 08:57:25 [error] 1303#1303: *325 FastCGI sent in stderr: "g\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:660
+PHP message: PHP  30. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/tr
+2018/05/17 08:57:25 [error] 1303#1303: *325 FastCGI sent in stderr: "ramework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  41. Illuminate\View\Middleware\ShareErrorsFromSession->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  42. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php:49
+PHP message: PHP  43. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  44. Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  45. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:67
+PHP message: PHP  46. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  47. Illuminate\Auth\Middleware\Authenticate->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  48. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php:43
+PHP message: PHP  49. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  50. Illuminate\Routing\Middl
+2018/05/17 08:57:25 [error] 1303#1303: *325 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?search_id=13&search_content=&search_created_at=2018-05-18 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep", referrer: "http://api.dev.nguyenhiep/manage/sliders"
+2018/05/17 08:57:42 [error] 1303#1303: *325 FastCGI sent in stderr: "PHP message: PHP Error:  Class 'Input' not found in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 50
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middleware\ValidatePo
+2018/05/17 08:57:42 [error] 1303#1303: *325 FastCGI sent in stderr: "ng\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:660
+PHP message: PHP  30. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel
+2018/05/17 08:57:42 [error] 1303#1303: *325 FastCGI sent in stderr: "ing/Pipeline.php:53
+PHP message: PHP  41. Illuminate\View\Middleware\ShareErrorsFromSession->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  42. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php:49
+PHP message: PHP  43. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  44. Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  45. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:67
+PHP message: PHP  46. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  47. Illuminate\Auth\Middleware\Authenticate->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  48. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php:43
+PHP message: PHP  49. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  50. Illuminate\Routing\Middleware\SubstituteBindings->ha
+2018/05/17 08:57:42 [error] 1303#1303: *325 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?search_id=13&search_content=&search_created_at=2018-05-18 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep", referrer: "http://api.dev.nguyenhiep/manage/sliders"
+2018/05/17 08:58:09 [error] 1303#1303: *325 FastCGI sent in stderr: "PHP message: PHP Error:  Call to undefined method Illuminate\Pagination\Paginator::make() in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 52
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illumin
+2018/05/17 08:58:09 [error] 1303#1303: *325 FastCGI sent in stderr: "minate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:660
+PHP message: PHP  30. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/rea
+2018/05/17 08:58:09 [error] 1303#1303: *325 FastCGI sent in stderr: "dor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  41. Illuminate\View\Middleware\ShareErrorsFromSession->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  42. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php:49
+PHP message: PHP  43. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  44. Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  45. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:67
+PHP message: PHP  46. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  47. Illuminate\Auth\Middleware\Authenticate->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  48. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php:43
+PHP message: PHP  49. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  50. Illuminate\
+2018/05/17 08:58:09 [error] 1303#1303: *325 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?search_id=13&search_content=&search_created_at=2018-05-18 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep", referrer: "http://api.dev.nguyenhiep/manage/sliders"
+2018/05/17 09:01:29 [error] 1303#1303: *332 FastCGI sent in stderr: "PHP message: PHP ParseError:  syntax error, unexpected '$collection' (T_VARIABLE) in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 59
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foun
+2018/05/17 09:01:29 [error] 1303#1303: *332 FastCGI sent in stderr: "outing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coba
+2018/05/17 09:18:26 [error] 1303#1303: *422 FastCGI sent in stderr: "PHP message: PHP Warning:  Unexpected character in input:  ' in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 166
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middlewa
+2018/05/17 09:18:26 [error] 1303#1303: *422 FastCGI sent in stderr: "uminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/ve
+2018/05/17 09:18:26 [error] 1303#1303: *422 FastCGI sent in stderr: "earn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  11. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reac
+2018/05/17 09:18:26 [error] 1303#1303: *422 FastCGI sent in stderr: "nh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:671
+PHP message: PHP  31. Illuminate\Routing\Route->controllerMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Route.php:757
+PHP message: P
+2018/05/17 09:18:26 [error] 1303#1303: *422 FastCGI sent in stderr: "ThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  11. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php:27
+PHP message: PHP  12. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/
+2018/05/17 09:18:26 [error] 1303#1303: *422 FastCGI sent in stderr: "HP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:671
+PHP message: PHP  31. Illuminate\Routing\Route->controllerMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Route.php:757
+PHP message: PHP  32. Illuminate\Routing\Route->getController() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Route.php:796
+PHP message: PHP  33. Illuminate\Foundation\Application->make() /mnt/hgfs/workspace/learn/reactj
+2018/05/17 09:18:26 [error] 1303#1303: *422 FastCGI sent in stderr: "/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  11. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php:27
+PHP message: PHP  12. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  13. Illuminate\Foundation\Http\Middleware\TransformsRequest->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:1
+2018/05/17 09:18:26 [error] 1303#1303: *422 FastCGI sent in stderr: "ure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:671
+PHP message: PHP  31. Illuminate\Routing\Route->controllerMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Route.php:757
+PHP message: PHP  32. Illuminate\Routing\Route->getController() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Route.php:796
+PHP message: PHP  33. Illuminate\Foundation\Application->make() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Route.php:226
+PHP message: PHP  34. Illuminate\Container\Container->make() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Applicatio
+2018/05/17 09:18:26 [error] 1303#1303: *422 FastCGI sent in stderr: ":102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  11. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php:27
+PHP message: PHP  12. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  13. Illuminate\Foundation\Http\Middleware\TransformsRequest->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  14. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php:30
+PHP message: PHP  15. Illuminat
+2018/05/17 09:18:26 [error] 1303#1303: *422 FastCGI sent in stderr: "ork/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:671
+PHP message: PHP  31. Illuminate\Routing\Route->controllerMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Route.php:757
+PHP message: PHP  32. Illuminate\Routing\Route->getController() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Route.php:796
+PHP message: PHP  33. Illuminate\Foundation\Application->make() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Route.php:226
+PHP message: PHP  34. Illuminate\Container\Container->make() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:732
+PHP message: PHP  35. Illuminate\Container\Container->resolve() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Container/Container.php:586
+PHP message: PHP  36. Illuminate\Container\Container->build() /mnt
+2018/05/17 09:18:26 [error] 1303#1303: *422 FastCGI sent in stderr: "ware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  11. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php:27
+PHP message: PHP  12. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  13. Illuminate\Foundation\Http\Middleware\TransformsRequest->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  14. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php:30
+PHP message: PHP  15. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  16. Illuminate\Foundation\Http\Middleware\TransformsRequest->handle() /mn
+2018/05/17 09:18:26 [error] 1303#1303: *422 FastCGI sent in stderr: "nate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:671
+PHP message: PHP  31. Illuminate\Routing\Route->controllerMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Route.php:757
+PHP message: PHP  32. Illuminate\Routing\Route->getController() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Route.php:796
+PHP message: PHP  33. Illuminate\Foundation\Application->make() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Route.php:226
+PHP message: PHP  34. Illuminate\Container\Container->make() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:732
+PHP message: PHP  35. Illuminate\Container\Container->resolve() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Container/Container.php:586
+PHP message: PHP  36. Illuminate\Container\Container->build() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Container/Container.php:631
+PHP message: PHP  37. ReflectionClass->__construct() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illumi
+2018/05/17 09:50:05 [error] 1303#1303: *496 FastCGI sent in stderr: "PHP message: PHP Error:  Call to undefined method Closure::paginate() in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 49
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\
+2018/05/17 09:50:05 [error] 1303#1303: *496 FastCGI sent in stderr: "ine->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:660
+PHP message: PHP  30. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentra
+2018/05/17 09:50:05 [error] 1303#1303: *496 FastCGI sent in stderr: "k/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  41. Illuminate\View\Middleware\ShareErrorsFromSession->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  42. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php:49
+PHP message: PHP  43. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  44. Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  45. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:67
+PHP message: PHP  46. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  47. Illuminate\Auth\Middleware\Authenticate->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  48. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php:43
+PHP message: PHP  49. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  50. Illuminate\Routing\Middleware\S
+2018/05/17 09:50:05 [error] 1303#1303: *496 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?page=1 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep", referrer: "http://api.dev.nguyenhiep/manage/sliders?page=3"
+2018/05/17 09:51:23 [error] 1303#1303: *498 FastCGI sent in stderr: "PHP message: PHP Error:  Call to undefined method Closure::paginate() in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 49
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\
+2018/05/17 09:51:23 [error] 1303#1303: *498 FastCGI sent in stderr: "ine->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:660
+PHP message: PHP  30. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentra
+2018/05/17 09:51:24 [error] 1303#1303: *498 FastCGI sent in stderr: "k/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  41. Illuminate\View\Middleware\ShareErrorsFromSession->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  42. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php:49
+PHP message: PHP  43. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  44. Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  45. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:67
+PHP message: PHP  46. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  47. Illuminate\Auth\Middleware\Authenticate->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  48. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php:43
+PHP message: PHP  49. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  50. Illuminate\Routing\Middleware\S
+2018/05/17 09:51:24 [error] 1303#1303: *498 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?page=1 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep", referrer: "http://api.dev.nguyenhiep/manage/sliders?page=3"
+2018/05/17 09:51:32 [error] 1303#1303: *498 FastCGI sent in stderr: "PHP message: PHP Error:  Call to undefined method Closure::paginate() in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 49
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\
+2018/05/17 09:51:32 [error] 1303#1303: *498 FastCGI sent in stderr: "ine->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:660
+PHP message: PHP  30. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentra
+2018/05/17 09:51:32 [error] 1303#1303: *498 FastCGI sent in stderr: "k/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  41. Illuminate\View\Middleware\ShareErrorsFromSession->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  42. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php:49
+PHP message: PHP  43. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  44. Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  45. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:67
+PHP message: PHP  46. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  47. Illuminate\Auth\Middleware\Authenticate->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  48. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php:43
+PHP message: PHP  49. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  50. Illuminate\Routing\Middleware\S
+2018/05/17 09:51:32 [error] 1303#1303: *498 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?page=1 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep", referrer: "http://api.dev.nguyenhiep/manage/sliders?page=3"
+2018/05/17 09:52:19 [error] 1303#1303: *498 FastCGI sent in stderr: "PHP message: PHP Error:  Call to undefined method Closure::paginate() in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 49
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\
+2018/05/17 09:52:19 [error] 1303#1303: *498 FastCGI sent in stderr: "ine->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:660
+PHP message: PHP  30. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentra
+2018/05/17 09:52:19 [error] 1303#1303: *498 FastCGI sent in stderr: "k/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  41. Illuminate\View\Middleware\ShareErrorsFromSession->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  42. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php:49
+PHP message: PHP  43. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  44. Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  45. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:67
+PHP message: PHP  46. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  47. Illuminate\Auth\Middleware\Authenticate->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  48. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php:43
+PHP message: PHP  49. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  50. Illuminate\Routing\Middleware\S
+2018/05/17 09:52:19 [error] 1303#1303: *498 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?page=1 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep", referrer: "http://api.dev.nguyenhiep/manage/sliders?page=3"
+2018/05/17 09:52:25 [error] 1303#1303: *498 FastCGI sent in stderr: "PHP message: PHP Error:  Call to undefined method Closure::paginate() in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 49
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\
+2018/05/17 09:52:25 [error] 1303#1303: *498 FastCGI sent in stderr: "ine->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:660
+PHP message: PHP  30. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentra
+2018/05/17 09:52:25 [error] 1303#1303: *498 FastCGI sent in stderr: "k/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  41. Illuminate\View\Middleware\ShareErrorsFromSession->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  42. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php:49
+PHP message: PHP  43. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  44. Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  45. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:67
+PHP message: PHP  46. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  47. Illuminate\Auth\Middleware\Authenticate->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  48. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php:43
+PHP message: PHP  49. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  50. Illuminate\Routing\Middleware\S
+2018/05/17 09:52:25 [error] 1303#1303: *498 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?page=1 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep", referrer: "http://api.dev.nguyenhiep/manage/sliders?page=3"
+2018/05/17 09:52:41 [error] 1303#1303: *498 FastCGI sent in stderr: "PHP message: PHP Error:  Call to undefined method Closure::paginate() in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 49
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\
+2018/05/17 09:52:41 [error] 1303#1303: *498 FastCGI sent in stderr: "ine->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:660
+PHP message: PHP  30. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentra
+2018/05/17 09:52:41 [error] 1303#1303: *498 FastCGI sent in stderr: "k/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  41. Illuminate\View\Middleware\ShareErrorsFromSession->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  42. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php:49
+PHP message: PHP  43. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  44. Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  45. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:67
+PHP message: PHP  46. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  47. Illuminate\Auth\Middleware\Authenticate->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  48. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php:43
+PHP message: PHP  49. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  50. Illuminate\Routing\Middleware\S
+2018/05/17 09:52:41 [error] 1303#1303: *498 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?page=1 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep", referrer: "http://api.dev.nguyenhiep/manage/sliders?page=3"
+2018/05/17 09:52:52 [error] 1303#1303: *498 FastCGI sent in stderr: "PHP message: PHP Error:  Call to undefined method Closure::paginate() in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 50
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\
+2018/05/17 09:52:52 [error] 1303#1303: *498 FastCGI sent in stderr: "ine->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:660
+PHP message: PHP  30. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentra
+2018/05/17 09:52:52 [error] 1303#1303: *498 FastCGI sent in stderr: "k/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  41. Illuminate\View\Middleware\ShareErrorsFromSession->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  42. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php:49
+PHP message: PHP  43. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  44. Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  45. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:67
+PHP message: PHP  46. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  47. Illuminate\Auth\Middleware\Authenticate->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  48. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php:43
+PHP message: PHP  49. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  50. Illuminate\Routing\Middleware\S
+2018/05/17 09:52:52 [error] 1303#1303: *498 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?page=1 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep", referrer: "http://api.dev.nguyenhiep/manage/sliders?page=3"
+2018/05/17 09:52:56 [error] 1303#1303: *498 FastCGI sent in stderr: "PHP message: PHP Error:  Call to undefined method Closure::paginate() in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 50
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\
+2018/05/17 09:52:56 [error] 1303#1303: *498 FastCGI sent in stderr: "ine->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:660
+PHP message: PHP  30. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentra
+2018/05/17 09:52:56 [error] 1303#1303: *498 FastCGI sent in stderr: "k/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  41. Illuminate\View\Middleware\ShareErrorsFromSession->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  42. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php:49
+PHP message: PHP  43. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  44. Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  45. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:67
+PHP message: PHP  46. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  47. Illuminate\Auth\Middleware\Authenticate->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  48. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php:43
+PHP message: PHP  49. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  50. Illuminate\Routing\Middleware\S
+2018/05/17 09:52:56 [error] 1303#1303: *498 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep"
+2018/05/17 09:52:56 [error] 1303#1303: *498 FastCGI sent in stderr: "PHP message: PHP Error:  Call to undefined method Closure::paginate() in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 50
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\
+2018/05/17 09:52:56 [error] 1303#1303: *498 FastCGI sent in stderr: "ine->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:660
+PHP message: PHP  30. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentra
+2018/05/17 09:52:56 [error] 1303#1303: *498 FastCGI sent in stderr: "k/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  41. Illuminate\View\Middleware\ShareErrorsFromSession->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  42. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php:49
+PHP message: PHP  43. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  44. Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  45. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:67
+PHP message: PHP  46. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  47. Illuminate\Auth\Middleware\Authenticate->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  48. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php:43
+PHP message: PHP  49. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  50. Illuminate\Routing\Middleware\S
+2018/05/17 09:52:56 [error] 1303#1303: *498 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?page=1 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep"
+2018/05/17 09:54:15 [error] 1303#1303: *515 FastCGI sent in stderr: "PHP message: PHP Error:  Call to undefined method Closure::paginate() in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 50
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\
+2018/05/17 09:54:15 [error] 1303#1303: *515 FastCGI sent in stderr: "ine->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:660
+PHP message: PHP  30. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentra
+2018/05/17 09:54:15 [error] 1303#1303: *515 FastCGI sent in stderr: "k/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  41. Illuminate\View\Middleware\ShareErrorsFromSession->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  42. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php:49
+PHP message: PHP  43. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  44. Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  45. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:67
+PHP message: PHP  46. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  47. Illuminate\Auth\Middleware\Authenticate->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  48. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php:43
+PHP message: PHP  49. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  50. Illuminate\Routing\Middleware\S
+2018/05/17 09:54:15 [error] 1303#1303: *515 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?page=1 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep"
+2018/05/17 09:54:26 [error] 1303#1303: *515 FastCGI sent in stderr: "PHP message: PHP Error:  Call to undefined method Closure::paginate() in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 50
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\
+2018/05/17 09:54:26 [error] 1303#1303: *515 FastCGI sent in stderr: "ine->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:660
+PHP message: PHP  30. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentra
+2018/05/17 09:54:26 [error] 1303#1303: *515 FastCGI sent in stderr: "k/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  41. Illuminate\View\Middleware\ShareErrorsFromSession->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  42. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php:49
+PHP message: PHP  43. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  44. Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  45. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:67
+PHP message: PHP  46. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  47. Illuminate\Auth\Middleware\Authenticate->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  48. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php:43
+PHP message: PHP  49. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  50. Illuminate\Routing\Middleware\S
+2018/05/17 09:54:26 [error] 1303#1303: *515 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?page=1 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep"
+2018/05/17 10:12:41 [error] 1303#1303: *546 FastCGI sent in stderr: "PHP message: PHP ParseError:  syntax error, unexpected '}' in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Sliders.php on line 37
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle() /mnt/hg
+2018/05/17 10:12:41 [error] 1303#1303: *546 FastCGI sent in stderr: "/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate
+2018/05/17 10:12:41 [error] 1303#1303: *546 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?search_id=&search_content=&search_created_at= HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep", referrer: "http://api.dev.nguyenhiep/manage/sliders?page=4"
+2018/05/17 10:12:56 [error] 1303#1303: *546 FastCGI sent in stderr: "PHP message: PHP ParseError:  syntax error, unexpected '}' in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Sliders.php on line 37
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle() /mnt/hg
+2018/05/17 10:12:56 [error] 1303#1303: *546 FastCGI sent in stderr: "/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate
+2018/05/17 10:12:56 [error] 1303#1303: *546 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?search_id=&search_content=&search_created_at= HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep", referrer: "http://api.dev.nguyenhiep/manage/sliders?page=4"
+2018/05/17 10:13:05 [error] 1303#1303: *546 FastCGI sent in stderr: "PHP message: PHP ParseError:  syntax error, unexpected '}' in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Sliders.php on line 37
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle() /mnt/hg
+2018/05/17 10:13:05 [error] 1303#1303: *546 FastCGI sent in stderr: "/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate
+2018/05/17 10:13:05 [error] 1303#1303: *546 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?search_id=&search_content=&search_created_at= HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep", referrer: "http://api.dev.nguyenhiep/manage/sliders?page=4"
+2018/05/17 10:13:21 [error] 1303#1303: *546 FastCGI sent in stderr: "PHP message: PHP ParseError:  syntax error, unexpected '}' in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Sliders.php on line 37
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle() /mnt/hg
+2018/05/17 10:13:21 [error] 1303#1303: *546 FastCGI sent in stderr: "/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate
+2018/05/17 10:13:21 [error] 1303#1303: *546 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?search_id=&search_content=&search_created_at= HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep", referrer: "http://api.dev.nguyenhiep/manage/sliders?page=4"
+2018/05/17 10:13:25 [error] 1303#1303: *546 FastCGI sent in stderr: "PHP message: PHP ParseError:  syntax error, unexpected '}' in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Sliders.php on line 37
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle() /mnt/hg
+2018/05/17 10:13:25 [error] 1303#1303: *546 FastCGI sent in stderr: "/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate
+2018/05/17 10:13:25 [error] 1303#1303: *546 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep"
+2018/05/17 11:29:54 [error] 1303#1303: *845 FastCGI sent in stderr: "PHP message: PHP Warning:  Unexpected character in input:  ' in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 146
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middlewa
+2018/05/17 11:29:54 [error] 1303#1303: *845 FastCGI sent in stderr: "uminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/ve
+2018/05/17 11:29:55 [error] 1303#1303: *845 FastCGI sent in stderr: "earn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  11. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reac
+2018/05/17 11:29:55 [error] 1303#1303: *845 FastCGI sent in stderr: "nh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:671
+PHP message: PHP  31. Illuminate\Routing\Route->controllerMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Route.php:757
+PHP message: P
+2018/05/17 11:29:55 [error] 1303#1303: *845 upstream sent too big header while reading response header from upstream, client: 192.168.75.1, server: api.dev.nguyenhiep, request: "GET /manage/sliders?page=4 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "api.dev.nguyenhiep"
+2018/05/17 11:43:13 [error] 1303#1303: *913 FastCGI sent in stderr: "PHP message: PHP ParseError:  syntax error, unexpected ';' in /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php on line 47
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/public/index.php:55
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Pipeline\Pipeline->then() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+PHP message: PHP   5. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:102
+PHP message: PHP   6. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP   7. Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP   8. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:46
+PHP message: PHP   9. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  10. Illuminate\Foundation\Http\Middleware\
+2018/05/17 11:43:13 [error] 1303#1303: *913 FastCGI sent in stderr: "nate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/fideloper/proxy/src/TrustProxies.php:56
+PHP message: PHP  21. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+PHP message: PHP  22. Barryvdh\Cors\HandleCors->handle() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:149
+PHP message: PHP  23. Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/barryvdh/laravel-cors/src/HandleCors.php:36
+PHP message: PHP  24. Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+PHP message: PHP  25. Illuminate\Routing\Router->dispatch() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+PHP message: PHP  26. Illuminate\Routing\Router->dispatchToRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:590
+PHP message: PHP  27. Illuminate\Routing\Router->runRoute() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:601
+PHP message: PHP  28. Illuminate\Routing\Router->runRouteWithinStack() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:635
+PHP message: PHP  29. Illuminate\Routing\Router->gatherRouteMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendor/laravel/framework/src/Illuminate/Routing/Router.php:651
+PHP message: PHP  30. Illuminate\Routing\Route->gatherMiddleware() /mnt/hgfs/workspace/learn/reactjs_coban/truyentranh.net/vendo

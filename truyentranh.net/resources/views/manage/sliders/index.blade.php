@@ -22,33 +22,38 @@
             <div class="toggel-box">
               <div class="collapse toggel-btn-fade" id="search_advanced">
                 <form method="GET" action="{{ route('sliders.index') }}" role="form" class="clearfix">
+                  @php $key = 'search_id' @endphp
                   <div class="form-group clearfix">
-                    <label class="control-label col-sm-3" for="id">Id:</label>
+                    <label class="control-label col-sm-3">Id:</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" name="id"/>
+                      {!! Form::text($key, old($key), ['class' => 'form-control']) !!}
                     </div>
                   </div>
+                  @php $key = 'search_content' @endphp
                   <div class="form-group clearfix">
-                    <label class="control-label col-sm-3" for="content">Nội dung:</label>
+                    <label class="control-label col-sm-3">Nội dung:</label>
                     <div class="col-sm-9">
-                      <input id="content" type="text" class="form-control" name="content"/>
+                      {!! Form::text($key, old($key), ['class' => 'form-control']) !!}
                     </div>
                   </div>
+                  @php $key = 'search_status[]' @endphp
                   <div class="form-group clearfix">
                     <label class="control-label col-sm-3">Trạng thái:</label>
                     <div class="col-sm-9">
-                      <label class="checkbox-inline"><input type="checkbox" name="status"/>Hiển thị</label>
-                      <label class="checkbox-inline"><input type="checkbox" name="status"/> Không hiển thị </label>
+                      <label class="checkbox-inline">{!! Form::checkbox($key, 1 , (old($key) == 1) ? true : null) !!}Hiển thị</label>
+                      <label class="checkbox-inline">{!! Form::checkbox($key, 2 , (old($key) == 2) ? true : null) !!}Không hiển thị </label>
                     </div>
                   </div>
+                  @php $key = 'search_created_at' @endphp
                   <div class="form-group clearfix">
                     <label class="control-label col-sm-3" for="created_at">Ngày tạo:</label>
                     <div class="col-sm-9">
-                      <input id="created_at" type="text" class="form-control" name="created_at"/>
+                      {!! Form::date($key, old($key), ['class' => 'form-control']) !!}
                     </div>
                   </div>
                   <div class="form-group clearfix text-right">
                     <a class="btn btn-default" data-toggle="collapse" data-parent="#accordion_toolbar" href="#search_advanced"><small><i class="fa fa-window-close"></i></small>Đóng lại</a>
+                    <a  class="btn btn-default" href="{{ route('sliders.index') }}">Reset</a>
                     <button class="btn btn-primary" type="submit"><small><i class="fa fa-search"></i></small>Tìm kiếm</button>
                   </div>
                 </form>
@@ -84,7 +89,7 @@
                   <option value="40">40</option>
                   <option value="50">50</option>
                 </select>
-                <span>Hiển thị 1 ~ 60 trong <strong>3000</strong> items</span>
+                <span>Hiển thị {{ $display_from }} ~ {{ $display_to }} trong <strong>{{ $page_total }}</strong> items</span>
               </p>
               {{ $records->appends(request()->query())->links()  }}
             </div>

@@ -11,9 +11,15 @@ use Illuminate\Support\Facades\Log;
 class SlidersController extends AppBaseController
 {
     protected $sliders;
+    protected $fileds_seach = [];
 
     public function __construct(Sliders $sliders) {
-        $this->sliders = $sliders;
+        $this->sliders      = $sliders;
+
+        foreach ($this->sliders->getFillable() as $filed)
+        {
+            $this->fileds_seach[] = $this->search_prefix.$filed;
+        }
     }
 
     /**
@@ -23,7 +29,31 @@ class SlidersController extends AppBaseController
      */
     public function index()
     {
-        $data['records'] = Sliders::OrderBy('id', 'DESC')->paginate(10);
+        $get_params = request()->query();
+        $model      = Sliders::query();
+        if (!empty($get_params)) {
+            $this->setSearch = [];
+            foreach ($get_params as $key => $val) {
+                if (in_array($key, $this->fileds_seach)) {
+                    $key = substr($key, strlen($this->search_prefix));
+                    $this->setSearch[$key] = $val;
+                }
+            }
+            $model = Sliders::SearchAdvanced($this->setSearch);
+        }
+        $limit = 15;
+        $data['records']      = $model->orderBy('id', 'ASC')->paginate($limit);
+        $data['page_total']   = $data['records']->total();
+        $offset               = $limit;
+        $data['display_to']   = $offset;
+        $data['display_from'] = 1;
+        if($data['records']->currentPage() > 1)
+        {
+            $offset = min($limit * $data['records']->currentPage(), $data['page_total']) ;
+            $data['display_to']   = min($offset +  $data['records']->perPage(), $data['page_total']);
+            $data['display_from'] = min($offset , $data['display_to']);
+        }
+
         return view('manage.sliders.index', $data);
     }
 
