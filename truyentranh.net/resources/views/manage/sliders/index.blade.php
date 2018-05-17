@@ -7,10 +7,60 @@
     </ol>
     <div class="col-xs-12">
       @include('manage._includes.message')
-      <form id="admin-form" method="GET" action="{{ route('sliders.index') }}" role="form">
+      <div>
+        <div class="title-block">
+          <h2>Danh sách slider</h2>
+          <div class="right-area">
+            <ul class="list-unstyled panel-layout btn-box-01">
+              <li>
+                <a class="btn btn-default" data-toggle="collapse" href="#search_advanced"><small><i class="fa fa-search"></i></small> Tìm kiếm</a>
+              </li>
+              <li>
+                <a href="{{ route('sliders.create') }}" class="btn btn-primary"><small><i class="fa fa-edit"></i></small> Thêm mới</a>
+              </li>
+            </ul>
+            <div class="toggel-box">
+              <div class="collapse toggel-btn-fade" id="search_advanced">
+                <form method="GET" action="{{ route('sliders.index') }}" role="form" class="clearfix">
+                  <div class="form-group clearfix">
+                    <label class="control-label col-sm-3" for="id">Id:</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" name="id"/>
+                    </div>
+                  </div>
+                  <div class="form-group clearfix">
+                    <label class="control-label col-sm-3" for="content">Nội dung:</label>
+                    <div class="col-sm-9">
+                      <input id="content" type="text" class="form-control" name="content"/>
+                    </div>
+                  </div>
+                  <div class="form-group clearfix">
+                    <label class="control-label col-sm-3">Trạng thái:</label>
+                    <div class="col-sm-9">
+                      <label class="checkbox-inline"><input type="checkbox" name="status"/>Hiển thị</label>
+                      <label class="checkbox-inline"><input type="checkbox" name="status"/> Không hiển thị </label>
+                    </div>
+                  </div>
+                  <div class="form-group clearfix">
+                    <label class="control-label col-sm-3" for="created_at">Ngày tạo:</label>
+                    <div class="col-sm-9">
+                      <input id="created_at" type="text" class="form-control" name="created_at"/>
+                    </div>
+                  </div>
+                  <div class="form-group clearfix text-right">
+                    <a class="btn btn-default" data-toggle="collapse" data-parent="#accordion_toolbar" href="#search_advanced"><small><i class="fa fa-window-close"></i></small>Đóng lại</a>
+                    <button class="btn btn-primary" type="submit"><small><i class="fa fa-search"></i></small>Tìm kiếm</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form id="admin-form" method="POST" action="{{ route('sliders.index') }}" role="form" class="clearfix">
         <div class="col-xs-12">
-          <div class="form-group" id="accordion_toolbar">
-            <ul class="list-unstyled panel-layout">
+          <div class="paging-wrap clearfix">
+            <ul class="list-unstyled btn-2line-wrap">
               <li>
                 <div class="btn-group">
                   <select id="task" name="task" class="form-control">
@@ -22,47 +72,22 @@
                 </div>
                 <button class="btn btn-submit js-action-list-batch" type="button"><small><i class="fa fa-save"></i></small> Thực thi</button>
               </li>
-              <li>
-                <div class="toggel-box">
-                  <a class="btn btn-default" data-toggle="collapse" data-parent="#accordion_toolbar" href="#search_advanced"><small><i class="fa fa-search"></i></small> Tìm kiếm</a>
-                  <div class="collapse toggel-btn-fade" id="search_advanced">
-                    <div class="form-group clearfix">
-                      <label class="control-label col-sm-3" for="id">Id:</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" name="id"/>
-                      </div>
-                    </div>
-                    <div class="form-group clearfix">
-                      <label class="control-label col-sm-3" for="content">Nội dung:</label>
-                      <div class="col-sm-9">
-                        <input id="content" type="text" class="form-control" name="content"/>
-                      </div>
-                    </div>
-                    <div class="form-group clearfix">
-                      <label class="control-label col-sm-3">Trạng thái:</label>
-                      <div class="col-sm-9">
-                        <label class="checkbox-inline"><input type="checkbox" name="status"/>Hiển thị</label>
-                        <label class="checkbox-inline"><input type="checkbox" name="status"/> Không hiển thị </label>
-                      </div>
-                    </div>
-                    <div class="form-group clearfix">
-                      <label class="control-label col-sm-3" for="created_at">Ngày tạo:</label>
-                      <div class="col-sm-9">
-                        <input id="created_at" type="text" class="form-control" name="created_at"/>
-                      </div>
-                    </div>
-                    <div class="form-group clearfix text-right">
-                      <a class="btn btn-default" data-toggle="collapse" data-parent="#accordion_toolbar" href="#search_advanced"><small><i class="fa fa-window-close"></i></small>Đóng lại</a>
-                      <button class="btn btn-primary" type="submit"><small><i class="fa fa-search"></i></small>Tìm kiếm</button>
-                    </div>
-                    
-                  </div>
-                </div>
-              </li>
-              <li class="pull-right">
-                <a href="{{ route('sliders.create') }}" class="btn btn-primary"><small><i class="fa fa-edit"></i></small> Thêm mới</a>
-              </li>
             </ul>
+            
+            <div class="block-pagination">
+              <p class="number">
+                {{--<label>Hiển thị</label>--}}
+                <select name="display" id="display" class="form-control w-middle">
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="30">30</option>
+                  <option value="40">40</option>
+                  <option value="50">50</option>
+                </select>
+                <span>Hiển thị 1 ~ 60 trong <strong>3000</strong> items</span>
+              </p>
+              {{ $records->appends(request()->query())->links()  }}
+            </div>
           </div>
           <table class="table table-bordered table-hover">
             <thead>

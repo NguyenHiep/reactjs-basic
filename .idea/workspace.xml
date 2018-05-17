@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0696b65d-6a36-4141-a2f3-50c2dddd9415" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/truyentranh.net/public/assets/manage/js/actions.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my-app/src/component/home/index.js" afterPath="$PROJECT_DIR$/my-app/src/component/home/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my-app/src/component/login/index.jsx" afterPath="$PROJECT_DIR$/my-app/src/component/login/index.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truyentranh.net/composer.lock" afterPath="$PROJECT_DIR$/truyentranh.net/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truyentranh.net/routes/api.php" afterPath="$PROJECT_DIR$/truyentranh.net/routes/api.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php" afterPath="$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truyentranh.net/public/assets/manage/css/admin.css" afterPath="$PROJECT_DIR$/truyentranh.net/public/assets/manage/css/admin.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truyentranh.net/resources/views/layouts/manage.blade.php" afterPath="$PROJECT_DIR$/truyentranh.net/resources/views/layouts/manage.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truyentranh.net/resources/views/manage/sliders/index.blade.php" afterPath="$PROJECT_DIR$/truyentranh.net/resources/views/manage/sliders/index.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,107 +19,89 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SlidersController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SlidersController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="92" column="48" lean-forward="false" selection-start-line="92" selection-start-column="43" selection-end-line="92" selection-end-column="48" />
+            <state relative-caret-position="50">
+              <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding>
-                <element signature="e#47#88#0#PHP" expanded="true" />
+                <element signature="e#303#391#0#PHP" expanded="false" />
+                <element signature="e#397#498#0#PHP" expanded="false" />
+                <element signature="e#669#778#0#PHP" expanded="false" />
+                <element signature="e#783#865#0#PHP" expanded="false" />
+                <element signature="e#871#1030#0#PHP" expanded="false" />
+                <element signature="e#1035#1819#0#PHP" expanded="false" />
+                <element signature="e#1124#1592#0#PHP" expanded="false" />
+                <element signature="e#1290#1462#0#PHP" expanded="false" />
+                <element signature="e#1331#1461#1#PHP" expanded="false" />
+                <element signature="e#1475#1592#0#PHP" expanded="false" />
+                <element signature="e#1608#1812#0#PHP" expanded="false" />
+                <element signature="e#1653#1811#1#PHP" expanded="false" />
+                <element signature="e#1825#1947#0#PHP" expanded="false" />
+                <element signature="e#1952#2000#0#PHP" expanded="false" />
+                <element signature="e#2006#2146#0#PHP" expanded="false" />
+                <element signature="e#2151#2378#0#PHP" expanded="false" />
+                <element signature="e#2244#2321#0#PHP" expanded="false" />
+                <element signature="e#2384#2566#0#PHP" expanded="false" />
+                <element signature="e#2571#2639#0#PHP" expanded="false" />
+                <element signature="e#2645#2779#0#PHP" expanded="false" />
+                <element signature="e#2784#2835#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/src/component/login/index.jsx">
+      <file leaf-file-name="admin.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/truyentranh.net/public/assets/manage/css/admin.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="25" />
+            <state relative-caret-position="455">
+              <caret line="227" column="20" lean-forward="false" selection-start-line="227" selection-start-column="20" selection-end-line="227" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/my-app/src/component/home/index.js">
+      <file leaf-file-name="mainboard.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/truyentranh.net/resources/views/mainboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="817" column="31" lean-forward="false" selection-start-line="817" selection-start-column="31" selection-end-line="817" selection-end-column="31" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/truyentranh.net/resources/views/manage/sliders/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="490">
+              <caret line="86" column="71" lean-forward="false" selection-start-line="86" selection-start-column="71" selection-end-line="86" selection-end-column="71" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#411#1525#0" expanded="false" />
-                <element signature="e#1545#27547#0" expanded="false" />
+                <element signature="e#1094#1375#0#HTML" expanded="false" />
+                <element signature="e#1394#1704#0#HTML" expanded="false" />
+                <element signature="e#1723#2153#0#HTML" expanded="false" />
+                <element signature="e#2172#2491#0#HTML" expanded="false" />
+                <element signature="e#2510#2895#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/src/component/include/header.js">
+      <file leaf-file-name="admin.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/truyentranh.net/public/assets/manage/js/admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="39" />
+            <state relative-caret-position="918">
+              <caret line="51" column="15" lean-forward="false" selection-start-line="51" selection-start-column="15" selection-end-line="51" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slider_items.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/src/component/home/slider_items.js">
+      <file leaf-file-name="actions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/truyentranh.net/public/assets/manage/js/actions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="project01.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/src/component/home/project01.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="items_new.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/src/component/home/items_new.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="items_hot.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/src/component/home/items_hot.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/src/component/register/index.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/truyentranh.net/routes/api.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="19" />
+            <state relative-caret-position="126">
+              <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -142,6 +125,7 @@
       <find>Form</find>
       <find>Form::select($key, [1=&gt;'_blank', 2 =&gt; '_self'], old($key), ['class' =&gt; 'form-control'])</find>
       <find>url</find>
+      <find>Hiển</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;col-6&quot;</replace>
@@ -153,14 +137,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Auth/LoginController.php" />
-        <option value="$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Api/ArticleController.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Apis/ArticleController.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/app/Http/Middleware/RedirectIfAuthenticated.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/routes/web.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/ManageController.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/resources/views/manage/_includes/sidebar.blade.php" />
-        <option value="$PROJECT_DIR$/truyentranh.net/resources/views/layouts/manage.blade.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/database/migrations/2018_05_10_081353_create_sliders_table.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/composer.json" />
         <option value="$PROJECT_DIR$/truyentranh.net/database/migrations/2018_05_10_095137_create_sliders_table.php" />
@@ -180,7 +161,6 @@
         <option value="$PROJECT_DIR$/truyentranh.net/resources/views/components/form/text.blade.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/database/seeds/UsersTableSeeder.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/resources/lang/vi/validation.php" />
-        <option value="$PROJECT_DIR$/truyentranh.net/public/assets/manage/css/admin.css" />
         <option value="$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/AppBaseController.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/storage/logs/laravel.log" />
         <option value="$PROJECT_DIR$/truyentranh.net/resources/views/manage/sliders/create.blade.php" />
@@ -192,8 +172,6 @@
         <option value="$PROJECT_DIR$/truyentranh.net/resources/views/manage/_includes/message.blade.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/database/seeds/SlidersTableSeeder.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/database/seeds/ArticlesTableSeeder.php" />
-        <option value="$PROJECT_DIR$/truyentranh.net/resources/views/manage/sliders/index.blade.php" />
-        <option value="$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php" />
         <option value="$PROJECT_DIR$/truyentranh.net/resources/views/manage/sliders/edit.blade.php" />
         <option value="$PROJECT_DIR$/my-app/src/routes.jsx" />
         <option value="$PROJECT_DIR$/my-app/src/component/register/index.jsx" />
@@ -204,6 +182,12 @@
         <option value="$PROJECT_DIR$/truyentranh.net/routes/api.php" />
         <option value="$PROJECT_DIR$/my-app/src/component/login/index.jsx" />
         <option value="$PROJECT_DIR$/my-app/src/component/home/index.js" />
+        <option value="$PROJECT_DIR$/truyentranh.net/public/assets/manage/js/admin.js" />
+        <option value="$PROJECT_DIR$/truyentranh.net/resources/views/layouts/manage.blade.php" />
+        <option value="$PROJECT_DIR$/truyentranh.net/public/assets/manage/js/actions.js" />
+        <option value="$PROJECT_DIR$/truyentranh.net/public/assets/manage/css/admin.css" />
+        <option value="$PROJECT_DIR$/truyentranh.net/resources/views/manage/sliders/index.blade.php" />
+        <option value="$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php" />
       </list>
     </option>
   </component>
@@ -330,6 +314,202 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="truyentranh.net" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manage" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sliders" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="truyentranh.net" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manage" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="truyentranh.net" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="truyentranh.net" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="truyentranh.net" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="truyentranh.net" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manage" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="truyentranh.net" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manage" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="truyentranh.net" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -392,6 +572,36 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="truyentranh.net" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Manage" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactjs-basic" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="my-app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -411,106 +621,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs-basic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs-basic" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my-app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="component" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs-basic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs-basic" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my-app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="component" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="login" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs-basic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs-basic" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my-app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="component" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="include" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs-basic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reactjs-basic" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my-app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="component" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -522,19 +632,19 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\dev\Workspace\LEARN\reactjs-basic\truyentranh.net\resources\views\manage" />
+      <recent name="D:\project\workspace\learn\reactjs_coban\my-app\public" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\project\workspace\learn\reactjs_coban\truyentranh.net\app\Http\Controllers\Apis" />
       <recent name="D:\project\workspace\learn\reactjs_coban\my-app\src\component" />
       <recent name="D:\project\workspace\learn\reactjs_coban\truyentranh.net\resources\lang\vi" />
       <recent name="D:\project\workspace\learn\reactjs_coban\truyentranh.net\resources\lang" />
       <recent name="D:\dev\Workspace\LEARN\reactjs-basic\truyentranh.net\app\Providers" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\dev\Workspace\LEARN\reactjs-basic\truyentranh.net\resources\views\manage" />
-      <recent name="D:\project\workspace\learn\reactjs_coban\my-app\public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -665,12 +775,13 @@
       <workItem from="1526175105155" duration="4039000" />
       <workItem from="1526206037119" duration="4825000" />
       <workItem from="1526228310338" duration="5430000" />
-      <workItem from="1526439251578" duration="13003000" />
+      <workItem from="1526439251578" duration="14017000" />
+      <workItem from="1526522347982" duration="13512000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258513000" />
+    <option name="totallyTimeSpent" value="273039000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -682,10 +793,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="1" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25931233" sideWeight="0.48657718" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26289397" sideWeight="0.48657718" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724252" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52491695" sideWeight="0.37212864" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -750,24 +860,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/storage/framework/views/1e523b6b83d2f7b99da184e5add34d24a15dfbda.php" />
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/storage/framework/views/50e427924b209eac2c5cf1443472a56851e94a1e.php" />
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/storage/framework/views/5ce1928c238cb4b31f3e50b1467abb0a89fe949c.php" />
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/storage/framework/views/2dcb9bcd93d6d2f16c5956a7a2e6d24d44198a5c.php" />
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/storage/logs/laravel.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Http/Requests/Sliders.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="27" column="9" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/AppBaseController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -864,13 +956,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/resources/views/manage/sliders/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="93" column="51" lean-forward="false" selection-start-line="93" selection-start-column="51" selection-end-line="93" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -977,7 +1062,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -985,7 +1069,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3222">
           <caret line="179" column="51" lean-forward="false" selection-start-line="179" selection-start-column="51" selection-end-line="179" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,7 +1092,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,7 +1099,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1029,21 +1110,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="92" column="48" lean-forward="false" selection-start-line="92" selection-start-column="43" selection-end-line="92" selection-end-column="48" />
-          <folding>
-            <element signature="e#47#88#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my-app/src/component/home/slider_items.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1051,7 +1121,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1059,7 +1128,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1067,7 +1135,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1075,7 +1142,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1083,18 +1149,104 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my-app/src/component/home/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="817" column="31" lean-forward="false" selection-start-line="817" selection-start-column="31" selection-end-line="817" selection-end-column="31" />
+        <state relative-caret-position="0">
+          <caret line="816" column="23" lean-forward="true" selection-start-line="816" selection-start-column="23" selection-end-line="816" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truyentranh.net/public/assets/manage/js/intro.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1805">
+          <caret line="26" column="324" lean-forward="false" selection-start-line="26" selection-start-column="324" selection-end-line="26" selection-end-column="324" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truyentranh.net/public/assets/manage/js/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="51" column="15" lean-forward="false" selection-start-line="51" selection-start-column="15" selection-end-line="51" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truyentranh.net/public/assets/manage/js/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truyentranh.net/resources/views/layouts/manage.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="74" lean-forward="false" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truyentranh.net/resources/views/mainboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truyentranh.net/public/assets/manage/css/admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="227" column="20" lean-forward="false" selection-start-line="227" selection-start-column="20" selection-end-line="227" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truyentranh.net/resources/views/manage/sliders/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="86" column="71" lean-forward="false" selection-start-line="86" selection-start-column="71" selection-end-line="86" selection-end-column="71" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#411#1525#0" expanded="false" />
-            <element signature="e#1545#27547#0" expanded="false" />
+            <element signature="e#1094#1375#0#HTML" expanded="false" />
+            <element signature="e#1394#1704#0#HTML" expanded="false" />
+            <element signature="e#1723#2153#0#HTML" expanded="false" />
+            <element signature="e#2172#2491#0#HTML" expanded="false" />
+            <element signature="e#2510#2895#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truyentranh.net/app/Http/Controllers/Manage/SlidersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="e#303#391#0#PHP" expanded="false" />
+            <element signature="e#397#498#0#PHP" expanded="false" />
+            <element signature="e#669#778#0#PHP" expanded="false" />
+            <element signature="e#783#865#0#PHP" expanded="false" />
+            <element signature="e#871#1030#0#PHP" expanded="false" />
+            <element signature="e#1035#1819#0#PHP" expanded="false" />
+            <element signature="e#1124#1592#0#PHP" expanded="false" />
+            <element signature="e#1290#1462#0#PHP" expanded="false" />
+            <element signature="e#1331#1461#1#PHP" expanded="false" />
+            <element signature="e#1475#1592#0#PHP" expanded="false" />
+            <element signature="e#1608#1812#0#PHP" expanded="false" />
+            <element signature="e#1653#1811#1#PHP" expanded="false" />
+            <element signature="e#1825#1947#0#PHP" expanded="false" />
+            <element signature="e#1952#2000#0#PHP" expanded="false" />
+            <element signature="e#2006#2146#0#PHP" expanded="false" />
+            <element signature="e#2151#2378#0#PHP" expanded="false" />
+            <element signature="e#2244#2321#0#PHP" expanded="false" />
+            <element signature="e#2384#2566#0#PHP" expanded="false" />
+            <element signature="e#2571#2639#0#PHP" expanded="false" />
+            <element signature="e#2645#2779#0#PHP" expanded="false" />
+            <element signature="e#2784#2835#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

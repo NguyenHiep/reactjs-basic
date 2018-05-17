@@ -115,4 +115,9 @@ class SlidersController extends AppBaseController
     {
         //
     }
+
+    public function bacth_action()
+    {
+
+    }
 }

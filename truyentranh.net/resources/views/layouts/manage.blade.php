@@ -2,7 +2,7 @@
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <base href=".">
+    <base href="{{  URL::current() }}">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,6 +18,7 @@
     <script type="text/javascript" src="{{ asset('assets/manage/js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/manage/js/intro.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/manage/js/admin.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/manage/js/actions.js') }}"></script>
     <!--Hỗ trợ IE nhận dạng thẻ HTML5-->
     <!--[if lt IE 9]>
     <script src="{{ asset('assets/manage/js/html5shiv.min.js') }}"></script>
