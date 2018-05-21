@@ -7,6 +7,9 @@ use App\Http\Controllers\AppBaseController;
 use App\Sliders;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use App\Helpers\Helpers;
+use App\Helpers\Uploads;
+
 
 class SlidersController extends AppBaseController
 {
@@ -42,7 +45,7 @@ class SlidersController extends AppBaseController
             $model = Sliders::SearchAdvanced($this->setSearch);
         }
         $limit = 15;
-        $data['records']      = $model->orderBy('id', 'ASC')->paginate($limit);
+        $data['records']      = $model->orderBy('id', 'DESC')->paginate($limit);
         $data['page_total']   = $data['records']->total();
         $offset               = $limit;
         $data['display_to']   = $offset;
@@ -76,6 +79,10 @@ class SlidersController extends AppBaseController
     public function store(Request $request)
     {
         $inputs = $request->all();
+        $image_path = Uploads::upload($request, 'image_path');
+        if($image_path){
+            $inputs['image_path'] = $image_path;
+        }
         try {
             DB::beginTransaction();
             $this->sliders->fill($inputs);
@@ -132,7 +139,35 @@ class SlidersController extends AppBaseController
      */
     public function update(Request $request, $id)
     {
-        //
+        $slider = Sliders::find($id);
+        if (empty($slider)) {
+            return abort(404);
+        }
+        $inputs     = $request->all();
+        $image_path = Uploads::upload($request, 'image_path');
+        if ($image_path) {
+            $inputs['image_path'] = $image_path;
+            if (!empty($slider->image_path)) {
+                Helpers::delete_image(public_path('uploads/images/').$slider->image_path);
+                Helpers::delete_image(public_path('uploads/thumbnail/').'thumbnail_'.$slider->image_path);
+            }
+        }
+        try {
+            DB::beginTransaction();
+            $slider->update($inputs);
+            DB::commit();
+            return redirect()->route('sliders.index')->with([
+                'message' => __('system.message.update'),
+                'status'  => self::CTRL_MESSAGE_SUCCESS,
+            ]);
+        } catch (\Exception $e) {
+            DB::rollBack();
+            Log::error([$e->getMessage(), __METHOD__]);
+        }
+        return redirect()->route('sliders.edit', ['id' => $slider->id])->withInput($inputs)->with([
+            'message' => __('system.message.error', ['errors' => 'Update slider is failed']),
+            'status'  => self::CTRL_MESSAGE_ERROR,
+        ]);
     }
 
     /**

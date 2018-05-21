@@ -200,7 +200,7 @@ a:hover{color: #16775c;}
   position: absolute;
   width: auto;
   top: 0;
-  right: 30px;
+  right: 15px;
   text-align: right;
 }
 .paging-wrap{
@@ -229,4 +229,8 @@ a:hover{color: #16775c;}
 }
 .paging-wrap .block-pagination{
   float: right;
+}
+img.img-thumbnail{
+  max-width: 80px;
+	max-height: 80px;
 }

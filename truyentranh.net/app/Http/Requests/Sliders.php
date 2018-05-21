@@ -29,11 +29,11 @@ class Sliders extends FormRequest
             $this->request->set('user_id', Auth::id());
         }
         return [
-            'image_path' => 'image|mimes:jpeg,bmp,png',
-            'image_link' => 'max:255',
-            'title'      => 'required|max:255',
-            'content'    => 'required|max:255',
-            'url'        => 'max:255',
+            'image_path' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image_link' => 'string|max:255',
+            'title'      => 'required|string|max:255|unique:sliders,title'. (($this->method() === 'PUT') ? ',' . $this->route()->parameter('slider') : ''),
+            'content'    => 'required|string|max:255',
+            'url'        => 'url|string|max:255',
             'position'   => 'required|integer|max:4',
             'target'     => 'required|integer|max:4',
             'status'     => 'required|integer|max:4',

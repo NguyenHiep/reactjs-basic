@@ -7,7 +7,7 @@
     </ol>
     <div class="col-xs-12">
       @include('manage._includes.message')
-      <div>
+      <div class="col-xs-12">
         <div class="title-block">
           <h2>Danh sách slider</h2>
           <div class="right-area">
@@ -116,15 +116,23 @@
                   </td>
                   <td class="hidden-xs">{{ $record->id }}</td>
                   <td>
-                    <a href="{{ route('sliders.show',$record->id) }}"><img class="img-thumbnail" src="{{ asset('assets/manage/uploads/images/1.jpg') }}" alt=""></a>
+                    <a href="{{ route('sliders.edit',$record->id) }}">
+                      @if(!empty($record->image_path))
+                        <img class="img-thumbnail" src="{!! asset("uploads/images/".$record->image_path) !!}" alt="{{ $record->title }}" />
+                      @endif
+                    </a>
                   </td>
                   <td class="hidden-sm hidden-xs">{!! Str::words($record->content, 7,'...')  !!}</td>
-                  <td class="hidden-xs">{{ $record->position }}</td>
+                  <td class="hidden-xs">{{ ($record->position == 1) ? 'Trang chủ' : 'Trang sản phẩm' }}</td>
                   <td>
                     <a href="{{ route('sliders.edit',$record->id) }}"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="Sửa slide"></i></a>
                   </td>
                   <td>
-                    <i class="fa fa-check  @if( $record->status == 1) text-success @else text-danger @endif" data-toggle="tooltip" data-placement="top" title="@if( $record->status == 1) Đang hiển thị @else Đã ẩn với người dùng @endif"></i>
+                    @if ($record->status == 1)
+                    {!! '<i class="fa fa-check  text-success" data-toggle="tooltip" data-placement="top" title="Đang hiển thị"></i>' !!}
+                    @else
+                      {!! '<i class="fa fa-check text-danger" data-toggle="tooltip" data-placement="top" title="Đã ẩn với người dùng"></i>' !!}
+                    @endif
                   </td>
                   <td>{{ $record->created_at }}</td>
                 </tr>

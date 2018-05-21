@@ -38,8 +38,17 @@
           <label for="status" class="col-sm-2 control-label required">Vị trí</label>
           <div class="col-sm-10">
             <div class="btn-group">
-              <label for="home"> {!! Form::radio($key, 1, (old($key) == '1') ? true : null, ['id' => 'home']) !!}Trang chủ</label>
-              <label for="product">{!! Form::radio($key, 2, (old($key) == '2') ? true : null, ['id' => 'product']) !!} Trang sản phẩm</label>
+              @if(old($key) == "1")
+                <label for="home"> {!! Form::radio($key, '1', true, ['id' => 'home']) !!}Trang chủ</label>
+              @else
+                <label for="home"> {!! Form::radio($key, '1', null, ['id' => 'home']) !!}Trang chủ</label>
+              @endif
+              
+              @if(old($key) == "2")
+                <label for="product">{!! Form::radio($key, '2', true, ['id' => 'product']) !!} Trang sản phẩm</label>
+              @else
+                <label for="product">{!! Form::radio($key, '2', null, ['id' => 'product']) !!} Trang sản phẩm</label>
+              @endif
             </div>
             @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
@@ -83,8 +92,8 @@
         <div class="form-group">
           <label class="col-sm-2 control-label required">Trạng thái</label>
           <div class="col-sm-10">
-            <label for="enable">{!! Form::radio($key, 1, null, ['id' => 'enable']) !!}Hiển thị</label>
-            <label for="disable">{!! Form::radio($key, 2, true, ['id' => 'disable']) !!}Ẩn</label>
+            <label for="enable">{!! Form::radio($key, '1', old($key), ['id' => 'enable']) !!}Hiển thị</label>
+            <label for="disable">{!! Form::radio($key, '2', old($key), ['id' => 'disable']) !!}Ẩn</label>
             @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
         </div>

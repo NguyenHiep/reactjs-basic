@@ -10,5 +10,7 @@ class AppBaseController extends Controller
     const CTRL_MESSAGE_INFO    = "info";
     const CTRL_MESSAGE_WARNING = "warning";
     const CTRL_MESSAGE_ERROR   = "error";
-    protected $search_prefix   = 'search_';
+    const UPLOAD_IMG           = "uploads/images";
+    const UPLOAD_IMG_THUMBNAIL = "uploads/thumbnail";
+    protected $search_prefix   = "search_";
 }

@@ -4,11 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
-use Collective\Html\Eloquent\FormAccessible;
+
 class Sliders extends Model
 {
-    use FormAccessible;
-
     protected $fillable = [
         'id',
         'image_path',

@@ -9,7 +9,7 @@
     <div class="col-xs-12">
       <form id="admin-form" class="form-horizontal col-xl-9 col-lg-10 col-md-12 col-sm-12" method="post" action="{{ route('sliders.update', [ 'id' => $record->id]) }}" enctype="multipart/form-data" role="form">
         {{ csrf_field() }}
-        {{ Form::hidden('_method','PATCH' ) }}
+        {{ Form::hidden('_method','PUT' ) }}
         @php $key = 'title'; @endphp
         <div class="form-group">
           <label for="content" class="col-sm-2 control-label required">Tiêu đề</label>
@@ -39,8 +39,8 @@
           <label for="status" class="col-sm-2 control-label required">Vị trí</label>
           <div class="col-sm-10">
             <div class="btn-group">
-              <label for="home"> {!! Form::radio($key, 1, (old($key, $record->{$key}) == '1') ? true : null, ['id' => 'home']) !!}Trang chủ</label>
-              <label for="product">{!! Form::radio($key, 2, (old($key, $record->{$key}) == '2') ? true : null, ['id' => 'product']) !!} Trang sản phẩm</label>
+                <label for="home"> {!! Form::radio($key, '1', (old($key, $record->{$key}) == '1') ? true : null, ['id' => 'home']) !!}Trang chủ</label>
+                <label for="product">{!! Form::radio($key, '2', (old($key, $record->{$key}) == '2') ? true : null, ['id' => 'product']) !!} Trang sản phẩm</label>
             </div>
             @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
@@ -59,6 +59,9 @@
                 <div class="col-sm-9">
                   {!! Form::file($key, ['class' => 'form-control', 'accept' => 'image/*']) !!}
                   @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
+                  @if(!empty($record->{$key}))
+                    <img class="img-thumbnail" src="{!! asset("uploads/images/".$record->image_path) !!}" alt="{{ $record->title }}" />
+                  @endif
                 </div>
               </div>
               @php $key = 'image_link'; @endphp
@@ -84,8 +87,8 @@
         <div class="form-group">
           <label class="col-sm-2 control-label required">Trạng thái</label>
           <div class="col-sm-10">
-            <label for="enable">{!! Form::radio($key, 1, (old($key, $record->{$key}) == '1') ? true : null, ['id' => 'enable']) !!}Hiển thị</label>
-            <label for="disable">{!! Form::radio($key, 2, (old($key, $record->{$key}) == '2') ? true : null, ['id' => 'disable']) !!}Ẩn</label>
+            <label for="enable">{!! Form::radio($key, '1', (old($key, $record->{$key}) == '1') ? true : null, ['id' => 'enable']) !!}Hiển thị</label>
+            <label for="disable">{!! Form::radio($key, '2', (old($key, $record->{$key}) == '2') ? true : null, ['id' => 'disable']) !!}Ẩn</label>
             @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
         </div>
