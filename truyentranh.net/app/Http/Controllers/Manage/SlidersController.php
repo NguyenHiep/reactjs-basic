@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Manage;
 use App\Http\Requests\Sliders as Request;
 use App\Http\Controllers\AppBaseController;
 use App\Sliders;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use App\Helpers\Helpers;
@@ -98,7 +100,7 @@ class SlidersController extends AppBaseController
             Log::error([$e->getMessage(), __METHOD__]);
         }
         return redirect()->back()->withInput($inputs)->with([
-            'message' => __('system.message.errors', ['errors' => 'Create sliders is failed']),
+            'message' => __('system.message.errorss', ['errors' => 'Create sliders is failed']),
             'status'  => self::CTRL_MESSAGE_ERROR,
         ]);
     }
@@ -165,7 +167,7 @@ class SlidersController extends AppBaseController
             Log::error([$e->getMessage(), __METHOD__]);
         }
         return redirect()->route('sliders.edit', ['id' => $slider->id])->withInput($inputs)->with([
-            'message' => __('system.message.error', ['errors' => 'Update slider is failed']),
+            'message' => __('system.message.errors', ['errors' => 'Update slider is failed']),
             'status'  => self::CTRL_MESSAGE_ERROR,
         ]);
     }
@@ -179,6 +181,68 @@ class SlidersController extends AppBaseController
     public function destroy($id)
     {
         //
+    }
+
+    public function batch()
+    {
+        try{
+            if (request()->method() !== 'POST'){
+                Log::warning('The requested method '.request()->method().' is not allowed for the URL.', __METHOD__);
+                throw new \Exception('Method is not allowed for the URL', self::CTRL_MESSAGE_ERROR);
+            }
+            $inputs = request()->all();
+            $validator = static::validate_batch($inputs);
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput($inputs);
+            }
+            $ids = request()->get('ids');
+            if (empty($ids))
+            {
+                throw new \Exception('Vui lòng chọn items');
+            }
+
+            DB::beginTransaction();
+            switch (request()->get('batch_actions'))
+            {
+                case 'status_publish':
+                    DB::table('sliders')
+                        ->whereIn('id', $ids)
+                        ->update(['status' => Sliders::STATUS_ON, 'updated_at' => Carbon::now()]);
+                    break;
+
+                case 'status_unpublish':
+                    DB::table('sliders')
+                        ->whereIn('id', $ids)
+                        ->update(['status' => Sliders::STATUS_OFF, 'updated_at' => Carbon::now()]);
+                    break;
+
+                case 'delete':
+                    DB::table('sliders')
+                        ->whereIn('id', $ids)
+                        ->update(['deleted_at' => Carbon::now()]);
+                    break;
+
+                default:
+                    throw new \Exception(__('Action được chọn không có trong danh sách'));
+                    break;
+            }
+            DB::commit();
+
+
+            return redirect()->route('sliders.index')->with([
+                'message' => __('system.message.update'),
+                'status'  => self::CTRL_MESSAGE_SUCCESS,
+            ]);
+
+        }catch (\Exception  $e){
+            DB::rollBack();
+            Log::error([$e->getMessage(), __METHOD__]);
+        }
+        return redirect()->route('sliders.index')->withInput($inputs)->with([
+            'message' => __('system.message.errors', ['errors' => 'Batch action slider is failed']),
+            'status'  => self::CTRL_MESSAGE_ERROR,
+        ]);
+
     }
 
     public function delete($id)
@@ -201,8 +265,15 @@ class SlidersController extends AppBaseController
             Log::error([$e->getMessage(), __METHOD__]);
         }
         return redirect()->route('products.index')->with([
-            'message' => __('system.message.error', ['errors' => 'Delete slider is failed']),
+            'message' => __('system.message.errors', ['errors' => 'Delete slider is failed']),
             'status'  => self::CTRL_MESSAGE_ERROR,
+        ]);
+    }
+
+    public static function validate_batch($data, $id = null){
+        return Validator::make($data, [
+            'batch_actions' => 'required',
+            'ids'           => 'nullable|array',
         ]);
     }
 }

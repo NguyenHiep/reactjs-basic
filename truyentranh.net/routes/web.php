@@ -23,6 +23,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/', 'ManageController@index')->name('manage');
         Route::namespace('Manage')->group(function () {
             Route::get('sliders/{slider}/delete', 'SlidersController@delete')->where('slider', '[0-9]+')->name('sliders.delete');
+            Route::post('sliders/batch', 'SlidersController@batch')->name('sliders.batch');
             Route::resource('sliders', 'SlidersController');
         });
     });

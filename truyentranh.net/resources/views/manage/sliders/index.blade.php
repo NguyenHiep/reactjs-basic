@@ -62,20 +62,21 @@
           </div>
         </div>
       </div>
-      <form id="admin-form" method="POST" action="{{ route('sliders.index') }}" role="form" class="clearfix">
+      <form id="admin-form" method="POST" action="{{ route('sliders.batch') }}" role="form" class="clearfix">
+        {{ csrf_field() }}
         <div class="col-xs-12">
           <div class="paging-wrap clearfix">
             <ul class="list-unstyled btn-2line-wrap">
               <li>
                 <div class="btn-group">
-                  <select id="task" name="task" class="form-control">
-                    <option>Tác vụ</option>
+                  <select id="task" name="batch_actions" class="form-control">
+                    <option value="">Tác vụ</option>
                     <option value="delete">Xóa</option>
-                    <option value="deactive">Ẩn</option>
-                    <option value="active">Hiện</option>
+                    <option value="status_unpublish">Ẩn</option>
+                    <option value="status_publish">Hiện</option>
                   </select>
                 </div>
-                <button class="btn btn-submit js-action-list-batch" type="button"><small><i class="fa fa-save"></i></small> Thực thi</button>
+                <button class="btn btn-submit js-action-list-batch" type="submit"><small><i class="fa fa-save"></i></small> Thực thi</button>
               </li>
             </ul>
             
@@ -114,7 +115,7 @@
               @foreach($records as $record)
                 <tr>
                   <td>
-                    <input name="id[]" type="checkbox" value="{{ $record->id }}">
+                    <input name="ids[]" type="checkbox" value="{{ $record->id }}">
                   </td>
                   <td class="hidden-xs">{{ $record->id }}</td>
                   <td>

@@ -2,11 +2,10 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
 
-class Categories extends Model
+class Categories extends BaseModel
 {
     use SoftDeletes;
     protected $dates    = ['deleted_at'];

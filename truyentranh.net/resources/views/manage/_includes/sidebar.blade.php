@@ -9,7 +9,7 @@
     <ul id="menu" class="list-group">
       <li class="list-group-item">
         <a href="post.html">
-          <i class="fa fa-edit"></i> <span>Tin tức</span>
+          <i class="fa fa-edit"></i> <span>Đăng truyện</span>
         </a>
       </li>
       <li class="list-group-item">
@@ -19,7 +19,7 @@
       </li>
       <li class="list-group-item">
         <a href="type_product.html">
-          <i class="fa fa-bars"></i> <span>Loại sản phẩm</span>
+          <i class="fa fa-bars"></i> <span>Thể loại</span>
         </a>
       </li>
       <li class="list-group-item">
