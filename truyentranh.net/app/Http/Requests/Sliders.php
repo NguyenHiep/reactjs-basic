@@ -30,10 +30,10 @@ class Sliders extends FormRequest
         }
         return [
             'image_path' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'image_link' => 'string|max:255',
+            'image_link' => 'nullable|url|string|max:255',
             'title'      => 'required|string|max:255|unique:sliders,title'. (($this->method() === 'PUT') ? ',' . $this->route()->parameter('slider') : ''),
             'content'    => 'required|string|max:255',
-            'url'        => 'url|string|max:255',
+            'url'        => 'required|url|string|max:255',
             'position'   => 'required|integer|max:4',
             'target'     => 'required|integer|max:4',
             'status'     => 'required|integer|max:4',

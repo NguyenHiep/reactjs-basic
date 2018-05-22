@@ -22,8 +22,8 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('manage')->group(function () {
         Route::get('/', 'ManageController@index')->name('manage');
         Route::namespace('Manage')->group(function () {
+            Route::get('sliders/{slider}/delete', 'SlidersController@delete')->where('slider', '[0-9]+')->name('sliders.delete');
             Route::resource('sliders', 'SlidersController');
-
         });
     });
 });

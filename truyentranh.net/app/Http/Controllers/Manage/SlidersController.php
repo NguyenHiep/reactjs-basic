@@ -181,8 +181,28 @@ class SlidersController extends AppBaseController
         //
     }
 
-    public function bacth_action()
+    public function delete($id)
     {
+        $slider = Sliders::find($id);
+        if (empty($slider)) {
+            return abort(404);
+        }
 
+        try {
+            DB::beginTransaction();
+            $slider->delete();
+            DB::commit();
+            return redirect()->route('sliders.index')->with([
+                'message' => __('system.message.delete'),
+                'status'  => self::CTRL_MESSAGE_SUCCESS,
+            ]);
+        } catch (\Exception $e) {
+            DB::rollBack();
+            Log::error([$e->getMessage(), __METHOD__]);
+        }
+        return redirect()->route('products.index')->with([
+            'message' => __('system.message.error', ['errors' => 'Delete slider is failed']),
+            'status'  => self::CTRL_MESSAGE_ERROR,
+        ]);
     }
 }

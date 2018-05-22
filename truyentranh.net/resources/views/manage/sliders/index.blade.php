@@ -100,11 +100,13 @@
               <th><input id="check_all" type="checkbox"></th>
               <th class="hidden-xs">ID</th>
               <th>Hình ảnh</th>
+              <th>Tiêu đề</th>
               <th class="hidden-sm hidden-xs">Nội dung</th>
               <th class="hidden-xs">Vị trí</th>
-              <th>Sửa</th>
               <th>Tình trạng</th>
               <th>Ngày tạo</th>
+              <th>Sửa</th>
+              <th>Xóa</th>
             </tr>
             </thead>
             <tbody>
@@ -118,15 +120,13 @@
                   <td>
                     <a href="{{ route('sliders.edit',$record->id) }}">
                       @if(!empty($record->image_path))
-                        <img class="img-thumbnail" src="{!! asset("uploads/images/".$record->image_path) !!}" alt="{{ $record->title }}" />
+                        <img class="img-thumbnail" src="{!! asset("uploads/thumbnail/thumbnail_".$record->image_path) !!}" alt="{{ $record->title }}" />
                       @endif
                     </a>
                   </td>
+                  <td>{{ $record->title }}</td>
                   <td class="hidden-sm hidden-xs">{!! Str::words($record->content, 7,'...')  !!}</td>
                   <td class="hidden-xs">{{ ($record->position == 1) ? 'Trang chủ' : 'Trang sản phẩm' }}</td>
-                  <td>
-                    <a href="{{ route('sliders.edit',$record->id) }}"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="Sửa slide"></i></a>
-                  </td>
                   <td>
                     @if ($record->status == 1)
                     {!! '<i class="fa fa-check  text-success" data-toggle="tooltip" data-placement="top" title="Đang hiển thị"></i>' !!}
@@ -135,6 +135,10 @@
                     @endif
                   </td>
                   <td>{{ $record->created_at }}</td>
+                  <td>
+                    <a href="{{ route('sliders.edit',$record->id) }}"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="Sửa"></i></a>
+                  </td>
+                  <td><a href="{{ route('sliders.delete',$record->id) }}" onclick="return confirm('Bạn thật sự muốn xóa?');"><i class="fa fa-trash-o" data-toggle="tooltip" data-placement="top" title="Xóa"></i></a></td>
                 </tr>
               @endforeach
             @endif
