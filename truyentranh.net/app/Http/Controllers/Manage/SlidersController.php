@@ -264,13 +264,13 @@ class SlidersController extends AppBaseController
             DB::rollBack();
             Log::error([$e->getMessage(), __METHOD__]);
         }
-        return redirect()->route('products.index')->with([
+        return redirect()->route('sliders.index')->with([
             'message' => __('system.message.errors', ['errors' => 'Delete slider is failed']),
             'status'  => self::CTRL_MESSAGE_ERROR,
         ]);
     }
 
-    public static function validate_batch($data, $id = null){
+    public static function validate_batch($data){
         return Validator::make($data, [
             'batch_actions' => 'required',
             'ids'           => 'nullable|array',

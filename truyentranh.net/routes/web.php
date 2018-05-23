@@ -25,6 +25,9 @@ Route::middleware(['auth'])->group(function () {
             Route::get('sliders/{slider}/delete', 'SlidersController@delete')->where('slider', '[0-9]+')->name('sliders.delete');
             Route::post('sliders/batch', 'SlidersController@batch')->name('sliders.batch');
             Route::resource('sliders', 'SlidersController');
+            Route::get('categories/{category}/delete', 'CategoriesController@delete')->where('category', '[0-9]+')->name('categories.delete');
+            Route::post('categories/batch', 'CategoriesController@batch')->name('categories.batch');
+            Route::resource('categories', 'CategoriesController');
         });
     });
 });

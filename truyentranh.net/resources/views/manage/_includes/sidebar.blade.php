@@ -18,7 +18,7 @@
         </a>
       </li>
       <li class="list-group-item">
-        <a href="type_product.html">
+        <a href="{{ route('categories.index') }}">
           <i class="fa fa-bars"></i> <span>Thể loại</span>
         </a>
       </li>
