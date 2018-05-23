@@ -8,8 +8,8 @@
     </div>
     <ul id="menu" class="list-group">
       <li class="list-group-item">
-        <a href="post.html">
-          <i class="fa fa-edit"></i> <span>Đăng truyện</span>
+        <a href="{{ route('books.index') }}">
+          <i class="fa fa-edit"></i> <span>Quản lý truyện</span>
         </a>
       </li>
       <li class="list-group-item">
