@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Manage;
 
+use App\Categories;
 use App\Http\Requests\BoooksRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Books;
@@ -68,7 +69,8 @@ class BooksController extends AppBaseController
      */
     public function create()
     {
-        return view('manage.books.create');
+        $data['categories'] = ['0' => 'Chọn tất cả'] + Categories::get_option_list();
+        return view('manage.books.create', $data);
     }
 
     /**

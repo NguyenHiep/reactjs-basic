@@ -8,7 +8,8 @@ use Carbon\Carbon;
 class Sliders extends BaseModel
 {
     use SoftDeletes;
-    protected $dates = ['deleted_at'];
+    protected $table    = 'sliders';
+    protected $dates    = ['deleted_at'];
     protected $fillable = [
         'id',
         'image_path',

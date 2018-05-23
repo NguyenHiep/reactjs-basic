@@ -8,6 +8,7 @@ use Carbon\Carbon;
 class Books extends BaseModel
 {
     use SoftDeletes;
+    protected $table    = 'books';
     protected $dates    = ['deleted_at'];
     protected $fillable = [
         'id',
