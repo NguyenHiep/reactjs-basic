@@ -34,6 +34,9 @@ class BooksController extends AppBaseController
      */
     public function index()
     {
+        // Get all category
+        $data['categories'] = Categories::get_option_list();
+
         $get_params = request()->query();
         $model      = Books::query();
         if (!empty($get_params)) {
@@ -130,6 +133,7 @@ class BooksController extends AppBaseController
         {
             return abort(404);
         }
+        $data['categories'] = ['0' => 'Chọn tất cả'] + Categories::get_option_list();
         return view('manage.books.edit', $data);
     }
 

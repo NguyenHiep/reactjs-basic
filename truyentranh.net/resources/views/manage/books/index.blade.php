@@ -120,14 +120,22 @@
                   <td class="hidden-xs">{{ $record->id }}</td>
                   <td>
                     <a href="{{ route('books.edit',$record->id) }}">
-                      @if(!empty($record->image_path))
-                        <img class="img-thumbnail" src="{!! asset("uploads/thumbnail/thumbnail_".$record->image_path) !!}" alt="{{ $record->title }}" />
+                      @if(!empty($record->image))
+                        <img class="img-thumbnail" src="{!! asset("uploads/thumbnail/thumbnail_".$record->image) !!}" alt="{{ $record->name }}" />
                       @endif
                     </a>
                   </td>
                   <td>{{ $record->name }}</td>
                   <td class="hidden-sm hidden-xs">{!! Str::words($record->content, 7,'...')  !!}</td>
-                  <td class="hidden-xs">{{ ($record->category_id == 1) ? 'Trang chủ' : 'Trang sản phẩm' }}</td>
+                  <td class="hidden-xs">
+                    @if(!empty($record->categories))
+                      <ul class="text-left">
+                        @foreach($record->categories as $val)
+                          <li>{{ array_get($categories, $val) }}</li>
+                        @endforeach
+                      </ul>
+                    @endif
+                  </td>
                   <td>
                     @if ($record->status == 1)
                     {!! '<i class="fa fa-check  text-success" data-toggle="tooltip" data-placement="top" title="Đang hiển thị"></i>' !!}
