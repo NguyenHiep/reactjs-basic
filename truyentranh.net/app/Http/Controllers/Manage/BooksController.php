@@ -86,7 +86,6 @@ class BooksController extends AppBaseController
         if($image_path){
             $inputs['image'] = $image_path;
         }
-        dd($inputs);
         try {
             DB::beginTransaction();
             $this->books->fill($inputs);

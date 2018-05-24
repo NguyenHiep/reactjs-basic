@@ -34,7 +34,7 @@
             @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
         </div>
-        @php $key = 'category_id'; @endphp
+        @php $key = 'categories'; @endphp
         <div class="form-group">
           <label class="col-sm-2 control-label required">Thể loại</label>
           <div class="col-sm-10">
@@ -42,8 +42,8 @@
               @if(count($categories) > 0)
                 <ul class="list-unstyled">
                   @foreach($categories as $id => $val)
-                    <label for="category_id{{ $loop->index }}">
-                      {!! Form::checkbox('category_id[]',$id, old($key), ['id' => 'category_id'.$loop->index]) !!} {{ $val }}
+                    <label for="categories{{ $loop->index }}">
+                      {!! Form::checkbox('categories[]',$id, old($key), ['id' => 'categories'.$loop->index]) !!} {{ $val }}
                     </label>
                   @endforeach
                 </ul>

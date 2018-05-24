@@ -116,9 +116,6 @@ return [
     |
     */
 
-    'attributes' => [
-        'title'   => 'tiêu đề',
-        'content' => 'nội dung'
-    ],
+    'attributes' => [],
 
 ];

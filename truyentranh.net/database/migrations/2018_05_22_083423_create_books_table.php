@@ -15,7 +15,7 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('category_id')->default(0)->unsigned()->comment('Thể loại');
+            $table->text('categories')->nullable()->comment('Thể loại');
             $table->string('author')->nullable()->comment('Tác giả');
             $table->string('name')->comment('Tên sách');
             $table->string('slug')->nullable()->comment('Tên không dấu');

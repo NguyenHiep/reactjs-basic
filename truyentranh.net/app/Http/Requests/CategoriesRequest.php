@@ -32,4 +32,11 @@ class CategoriesRequest extends FormRequest
             'status'     => 'required|integer|max:4',
         ];
     }
+
+    public function attributes()
+    {
+        return [
+          'name' => 'thể loại'
+        ];
+    }
 }

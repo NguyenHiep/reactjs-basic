@@ -34,7 +34,7 @@ class BoooksRequest extends FormRequest
         }
         return [
             'name'            => 'required|string|max:255|unique:books,name' . (($this->method() === 'PUT') ? ',' . $this->route()->parameter('book') : ''),
-            'category_id'     => 'required|integer|array',
+            'categories'      => 'required|array',
             'author'          => 'nullable|string|max:255',
             'slug'            => 'string|max:255',
             'name_dif'        => 'nullable|string|max:255',
@@ -47,6 +47,15 @@ class BoooksRequest extends FormRequest
             'views'           => 'nullable|integer',
             'status'          => 'required|integer|max:4',
             'created_by'      => 'integer|max:4',
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'name'        => 'tên truyện',
+            'content'     => 'mô tả',
+            'categories'  => 'thể loại'
         ];
     }
 }

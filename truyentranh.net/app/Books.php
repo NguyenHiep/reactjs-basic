@@ -12,7 +12,7 @@ class Books extends BaseModel
     protected $dates    = ['deleted_at'];
     protected $fillable = [
         'id',
-        'category_id',
+        'categories',
         'author',
         'name',
         'slug',
@@ -27,6 +27,9 @@ class Books extends BaseModel
         'status',
         'created_by',
         'created_at',
+    ];
+    protected $casts = [
+        'categories' => 'array'
     ];
 
     public function getCreatedAtAttribute($value)

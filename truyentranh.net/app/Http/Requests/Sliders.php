@@ -39,4 +39,14 @@ class Sliders extends FormRequest
             'status'     => 'required|integer|max:4',
         ];
     }
+
+    public function attributes()
+    {
+        return [
+            'title'    => 'tiêu đề',
+            'content'  => 'nội dung',
+            'position' => 'vị trí',
+            'status'   => 'trạng thái',
+        ];
+    }
 }
