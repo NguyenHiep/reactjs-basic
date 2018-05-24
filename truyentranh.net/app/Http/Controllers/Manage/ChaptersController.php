@@ -2,24 +2,25 @@
 
 namespace App\Http\Controllers\Manage;
 
-use App\Http\Requests\CategoriesRequest;
 use App\Http\Controllers\AppBaseController;
-use App\Categories;
+use App\Http\Requests\ChaptersRequest;
+use App\Books;
+use App\Chapters;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
-class CategoriesController extends AppBaseController
+class ChaptersController extends AppBaseController
 {
-    protected $categories;
+    protected $chapters;
     protected $fileds_seach = [];
 
-    public function __construct(Categories $categories)
+    public function __construct(Chapters $chapters)
     {
-        $this->categories = $categories;
+        $this->chapters = $chapters;
 
-        foreach ($this->categories->getFillable() as $filed) {
+        foreach ($this->chapters->getFillable() as $filed) {
             $this->fileds_seach[] = $this->search_prefix . $filed;
         }
     }
@@ -31,8 +32,10 @@ class CategoriesController extends AppBaseController
      */
     public function index()
     {
+        // Get all books
+        $data['books'] = Books::get_option_list();
         $get_params = request()->query();
-        $model      = Categories::query();
+        $model      = Chapters::query();
         if (!empty($get_params)) {
             $this->setSearch = [];
             foreach ($get_params as $key => $val) {
@@ -41,21 +44,22 @@ class CategoriesController extends AppBaseController
                     $this->setSearch[$key] = $val;
                 }
             }
-            $model = Categories::SearchAdvanced($this->setSearch);
+            $model = Chapters::SearchAdvanced($this->setSearch);
         }
         $limit = 15;
-        $data['records']    = $model->orderBy('id', 'DESC')->paginate($limit);
-        $data['page_total'] = $data['records']->total();
-        $offset = $limit;
-        $data['display_to'] = $offset;
+        $data['records']      = $model->orderBy('id', 'DESC')->paginate($limit);
+        $data['page_total']   = $data['records']->total();
+        $offset               = $limit;
+        $data['display_to']   = $offset;
         $data['display_from'] = 1;
-        if ($data['records']->currentPage() > 1) {
-            $offset = min($limit * $data['records']->currentPage(), $data['page_total']);
-            $data['display_to']   = min($offset + $data['records']->perPage(), $data['page_total']);
-            $data['display_from'] = min($offset, $data['display_to']);
+        if($data['records']->currentPage() > 1)
+        {
+            $offset = min($limit * $data['records']->currentPage(), $data['page_total']) ;
+            $data['display_to']   = min($offset +  $data['records']->perPage(), $data['page_total']);
+            $data['display_from'] = min($offset , $data['display_to']);
         }
 
-        return view('manage.categories.index', $data);
+        return view('manage.chapters.index', $data);
     }
 
     /**
@@ -65,24 +69,26 @@ class CategoriesController extends AppBaseController
      */
     public function create()
     {
-        return view('manage.categories.create');
+        $data['books'] = ['' => 'Chọn truyện'] + Books::get_option_list();
+        return view('manage.chapters.create', $data);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoriesRequest $request)
+    public function store(ChaptersRequest $request)
     {
         $inputs = $request->all();
+
         try {
             DB::beginTransaction();
-            $this->categories->fill($inputs);
-            $this->categories->save();
+            $this->chapters->fill($inputs);
+            $this->chapters->save();
             DB::commit();
-            return redirect()->route('categories.index')->with([
+            return redirect()->route('chapters.index')->with([
                 'message' => __('system.message.create'),
                 'status'  => self::CTRL_MESSAGE_SUCCESS,
             ]);
@@ -92,7 +98,7 @@ class CategoriesController extends AppBaseController
             Log::error([$e->getMessage(), __METHOD__]);
         }
         return redirect()->back()->withInput($inputs)->with([
-            'message' => __('system.message.errorss', ['errors' => 'Create categories is failed']),
+            'message' => __('system.message.errors', ['errors' => 'Create chapters is failed']),
             'status'  => self::CTRL_MESSAGE_ERROR,
         ]);
     }
@@ -100,7 +106,7 @@ class CategoriesController extends AppBaseController
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -111,38 +117,40 @@ class CategoriesController extends AppBaseController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $data['record'] = $this->categories->find($id);
+        $data['record'] = $this->chapters->find($id);
         if(empty($data['record']))
         {
             return abort(404);
         }
-        return view('manage.categories.edit', $data);
+        $data['books'] = ['' => 'Chọn tất cả'] + Books::get_option_list();
+        return view('manage.chapters.edit', $data);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoriesRequest $request, $id)
+    public function update(ChaptersRequest $request, $id)
     {
-        $category = Categories::find($id);
-        if (empty($category)) {
+        $chapter = Chapters::find($id);
+        if (empty($chapter)) {
             return abort(404);
         }
         $inputs     = $request->all();
+
         try {
             DB::beginTransaction();
-            $category->update($inputs);
+            $chapter->update($inputs);
             DB::commit();
-            return redirect()->route('categories.index')->with([
+            return redirect()->route('chapters.index')->with([
                 'message' => __('system.message.update'),
                 'status'  => self::CTRL_MESSAGE_SUCCESS,
             ]);
@@ -150,8 +158,8 @@ class CategoriesController extends AppBaseController
             DB::rollBack();
             Log::error([$e->getMessage(), __METHOD__]);
         }
-        return redirect()->route('categories.edit', ['id' => $category->id])->withInput($inputs)->with([
-            'message' => __('system.message.errors', ['errors' => 'Update category is failed']),
+        return redirect()->route('chapters.edit', ['id' => $chapter->id])->withInput($inputs)->with([
+            'message' => __('system.message.errors', ['errors' => 'Update chapter is failed']),
             'status'  => self::CTRL_MESSAGE_ERROR,
         ]);
     }
@@ -159,7 +167,7 @@ class CategoriesController extends AppBaseController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -188,19 +196,19 @@ class CategoriesController extends AppBaseController
             DB::beginTransaction();
             switch (request()->get('batch_actions')) {
                 case 'status_publish':
-                    DB::table($this->categories->getTable())
+                    DB::table($this->chapters->getTable())
                         ->whereIn('id', $ids)
-                        ->update(['status' => Categories::STATUS_ON, 'updated_at' => Carbon::now()]);
+                        ->update(['status' => Chapters::STATUS_ON, 'updated_at' => Carbon::now()]);
                     break;
 
                 case 'status_unpublish':
-                    DB::table($this->categories->getTable())
+                    DB::table($this->chapters->getTable())
                         ->whereIn('id', $ids)
-                        ->update(['status' => Categories::STATUS_OFF, 'updated_at' => Carbon::now()]);
+                        ->update(['status' => Chapters::STATUS_OFF, 'updated_at' => Carbon::now()]);
                     break;
 
                 case 'delete':
-                    DB::table($this->categories->getTable())
+                    DB::table($this->chapters->getTable())
                         ->whereIn('id', $ids)
                         ->update(['deleted_at' => Carbon::now()]);
                     break;
@@ -212,7 +220,7 @@ class CategoriesController extends AppBaseController
             DB::commit();
 
 
-            return redirect()->route('categories.index')->with([
+            return redirect()->route('chapters.index')->with([
                 'message' => __('system.message.update'),
                 'status'  => self::CTRL_MESSAGE_SUCCESS,
             ]);
@@ -221,8 +229,8 @@ class CategoriesController extends AppBaseController
             DB::rollBack();
             Log::error([$e->getMessage(), __METHOD__]);
         }
-        return redirect()->route('categories.index')->withInput($inputs)->with([
-            'message' => __('system.message.errors', ['errors' => 'Batch action categories is failed']),
+        return redirect()->route('chapters.index')->withInput($inputs)->with([
+            'message' => __('system.message.errors', ['errors' => 'Batch action chapters is failed']),
             'status'  => self::CTRL_MESSAGE_ERROR,
         ]);
 
@@ -230,16 +238,16 @@ class CategoriesController extends AppBaseController
 
     public function delete($id)
     {
-        $category = Categories::find($id);
-        if (empty($category)) {
+        $chapter = Chapters::find($id);
+        if (empty($chapter)) {
             return abort(404);
         }
 
         try {
             DB::beginTransaction();
-            $category->delete();
+            $chapter->delete();
             DB::commit();
-            return redirect()->route('categories.index')->with([
+            return redirect()->route('chapters.index')->with([
                 'message' => __('system.message.delete'),
                 'status'  => self::CTRL_MESSAGE_SUCCESS,
             ]);
@@ -247,8 +255,8 @@ class CategoriesController extends AppBaseController
             DB::rollBack();
             Log::error([$e->getMessage(), __METHOD__]);
         }
-        return redirect()->route('categories.index')->with([
-            'message' => __('system.message.errors', ['errors' => 'Delete category is failed']),
+        return redirect()->route('chapters.index')->with([
+            'message' => __('system.message.errors', ['errors' => 'Delete chapter is failed']),
             'status'  => self::CTRL_MESSAGE_ERROR,
         ]);
     }

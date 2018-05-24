@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class Books extends BaseModel
 {
@@ -53,5 +54,28 @@ class Books extends BaseModel
             $model->whereDate('created_at', '>=', $searchs['created_at']);
         }
         return $model;
+    }
+
+    public static function get_option_list($deleted = false)
+    {
+        static $data, $deleted_data;
+        if (empty($data)) {
+            $data = array_pluck(DB::table('books')->select('id', 'name')
+                ->where('status', static::STATUS_ON)
+                ->where('deleted_at', null)
+                ->orderBy('name')
+                ->get()
+                ->toArray(), 'name', 'id');
+        }
+        if ($deleted && empty($deleted_data)) {
+            $deleted_data = array_pluck(DB::table('books')->select('id', 'name')
+                ->where('status', static::STATUS_OFF)
+                ->orWhere('deleted_at', '!=', null)
+                ->orderBy('name')
+                ->get()
+                ->toArray(), 'name', 'id');
+        }
+
+        return $data + ($deleted ? $deleted_data : []);
     }
 }

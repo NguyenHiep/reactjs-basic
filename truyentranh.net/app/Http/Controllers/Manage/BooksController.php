@@ -171,7 +171,7 @@ class BooksController extends AppBaseController
             DB::rollBack();
             Log::error([$e->getMessage(), __METHOD__]);
         }
-        return redirect()->route('books', ['id' => $book->id])->withInput($inputs)->with([
+        return redirect()->route('books.edit', ['id' => $book->id])->withInput($inputs)->with([
             'message' => __('system.message.errors', ['errors' => 'Update book is failed']),
             'status'  => self::CTRL_MESSAGE_ERROR,
         ]);
@@ -209,19 +209,19 @@ class BooksController extends AppBaseController
             DB::beginTransaction();
             switch (request()->get('batch_actions')) {
                 case 'status_publish':
-                    DB::table('books')
+                    DB::table($this->books->getTable())
                         ->whereIn('id', $ids)
                         ->update(['status' => Books::STATUS_ON, 'updated_at' => Carbon::now()]);
                     break;
 
                 case 'status_unpublish':
-                    DB::table('books')
+                    DB::table($this->books->getTable())
                         ->whereIn('id', $ids)
                         ->update(['status' => Books::STATUS_OFF, 'updated_at' => Carbon::now()]);
                     break;
 
                 case 'delete':
-                    DB::table('books')
+                    DB::table($this->books->getTable())
                         ->whereIn('id', $ids)
                         ->update(['deleted_at' => Carbon::now()]);
                     break;
@@ -269,7 +269,7 @@ class BooksController extends AppBaseController
             Log::error([$e->getMessage(), __METHOD__]);
         }
         return redirect()->route('books.index')->with([
-            'message' => __('system.message.errors', ['errors' => 'Delete category is failed']),
+            'message' => __('system.message.errors', ['errors' => 'Delete book is failed']),
             'status'  => self::CTRL_MESSAGE_ERROR,
         ]);
     }

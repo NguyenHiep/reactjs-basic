@@ -83,7 +83,7 @@
         <div class="form-group">
           <label for="content" class="col-sm-2 control-label">Tác giả</label>
           <div class="col-sm-10">
-            {!! Form::text($key,  old($key), ['class' => 'form-control ', 'placeholder' => 'Nhóm dịch']) !!}
+            {!! Form::text($key,  old($key), ['class' => 'form-control ', 'placeholder' => 'Tác giả']) !!}
             @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
         </div>
