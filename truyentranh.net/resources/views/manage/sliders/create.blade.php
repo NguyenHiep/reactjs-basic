@@ -7,6 +7,7 @@
       <li class="active">Thêm slider mới</li>
     </ol>
     <div class="col-xs-12">
+      @include('manage._includes.message')
       <form id="admin-form" class="form-horizontal col-xl-9 col-lg-10 col-md-12 col-sm-12" method="post" action="{{ route('sliders.store') }}" enctype="multipart/form-data" role="form">
         {{ csrf_field() }}
         @php $key = 'title'; @endphp

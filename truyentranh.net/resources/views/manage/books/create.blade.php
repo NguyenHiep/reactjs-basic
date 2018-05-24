@@ -7,6 +7,7 @@
       <li class="active">Thêm truyện mới</li>
     </ol>
     <div class="col-xs-12">
+      @include('manage._includes.message')
       <form id="admin-form" class="form-horizontal col-xl-9 col-lg-10 col-md-12 col-sm-12" method="post" action="{{ route('books.store') }}" enctype="multipart/form-data" role="form">
         {{ csrf_field() }}
         @php $key = 'name'; @endphp
@@ -33,7 +34,7 @@
             @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
         </div>
-        @php $key = 'category_id[]'; @endphp
+        @php $key = 'category_id'; @endphp
         <div class="form-group">
           <label class="col-sm-2 control-label required">Thể loại</label>
           <div class="col-sm-10">
@@ -42,7 +43,7 @@
                 <ul class="list-unstyled">
                   @foreach($categories as $id => $val)
                     <label for="category_id{{ $loop->index }}">
-                      {!! Form::checkbox($key,$id, old($key), ['id' => 'category_id'.$loop->index]) !!} {{ $val }}
+                      {!! Form::checkbox('category_id[]',$id, old($key), ['id' => 'category_id'.$loop->index]) !!} {{ $val }}
                     </label>
                   @endforeach
                 </ul>
@@ -107,6 +108,15 @@
           <label class="col-sm-2 control-label required">Đánh giá</label>
           <div class="col-sm-10">
             {!! Form::select($key, __('selector.reviews'), old($key, 4), ['class' => 'form-control']) !!}
+            @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
+          </div>
+        </div>
+        @php $key = 'sticky';@endphp
+        <div class="form-group">
+          <label class="col-sm-2 control-label required">Vị trí</label>
+          <div class="col-sm-10">
+            <label for="sticky">{!! Form::radio($key, '1', old($key), ['id' => 'sticky']) !!}Nổi bật</label>
+            <label for="unsticky">{!! Form::radio($key, '2', old($key, true), ['id' => 'unsticky']) !!}Không nổi bật</label>
             @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
         </div>

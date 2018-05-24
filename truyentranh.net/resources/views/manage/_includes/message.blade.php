@@ -11,11 +11,12 @@
   $html = '';
   if (count($errors) > 0):
     $html .= '<div class="col-xs-12">';
-      $html .= "<ul class='list-unstyled alert alert-danger'>";
+      $html .= '<ul class="list-unstyled alert alert-danger">';
+      $html .= '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
       foreach ($errors->all() as $error):
         $html .= "<li>{$error}</li>";
       endforeach;
-      $html .= "</ul>";
+      $html .= '</ul>';
     $html .= '</div>';
   endif;
   echo $html;

@@ -7,6 +7,7 @@
       <li class="active">Cập nhật truyện</li>
     </ol>
     <div class="col-xs-12">
+      @include('manage._includes.message')
       <form id="admin-form" class="form-horizontal col-xl-9 col-lg-10 col-md-12 col-sm-12" method="post" action="{{ route('books.update', [ 'id' => $record->id]) }}" enctype="multipart/form-data" role="form">
         {{ csrf_field() }}
         {{ Form::hidden('_method','PUT' ) }}

@@ -28,11 +28,15 @@ class BoooksRequest extends FormRequest
         {
             $this->request->set('created_by', Auth::id());
         }
+        if(empty($this->request->get('slug')))
+        {
+            $this->request->set('slug',str_slug($this->request->get('name')));
+        }
         return [
             'name'            => 'required|string|max:255|unique:books,name' . (($this->method() === 'PUT') ? ',' . $this->route()->parameter('book') : ''),
             'category_id'     => 'required|integer|array',
             'author'          => 'nullable|string|max:255',
-            'slug'            => 'required|string|max:255',
+            'slug'            => 'string|max:255',
             'name_dif'        => 'nullable|string|max:255',
             'image'           => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'image_link'      => 'nullable|url|string|max:255',
@@ -40,9 +44,9 @@ class BoooksRequest extends FormRequest
             'progress'        => 'required|integer',
             'teams_translate' => 'nullable|string|max:255',
             'sticky'          => 'required|integer|max:4',
-            'views'           => 'required|integer',
+            'views'           => 'nullable|integer',
             'status'          => 'required|integer|max:4',
-            'created_by'      => 'required|integer|max:4',
+            'created_by'      => 'integer|max:4',
         ];
     }
 }
