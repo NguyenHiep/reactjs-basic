@@ -33,7 +33,7 @@
         <div class="form-group">
           <label for="content" class="col-sm-2 control-label required">Nội dung</label>
           <div class="col-sm-10">
-            {!! Form::textarea($key,  old($key, $record->{$key}), ['class' => 'form-control ', 'rows' => '5', 'placeholder' => 'Nhập mô tả ngắn cho truyện']) !!}
+            {!! Form::textarea($key,  old($key, $record->{$key}), ['class' => 'ckeditor form-control ', 'rows' => '5', 'placeholder' => 'Nhập mô tả ngắn cho truyện']) !!}
             @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
         </div>

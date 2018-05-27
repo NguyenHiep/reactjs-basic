@@ -13,8 +13,8 @@
         <a href="{{ route('books.index') }}" class="col-md-2 col-sm-5 col-xs-5">
           <i class="fa fa-edit"></i><br> <span>Quản lý truyện</span>
         </a>
-        <a href="product.html" class="col-md-2 col-sm-5 col-xs-5">
-          <i class="fa fa-fire"></i><br> <span>Sản phẩm</span>
+        <a href="{{ route('chapters.index') }}" class="col-md-2 col-sm-5 col-xs-5">
+          <i class="fa fa-fire"></i><br> <span>Quản lý chương</span>
         </a>
         <a href="{{ route('categories.index') }}" class="col-md-2 col-sm-5 col-xs-5">
           <i class="fa fa-bars"></i><br> <span>Thể loại</span>

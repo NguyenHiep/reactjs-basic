@@ -26,3 +26,20 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.mt-50{
+  margin-top: 50px;
+}
+#content {
+  padding: 10px;
+  border: solid 3px red;
+}
+.active {
+  border: solid 3px black;
+}
+
+span {
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}

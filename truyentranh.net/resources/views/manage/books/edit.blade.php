@@ -23,7 +23,7 @@
         <div class="form-group">
           <label for="content" class="col-sm-2 control-label required">Nội dung</label>
           <div class="col-sm-10">
-            {!! Form::textarea($key,  old($key, $record->{$key}), ['class' => 'form-control ', 'rows' => '5', 'placeholder' => 'Nhập mô tả ngắn cho truyện']) !!}
+            {!! Form::textarea($key,  old($key, $record->{$key}), ['class' => 'ckeditor form-control ', 'rows' => '5', 'placeholder' => 'Nhập mô tả ngắn cho truyện']) !!}
             @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
         </div>
@@ -144,7 +144,8 @@
             <button type="submit" class="btn btn-submit"><small><i class="fa fa-plus"></i></small> Thêm mới</button>
             <button type="submit" class="btn btn-danger"><small><i class="fa fa-save"></i></small> Lưu nháp</button>
             <a class="btn btn-warning" href="{{ route('books.index') }}"><small><i class="fa fa-reply"></i></small> Trở về</a>
-            <a href="{{ route('chapters.create', ['book_id' => $record->id]) }}" class="btn btn-primary"><small><i class="fa fa-bars" data-original-title="" title=""></i></small>Thêm chương mới</a>
+            <a href="{{ route('chapters.index', ['book_id' => $record->id]) }}" class="btn btn-primary"><small><i class="fa fa-bars" data-original-title="" title=""></i></small>Danh sách các chương</a>
+           
           </div>
         </div>
       </form>

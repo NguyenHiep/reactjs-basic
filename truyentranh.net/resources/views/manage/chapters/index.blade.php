@@ -102,7 +102,6 @@
               <th class="hidden-xs">ID</th>
               <th>Truyện</th>
               <th>Tên chương</th>
-              <th class="hidden-sm hidden-xs">Nội dung</th>
               <th class="hidden-xs">Nổi bật</th>
               <th>Tình trạng</th>
               <th>Ngày tạo</th>
@@ -118,9 +117,12 @@
                     <input name="ids[]" type="checkbox" value="{{ $record->id }}">
                   </td>
                   <td class="hidden-xs">{{ $record->id }}</td>
-                  <td>{!! $record->book_id !!}</td>
-                  <td>{{ $record->name }}</td>
-                  <td class="hidden-sm hidden-xs">{!! Str::words($record->content, 7,'...')  !!}</td>
+                  <td>
+                    @if(!empty($record->book_id))
+                      {{ array_get($books, $record->book_id) }}
+                    @endif
+                   </td>
+                   <td>{{ $record->name }}</td>
                   <td class="hidden-xs">
                     @if ($record->sticky == 1)
                       {!! '<i class="fa fa-check  text-success" data-toggle="tooltip" data-placement="top" title="Đang hiển thị"></i>' !!}

@@ -33,6 +33,11 @@ class Books extends BaseModel
         'categories' => 'array'
     ];
 
+    public function chapters()
+    {
+        return $this->hasMany('App\Chapters');
+    }
+
     public function getCreatedAtAttribute($value)
     {
         return Carbon::parse($value)->format('d/m/Y');

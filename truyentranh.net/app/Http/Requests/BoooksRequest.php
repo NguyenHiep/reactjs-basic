@@ -40,7 +40,7 @@ class BoooksRequest extends FormRequest
             'name_dif'        => 'nullable|string|max:255',
             'image'           => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'image_link'      => 'nullable|url|string|max:255',
-            'content'         => 'required|string|max:1024',
+            'content'         => 'required|string',
             'progress'        => 'required|integer',
             'teams_translate' => 'nullable|string|max:255',
             'sticky'          => 'required|integer|max:4',

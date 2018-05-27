@@ -65,5 +65,13 @@
       @yield('content')
       <!--END #main-->
     </div>
+    <script type="text/javascript" src="{{ asset('assets/manage/plugins/ckeditor/ckeditor.js') }}"></script>
+    {{--<script type="text/javascript" src="{{ asset('assets/manage/plugins/ckfinder/ckfinder.js') }}"></script>--}}
+    <script>
+			if (document.getElementsByClassName("ckeditor").length > 0) {
+				CKEDITOR.replaceClass = 'ckeditor';
+			}
+			
+    </script>
 </body>
 </html>

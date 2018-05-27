@@ -23,6 +23,11 @@ class Chapters extends BaseModel
         'created_at',
     ];
 
+    public function books()
+    {
+        return $this->hasOne('App\Books');
+    }
+
     public function getCreatedAtAttribute($value)
     {
         return Carbon::parse($value)->format('d/m/Y');

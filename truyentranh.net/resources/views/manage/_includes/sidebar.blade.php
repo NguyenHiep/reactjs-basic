@@ -13,8 +13,8 @@
         </a>
       </li>
       <li class="list-group-item">
-        <a href="product.html">
-          <i class="fa fa-fire"></i><span>Sản phẩm</span>
+        <a href="{{ route('chapters.index') }}">
+          <i class="fa fa-fire"></i><span>Quản lý chương</span>
         </a>
       </li>
       <li class="list-group-item">

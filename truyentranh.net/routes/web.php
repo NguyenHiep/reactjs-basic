@@ -37,6 +37,26 @@ Route::middleware(['auth'])->group(function () {
             Route::get('chapters/{chapter}/delete', 'ChaptersController@delete')->where('chapter', '[0-9]+')->name('chapters.delete');
             Route::post('chapters/batch', 'ChaptersController@batch')->name('chapters.batch');
             Route::resource('chapters', 'ChaptersController');
+
+            Route::post('/upload_image', function() {
+                $CKEditor = \Input::get('CKEditor');
+                $funcNum = \Input::get('CKEditorFuncNum');
+                $message = $url = '';
+                if (\Input::hasFile('upload')) {
+                    $file = \Input::file('upload');
+                    if ($file->isValid()) {
+                        $filename = $file->getClientOriginalName();
+                        $file->move(storage_path().'/images/', $filename);
+                        $url = public_path() .'/images/' . $filename;
+                    } else {
+                        $message = 'An error occured while uploading the file.';
+                    }
+                } else {
+                    $message = 'No file uploaded.';
+                }
+                return '<script>window.parent.CKEDITOR.tools.callFunction('.$funcNum.', "'.$url.'", "'.$message.'")</script>';
+            });
+
         });
     });
 });

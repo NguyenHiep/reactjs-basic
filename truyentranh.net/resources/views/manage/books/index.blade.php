@@ -126,7 +126,7 @@
                     </a>
                   </td>
                   <td>{{ $record->name }}</td>
-                  <td class="hidden-sm hidden-xs">{!! Str::words($record->content, 7,'...')  !!}</td>
+                  <td class="hidden-sm hidden-xs">{!! Str::words($record->content, 10,'...')  !!}</td>
                   <td class="hidden-xs">
                     @if(!empty($record->categories))
                       <ul class="text-left">
