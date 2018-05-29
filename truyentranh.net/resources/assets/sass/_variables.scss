@@ -9,7 +9,8 @@ $list-group-border-color: $laravel-border-color;
 $card-border-color: $laravel-border-color;
 
 // Brands
-$primary: #3097D1;
+/*$primary: #3097D1;*/
+$primary: #29c6ab;
 $info: #8eb4cb;
 $success: #2ab27b;
 $warning: #cbb956;
@@ -24,3 +25,5 @@ $text-color: #636b6f;
 // Inputs
 $input-border-color: lighten($text-color, 40%);
 $input-placeholder-color: lighten($text-color, 30%);
+
+$second-color: #0e977f;
