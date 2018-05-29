@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 ## Begin routes backend
@@ -61,4 +61,9 @@ Route::middleware(['auth'])->group(function () {
     });
 });
 
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 

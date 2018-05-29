@@ -1,0 +1,15 @@
+.hot-manga .thumbnails {
+  padding: 2px;
+  -webkit-transition: border .2s ease-in-out;
+  -o-transition: border .2s ease-in-out;
+  transition: border .2s ease-in-out;
+}
+.hot-manga .thumbnails, .thumbnail-clip {
+  line-height: 1.42857143;
+  display: block;
+  margin-bottom: 5px;
+}
+.update-list, .update-list2 {
+  background-color: #1e202a;
+  overflow: hidden
+}
