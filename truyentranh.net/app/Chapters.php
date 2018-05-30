@@ -25,7 +25,7 @@ class Chapters extends BaseModel
 
     public function books()
     {
-        return $this->hasOne('App\Books');
+        return $this->belongsTo('App\Books');
     }
 
     public function getCreatedAtAttribute($value)

@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/', 'FrontEndController@index')->name('front.home');
+
 ## Begin routes backend
 Auth::routes();
 

@@ -64,4 +64,8 @@ class Categories extends BaseModel
 
         return $data + ($deleted ? $deleted_data : []);
     }
+
+    public static function getListCategories(){
+        return Categories::where('status', static::STATUS_ON)->get();
+    }
 }

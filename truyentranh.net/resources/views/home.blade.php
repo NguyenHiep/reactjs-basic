@@ -33,66 +33,72 @@
       <div class="col-xs-12 col-lg-8">
         <h3 class="title-body">Truyện mới đăng</h3>
         <div class="row">
-          @for($i = 1; $i <= 8; $i++)
+          @foreach($books_new as $book)
             <div class="col-xs-12 col-md-6">
               <div class="media mainpage-manga mt-0">
-                <a href={this.props.url} class="tooltips">
-                  <img src=http://cdn.truyentranh.net/upload/image/comic/20180529/Vigilante-Boku-no-Hero-Academia-Illegals-5b0cb98bafa2b-thumbnail-176x264.jpg alt={this.props.title} class="pr-2" />
+                <a href="{{ url($book->slug) }}" class="tooltips">
+                  @if(!empty($book->image))
+                    <img class="pr-2" src="{!! asset("uploads/thumbnail/thumbnail_".$book->image) !!}" alt="{{ $book->name }}" />
+                  @endif
                   <span>
 						        <img src="http://cdn.truyentranh.net/frontend/images/callout.gif" class="callout" />
                      <p class="description">
-                      <strong>Tên khác:</strong>{this.props.title_en}<br />
-                      <strong>Thể loại: </strong>{this.props.type}<br />
-                      <strong>Tác giả:</strong>{this.props.author}<br />
-                      <strong>Nội dung:</strong>{this.props.description}
+                      <strong>Tên khác:</strong>{{ $book->name_dif }}<br />
+                      <strong>Thể loại: </strong>{{--{{ $book->categories }}--}}<br />
+                      <strong>Tác giả:</strong>{{ $book->author }}<br />
+                      <strong>Nội dung:</strong>{!! Str::words($book->content, 40,'...') !!}
                      </p>
                    </span>
                 </a>
                 <div class="media-body">
-                  <h4 class="manga-newest"><a href={this.props.url}>{this.props.children}</a></h4>
+                  <h4 class="manga-newest"><a href="{{ url($book->slug) }}">{{ $book->name }}</a></h4>
                   <p class="description">
-                    <span>Tên khác:</span>{this.props.title_en}<br />
-                    <span>Thể loại: </span>{this.props.type}<br />
-                    <span>Tác giả:</span>{this.props.author}<br />
-                    <strong>Nội dung:</strong>{this.props.description}
+                    <strong>Tên khác:</strong>{{ $book->name_dif }}<br />
+                    <strong>Thể loại: </strong>{{--{{ $book->categories }}--}}<br />
+                    <strong>Tác giả:</strong>{{ $book->author }}<br />
+                    <strong>Nội dung:</strong>{!!  Str::words($book->content, 20,'...') !!}
                   </p>
                 </div>
               </div>
             </div>
-          @endfor
+          @endforeach
         </div>
         <h3 class="title-body">Truyện mới nhất</h3>
         <div class="row">
-          @for($i = 1; $i <= 8; $i++)
+          @foreach($books_update as $book)
             <div class="col-xs-12 col-md-6">
               <div class="media mainpage-manga mt-0">
-                <a href={this.props.url} class="tooltips">
-                  <img src=http://cdn.truyentranh.net/upload/image/comic/20180529/Vigilante-Boku-no-Hero-Academia-Illegals-5b0cb98bafa2b-thumbnail-176x264.jpg alt={this.props.title} class="pr-2"/>
+                <a href="{{ url($book->slug) }}" class="tooltips">
+                  @if(!empty($book->image))
+                    <img class="pr-2" src="{!! asset("uploads/thumbnail/thumbnail_".$book->image) !!}" alt="{{ $book->name }}" />
+                  @endif
                   <span>
-							<img src="http://cdn.truyentranh.net/frontend/images/callout.gif" class="callout"/>
-							<p class="description">
-								<strong>Tên khác:</strong>{this.props.title_en}<br />
-								<strong>Thể loại: </strong>{this.props.type}<br />
-								<strong>Tác giả:</strong>{this.props.author}<br />
-								<strong>Nội dung:</strong>{this.props.description}
-							</p>
-						</span>
+                    <img src="http://cdn.truyentranh.net/frontend/images/callout.gif" class="callout"/>
+                    <p class="description">
+                      <strong>Tên khác:</strong>{{ $book->name_dif }}<br />
+                      <strong>Thể loại: </strong>{{--{{ $book->categories }}--}}<br />
+                      <strong>Tác giả:</strong>{{ $book->author }}<br />
+                      <strong>Nội dung:</strong>{!!  Str::words($book->content, 20,'...') !!}
+                    </p>
+                  </span>
                 </a>
                 <div class="media-body">
-                  <h4 class="manga-newest"><a href={this.props.url} title={this.props.title} data-tt="#truyenmoi-31347">{this.props.children}</a></h4>
+                  <h4 class="manga-newest"><a href="{{ url($book->slug) }}">{{ $book->name }}</a></h4>
                   <div class="row">
                     <div class="col-12">
                       <ul class="hotup-list list-unstyled clearfix">
-                        @for($j = 1; $j<=12; $j++)
-                          <li key={chapter.id}><a class="latest-chap" href={chapter.url} target="_blank" title={chapter.title}>{chapter.title}</a></li>
-                        @endfor
+                        @if(!empty($book->chapters))
+                          @foreach( $book->chapters as $chapter)
+                            <li><a class="latest-chap" href="{{ url($book->slug.'/'.$chapter->slug) }}" target="_blank" title="{{$chapter->name}}">{{$chapter->name}}</a></li>
+                          @endforeach
+                        @endif
                       </ul>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          @endfor
+          @endforeach
         </div>
       </div>
       <div class="col-xs-12 col-lg-4">
@@ -100,7 +106,7 @@
           <div class="col-md-12">
             <div class="history-read">
               <p class="save-manga">
-                <a href="/login">
+                <a href="{{ url('/login') }}">
                 <img src="http://cdn.truyentranh.net/frontend/images/clockfix.png" /> Xem lịch sử đọc truyện của bạn</a>
               </p>
             </div>

@@ -35,7 +35,7 @@ class Books extends BaseModel
 
     public function chapters()
     {
-        return $this->hasMany('App\Chapters');
+        return $this->hasMany('App\Chapters','book_id');
     }
 
     public function getCreatedAtAttribute($value)
