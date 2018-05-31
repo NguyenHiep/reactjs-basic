@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@if(!empty($show_slider))
 <section id="slider_top" class="bg-main-section">
   <div class="container">
     <div class="row">
@@ -27,6 +28,7 @@
     </div>
   </div>
 </section>
+@endif
 <main id="content">
   <div class="container">
     <div class="row">

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Books;
+use App\Chapters;
+
 class FrontEndController extends Controller
 {
     public function index()
@@ -18,8 +20,14 @@ class FrontEndController extends Controller
             }
         }
 
-        $data['books_update'] = Books::query()
-            ->where('status', Books::STATUS_ON)
+        $data['books_update'] = Books::query()->with(
+            [
+                'chapters' => function ($query) {
+                    $query->where('status', '=', Chapters::STATUS_ON)
+                        ->orderBy('created_at', 'desc')
+                        ->limit(8);
+                }
+            ])->where('status', Books::STATUS_ON)
             ->whereNotIn('id', $ids)
             ->orderBy('created_at', 'desc')
             ->limit(20)
