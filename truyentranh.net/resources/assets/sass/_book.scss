@@ -1,0 +1,244 @@
+/** Style page book */
+.manga-detail {
+  margin-top: 33px !important;
+}
+.manga-detail .media-body .title-manga {
+  margin-top: 0;
+  font-weight: 700;
+  font-size: 25px;
+}
+.description-update {
+  font-size: 15px;
+  line-height: 23px;
+  margin-top: 10px;
+  a{
+    color: #222;
+    transition: .3s;
+    &:hover{
+      color:#a1a1a1;
+    }
+  }
+  a.current{
+    color: #0e977f;
+  }
+  span{
+    color: #0e977f;
+  }
+
+}
+.follow {
+  background-color: #14BEA0;
+  background-image: url(http://cdn.truyentranh.net/frontend/images/bookbig.png);
+  background-position: 165px 7px;
+  padding: 3px;
+  color: #fff !important;
+  font-size: 18px;
+  line-height: 38px;
+  display: block;
+  margin-top: 10px;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  transition: .3s;
+  text-align: center;
+  &:hover{
+    background-color: #29C8AC;
+  }
+}
+.collapse-contain {
+  border-bottom: 3px solid #0e977f;
+  color: #0e977f;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+.chapter-list .date-release,
+.content .date-release, .text-right {
+  float: right;
+}
+.chapter-list {
+  padding: 15px 25px;
+  a {
+    color: #222;
+    transition: .3s;
+    &:visited{
+      color: #b1b1b1;
+    }
+    &:hover {
+      color: #29c6ab;
+    }
+  }
+  p {
+    border-bottom: 1px dashed #d2d2d2;
+    padding-bottom: 3px;
+  }
+}
+.total-chapter {
+  margin-bottom: 15px;
+}
+.content {
+  overflow: auto;
+  position: relative;
+  max-height: 600px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 15px 0 0 25px;
+}
+.content, .manga-related .thumbnails img, .thumbnails img, table a {
+  width: 100%;
+}
+.content p {
+  border-bottom: 1px dashed #d2d2d2;
+  padding-bottom: 3px;
+}
+.content a {
+  color: #222;
+  transition: .3s;
+}
+.content a:hover {
+  color: #29c6ab;
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background-color: #0e977f !important
+}
+.caption-anime h4 {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #222;
+}
+.StarRating {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100px;
+  height: 25px;
+  position: relative;
+  background: url(http://cdn.truyentranh.net/frontend/images/star-vote.png?1508191135) top left repeat-x;
+  li{
+    padding: 0;
+    margin: 0;
+    float: left;
+    text-indent: -9000px;
+    a{
+      width: 20px;
+      z-index: 20;
+      padding: 0;
+      overflow: hidden;
+      outline: 0;
+      border: 0;
+      &:hover{
+        background: url(http://cdn.truyentranh.net/frontend/images/star-vote.png?1508191135) left bottom;
+        z-index: 2;
+        left: 0
+      }
+    }
+  }
+  li a, li.CurrentRating{
+    position: absolute;
+    height: 26px;
+    text-indent: -9000px;
+    display: block
+  }
+  li.One{
+    width: 20px
+  }
+  li.Two{
+    width: 400px
+  }
+  li.Three{
+    width: 60px
+  }
+  li.Four{
+    width: 80px
+  }
+  li.Five{
+    width: 100px
+  }
+}
+
+.StarRating a.OneStar, .StarRating li.OneStar {
+  left: 0
+}
+
+.StarRating a.OneStar:hover {
+  width: 20px
+}
+
+.StarRating a.TwoStars, .StarRating li.TwoStars {
+  left: 20px
+}
+
+.StarRating a.TwoStars:hover {
+  width: 40px
+}
+
+.StarRating a.ThreeStars, .StarRating li.ThreeStars {
+  left: 40px
+}
+
+.StarRating a.ThreeStars:hover {
+  width: 60px
+}
+
+.StarRating a.FourStars, .StarRating li.FourStars {
+  left: 60px
+}
+
+.StarRating a.FourStars:hover {
+  width: 80px
+}
+
+.StarRating a.FiveStars, .StarRating li.FiveStars {
+  left: 80px
+}
+
+.StarRating a.FiveStars:hover {
+  width: 100px
+}
+
+.StarRating li.CurrentRating {
+  background: url(http://cdn.truyentranh.net/frontend/images/star-vote.png?1508191135) left center;
+  z-index: 1
+}
+
+.StarRating-warning {
+  font-size: smaller;
+  color: maroon
+}
+.media-left{
+  padding-right: 15px;
+}
+.manga-related{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.pagelistcate{
+  margin:  0 auto;
+  .pagination{
+    justify-content: center;
+    li{
+      border-radius: 3px;
+      background: #e1e1e1;
+      color: #222;
+      font-size: 11px;
+      margin-right: 4px;
+      &:hover{
+        background: #258f80;
+        color: #fff;
+      }
+      &.active{
+        background: #258f80;
+        color: #fff;
+      }
+      a, span{
+        display: inline-block;
+        padding: 5px 10px;
+       &:hover{
+         color: #fff;
+       }
+      }
+    }
+  }
+}

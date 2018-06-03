@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed&subset=latin,latin-ext,vietnamese);@charset "UTF-8";
 
 /*$primary: #3097D1;*/
 
@@ -10419,6 +10419,7 @@ a.text-dark:focus {
 
 body {
   font-size: 1em;
+  font-family: 'Roboto Condensed', sans-serif !important;
 }
 
 a,
@@ -10485,7 +10486,8 @@ h3.tilte-update {
 }
 
 .tilte-update,
-.title-body {
+.title-body,
+.title-cate {
   font-size: 1.4em;
   border-bottom: 1px solid #258f80;
   padding-bottom: 5px;
@@ -10524,9 +10526,8 @@ a.tooltips:hover span {
 }
 
 .manga-newest {
-  margin-top: 5px;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 1.2em;
   margin-bottom: 10px;
   color: #222;
   -webkit-transition: .3s;
@@ -10549,6 +10550,11 @@ a.tooltips:hover span {
 
 .mainpage-manga img {
   width: 120px;
+}
+
+.mainpage-manga .media-body p,
+.mainpage-manga span p {
+  margin-bottom: 0;
 }
 
 .callout {
@@ -10906,6 +10912,429 @@ header {
 
 .app-download img {
   width: 100%;
+}
+
+footer {
+  border-bottom: 3px solid #0e977f;
+}
+
+/** Style page book */
+
+.manga-detail {
+  margin-top: 33px !important;
+}
+
+.manga-detail .media-body .title-manga {
+  margin-top: 0;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.description-update {
+  font-size: 15px;
+  line-height: 23px;
+  margin-top: 10px;
+}
+
+.description-update a {
+  color: #222;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.description-update a:hover {
+  color: #a1a1a1;
+}
+
+.description-update a.current {
+  color: #0e977f;
+}
+
+.description-update span {
+  color: #0e977f;
+}
+
+.follow {
+  background-color: #14BEA0;
+  background-image: url(http://cdn.truyentranh.net/frontend/images/bookbig.png);
+  background-position: 165px 7px;
+  padding: 3px;
+  color: #fff !important;
+  font-size: 18px;
+  line-height: 38px;
+  display: block;
+  margin-top: 10px;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  text-align: center;
+}
+
+.follow:hover {
+  background-color: #29C8AC;
+}
+
+.collapse-contain {
+  border-bottom: 3px solid #0e977f;
+  color: #0e977f;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.chapter-list .date-release,
+.content .date-release,
+.text-right {
+  float: right;
+}
+
+.chapter-list {
+  padding: 15px 25px;
+}
+
+.chapter-list a {
+  color: #222;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.chapter-list a:visited {
+  color: #b1b1b1;
+}
+
+.chapter-list a:hover {
+  color: #29c6ab;
+}
+
+.chapter-list p {
+  border-bottom: 1px dashed #d2d2d2;
+  padding-bottom: 3px;
+}
+
+.total-chapter {
+  margin-bottom: 15px;
+}
+
+.content {
+  overflow: auto;
+  position: relative;
+  max-height: 600px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 15px 0 0 25px;
+}
+
+.content,
+.manga-related .thumbnails img,
+.thumbnails img,
+table a {
+  width: 100%;
+}
+
+.content p {
+  border-bottom: 1px dashed #d2d2d2;
+  padding-bottom: 3px;
+}
+
+.content a {
+  color: #222;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.content a:hover {
+  color: #29c6ab;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background-color: #0e977f !important;
+}
+
+.caption-anime h4 {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #222;
+}
+
+.StarRating {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100px;
+  height: 25px;
+  position: relative;
+  background: url(http://cdn.truyentranh.net/frontend/images/star-vote.png?1508191135) top left repeat-x;
+}
+
+.StarRating li {
+  padding: 0;
+  margin: 0;
+  float: left;
+  text-indent: -9000px;
+}
+
+.StarRating li a {
+  width: 20px;
+  z-index: 20;
+  padding: 0;
+  overflow: hidden;
+  outline: 0;
+  border: 0;
+}
+
+.StarRating li a:hover {
+  background: url(http://cdn.truyentranh.net/frontend/images/star-vote.png?1508191135) left bottom;
+  z-index: 2;
+  left: 0;
+}
+
+.StarRating li a,
+.StarRating li.CurrentRating {
+  position: absolute;
+  height: 26px;
+  text-indent: -9000px;
+  display: block;
+}
+
+.StarRating li.One {
+  width: 20px;
+}
+
+.StarRating li.Two {
+  width: 400px;
+}
+
+.StarRating li.Three {
+  width: 60px;
+}
+
+.StarRating li.Four {
+  width: 80px;
+}
+
+.StarRating li.Five {
+  width: 100px;
+}
+
+.StarRating a.OneStar,
+.StarRating li.OneStar {
+  left: 0;
+}
+
+.StarRating a.OneStar:hover {
+  width: 20px;
+}
+
+.StarRating a.TwoStars,
+.StarRating li.TwoStars {
+  left: 20px;
+}
+
+.StarRating a.TwoStars:hover {
+  width: 40px;
+}
+
+.StarRating a.ThreeStars,
+.StarRating li.ThreeStars {
+  left: 40px;
+}
+
+.StarRating a.ThreeStars:hover {
+  width: 60px;
+}
+
+.StarRating a.FourStars,
+.StarRating li.FourStars {
+  left: 60px;
+}
+
+.StarRating a.FourStars:hover {
+  width: 80px;
+}
+
+.StarRating a.FiveStars,
+.StarRating li.FiveStars {
+  left: 80px;
+}
+
+.StarRating a.FiveStars:hover {
+  width: 100px;
+}
+
+.StarRating li.CurrentRating {
+  background: url(http://cdn.truyentranh.net/frontend/images/star-vote.png?1508191135) left center;
+  z-index: 1;
+}
+
+.StarRating-warning {
+  font-size: smaller;
+  color: maroon;
+}
+
+.media-left {
+  padding-right: 15px;
+}
+
+.manga-related {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.pagelistcate {
+  margin: 0 auto;
+}
+
+.pagelistcate .pagination {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pagelistcate .pagination li {
+  border-radius: 3px;
+  background: #e1e1e1;
+  color: #222;
+  font-size: 11px;
+  margin-right: 4px;
+}
+
+.pagelistcate .pagination li:hover {
+  background: #258f80;
+  color: #fff;
+}
+
+.pagelistcate .pagination li.active {
+  background: #258f80;
+  color: #fff;
+}
+
+.pagelistcate .pagination li a,
+.pagelistcate .pagination li span {
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+.pagelistcate .pagination li a:hover,
+.pagelistcate .pagination li span:hover {
+  color: #fff;
+}
+
+/** Style for categories */
+
+.title-cate {
+  margin-top: 33px;
+}
+
+.cate-result {
+  margin-top: 10px;
+  background: #f2f2f2;
+  padding: 5px;
+}
+
+.cate-result,
+.search-result,
+.search-resulted {
+  border-bottom: 2px solid #d2d2d2;
+}
+
+.cate-result .cate-order {
+  margin-top: 8px;
+  margin-left: 10px;
+  padding-bottom: 8px;
+}
+
+.cate-result .cate-order a.active,
+.cate-result .cate-order a:hover {
+  background-color: #FBA500;
+  color: #fff;
+}
+
+.cate-result .cate-order a {
+  font-weight: 700;
+  padding: 5px 10px;
+  color: #222;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.list-watch {
+  margin-top: 10px;
+}
+
+.list-watch .well {
+  margin-bottom: 10px !important;
+}
+
+.well {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e8e8e8), to(#f5f5f5));
+  background-image: linear-gradient(to bottom, #e8e8e8 0, #f5f5f5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe8e8e8', endColorstr='#fff5f5f5', GradientType=0);
+  background-repeat: repeat-x;
+  border-color: #dcdcdc;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.well a.Active {
+  background: #258f80 !important;
+  color: #fff !important;
+}
+
+.list-watch a {
+  padding: 0 12px;
+  color: #222;
+}
+
+.list-watch a,
+.list-watched a {
+  font-size: 16px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.list-watch a:hover {
+  color: #258f80;
+}
+
+table {
+  margin-top: 10px;
+}
+
+table .table-head {
+  background: #e1e1e1;
+}
+
+table td {
+  position: relative;
+}
+
+table a {
+  color: #222;
+  display: block;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+table a:hover {
+  color: #29c6ab;
+}
+
+table th p {
+  margin: 0;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */

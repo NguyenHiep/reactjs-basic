@@ -18,6 +18,11 @@ class Categories extends BaseModel
         'status',
     ];
 
+    public function books()
+    {
+        return $this->belongsToMany('App\Books');
+    }
+
     public function getCreatedAtAttribute($value)
     {
         return Carbon::parse($value)->format('d/m/Y');

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 use App\Books;
+use App\Categories;
 use App\Chapters;
 
 class FrontEndController extends Controller
 {
     public function index()
     {
+        $data['categories'] = Categories::get_option_list();
         $data['books_new'] = Books::query()
             ->where('status', Books::STATUS_ON)
             ->orderBy('created_at', 'desc')
@@ -32,6 +34,7 @@ class FrontEndController extends Controller
             ->orderBy('created_at', 'desc')
             ->limit(20)
             ->get();
+        $data['show_slider'] = true;
         return view('home', $data);
     }
 }

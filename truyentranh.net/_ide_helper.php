@@ -13878,7 +13878,9 @@ namespace  {
 
     class Artisan extends \Illuminate\Support\Facades\Artisan {}
 
-    class Auth extends \Illuminate\Support\Facades\Auth {}
+    class Auth extends \Illuminate\Support\Facades\Auth {
+        public static function routes() { }
+    }
 
     class Blade extends \Illuminate\Support\Facades\Blade {}
 
