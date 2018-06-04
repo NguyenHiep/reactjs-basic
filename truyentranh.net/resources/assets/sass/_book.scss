@@ -242,3 +242,74 @@
     }
   }
 }
+#chapter_detail{
+  background-color: #1E202A !important;
+}
+.chapter-content{
+  margin-top: 25px;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  background: #FFFFFF;
+  img{
+    max-width: 100%;
+    margin: 0 auto 15px;
+  }
+}
+.breadcrumb-contain {
+  background-color: #1e202a;
+  padding-bottom: 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+.breadcrumb {
+  padding: 0 !important;
+  background: 0 0 !important;
+  margin-bottom: 5px !important;
+  margin-top: 5px;
+}
+.breadcrumb > li + li:before {
+  content: '>>' !important;
+}
+
+.breadcrumb>li+li:before {
+  padding: 0 5px;
+  color: #ccc;
+  content: "/\00a0";
+}
+.breadcrumb a {
+  color: #fff !important;
+}
+.chapter-title, .chapter-titlebig {
+  color: #fff;
+  font-size: 30px;
+  margin-top: 15px;
+}
+.chapter-control {
+  margin-top: 25px;
+  text-align: right;
+}
+.paddfixboth {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.rightalign {
+  text-align: left;
+}
+.dropdown-manga {
+  height: 31px;
+  width: 100%;
+  -webkit-appearance: none;
+  padding-left: 5px;
+  background: url(http://cdn.truyentranh.net/frontend/images/toolbar-dropdown-icon.png) no-repeat #fff;
+  background-position-y: 8px;
+  background-position-x: 293px;
+  box-shadow: none;
+}
+
+.btn-green, .dropdown-manga, .form-link, a.tooltips, a.tooltips-anime, a.tooltips-listm {
+  outline: 0;
+}
+.paddselectfix {
+  padding-right: 5px !important;
+  padding-left: 5px !important;
+}

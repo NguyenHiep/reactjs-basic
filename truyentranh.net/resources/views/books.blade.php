@@ -6,11 +6,11 @@
     <div class="row">
       <div class="col-md-12">
         <div class="media manga-detail">
-          <div class="media-left cover-detail">
-            @if(!empty($book->image))
+          @if(!empty($book->image))
+            <div class="media-left cover-detail">
               <img class="pr-2" src="{!! asset("uploads/thumbnail/thumbnail_".$book->image) !!}" alt="{{ $book->name }}" />
-            @endif
-          </div>
+            </div>
+          @endif
           <div class="media-body">
             <h1 class="title-manga">{{ $book->name }}</h1>
             <div class="rating-online">

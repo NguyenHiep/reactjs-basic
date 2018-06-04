@@ -11,9 +11,9 @@
     <div class="category">
       <div class="row">
         @if (count($categories) > 0)
-       @foreach($categories as $category)
+         @foreach($categories as $category)
             <div class="col-6">
-              <a href="{{ url("/the-loai/".$category->slug) }}" title="4 koma"> {{ $category->name }}{{--<span> (2)</span>--}}</a>
+              <a href="{{ url("/the-loai/".$category->slug) }}" title="{{ $category->name }}"> {{ $category->name }}{{--<span> (2)</span>--}}</a>
             </div>
          @endforeach
         @endif

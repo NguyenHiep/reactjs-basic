@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Manage;
 
+use App\Books_Categories;
 use App\Categories;
 use App\Http\Requests\BoooksRequest;
 use App\Http\Controllers\AppBaseController;
@@ -93,6 +94,16 @@ class BooksController extends AppBaseController
             DB::beginTransaction();
             $this->books->fill($inputs);
             $this->books->save();
+            if(!empty($this->books->categories)){
+                $books_categories = [];
+                foreach ($this->books->categories as $key => $cat_id){
+                    $books_categories['books_id']      = $this->books->id;
+                    $books_categories['categories_id'] = $cat_id;
+                    $model_books_categories = new Books_Categories();
+                    $model_books_categories->fill($books_categories);
+                    $model_books_categories->save();
+                }
+            }
             DB::commit();
             return redirect()->route('books.index')->with([
                 'message' => __('system.message.create'),
@@ -104,7 +115,7 @@ class BooksController extends AppBaseController
             Log::error([$e->getMessage(), __METHOD__]);
         }
         return redirect()->back()->withInput($inputs)->with([
-            'message' => __('system.message.errorss', ['errors' => 'Create books is failed']),
+            'message' => __('system.message.errors', ['errors' => 'Create books is failed']),
             'status'  => self::CTRL_MESSAGE_ERROR,
         ]);
     }
@@ -162,6 +173,21 @@ class BooksController extends AppBaseController
         try {
             DB::beginTransaction();
             $book->update($inputs);
+            // Delete all
+            if(!empty($book->categories)){
+                Books_Categories::where('books_id', $book->id)->delete();
+            }
+            // Insert new to db
+            if(!empty($book->categories)){
+                $books_categories = [];
+                foreach ($book->categories as $key => $cat_id){
+                    $books_categories['books_id']      = $book->id;
+                    $books_categories['categories_id'] = $cat_id;
+                    $model_books_categories = new Books_Categories();
+                    $model_books_categories->fill($books_categories);
+                    $model_books_categories->save();
+                }
+            }
             DB::commit();
             return redirect()->route('books.index')->with([
                 'message' => __('system.message.update'),

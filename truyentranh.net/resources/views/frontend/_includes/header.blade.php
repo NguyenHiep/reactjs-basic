@@ -34,14 +34,17 @@
     </div>
   </div>
 </nav>
+@if(count($chapters) > 0)
 <section class="bg-post-stick">
   <div class="container">
     <div class="row">
       <div class="col-12">
-        @for($i = 1; $i<=3; $i++)
-          <div class="post-stick" key={post_slick.id}><a href={post_slick.url} title={post_slick.title}>{post_slick.title} <img src="http://cdn.truyentranh.net/frontend/images/hot.gif" /></a></div>
-        @endfor
+        @foreach($chapters as $chapter)
+          <div class="post-stick"><a href="{{ url($chapter->book_slug.'/'.$chapter->slug) }}" title="{{ $chapter->name }}">{{$chapter->name}} <img src="http://cdn.truyentranh.net/frontend/images/hot.gif" /></a>
+          </div>
+        @endforeach
       </div>
     </div>
   </div>
 </section>
+@endif

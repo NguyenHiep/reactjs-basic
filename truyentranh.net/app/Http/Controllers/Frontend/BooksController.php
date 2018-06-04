@@ -38,4 +38,24 @@ class BooksController extends FrontEndController
         return view('books',$data );
     }
 
+    public function chapter_detail($book_slug, $chapter_slug)
+    {
+        if(empty($book_slug) || empty($chapter_slug) ){
+            return abort(404);
+        }
+        $book = Books::where('slug', $book_slug)
+            ->where('status', Books::STATUS_ON)
+            ->first();
+        if(empty($book)){
+            return abort(404);
+        }
+        $chapter = $book->chapters()
+            ->where('slug', $chapter_slug)
+            ->where('status', Chapters::STATUS_ON)
+            ->first();
+        $data['book']       = $book;
+        $data['chapter']    = $chapter;
+        $data['categories'] = Categories::get_option_list();
+        return view('books-detail',$data );
+    }
 }

@@ -34,7 +34,19 @@ class FrontEndController extends Controller
             ->orderBy('created_at', 'desc')
             ->limit(20)
             ->get();
-        $data['show_slider'] = true;
+
+        $data['show_slider'] = Books::query()->with(
+            [
+                'chapters' => function ($query) {
+                    $query->where('status', '=', Chapters::STATUS_ON)
+                        ->orderBy('created_at', 'desc')
+                        ->first();
+                }
+            ])->where('status', Books::STATUS_ON)
+            ->where('sticky', Books::STATUS_ON)
+            ->orderBy('created_at', 'desc')
+            ->limit(12)
+            ->get();
         return view('home', $data);
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('sliders')
-  @if(!empty($show_slider))
+  @if(!empty($show_slider) && count($show_slider) > 0)
     <section id="slider_top" class="bg-main-section">
       <div class="container">
         <div class="row">
@@ -9,21 +9,27 @@
             <h3 class="tilte-update">Truyện hot mới ra lò</h3>
           </div>
           <div class="home-sliders col-md-12">
-            @for($i = 1; $i <=12; $i++ )
+            @foreach($show_slider as $book)
               <div class="hot-manga">
                 <div class="thumbnails">
-                  <a href="" class="slick-item">
-                    <img src="{{ asset('uploads/images/1527278578_c102e895a90d80cb49a9565c3b9207cd.jpg') }}" alt="This Man"/>
-                    <h3 class="manga-title">This Man</h3>
+                  <a href="{{ url($book->slug) }}" class="slick-item">
+                    @if(!empty($book->image))
+                      <img class="pr-2" src="{!! asset("uploads/thumbnail/thumbnail_".$book->image) !!}" alt="{{ $book->name }}" />
+                    @endif
+                    <h3 class="manga-title">{{ $book->name }}</h3>
                   </a>
                 </div>
                 <div class="caption">
-                  <a href="#" title="This Man Chap 003" class="Chapter">
-                    <p class="chapter"><a href="#">This Man Chap 003</a> </p>
-                  </a>
+                  @if(count($book->chapters))
+                    @foreach($book->chapters as $chapter)
+                      <a href="{{ url($book->slug.'/'.$chapter->slug) }}" title="{{ $chapter->name }}" class="Chapter">
+                        <p class="chapter"><a href="{{ url($book->slug.'/'.$chapter->slug) }}">{{ $chapter->name }}</a> </p>
+                      </a>
+                    @endforeach
+                  @endif
                 </div>
               </div>
-            @endfor
+            @endforeach
           </div>
         </div>
       </div>
