@@ -356,4 +356,22 @@ header{
 footer {
   border-bottom: 3px solid #0e977f;
 }
-
+#back-top {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  z-index: 999;
+}
+#back-top span {
+  width: 100px;
+  height: 70px;
+  display: block;
+  margin-bottom: 7px;
+  background: url(http://cdn.truyentranh.net/frontend/images/scroll-topfix.png) center no-repeat;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  background-size: 50px 50px;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+}

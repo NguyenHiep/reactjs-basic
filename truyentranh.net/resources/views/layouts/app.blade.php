@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>{{ config('app.name', 'Laravel') }}</title>
+  <title>Đọc truyện tranh online | yeutruyentranh.com</title>
+  <meta name="keywords" content="Đọc truyện tranh online,One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,..." />
+  <meta name="description" content="Đọc truyện tranh online mới nhất, nhanh nhất như One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,.." >
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link href="{{ asset('assets/frontend/plugins/slick/slick/slick.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/frontend/plugins/slick/slick/slick-theme.css') }}" rel="stylesheet">
@@ -18,7 +20,6 @@
 <div id="app">
   @include('frontend._includes.header')
   @yield('sliders')
-  
     @php
       $router_expect = [
           'front.books.showdetail',
@@ -29,6 +30,7 @@
     @if(in_array(Route::currentRouteName(), $router_expect))
       @yield('content')
     @else
+      @yield('breadcrumb')
       <main id="content">
         <div class="container">
           <div class="row">
@@ -61,6 +63,8 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="{{ asset('assets/frontend/plugins/slick/slick/slick.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/plugins/scrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/main.js') }}"></script>

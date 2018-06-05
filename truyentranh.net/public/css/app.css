@@ -10918,6 +10918,26 @@ footer {
   border-bottom: 3px solid #0e977f;
 }
 
+#back-top {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  z-index: 999;
+}
+
+#back-top span {
+  width: 100px;
+  height: 70px;
+  display: block;
+  margin-bottom: 7px;
+  background: url(http://cdn.truyentranh.net/frontend/images/scroll-topfix.png) center no-repeat;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  background-size: 50px 50px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
 /** Style page book */
 
 .manga-detail {
@@ -11224,6 +11244,7 @@ table a {
 
 #chapter_detail {
   background-color: #1E202A !important;
+  padding-bottom: 25px;
 }
 
 .chapter-content {
@@ -11278,11 +11299,6 @@ table a {
   text-align: right;
 }
 
-.paddfixboth {
-  padding-right: 0 !important;
-  padding-left: 0 !important;
-}
-
 .rightalign {
   text-align: left;
 }
@@ -11309,8 +11325,71 @@ a.tooltips-listm {
 }
 
 .paddselectfix {
-  padding-right: 5px !important;
-  padding-left: 5px !important;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+.btn-green,
+.modal-header {
+  background-color: #0e977f;
+}
+
+.btn-green {
+  border-color: #0e977f;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-green,
+.close {
+  color: #fff !important;
+}
+
+.btn-green,
+.modal-header {
+  background-color: #0e977f;
+}
+
+.btn-default,
+.btn-green,
+.button-login {
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.modal-footer {
+  text-align: left !important;
+}
+
+.die-linknd {
+  margin-bottom: 0;
+}
+
+.die-linknd .btn-diepage {
+  border-color: #F73D1F;
+}
+
+.die-link .btn-diepage,
+.die-linknd .btn-diepage {
+  padding: 10px;
+  font-size: 18px;
+  background-color: #F73D1F;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+}
+
+.form-link {
+  width: 100%;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding: 5px;
+}
+
+.modal-title {
+  text-align: left;
+  color: #fff;
 }
 
 /** Style for categories */

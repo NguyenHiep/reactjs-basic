@@ -1,7 +1,22 @@
 @extends('layouts.app')
 
+@section('breadcrumb')
+<div class="breadcrumb-contain">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a href="{{ url('/') }}"><i class="fa fa-home"></i></a></li>
+          <li><a href="javascript:;" title="{{ $book->name }}"> {{ $book->name }}</a></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection
+
 @section('content')
-<div class="wraper-content">
+<div class="wraper-content row">
   <div class="col-md-12">
     <div class="row">
       <div class="col-md-12">
@@ -13,7 +28,7 @@
           @endif
           <div class="media-body">
             <h1 class="title-manga">{{ $book->name }}</h1>
-            <div class="rating-online">
+           {{-- <div class="rating-online">
               <div class="row">
                 <div class="col-md-3">
                   <ul class="StarRating" id="vote" data-href="http://truyentranh.net/vote.json" data-id="{{ $book->id }}" data-voted="false">
@@ -42,7 +57,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div>--}}
             <p class="description-update">
               <span>Lượt xem:</span>{{ $book->views }}<br>
               <span>Tên khác:</span>{{ $book->name_dif }}<br>

@@ -1,5 +1,20 @@
 @extends('layouts.app')
 
+@section('breadcrumb')
+  <div class="breadcrumb-contain">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ol class="breadcrumb">
+            <li><a href="{{ url('/') }}"><i class="fa fa-home"></i></a></li>
+            <li><a href="javascript:;" title="{{ $category->name }}"> {{ $category->name }}</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+@endsection
+
 @section('content')
 <div class="wraper-content">
   <h1 class="title-cate">{{ $category->name }}</h1>
