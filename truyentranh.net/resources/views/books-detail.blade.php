@@ -70,27 +70,6 @@
           <div class="die-linknd text-center">
             <button type="button" data-toggle="modal" data-target=".bs-example-modal-sm" class="btn-diepage"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Báo lỗi chương
             </button>
-            <div class="modal fade bs-example-modal-sm">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <form name="report-form" id="report-form" method="POST" action="#">
-                    <input type="hidden" name="id" value="31387">
-                    <input type="hidden" name="cid" value="149993">
-                    <div class="modal-header">
-                      <h4 id="gridSystemModalLabel" class="modal-title">Báo lỗi chương</h4>
-                      <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                    </div>
-                    <div class="modal-body">
-                      <textarea rows="3" name="message" placeholder="Mô tả lỗi" class="form-link"></textarea>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="submit" class="btn btn-green">Gửi thông báo</button>
-                      <button type="button" data-dismiss="modal" class="btn btn-default">Đóng</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -126,8 +105,8 @@
               <div class="modal-dialog">
                 <div class="modal-content">
                   <form name="report-form" id="report-form" method="POST" action="#">
-                    <input type="hidden" name="id" value="31387">
-                    <input type="hidden" name="cid" value="149993">
+                    <input type="hidden" name="id" value="{{ $book->id }}">
+                    <input type="hidden" name="cid" value="{{ $chapter->id }}">
                     <div class="modal-header">
                       <h4 id="gridSystemModalLabel" class="modal-title">Báo lỗi chương</h4>
                       <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>

@@ -27,6 +27,10 @@ class Books extends BaseModel
         'reviews',
         'status',
         'created_by',
+        'seo_title',
+        'seo_slug',
+        'seo_description',
+        'seo_keywords',
         'created_at',
     ];
     protected $casts = [

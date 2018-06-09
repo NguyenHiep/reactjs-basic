@@ -14,12 +14,17 @@ class Chapters extends BaseModel
         'id',
         'book_id',
         'name',
+        'episodes',
         'slug',
         'content',
         'sticky',
         'views',
         'status',
         'created_by',
+        'seo_title',
+        'seo_slug',
+        'seo_description',
+        'seo_keywords',
         'created_at',
     ];
 

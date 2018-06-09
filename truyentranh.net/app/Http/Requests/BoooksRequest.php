@@ -47,6 +47,10 @@ class BoooksRequest extends FormRequest
             'views'           => 'nullable|integer',
             'status'          => 'required|integer|max:4',
             'created_by'      => 'integer|max:4',
+            'seo_title'       => 'nullable|string|max:255',
+            'seo_slug'        => 'nullable|string|max:255',
+            'seo_description' => 'nullable|string|max:255',
+            'seo_keywords'    => 'nullable|string|max:255',
         ];
     }
 

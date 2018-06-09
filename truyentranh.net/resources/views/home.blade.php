@@ -126,7 +126,7 @@
                 <ul class="hotup-list list-unstyled clearfix">
                   @if(!empty($book->chapters))
                     @foreach( $book->chapters as $chapter)
-                      <li><a class="latest-chap" href="{{ url($book->slug.'/'.$chapter->slug) }}" target="_blank" title="{{$chapter->name}}">{{$chapter->name}}</a></li>
+                      <li><a class="latest-chap" href="{{ url($book->slug.'/'.$chapter->slug) }}" target="_blank" title="{{$chapter->name}}">{{$chapter->episodes}}</a></li>
                     @endforeach
                   @endif
                 </ul>

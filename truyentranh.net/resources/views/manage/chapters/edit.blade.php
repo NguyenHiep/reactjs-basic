@@ -3,8 +3,8 @@
   <div id="main">
     <ol class="breadcrumb">
       <li><a href="{{ route('manage') }}"><i class="fa fa-home"></i> Trang quản trị</a></li>
-      <li><a href="{{ route('books.index') }}">Truyện</a></li>
-      <li class="active">Cập nhật truyện</li>
+      <li><a href="{{ route('chapters.index') }}">Danh sách chương</a></li>
+      <li class="active">Cập nhật chương</li>
     </ol>
     <div class="col-xs-12">
       @include('manage._includes.message')
@@ -15,25 +15,23 @@
         <div class="form-group">
           <label class="col-sm-2 control-label required">Chọn truyện</label>
           <div class="col-sm-10">
-            <div class="btn-group">
-              {{ Form::select($key, $books, old($key,  $record->{$key}), ['class' => 'form-control']) }}
-            </div>
+            {{ Form::select($key, $books, old($key,  $record->{$key}), ['class' => 'form-control']) }}
             @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
         </div>
         @php $key = 'name'; @endphp
         <div class="form-group">
-          <label for="content" class="col-sm-2 control-label required">Tên truyện</label>
+          <label for="content" class="col-sm-2 control-label required">Tên chương</label>
           <div class="col-sm-10">
             {!! Form::text($key,  old($key, $record->{$key}), ['class' => 'form-control ', 'placeholder' => 'Nhập tên truyện tối đa 191 ký tự']) !!}
             @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
         </div>
-        @php $key = 'content'; @endphp
+        @php $key = 'episodes'; @endphp
         <div class="form-group">
-          <label for="content" class="col-sm-2 control-label required">Nội dung</label>
+          <label for="content" class="col-sm-2 control-label required">Tập</label>
           <div class="col-sm-10">
-            {!! Form::textarea($key,  old($key, $record->{$key}), ['class' => 'ckeditor form-control ', 'rows' => '5', 'placeholder' => 'Nhập mô tả ngắn cho truyện']) !!}
+            {!! Form::text($key,  old($key, $record->{$key}), ['class' => 'form-control ', 'placeholder' => 'VD: Chap 001, Chap 122, Chap 300, ....']) !!}
             @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
         </div>
@@ -55,11 +53,52 @@
             @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
         </div>
+        @php $key = 'content'; @endphp
+        <div class="form-group">
+          <label for="content" class="col-sm-2 control-label required">Nội dung</label>
+          <div class="col-sm-10">
+            {!! Form::textarea($key,  old($key, $record->{$key}), ['class' => 'ckeditor form-control ', 'rows' => '5', 'placeholder' => 'Nhập mô tả ngắn cho truyện']) !!}
+            @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
+          </div>
+        </div>
+        <hr>
+        @php $key = 'seo_title';@endphp
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Tiêu đề SEO</label>
+          <div class="col-sm-10">
+            {!! Form::text($key, old($key, $record->{$key}), ['class' => 'form-control']) !!}
+            @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
+          </div>
+        </div>
+        @php $key = 'seo_slug';@endphp
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Slug SEO</label>
+          <div class="col-sm-10">
+            {!! Form::text($key, old($key, $record->{$key}), ['class' => 'form-control']) !!}
+            @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
+          </div>
+        </div>
+        @php $key = 'seo_description';@endphp
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Mô tả SEO</label>
+          <div class="col-sm-10">
+            {!! Form::textarea($key, old($key, $record->{$key}), ['rows' => '5', 'class' => 'form-control']) !!}
+            @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
+          </div>
+        </div>
+        @php $key = 'seo_keywords';@endphp
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Từ khóa SEO</label>
+          <div class="col-sm-10">
+            {!! Form::text($key, old($key, $record->{$key}), ['class' => 'form-control']) !!}
+            @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
+          </div>
+        </div>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-submit"><small><i class="fa fa-plus"></i></small> Thêm mới</button>
             <button type="submit" class="btn btn-danger"><small><i class="fa fa-save"></i></small> Lưu nháp</button>
-            <a class="btn btn-warning" href="{{ route('books.index') }}"><small><i class="fa fa-reply"></i></small> Trở về</a>
+            <a class="btn btn-warning" href="{{ route('chapters.index') }}"><small><i class="fa fa-reply"></i></small> Trở về</a>
             <a href="" class="btn btn-primary"><small><i class="fa fa-bars" data-original-title="" title=""></i></small>Thêm chương mới</a>
           </div>
         </div>
