@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class Chapters extends BaseModel
 {
@@ -54,5 +55,16 @@ class Chapters extends BaseModel
             $model->whereDate('created_at', '>=', $searchs['created_at']);
         }
         return $model;
+    }
+
+    public static function get_option_list_by_book_id($book_id = null){
+        $chapters = Chapters::select('chapters.name', 'chapters.slug', 'books.name as book_name', 'books.slug as book_slug')
+            ->join('books', 'books.id', '=', 'chapters.book_id')
+            ->where('books.status', Books::STATUS_ON)
+            ->where('chapters.status', Chapters::STATUS_ON)
+            ->where('chapters.book_id', $book_id)
+            ->orderBy('chapters.id', 'desc')
+            ->get();
+        return $chapters;
     }
 }

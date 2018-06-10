@@ -10,6 +10,7 @@
           </div>
           <div class="home-sliders col-md-12">
             @foreach($show_slider as $book)
+              @if(count($book->chapters) > 0)
               <div class="hot-manga">
                 <div class="thumbnails">
                   <a href="{{ url($book->slug) }}" class="slick-item">
@@ -20,15 +21,17 @@
                   </a>
                 </div>
                 <div class="caption">
-                  @if(count($book->chapters))
                     @foreach($book->chapters as $chapter)
+                      @if ($loop->iteration > 1)
+                        @break
+                      @endif
                       <a href="{{ url($book->slug.'/'.$chapter->slug) }}" title="{{ $chapter->name }}" class="Chapter">
-                        <p class="chapter"><a href="{{ url($book->slug.'/'.$chapter->slug) }}">{{ $chapter->name }}</a> </p>
+                        <p class="chapter"><a href="{{ url($book->slug.'/'.$chapter->slug) }}">{{ $chapter->episodes }}</a> </p>
                       </a>
                     @endforeach
-                  @endif
                 </div>
               </div>
+              @endif
             @endforeach
           </div>
         </div>
@@ -124,8 +127,11 @@
             <div class="row">
               <div class="col-12">
                 <ul class="hotup-list list-unstyled clearfix">
-                  @if(!empty($book->chapters))
+                  @if(count($book->chapters) > 0 )
                     @foreach( $book->chapters as $chapter)
+                      @if ($loop->iteration > 8)
+                        @break
+                      @endif
                       <li><a class="latest-chap" href="{{ url($book->slug.'/'.$chapter->slug) }}" target="_blank" title="{{$chapter->name}}">{{$chapter->episodes}}</a></li>
                     @endforeach
                   @endif

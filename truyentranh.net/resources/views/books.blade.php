@@ -94,13 +94,16 @@
         <div class="total-chapter">
           <p class="collapse-contain"><span class="text-left">Chương mới</span></p>
           <div class="chapter-list">
-            @if(!empty($book->chapters))
+            @if(count($book->chapters) > 0)
               @foreach( $book->chapters as $chapter)
+                @if ($loop->iteration > 5) @break @endif
                 <p>
                   <a href="{{ url($book->slug.'/'.$chapter->slug) }}" title="{{$chapter->name}}" target="_blank">{{$chapter->name}} <span class="date-release">{{ $chapter->created_at }}</span>
                   </a>
                 </p>
               @endforeach
+            @else
+              <p>Đang cập nhật</p>
             @endif
           </div>
         </div>
@@ -108,13 +111,15 @@
           <p class="collapse-contain"><span class="text-left">Danh sách chương</span></p>
           <section id="examples">
             <div class="content mCustomScrollbar">
-              @if(!empty($book->chapters))
+              @if(count($book->chapters) > 0)
                 @foreach( $book->chapters as $chapter)
                   <p>
                     <a href="{{ url($book->slug.'/'.$chapter->slug) }}" title="{{$chapter->name}}" target="_blank">{{$chapter->name}} <span class="date-release">{{ $chapter->created_at }}</span>
                     </a>
                   </p>
                 @endforeach
+              @else
+                <p>Đang cập nhật</p>
               @endif
             </div>
           </section>

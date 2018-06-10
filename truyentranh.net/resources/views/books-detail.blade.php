@@ -27,25 +27,30 @@
           <div class="chapter-control">
             <div class="row">
               <div class="col-xs-2 col-lg-2 paddfixboth">
-                <a href="http://truyentranh.net/killing-morph/Chap-035" class="LeftArrow" title="Killing Morph Chap 035">
+                @if(!empty($previous))
+                <a href="{{ url($book->slug.'/'.$previous->slug) }}" title="{{$previous->name}}" class="LeftArrow">
                   <img src="http://cdn.truyentranh.net/frontend/images/arrowleft.jpg" alt="leftarrow">
                 </a>
+                @endif
               </div>
               <div class="col-xs-8 col-lg-8 paddselectfix">
                 <select class="dropdown-manga" data-placeholder="Chọn chương truyện" rel="chap-select">
                   <optgroup label="Tổng hợp">
-                    @for($i = 1; $i<=999; $i++)
-                    <option value="http://truyentranh.net/killing-morph/Chap-{{ $i }}">
-                      Killing Morph Chap {{ $i }}
-                    </option>
-                    @endfor
+                    @if(isset($list_chapters))
+                    @foreach($list_chapters as $objchapter)
+                      @php $selected = ($chapter->slug === $objchapter->slug) ?  'selected' : ''; @endphp
+                      <option value="{{ url($objchapter->book_slug.'/'.$objchapter->slug) }}" {{ $selected }}>{{ $objchapter->name }}</option>
+                    @endforeach
+                    @endif
                   </optgroup>
                 </select>
               </div>
               <div class="col-xs-2 col-lg-2 paddfixboth rightalign">
-                <a href="http://truyentranh.net/killing-morph/Chap-037" class="RightArrow" title="Killing Morph Chap 037">
-                  <img src="http://cdn.truyentranh.net/frontend/images/arrowright.jpg" alt="rightarrow">
-                </a>
+                @if(!empty($next))
+                  <a href="{{ url($book->slug.'/'.$next->slug) }}" title="{{$next->name}}" class="RightArrow">
+                    <img src="http://cdn.truyentranh.net/frontend/images/arrowright.jpg" alt="rightarrow">
+                  </a>
+                @endif
               </div>
             </div>
           </div>
@@ -125,33 +130,38 @@
           </div>
         </div>
       </div>
-      <div class="row chapter-toolbar ">
+      <div class="row chapter-toolbar">
         <div class="col-md-7 col-sm-6">
-          <h1 class="chapter-title">{{ $chapter->name }}</h1>
+          <h2 class="chapter-title">{{ $chapter->name }}</h2>
         </div>
         <div class="col-sm-6 col-md-5 col-lg-5 paddfixboth">
           <div class="chapter-control">
             <div class="row">
               <div class="col-xs-2 col-lg-2 paddfixboth">
-                <a href="http://truyentranh.net/killing-morph/Chap-035" class="LeftArrow" title="Killing Morph Chap 035">
-                  <img src="http://cdn.truyentranh.net/frontend/images/arrowleft.jpg" alt="leftarrow">
-                </a>
+                @if(!empty($previous))
+                  <a href="{{ url($book->slug.'/'.$previous->slug) }}" title="{{$previous->name}}" class="LeftArrow">
+                    <img src="http://cdn.truyentranh.net/frontend/images/arrowleft.jpg" alt="leftarrow">
+                  </a>
+                @endif
               </div>
               <div class="col-xs-8 col-lg-8 paddselectfix">
                 <select class="dropdown-manga" data-placeholder="Chọn chương truyện" rel="chap-select">
                   <optgroup label="Tổng hợp">
-                    @for($i = 1; $i<=999; $i++)
-                      <option value="http://truyentranh.net/killing-morph/Chap-{{ $i }}">
-                        Killing Morph Chap {{ $i }}
-                      </option>
-                    @endfor
+                    @if(isset($list_chapters))
+                      @foreach($list_chapters as $objchapter)
+                        @php $selected = ($chapter->slug === $objchapter->slug) ?  'selected' : ''; @endphp
+                        <option value="{{ url($objchapter->book_slug.'/'.$objchapter->slug) }}" {{ $selected }}>{{ $objchapter->name }}</option>
+                      @endforeach
+                    @endif
                   </optgroup>
                 </select>
               </div>
               <div class="col-xs-2 col-lg-2 paddfixboth rightalign">
-                <a href="http://truyentranh.net/killing-morph/Chap-037" class="RightArrow" title="Killing Morph Chap 037">
-                  <img src="http://cdn.truyentranh.net/frontend/images/arrowright.jpg" alt="rightarrow">
-                </a>
+                @if(!empty($next))
+                  <a href="{{ url($book->slug.'/'.$next->slug) }}" title="{{$next->name}}" class="RightArrow">
+                    <img src="http://cdn.truyentranh.net/frontend/images/arrowright.jpg" alt="rightarrow">
+                  </a>
+                @endif
               </div>
             </div>
           </div>

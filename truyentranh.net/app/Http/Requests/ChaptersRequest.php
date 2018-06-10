@@ -34,7 +34,8 @@ class ChaptersRequest extends FormRequest
         }
         return [
             'book_id'         => 'required|integer',
-            'name'            => 'required|string|max:255|unique:chapters,name' . (($this->method() === 'PUT') ? ',' . $this->route()->parameter('chapter') : ''),
+            //'name'            => 'required|string|max:255|unique:chapters,name' . (($this->method() === 'PUT') ? ',' . $this->route()->parameter('chapter') : ''),
+            'name'            => 'required|string|max:255|',
             'episodes'        => 'string|max:255',
             'slug'            => 'string|max:255',
             'content'         => 'required|string',

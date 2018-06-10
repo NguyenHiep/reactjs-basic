@@ -12,7 +12,8 @@ class FrontEndController extends Controller
         $data['categories'] = Categories::get_option_list();
         $data['books_new'] = Books::query()
             ->where('status', Books::STATUS_ON)
-            ->orderBy('created_at', 'desc')
+            ->where('sticky', Books::STATUS_ON)
+            ->orderBy('updated_at', 'desc')
             ->limit(2)
             ->get();
         $ids = [];
@@ -26,8 +27,7 @@ class FrontEndController extends Controller
             [
                 'chapters' => function ($query) {
                     $query->where('status', '=', Chapters::STATUS_ON)
-                        ->orderBy('created_at', 'desc')
-                        ->limit(8);
+                        ->orderBy('created_at', 'desc');
                 }
             ])->where('status', Books::STATUS_ON)
             ->whereNotIn('id', $ids)
@@ -39,12 +39,11 @@ class FrontEndController extends Controller
             [
                 'chapters' => function ($query) {
                     $query->where('status', '=', Chapters::STATUS_ON)
-                        ->orderBy('created_at', 'desc')
-                        ->first();
+                        ->where('sticky', Chapters::STATUS_ON)
+                        ->orderBy('created_at', 'desc');
                 }
             ])->where('status', Books::STATUS_ON)
-            ->where('sticky', Books::STATUS_ON)
-            ->orderBy('created_at', 'desc')
+            ->orderBy('updated_at', 'desc')
             ->limit(12)
             ->get();
         return view('home', $data);

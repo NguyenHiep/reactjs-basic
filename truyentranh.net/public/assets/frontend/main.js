@@ -2,6 +2,7 @@
 $(document).ready(function () {
 	var elemBody = $('body');
 	var elemSlider = elemBody.find('.home-sliders').eq(0);
+	// Slider page home
 	elemSlider.slick({
 		dots: false,
 		infinite: true,
@@ -42,9 +43,19 @@ $(document).ready(function () {
 			}
 		]
 	});
+	// Chapter selected
+	elemBody.find('[rel=chap-select]').change(function(){
+		var item = $(this),
+			href   = item.val();
+		if (!href) {
+			return false;
+		}
+		return window.location.href = href;
+	});
 
 });
 (function ($) {
+	// Scroll bar in maga book
 	$(window).on("load", function () {
 		var elemBody = $('body');
 		var elemCustomScrollbar = elemBody.find('.mCustomScrollbar');
