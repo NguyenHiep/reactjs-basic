@@ -23,9 +23,9 @@
       <div class="col-md-12">
         <div class="cate-order"><span>Sắp xếp theo: </span>
           <a role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample" class="active" title="A-Z">A-Z</a>
-          <a href="#" class="" title="Xem nhiều nhất">Xem nhiều nhất</a>
-          <a href="#" class="" title="Điểm cao nhất">Điểm cao nhất</a>
-          <a href="#" class="" title="Mới nhất">Mới nhất</a>
+          <a href="{{ route('front.categories.show', ['cat_slug' => $category->slug, 'sort' => 'most_view']) }}" class="" title="Xem nhiều nhất">Xem nhiều nhất</a>
+          <a href="{{ route('front.categories.show', ['cat_slug' => $category->slug, 'sort' => 'most_review']) }}" class="" title="Điểm cao nhất">Điểm cao nhất</a>
+          <a href="{{ route('front.categories.show', ['cat_slug' => $category->slug, 'sort' => 'most_new']) }}" class="" title="Mới nhất">Mới nhất</a>
         </div>
       </div>
     </div>
@@ -35,43 +35,12 @@
       <div id="collapseExample" class="list-watch collapse in" aria-expanded="true" style="">
         <div class="well">
           <p>
-            <a href="#" class=" Active" title="Tất cả">Tất cả</a>
-            <a href="#?fc=A" class="" title="A">A</a>
-            <a href="#?fc=B" class="" title="B">B</a>
-            <a href="#?fc=C" class="" title="C">C</a>
-            <a href="#?fc=D" class="" title="D">D</a>
-            <a href="#?fc=E" class="" title="E">E</a>
-            <a href="#?fc=F" class="" title="F">F</a>
-            <a href="#?fc=G" class="" title="G">G</a>
-            <a href="#?fc=H" class="" title="H">H</a>
-            <a href="#?fc=I" class="" title="I">I</a>
-            <a href="#?fc=J" class="" title="J">J</a>
-            <a href="#?fc=K" class="" title="K">K</a>
-            <a href="#?fc=L" class="" title="L">L</a>
-            <a href="#?fc=M" class="" title="M">M</a>
-            <a href="#?fc=N" class="" title="N">N</a>
-            <a href="#?fc=O" class="" title="O">O</a>
-            <a href="#?fc=P" class="" title="P">P</a>
-            <a href="#?fc=Q" class="" title="Q">Q</a>
-            <a href="#?fc=R" class="" title="R">R</a>
-            <a href="#?fc=S" class="" title="S">S</a>
-            <a href="#?fc=T" class="" title="T">T</a>
-            <a href="#?fc=U" class="" title="U">U</a>
-            <a href="#?fc=V" class="" title="V">V</a>
-            <a href="#?fc=W" class="" title="W">W</a>
-            <a href="#?fc=X" class="" title="X">X</a>
-            <a href="#?fc=Y" class="" title="Y">Y</a>
-            <a href="#?fc=Z" class="" title="Z">Z</a>
-            <a href="#?fc=0" class="" title="0">0</a>
-            <a href="#?fc=1" class="" title="1">1</a>
-            <a href="#?fc=2" class="" title="2">2</a>
-            <a href="#?fc=3" class="" title="3">3</a>
-            <a href="#?fc=4" class="" title="4">4</a>
-            <a href="#?fc=5" class="" title="5">5</a>
-            <a href="#?fc=6" class="" title="6">6</a>
-            <a href="#?fc=7" class="" title="7">7</a>
-            <a href="#?fc=8" class="" title="8">8</a>
-            <a href="#?fc=9" class="" title="9">9</a>
+            <a href="{{ route('front.categories.show', ['cat_slug' => $category->slug]) }}" class=" Active" title="Tất cả">Tất cả</a>
+            @if(count($list_filter) > 0)
+              @foreach($list_filter as $sort)
+                <a href="{{ route('front.categories.show', ['cat_slug' => $category->slug, 'fc' => $sort]) }}" class="" title="{{$sort}}">{{$sort}}</a>
+              @endforeach
+            @endif
           </p>
         </div>
       </div>
