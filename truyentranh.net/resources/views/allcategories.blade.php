@@ -88,31 +88,35 @@
       </div>
     </div>
     <div class="row" id="loadlist">
-      @foreach($books as $book)
-        <div class="col-xs-12 col-md-6">
-          <div class="media mainpage-manga mt-0">
-            <a href="{{ url($book->slug) }}" class="tooltips">
-              @if(!empty($book->image))
-                <img class="pr-2" src="{!! asset("uploads/thumbnail/thumbnail_".$book->image) !!}" alt="{{ $book->name }}" />
-              @endif
-              <span>
-                <img src="http://cdn.truyentranh.net/frontend/images/callout.gif" class="callout" />
+      @if(count($books) > 0)
+        @foreach($books as $book)
+          <div class="col-xs-12 col-md-6">
+            <div class="media mainpage-manga mt-0">
+              <a href="{{ url($book->slug) }}" class="tooltips">
+                @if(!empty($book->image))
+                  <img class="pr-2" src="{!! asset("uploads/thumbnail/thumbnail_".$book->image) !!}" alt="{{ $book->name }}" />
+                @endif
+                <span>
+                  <img src="http://cdn.truyentranh.net/frontend/images/callout.gif" class="callout" />
+                  <p class="description">
+                    <strong>Tác giả:</strong>{{ $book->author }}<br />
+                    <strong>Nội dung:</strong>{!! Str::words($book->content, 40,'...') !!}
+                  </p>
+                 </span>
+              </a>
+              <div class="media-body">
+                <h4 class="manga-newest"><a href="{{ url($book->slug) }}">{{ $book->name }}</a></h4>
                 <p class="description">
                   <strong>Tác giả:</strong>{{ $book->author }}<br />
-                  <strong>Nội dung:</strong>{!! Str::words($book->content, 40,'...') !!}
+                  <strong>Nội dung:</strong>{!!  Str::words($book->content, 20,'...') !!}
                 </p>
-               </span>
-            </a>
-            <div class="media-body">
-              <h4 class="manga-newest"><a href="{{ url($book->slug) }}">{{ $book->name }}</a></h4>
-              <p class="description">
-                <strong>Tác giả:</strong>{{ $book->author }}<br />
-                <strong>Nội dung:</strong>{!!  Str::words($book->content, 20,'...') !!}
-              </p>
+              </div>
             </div>
           </div>
-        </div>
-      @endforeach
+        @endforeach
+      @else
+        <div class="col-xs-12 col-md-6">Thể loại này chưa có truyện !!</div>
+      @endif
     </div>
   </div>
   

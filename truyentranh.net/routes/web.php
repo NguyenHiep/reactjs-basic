@@ -53,6 +53,7 @@ Route::get('{book_slug}/{chapter}','Frontend\BooksController@chapter_detail')->n
     'book_slug'    => '[a-zA-Z0-9.-]+',
     'chapter_slug' => '[a-zA-Z0-9.-]+',
 ]);
+Route::post('reportchapter', 'Frontend\ReportController@chapter')->name('front.report.chapter');
 
 Route::get('{book_slug}','Frontend\BooksController@show')->name('front.books.show')->where('book_slug','[a-zA-Z0-9.-]+');
 

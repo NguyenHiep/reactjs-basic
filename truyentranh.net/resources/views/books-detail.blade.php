@@ -104,20 +104,26 @@
       <div class="row">
         <div class="col-md-12">
           <div class="die-linknd text-center">
-            <button type="button" data-toggle="modal" data-target=".bs-example-modal-sm" class="btn-diepage"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Báo lỗi chương
+            <button type="button" data-toggle="modal" data-target="#boxReport" class="btn-diepage"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Báo lỗi chương
             </button>
-            <div class="modal fade bs-example-modal-sm">
+            <div class="modal fade bs-example-modal-sm" id="boxReport">
               <div class="modal-dialog">
                 <div class="modal-content">
-                  <form name="report-form" id="report-form" method="POST" action="#">
+                  <form name="report-form" id="report-form" method="POST" action="{{ route('front.report.chapter')}}">
                     <input type="hidden" name="id" value="{{ $book->id }}">
                     <input type="hidden" name="cid" value="{{ $chapter->id }}">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="modal-header">
                       <h4 id="gridSystemModalLabel" class="modal-title">Báo lỗi chương</h4>
                       <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                     </div>
                     <div class="modal-body">
-                      <textarea rows="3" name="message" placeholder="Mô tả lỗi" class="form-link"></textarea>
+                      @php $key = 'content' @endphp
+                      <textarea rows="3" name="{{$key}}" placeholder="Mô tả lỗi" class="form-link">{{old($key)}}</textarea>
+                      @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
+                      @php $key = 'g-recaptcha-response' @endphp
+                      <div class="g-recaptcha" data-sitekey="6LejnF4UAAAAADKoPPqyOIlZqIpo5_ss2WVJwufN" data-theme="dark" ata-callback="YourOnSubmitFn"></div>
+                      @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
                     </div>
                     <div class="modal-footer">
                       <button type="submit" class="btn btn-green">Gửi thông báo</button>

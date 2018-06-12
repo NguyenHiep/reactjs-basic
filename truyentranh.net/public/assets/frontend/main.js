@@ -53,6 +53,33 @@ $(document).ready(function () {
 		return window.location.href = href;
 	});
 
+	var reportForm = elemBody.find('#report-form').submit(function(){
+		var form = this;
+		if($.trim(this.id.value).length == 0 || $.trim(this.cid.value).length == 0){
+			alert('Unknow error!');
+			return false;
+		}
+		if($.trim(this.content.value).length == 0 || $.trim(this.content.value).length < 10){
+			alert('Vui lòng mô tả lỗi!');
+			this.content.focus();
+			return false;
+		}
+
+		$.post(reportForm.attr('action'), reportForm.serialize(), function(json){
+			console.log(json);
+			if (json.status == true) {
+				form.content.value = '';
+				$('#boxReport').hide();
+				$('.modal-backdrop.fade.show').hide();
+				alert('Thông báo thành công, cảm ơn rất nhiều !');
+			} else {
+				alert(json.msg);
+			}
+
+		}, 'json');
+		return false;
+	});
+
 });
 (function ($) {
 	// Scroll bar in maga book
