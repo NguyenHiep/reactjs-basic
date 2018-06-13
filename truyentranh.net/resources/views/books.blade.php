@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('seo_title', 'Đọc truyện tranh online | yeutruyentranh.com')
+@section('seo_keywords', 'Đọc truyện tranh online, One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,...')
+@section('seo_description', 'Đọc truyện tranh online mới nhất, nhanh nhất như One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,..')
+
 @section('breadcrumb')
 <div class="breadcrumb-contain">
   <div class="container">
@@ -28,36 +32,6 @@
           @endif
           <div class="media-body">
             <h1 class="title-manga">{{ $book->name }}</h1>
-           {{-- <div class="rating-online">
-              <div class="row">
-                <div class="col-md-3">
-                  <ul class="StarRating" id="vote" data-href="http://truyentranh.net/vote.json" data-id="{{ $book->id }}" data-voted="false">
-                    <li id="point-1">
-                      <a href="javascript:void(0);" data-point="2" data-classes="CurrentRating One" class="OneStar">1</a>
-                    </li>
-                    <li id="point-2">
-                      <a href="javascript:void(0);" data-point="4" data-classes="CurrentRating Two" class="TwoStars">2</a>
-                    </li>
-                    <li id="point-3">
-                      <a href="javascript:void(0);" data-point="6" data-classes="CurrentRating Three" class="ThreeStars">3</a>
-                    </li>
-                    <li id="point-4">
-                      <a href="javascript:void(0);" data-point="8" data-classes="CurrentRating Four" class="FourStars">4</a>
-                    </li>
-                    <li id="point-5" class="Active CurrentRating Five">
-                      <a href="javascript:void(0);" data-point="10" data-classes="CurrentRating Five" class="FiveStars">5</a>
-                    </li>
-                  </ul>
-                  <img src="http://cdn.truyentranh.net/images/loading.gif" id="vote-busy" style="display: none">
-                
-                </div>
-                <div class="col-md-7 fixpadding">
-                  <div class="total-rating">
-                    <p><span class="VoteScore" rel="total-point">8.3</span>/10 trên tổng số <span rel="total-vote">10,278</span> lượt đánh giá</p>
-                  </div>
-                </div>
-              </div>
-            </div>--}}
             <p class="description-update">
               <span>Lượt xem:</span>{{ $book->views }}<br>
               <span>Tên khác:</span>{{ $book->name_dif }}<br>

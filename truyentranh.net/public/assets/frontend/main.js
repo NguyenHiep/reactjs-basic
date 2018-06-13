@@ -44,37 +44,40 @@ $(document).ready(function () {
 		]
 	});
 	// Chapter selected
-	elemBody.find('[rel=chap-select]').change(function(){
+	elemBody.find('[rel=chap-select]').change(function () {
 		var item = $(this),
-			href   = item.val();
+			href = item.val();
 		if (!href) {
 			return false;
 		}
 		return window.location.href = href;
 	});
 
-	var reportForm = elemBody.find('#report-form').submit(function(){
+	var reportForm = elemBody.find('#report-form').submit(function () {
 		var form = this;
-		if($.trim(this.book_id.value).length == 0 || $.trim(this.chapter_id.value).length == 0){
+		if ($.trim(this.book_id.value).length == 0 || $.trim(this.chapter_id.value).length == 0) {
 			alert('Unknow error!');
 			return false;
 		}
-		if($.trim(this.content.value).length == 0 || $.trim(this.content.value).length < 10){
+		if ($.trim(this.content.value).length == 0 || $.trim(this.content.value).length < 10) {
 			alert('Vui lòng mô tả lỗi!');
 			this.content.focus();
 			return false;
 		}
 
-		$.post(reportForm.attr('action'), reportForm.serialize(), function(json){
-			if (json.status == true) {
-				form.content.value = '';
-				$('.btn-close-modal').click();
-				alert('Thông báo thành công, cảm ơn rất nhiều !');
-			} else {
-				alert(json.msg);
+		$.post(reportForm.attr('action'), reportForm.serialize(), function (json) {
+			console.log(json);
+			if (typeof json != 'undefined' && json != '') {
+				if (json.status == true) {
+					form.content.value = '';
+					$('.btn-close-modal').click();
+					alert(json.msg);
+				} else {
+					alert(json.msg);
+				}
 			}
 			//Reset recapcha
-            if (window.grecaptcha) grecaptcha.reset();
+			if (window.grecaptcha) grecaptcha.reset();
 
 		}, 'json');
 		return false;

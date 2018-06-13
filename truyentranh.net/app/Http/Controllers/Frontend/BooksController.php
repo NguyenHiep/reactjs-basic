@@ -6,6 +6,7 @@ use App\Http\Controllers\FrontEndController;
 use App\Books;
 use App\Categories;
 use App\Chapters;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class BooksController extends FrontEndController
@@ -78,5 +79,29 @@ class BooksController extends FrontEndController
         $result['next']     = Chapters::where('id', $next)->first();;
         $result['previous'] = Chapters::where('id', $previous)->first();
         return $result;
+    }
+
+    public function search(Request $request)
+    {
+        $search_key = $request->query('q');
+        $books = Books::where('status', Books::STATUS_ON)
+            ->where('name', 'like', '%' . $search_key . '%')
+            ->orderBy('name', 'asc')
+            ->paginate(20);
+        $data['list_filter']  = [
+            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
+            'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+            'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+        ];
+
+        $filter_key = $request->query('fc');
+        if (!empty($filter_key) && in_array($filter_key, $data['list_filter'])) {
+            $books = Books::where('status', Books::STATUS_ON)
+                ->where('name', 'like', $filter_key . '%')
+                ->orderBy('name', 'asc')
+                ->paginate(20);
+        }
+        $data['books'] = $books;
+        return view('search', $data);
     }
 }

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('seo_title', 'Đọc truyện tranh online | yeutruyentranh.com')
+@section('seo_keywords', 'Đọc truyện tranh online, One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,...')
+@section('seo_description', 'Đọc truyện tranh online mới nhất, nhanh nhất như One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,..')
+
 @section('content')
 <div class="breadcrumb-contain">
   <div class="container">
@@ -58,20 +62,6 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div class="likeshare-fb text-center">
-            <ul id="socialBtn">
-              <li>
-                <div class="fb-like" data-href="http://truyentranh.net/neu-em-vui/Chap-012" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-              </li>
-              <li><a href="#" data-href="http://truyentranh.net/neu-em-vui/Chap-012" rel="share-fb" title="Share Facebook" class="Facebook"><img src="http://cdn.truyentranh.net/images/fb-share.jpg" alt=""></a>
-              </li>
-              <li></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
           <div class="die-linknd text-center">
             <button type="button" data-toggle="modal" data-target=".bs-example-modal-sm" class="btn-diepage"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Báo lỗi chương
             </button>
@@ -85,20 +75,6 @@
              {!! $chapter->content !!}
            @endif
          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="likeshare-fb text-center">
-            <ul id="socialBtn">
-              <li>
-                <div class="fb-like" data-href="http://truyentranh.net/neu-em-vui/Chap-012" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-              </li>
-              <li><a href="#" data-href="http://truyentranh.net/neu-em-vui/Chap-012" rel="share-fb" title="Share Facebook" class="Facebook"><img src="http://cdn.truyentranh.net/images/fb-share.jpg" alt=""></a>
-              </li>
-              <li></li>
-            </ul>
-          </div>
         </div>
       </div>
       <div class="row">

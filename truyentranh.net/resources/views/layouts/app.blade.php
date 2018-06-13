@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>Đọc truyện tranh online | yeutruyentranh.com</title>
-  <meta name="keywords" content="Đọc truyện tranh online,One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,..." />
-  <meta name="description" content="Đọc truyện tranh online mới nhất, nhanh nhất như One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,.." >
-  <script src='https://www.google.com/recaptcha/api.js'></script>
+  <title> @yield('seo_title')</title>
+  <meta name="keywords" content="@yield('seo_keywords')" />
+  <meta name="description" content="@yield('seo_description')" >
+  <script src='https://www.google.com/recaptcha/api.js?hl=vi'></script>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link href="{{ asset('assets/frontend/plugins/slick/slick/slick.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/frontend/plugins/slick/slick/slick-theme.css') }}" rel="stylesheet">

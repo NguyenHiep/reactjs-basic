@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('seo_title', 'Đọc truyện tranh online | yeutruyentranh.com')
+@section('seo_title', 'Tìm kiếm truyện đọc truyện tranh online | yeutruyentranh.com')
 @section('seo_keywords', 'Đọc truyện tranh online, One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,...')
 @section('seo_description', 'Đọc truyện tranh online mới nhất, nhanh nhất như One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,..')
 
@@ -11,7 +11,7 @@
         <div class="col-md-12">
           <ol class="breadcrumb">
             <li><a href="{{ url('/') }}"><i class="fa fa-home"></i></a></li>
-            <li><a href="javascript:;" title="Danh sách truyện"> Danh sách truyện</a></li>
+            <li><a href="javascript:;" title="Danh sách truyện">Tìm kiếm</a></li>
           </ol>
         </div>
       </div>
@@ -21,7 +21,7 @@
 
 @section('content')
 <div class="wraper-content">
-  <h1 class="title-cate">Danh sách truyện</h1>
+  <h1 class="title-cate">Liệt kê và tìm truyện</h1>
   <div class="cate-result">
     <div class="row">
       <div class="col-md-12">
@@ -36,10 +36,10 @@
       <div id="collapseExample" class="list-watch collapse in" aria-expanded="true" style="">
         <div class="well">
           <p>
-            <a href="{{ route('front.categories.showall') }}" class=" Active" title="Tất cả">Tất cả</a>
+            <a href="{{ route('front.books.search', ['q' => request()->get('q')]) }}" class=" Active" title="Tất cả">Tất cả</a>
             @if(count($list_filter) > 0)
               @foreach($list_filter as $sort)
-                <a href="{{ route('front.categories.showall', ['fc' => $sort]) }}" class="" title="{{$sort}}">{{$sort}}</a>
+                <a href="{{ route('front.books.search', ['fc' => $sort]) }}" class="" title="{{$sort}}">{{$sort}}</a>
               @endforeach
             @endif
           </p>
@@ -119,7 +119,7 @@
           </div>
         @endforeach
       @else
-        <div class="col-xs-12 col-md-6">Thể loại này chưa có truyện !!</div>
+        <div class="col-xs-12 col-md-6">Không tìm thấy truyện !!</div>
       @endif
     </div>
   </div>
