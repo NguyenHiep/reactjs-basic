@@ -109,10 +109,10 @@
             <div class="modal fade bs-example-modal-sm" id="boxReport">
               <div class="modal-dialog">
                 <div class="modal-content">
-                  <form name="report-form" id="report-form" method="POST" action="{{ route('front.report.chapter')}}">
-                    <input type="hidden" name="id" value="{{ $book->id }}">
-                    <input type="hidden" name="cid" value="{{ $chapter->id }}">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  <form name="report-form" id="report-form" method="POST" action="{{ route('front.report.chapter',['book_slug' => $book->slug, 'chapter_slug' => $chapter->slug])}}">
+                    {{ csrf_field() }}
+                    {{ Form::hidden('book_id', $book->id) }}
+                    {{ Form::hidden('chapter_id', $chapter->id) }}
                     <div class="modal-header">
                       <h4 id="gridSystemModalLabel" class="modal-title">Báo lỗi chương</h4>
                       <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
@@ -122,12 +122,12 @@
                       <textarea rows="3" name="{{$key}}" placeholder="Mô tả lỗi" class="form-link">{{old($key)}}</textarea>
                       @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
                       @php $key = 'g-recaptcha-response' @endphp
-                      <div class="g-recaptcha" data-sitekey="6LejnF4UAAAAADKoPPqyOIlZqIpo5_ss2WVJwufN" data-theme="dark" ata-callback="YourOnSubmitFn"></div>
+                      <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY', '') }}" data-theme="dark"></div>
                       @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
                     </div>
                     <div class="modal-footer">
                       <button type="submit" class="btn btn-green">Gửi thông báo</button>
-                      <button type="button" data-dismiss="modal" class="btn btn-default">Đóng</button>
+                      <button type="button" data-dismiss="modal" class="btn btn-default btn-close-modal">Đóng</button>
                     </div>
                   </form>
                 </div>

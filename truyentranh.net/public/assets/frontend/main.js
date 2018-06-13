@@ -55,7 +55,7 @@ $(document).ready(function () {
 
 	var reportForm = elemBody.find('#report-form').submit(function(){
 		var form = this;
-		if($.trim(this.id.value).length == 0 || $.trim(this.cid.value).length == 0){
+		if($.trim(this.book_id.value).length == 0 || $.trim(this.chapter_id.value).length == 0){
 			alert('Unknow error!');
 			return false;
 		}
@@ -66,15 +66,15 @@ $(document).ready(function () {
 		}
 
 		$.post(reportForm.attr('action'), reportForm.serialize(), function(json){
-			console.log(json);
 			if (json.status == true) {
 				form.content.value = '';
-				$('#boxReport').hide();
-				$('.modal-backdrop.fade.show').hide();
+				$('.btn-close-modal').click();
 				alert('Thông báo thành công, cảm ơn rất nhiều !');
 			} else {
 				alert(json.msg);
 			}
+			//Reset recapcha
+            if (window.grecaptcha) grecaptcha.reset();
 
 		}, 'json');
 		return false;
