@@ -10,15 +10,27 @@
                   <div class="logo-footer-icon"><a href="http://truyentranh.net"><img src="http://cdn.truyentranh.net/frontend/images/logo_2.png" alt="Đọc truyện tranh online | TruyenTranh.net"/></a></div>
                 </div>
                 <div class="col-md-9">
-                  <p class="vechai-intro"><span>TruyenTranh.net</span> là điểm kết nối giữa các team dịch truyện với Fan truyện tranh trên toàn Việt Nam, hoạt động hoàn toàn miễn phí.</p>
+                  <p class="vechai-intro">
+                    <span>Cliptroll</span> là điểm kết nối giữa các team dịch truyện với Fan truyện tranh trên toàn Việt Nam, hoạt động hoàn toàn miễn phí.
+                  </p>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-6">
-                  <div class="social-icon"><a href="https://www.facebook.com/truyentranh/" target="_blank"><img src="http://cdn.truyentranh.net/frontend/images/fbicon.png" alt="Facebook" /></a><a href="skype:vechai.comic"><img src="http://cdn.truyentranh.net/frontend/images/skypeicon.png" alt="skype" /></a><a href="mailto:vechaicomic@gmail.com"><img src="http://cdn.truyentranh.net/frontend/images/mailicon.png" alt="mail" /><span>
-                      vechaicomic@gmail.com</span></a></div>
+                  <div class="social-icon">
+                    <a href="https://www.facebook.com/cliptroll/" target="_blank">
+                      <img src="http://cdn.truyentranh.net/frontend/images/fbicon.png" alt="Facebook" />
+                    </a>
+                    <a href="skype:cliptroll.com">
+                      <img src="http://cdn.truyentranh.net/frontend/images/skypeicon.png" alt="skype" />
+                    </a>
+                    <a href="mailto:cliptroll@gmail.com">
+                      <img src="http://cdn.truyentranh.net/frontend/images/mailicon.png" alt="mail" />
+                      <span>cliptroll@gmail.com</span>
+                    </a>
+                  </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6">
                   <div class="app-download">

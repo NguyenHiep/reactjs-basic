@@ -10629,6 +10629,14 @@ header {
   border-bottom: 2px solid #931cf3;
 }
 
+.navigation-menu {
+  padding: 0;
+}
+
+.navigation-menu .navbar-nav a.nav-link {
+  font-size: 1rem;
+}
+
 .navbar-light .navbar-nav .nav-link {
   text-transform: uppercase;
   color: #fff;
@@ -10644,6 +10652,90 @@ header {
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .show > .nav-link {
   color: #29c6ab;
+}
+
+.user-circle img {
+  width: 35px;
+  margin-top: 0;
+  margin-right: 5px;
+}
+
+.user-circle .norti-user {
+  position: absolute;
+  top: -5px;
+  right: 0;
+  padding: 0 5px;
+  background: #E1141E;
+  border-radius: 4px;
+  color: #FFF;
+  font-size: 12px;
+  width: 18px;
+}
+
+.usercontent {
+  width: 500px !important;
+  padding: 0;
+  margin-top: 4px !important;
+  margin-right: 4px;
+}
+
+.usercontent.dropdown-menu {
+  right: 0 !important;
+  left: inherit;
+}
+
+.usercontent .yamm-content {
+  padding: 0;
+  background-color: #0E977F;
+}
+
+.username {
+  margin-top: 2px;
+  color: #fff;
+  float: left;
+  margin-left: 5px;
+}
+
+.welcome-contain {
+  padding: 5px;
+}
+
+.status-click {
+  float: right;
+  margin-top: 6px;
+}
+
+.status-click a {
+  color: #FFF;
+  margin-right: 8px;
+  border-right: 1px solid #fff;
+  padding-right: 8px;
+}
+
+.follower-status {
+  padding: 5px;
+  background-color: #fff;
+}
+
+.media-flowuser {
+  border-bottom: 1px solid #d2d2d2;
+  margin-top: 7px !important;
+  padding-bottom: 10px !important;
+}
+
+.media-topfix {
+  padding-top: 7px;
+}
+
+.media-topfix img {
+  width: 54px;
+}
+
+.welcome-contain .view-allmess {
+  display: block;
+  width: 100%;
+  color: #fff;
+  text-align: center;
 }
 
 .bg-post-stick {
@@ -10729,6 +10821,7 @@ header {
   text-align: center;
   margin-bottom: 0;
   opacity: .7;
+  outline: none;
   -webkit-transition: opacity, 0.3s, ease-in-out;
   transition: opacity, 0.3s, ease-in-out;
   display: block;

@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-md-center mt-5">
-        <div class="col-md-8">
+    <div class="row justify-content-md-center mt-5 mb-5">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">Register</div>
                 <div class="card-body">
@@ -84,6 +84,10 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label text-lg-right"></label>
+                            <div class="col-lg-6">{{ Form::capcha('capcha') }}</div>
+                        </div>
 
                         <div class="form-group row">
                             <div class="col-lg-6 offset-lg-4">
@@ -96,6 +100,7 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-6"></div>
     </div>
 </div>
 @endsection

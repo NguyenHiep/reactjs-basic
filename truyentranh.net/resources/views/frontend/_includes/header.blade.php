@@ -28,6 +28,60 @@
         <input class="form-control mr-sm-2" name="q" type="search" placeholder="Nhập tên truyện" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
       </form>
+      <ul class="list-unstyled list-inline-item ml-2 my-2 my-lg-0">
+        @auth
+        <li class="dropdown">
+          <a href="javascript:void(0);" data-toggle="dropdown" class="user-circle" data-href="http://truyentranh.net/notification/topbar.json" data-hascontent="false" id="dLabel" aria-haspopup="true" aria-expanded="false">
+            <img src="http://cdn.truyentranh.net/upload//image/notification/default.png" alt="nguyenhiep" class="img-circle"><b class="caret"></b><span class="norti-user">1</span>
+          </a>
+          <ul class="usercontent dropdown-menu" id="noticePanel" role="menu" aria-labelledby="dLabel">
+            <li>
+              <div class="yamm-content">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="welcome-contain">
+                      <a href="#">
+                        <h3 class="username">nguyenhiep</h3>
+                      </a>
+                      <span class="status-click">
+                        <a title="Truyện theo dõi" href="http://truyentranh.net/profile.html">Truyện theo dõi</a>
+                        <a href="http://truyentranh.net/profile/update.html" title="Chỉnh sửa">Chỉnh sửa</a>
+                        <a href="http://truyentranh.net/thoat.html?ref=http%3A%2F%2Ftruyentranh.net%2F" title="Thoát">Thoát</a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="follower-status NotificationList" id="notification-content">
+                      <div class="media media-flowuser">
+                        <img src="http://cdn.truyentranh.net/images/loading.gif" class="Loading">
+                      </div>
+              
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="welcome-contain">
+                      <a href="http://truyentranh.net/notification.html" class="view-allmess" title="Xem tất cả thông báo">Xem tất cả thông
+                        báo</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        @endauth
+        @guest
+          <li>
+            <a href="{{ url('/login') }}" class="btn btn-success">Đăng nhập</a>
+          </li>
+        @endguest
+      </ul>
     </div>
   </div>
 </nav>

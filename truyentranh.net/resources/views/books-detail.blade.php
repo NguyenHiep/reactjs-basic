@@ -97,9 +97,7 @@
                       @php $key = 'content' @endphp
                       <textarea rows="3" name="{{$key}}" placeholder="Mô tả lỗi" class="form-link">{{old($key)}}</textarea>
                       @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
-                      @php $key = 'g-recaptcha-response' @endphp
-                      <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY', '') }}" data-theme="dark"></div>
-                      @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
+                      {{ Form::capcha('capcha') }}
                     </div>
                     <div class="modal-footer">
                       <button type="submit" class="btn btn-green">Gửi thông báo</button>
