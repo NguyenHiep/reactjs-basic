@@ -26,6 +26,7 @@
           'front.books.showdetail',
           'login',
           'register',
+          'password.request'
       ];
     @endphp
     @if(in_array(Route::currentRouteName(), $router_expect))
