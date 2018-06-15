@@ -7,7 +7,7 @@
             <div class="col-md-6">
               <div class="row">
                 <div class="col-md-3">
-                  <div class="logo-footer-icon"><a href="http://truyentranh.net"><img src="http://cdn.truyentranh.net/frontend/images/logo_2.png" alt="Đọc truyện tranh online | TruyenTranh.net"/></a></div>
+                  <div class="logo-footer-icon"><a href="{{ url('/') }}"><img src="http://cdn.truyentranh.net/frontend/images/logo_2.png" alt="Đọc truyện tranh online | TruyenTranh.net"/></a></div>
                 </div>
                 <div class="col-md-9">
                   <p class="vechai-intro">
