@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('seo_title', 'Đăng ký thành viên | Đọc truyện tranh online | yeutruyentranh.com')
+@section('seo_keywords', 'Đọc truyện tranh online, One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,...')
+@section('seo_description', 'Đọc truyện tranh online mới nhất, nhanh nhất như One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,..')
+
+
 @section('content')
   <div class="breadcrumb-contain">
     <div class="container">
