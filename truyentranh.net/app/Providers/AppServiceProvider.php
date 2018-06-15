@@ -36,5 +36,10 @@ class AppServiceProvider extends ServiceProvider
             require_once($filename);
         }
 
+        // register trait
+        foreach (glob(app_path().'/Traits/*.php') as $filename){
+            require_once($filename);
+        }
+
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Books;
 use App\Categories;
 use App\Chapters;
+use App\Helpers\Helpers;
 
 class FrontEndController extends Controller
 {
