@@ -100,11 +100,6 @@
               <div class="form-group row">
                 <label class="col-lg-3 col-form-label text-lg-left"></label>
                 <div class="col-lg-9">{{ Form::capcha('g-recaptcha-response') }}</div>
-                @if ($errors->has('g-recaptcha-response'))
-                  <div class="invalid-feedback">
-                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-                  </div>
-                @endif
               </div>
               <div class="form-group row">
                 <div class="col-lg-9 offset-lg-3">

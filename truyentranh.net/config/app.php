@@ -179,7 +179,9 @@ return [
         Laravel\Passport\PassportServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
-        App\Providers\ComponentsServiceProvider::class
+        App\Providers\ComponentsServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
+
     ],
 
     /*
@@ -231,6 +233,7 @@ return [
         'Str'   => Illuminate\Support\Str::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];

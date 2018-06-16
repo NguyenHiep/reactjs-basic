@@ -30,7 +30,7 @@
       </form>
       <ul class="list-unstyled list-inline-item ml-2 my-2 my-lg-0">
         @auth
-        <li class="dropdown">
+          <li class="dropdown">
           <a href="javascript:void(0);" data-toggle="dropdown" class="user-circle" data-href="http://truyentranh.net/notification/topbar.json" data-hascontent="false" id="dLabel" aria-haspopup="true" aria-expanded="false">
             <img src="http://cdn.truyentranh.net/upload//image/notification/default.png" alt="nguyenhiep" class="img-circle"><b class="caret"></b><span class="norti-user">1</span>
           </a>
@@ -40,13 +40,16 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="welcome-contain">
-                      <a href="#">
-                        <h3 class="username">nguyenhiep</h3>
+                      <a href="{{ route('front.profile.edit') }}">
+                        <h3 class="username">{{ Auth::user()->name ?? null }}</h3>
                       </a>
                       <span class="status-click">
-                        <a title="Truyện theo dõi" href="http://truyentranh.net/profile.html">Truyện theo dõi</a>
-                        <a href="http://truyentranh.net/profile/update.html" title="Chỉnh sửa">Chỉnh sửa</a>
-                        <a href="http://truyentranh.net/thoat.html?ref=http%3A%2F%2Ftruyentranh.net%2F" title="Thoát">Thoát</a>
+                        <a title="Truyện theo dõi" href="{{ route('front.profile.follow') }}">Truyện theo dõi</a>
+                        <a href="{{ route('front.profile.edit') }}" title="Chỉnh sửa">Chỉnh sửa</a>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" title="Thoát">Thoát</a>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                      </form>
                       </span>
                     </div>
                   </div>
@@ -55,10 +58,8 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="follower-status NotificationList" id="notification-content">
-                      <div class="media media-flowuser">
-                        <img src="http://cdn.truyentranh.net/images/loading.gif" class="Loading">
-                      </div>
-              
+                      <div class="media media-flowuser"><div class="media-left media-topfix"><a href="http://truyentranh.net/profile/fshare-register.html"><img src="http://storage.fshare.vn/Test-vechai/1436863505-fshare.jpg" alt="hott3" class="media-object"></a></div><div class="media-body"><a href="http://truyentranh.net/profile/fshare-register.html"><h4 class="manga-newest">Fshare.vn tặng các thành viên vechai.info 1GB dung lượng tải tốc độ cao miễn phí. Tham gia ngay!</h4></a><p class="description-flow"><span class="chapter">2018-06-16 20:12:21</span></p></div></div>
+                      <div class="media media-flowuser"><div class="media-left media-topfix"><a href="http://truyentranh.net/profile/fshare-register.html"><img src="http://storage.fshare.vn/Test-vechai/1436863505-fshare.jpg" alt="hott3" class="media-object"></a></div><div class="media-body"><a href="http://truyentranh.net/profile/fshare-register.html"><h4 class="manga-newest">Fshare.vn tặng các thành viên vechai.info 1GB dung lượng tải tốc độ cao miễn phí. Tham gia ngay!</h4></a><p class="description-flow"><span class="chapter">2018-06-16 20:12:21</span></p></div></div>
                     </div>
                   </div>
                 </div>
@@ -66,7 +67,7 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="welcome-contain">
-                      <a href="http://truyentranh.net/notification.html" class="view-allmess" title="Xem tất cả thông báo">Xem tất cả thông
+                      <a href="{{ route('front.profile.notification') }}" class="view-allmess" title="Xem tất cả thông báo">Xem tất cả thông
                         báo</a>
                     </div>
                   </div>
@@ -75,12 +76,11 @@
             </li>
           </ul>
         </li>
-        @endauth
-        @guest
+        @else
           <li>
             <a href="{{ url('/login') }}" class="btn btn-success">Đăng nhập</a>
           </li>
-        @endguest
+        @endauth
       </ul>
     </div>
   </div>

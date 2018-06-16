@@ -12,8 +12,17 @@
 */
 ## Begin routes backend
 Auth::routes();
+Route::get('login/{social}', [
+    'as'   => 'login.{social}',
+    'uses' => 'Frontend\SocialAccountController@redirectToProvider'
+]);
 
-Route::middleware(['auth'])->group(function () {
+Route::get('login/{social}/callback', [
+    'as'   => 'login.{social}.callback',
+    'uses' => 'Frontend\SocialAccountController@handleProviderCallback'
+]);
+
+Route::middleware(['auth', 'admin'])->group(function () {
     Route::prefix('manage')->group(function () {
         Route::get('/', 'ManageController@index')->name('manage');
         Route::namespace('Manage')->group(function () {
@@ -39,6 +48,19 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/', 'FrontEndController@index')->name('front.home');
 Route::get('tim-kiem','Frontend\BooksController@search')->name('front.books.search');
 Route::get('danh-sach-truyen','Frontend\CategoriesController@showall')->name('front.categories.showall');
+
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('profile')->group(function () {
+        Route::get('/','Frontend\ProfileController@edit')->name('front.profile.edit');
+        Route::post('/','Frontend\ProfileController@update')->name('front.profile.update');
+        Route::get('follow','Frontend\ProfileController@follow_book')->name('front.profile.follow');
+        Route::get('changepassword','Frontend\ProfileController@changepassword')->name('front.profile.changepassword');
+        Route::get('notification','Frontend\ProfileController@notification')->name('front.profile.notification');
+    });
+
+});
+
+
 Route::get('the-loai/{cat_slug}','Frontend\CategoriesController@show')->name('front.categories.show')->where('cat_slug','[a-zA-Z.-]+');
 Route::get('{book_slug}/{chapter}','Frontend\BooksController@chapter_detail')->name('front.books.showdetail')->where([
     'book_slug'    => '[a-zA-Z0-9.-]+',
@@ -49,4 +71,5 @@ Route::post('{book_slug}/{chapter}', 'Frontend\ReportController@chapter')->name(
     'chapter_slug' => '[a-zA-Z0-9.-]+',
 ]);;
 Route::get('{book_slug}','Frontend\BooksController@show')->name('front.books.show')->where('book_slug','[a-zA-Z0-9.-]+');
+
 

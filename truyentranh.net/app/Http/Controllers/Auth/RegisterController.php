@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -27,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/manage';
+    //protected $redirectTo = '/manage';
 
     /**
      * Create a new controller instance.
@@ -68,5 +69,18 @@ class RegisterController extends Controller
             'email'    => $data[ 'email' ],
             'password' => bcrypt($data[ 'password' ]),
         ]);
+    }
+
+    /***
+     * @param Request $request
+     * @param $user
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    protected function registered(Request $request, $user)
+    {
+        if ($user->isAdmin()->count() == 1) {
+            return redirect()->route('manage');
+        }
+        return redirect('/');
     }
 }

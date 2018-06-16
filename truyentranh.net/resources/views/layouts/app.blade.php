@@ -23,10 +23,14 @@
   @yield('sliders')
     @php
       $router_expect = [
-          'front.books.showdetail',
-          'login',
-          'register',
-          'password.request'
+        'front.books.showdetail',
+        'login',
+        'register',
+        'password.request',
+        'front.profile.edit',
+        'front.profile.follow',
+        'front.profile.changepassword',
+        'front.profile.notification',
       ];
     @endphp
     @if(in_array(Route::currentRouteName(), $router_expect))

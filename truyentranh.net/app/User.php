@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'avatar', 'level'
     ];
 
     /**
@@ -31,7 +31,11 @@ class User extends Authenticatable
     {
         $this->api_token = str_random(60);
         $this->save();
-
         return $this->api_token;
+    }
+
+    public function scopeisAdmin($query)
+    {
+        return $query->where('level', 3);
     }
 }
