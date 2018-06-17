@@ -91,7 +91,7 @@
     <div class="row">
       <div class="col-12">
         @foreach($chapters as $chapter)
-          <div class="post-stick"><a href="{{ url($chapter->book_slug.'/'.$chapter->slug) }}" title="{{ $chapter->name }}">{{$chapter->name}} <img src="http://cdn.truyentranh.net/frontend/images/hot.gif" /></a>
+          <div class="post-stick"><a href="{{ url($chapter->book_slug.'/'.$chapter->slug) }}" title="{{ $chapter->name }}">{{ $chapter->book_name . $chapter->name }} <img src="http://cdn.truyentranh.net/frontend/images/hot.gif" /></a>
           </div>
         @endforeach
       </div>

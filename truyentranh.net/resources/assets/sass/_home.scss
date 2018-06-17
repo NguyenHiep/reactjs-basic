@@ -443,18 +443,18 @@ footer {
 #back-top {
   position: fixed;
   bottom: 0;
-  right: 20px;
+  right: 15px;
   z-index: 999;
 }
 #back-top span {
-  width: 100px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   display: block;
   margin-bottom: 7px;
   background: url(http://cdn.truyentranh.net/frontend/images/scroll-topfix.png) center no-repeat;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
-  background-size: 50px 50px;
+  background-size: 40px 40px;
   -webkit-transition: 1s;
   -moz-transition: 1s;
   transition: 1s;

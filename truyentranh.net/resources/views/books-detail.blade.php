@@ -26,19 +26,19 @@
     <div class="wraper-content">
       <div class="row chapter-toolbar">
         <div class="col-md-7 col-sm-6">
-          <h1 class="chapter-title">{{ $chapter->name }}</h1>
+          <h1 class="chapter-title">{{ ucfirst(strtolower($book->name .' '. $chapter->name)) }}</h1>
         </div>
         <div class="col-sm-6 col-md-5 col-lg-5 paddfixboth">
           <div class="chapter-control">
             <div class="row">
-              <div class="col-xs-2 col-lg-2 paddfixboth">
+              <div class="col-2 paddfixboth">
                 @if(!empty($previous))
                 <a href="{{ url($book->slug.'/'.$previous->slug) }}" title="{{$previous->name}}" class="LeftArrow">
                   <img src="http://cdn.truyentranh.net/frontend/images/arrowleft.jpg" alt="leftarrow">
                 </a>
                 @endif
               </div>
-              <div class="col-xs-8 col-lg-8 paddselectfix">
+              <div class="col-8 paddselectfix">
                 <select class="dropdown-manga" data-placeholder="Chọn chương truyện" rel="chap-select">
                   <optgroup label="Tổng hợp">
                     @if(isset($list_chapters))
@@ -50,7 +50,7 @@
                   </optgroup>
                 </select>
               </div>
-              <div class="col-xs-2 col-lg-2 paddfixboth rightalign">
+              <div class="col-2 paddfixboth rightalign">
                 @if(!empty($next))
                   <a href="{{ url($book->slug.'/'.$next->slug) }}" title="{{$next->name}}" class="RightArrow">
                     <img src="http://cdn.truyentranh.net/frontend/images/arrowright.jpg" alt="rightarrow">
@@ -118,14 +118,14 @@
         <div class="col-sm-6 col-md-5 col-lg-5 paddfixboth">
           <div class="chapter-control">
             <div class="row">
-              <div class="col-xs-2 col-lg-2 paddfixboth">
+              <div class="col-2 paddfixboth">
                 @if(!empty($previous))
                   <a href="{{ url($book->slug.'/'.$previous->slug) }}" title="{{$previous->name}}" class="LeftArrow">
                     <img src="http://cdn.truyentranh.net/frontend/images/arrowleft.jpg" alt="leftarrow">
                   </a>
                 @endif
               </div>
-              <div class="col-xs-8 col-lg-8 paddselectfix">
+              <div class="col-8 paddselectfix">
                 <select class="dropdown-manga" data-placeholder="Chọn chương truyện" rel="chap-select">
                   <optgroup label="Tổng hợp">
                     @if(isset($list_chapters))
@@ -137,7 +137,7 @@
                   </optgroup>
                 </select>
               </div>
-              <div class="col-xs-2 col-lg-2 paddfixboth rightalign">
+              <div class="col-2 paddfixboth rightalign">
                 @if(!empty($next))
                   <a href="{{ url($book->slug.'/'.$next->slug) }}" title="{{$next->name}}" class="RightArrow">
                     <img src="http://cdn.truyentranh.net/frontend/images/arrowright.jpg" alt="rightarrow">
