@@ -17,9 +17,12 @@
       width: 100%;
       display: block;
       opacity: 1;
-      background-color: #0e977f;
+      background-color: $second-color;
       transition: .3s;
       &:hover{
+        opacity: .8;
+      }
+      &.active{
         opacity: .8;
       }
     }
@@ -35,7 +38,7 @@
 .form-groupuser {
   margin-bottom: 15px;
   label{
-    color: #0e977f;
+    color: $second-color;
     font-weight: 400;
   }
   .infouser{
@@ -56,7 +59,7 @@
   border: none;
   outline: 0;
   margin-bottom: 20px;
-  background-color: #0e977f;
+  background-color: $second-color;
   transition: .3s;
   cursor: pointer;
 }
@@ -84,7 +87,7 @@
   margin-bottom: 0;
 }
 .description-user span {
-  color: #0e977f;
+  color: $second-color;
 }
 .description-user a {
   color: #222;

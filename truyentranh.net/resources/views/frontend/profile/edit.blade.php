@@ -27,7 +27,8 @@
         <h3 class="title-control">Thay đổi thông tin</h3>
         <div class="row">
           <div class="col-md-12">
-            <form name="form" id="form" action="" method="POST" enctype="multipart/form-data">
+            <form name="form" id="form" action="{{ route('front.profile.update') }}" method="POST" enctype="multipart/form-data">
+              {{ csrf_field()}}
               <div class="form-groupuser alert alert-danger">
                 <p>Mật khẩu cũ không chính xác!</p>
               </div>
@@ -36,12 +37,12 @@
                 <input type="text" class="infouser" value="{{ Auth::user()->name ?? null }}" disabled>
               </div>
               <div class="form-groupuser">
-                <label>Tên hiển thị</label>
-                <input type="text" class="infouser" name="displayname" value=" ">
+                <label>Tên hiển thị <span class="required">*</span></label>
+                <input type="text" class="infouser" name="displayname" value="{{ Auth::user()->name ?? null }}" />
               </div>
               <div class="form-groupuser">
                 <label>Email</label>
-                <input type="text" class="infouser" name="email" value="nguyenminhhiep9x@gmail.com">
+                <input type="text" class="infouser" name="email" value="{{ Auth::user()->email ?? null }}" disabled />
               </div>
               <div class="form-groupuser">
                 <label>Hình đại diện
@@ -50,19 +51,19 @@
               </div>
               <div class="form-groupuser">
                 <label>CMND</label>
-                <input type="text" class="infouser" id="card" name="card" value="">
+                <input type="text" class="infouser" id="card" name="card" value="" placeholder="Nhập chứng minh thư" />
               </div>
               <div class="form-groupuser">
                 <label>Số điện thoại</label>
-                <input type="text" class="infouser" id="phone" name="phone" value="">
+                <input type="text" class="infouser" id="phone" name="phone" value="" placeholder="Nhập số điện thoại" />
               </div>
               <div class="form-groupuser">
                 <label>Ngày sinh</label>
-                <input type="text" class="infouser datepicker" id="birthday" name="birthday" value="05/06/2018">
+                <input type="text" class="infouser datepicker" id="birthday" name="birthday" value="05/06/2018" />
               </div>
               <div class="form-groupuser">
                 <label>Chữ ký</label>
-                <textarea class="infouser" rows="3" name="sign" id="sign"></textarea>
+                <textarea class="infouser" rows="3" name="sign" id="sign" placeholder="Nhập chữ ký"></textarea>
               </div>
               <button type="submit" class="button-submit">Cập nhật</button>
             </form>

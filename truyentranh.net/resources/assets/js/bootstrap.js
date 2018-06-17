@@ -55,3 +55,4 @@ if (token) {
 //     cluster: 'mt1',
 //     encrypted: true
 // });
+window.datimepicker = require('jquery-datetimepicker/jquery.datetimepicker.js');

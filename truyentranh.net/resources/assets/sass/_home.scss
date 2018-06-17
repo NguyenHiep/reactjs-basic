@@ -1,10 +1,13 @@
 /** Style page home */
+.required{
+  color: $danger;
+}
 .help-block{
   display: block;
   width: 100%;
   margin-top: 0.25rem;
   font-size: 80%;
-  color: #bf5329;
+  color: $danger;
   font-weight: bold;
 }
 .navigation-menu{
