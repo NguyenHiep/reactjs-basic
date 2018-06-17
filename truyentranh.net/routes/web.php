@@ -55,6 +55,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/','Frontend\ProfileController@update')->name('front.profile.update');
         Route::get('follow','Frontend\ProfileController@follow_book')->name('front.profile.follow');
         Route::get('changepassword','Frontend\ProfileController@changepassword')->name('front.profile.changepassword');
+        Route::post('changepassword','Frontend\ProfileController@changepassword_update')->name('front.profile.changepassword_update');
         Route::get('notification','Frontend\ProfileController@notification')->name('front.profile.notification');
     });
 

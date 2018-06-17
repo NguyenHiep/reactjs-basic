@@ -32,7 +32,9 @@
         @auth
           <li class="dropdown">
           <a href="javascript:void(0);" data-toggle="dropdown" class="user-circle" data-href="http://truyentranh.net/notification/topbar.json" data-hascontent="false" id="dLabel" aria-haspopup="true" aria-expanded="false">
-            <img src="http://cdn.truyentranh.net/upload//image/notification/default.png" alt="nguyenhiep" class="img-circle"><b class="caret"></b><span class="norti-user">1</span>
+            @php $avatar = (Auth::user()->avatar) ? asset("uploads/thumbnail/avatars/thumbnail_" . Auth::user()->avatar) : 'http://cdn.truyentranh.net/upload//image/notification/default.png';@endphp
+            <img src="{{ $avatar }}" alt="{{ Auth::user()->name ?? null }}" class="img-circle">
+            {{--<b class="caret"></b><span class="norti-user">1</span>--}}
           </a>
           <ul class="usercontent dropdown-menu" id="noticePanel" role="menu" aria-labelledby="dLabel">
             <li>

@@ -4,6 +4,7 @@ namespace App;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -15,7 +16,17 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'avatar', 'level'
+        'name',
+        'email',
+        'password',
+        'avatar',
+        'level',
+        'avatar',
+        'fullname',
+        'card',
+        'phone',
+        'birthday',
+        "sign",
     ];
 
     /**
@@ -26,6 +37,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function setBirthdayAttribute($value)
+    {
+        $this->attributes['birthday'] = Carbon::createFromFormat('d/m/Y', $value)->format('Y-m-d');
+    }
+
+    public function getBirthdayAttribute($value)
+    {
+        return Carbon::parse($value)->format('d/m/Y');
+    }
 
     public function generateToken()
     {

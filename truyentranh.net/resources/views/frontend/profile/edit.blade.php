@@ -27,18 +27,16 @@
         <h3 class="title-control">Thay đổi thông tin</h3>
         <div class="row">
           <div class="col-md-12">
+            @includeIf('frontend._includes.message')
             <form name="form" id="form" action="{{ route('front.profile.update') }}" method="POST" enctype="multipart/form-data">
               {{ csrf_field()}}
-              <div class="form-groupuser alert alert-danger">
-                <p>Mật khẩu cũ không chính xác!</p>
-              </div>
               <div class="form-groupuser">
                 <label>Tên đăng nhập</label>
                 <input type="text" class="infouser" value="{{ Auth::user()->name ?? null }}" disabled>
               </div>
               <div class="form-groupuser">
                 <label>Tên hiển thị <span class="required">*</span></label>
-                <input type="text" class="infouser" name="displayname" value="{{ Auth::user()->name ?? null }}" />
+                <input type="text" class="infouser" name="fullname" value="{{ old('fullname', Auth::user()->fullname) }}" placeholder="Nhập tên hiển thị"/>
               </div>
               <div class="form-groupuser">
                 <label>Email</label>
@@ -46,24 +44,24 @@
               </div>
               <div class="form-groupuser">
                 <label>Hình đại diện
-                  <input type="file" id="avatar" name="avatar">
+                  <input type="file" id="avatar" name="avatar" accept="image/*"> ( Kích thước tối thiểu 100x100)
                 </label>
               </div>
               <div class="form-groupuser">
                 <label>CMND</label>
-                <input type="text" class="infouser" id="card" name="card" value="" placeholder="Nhập chứng minh thư" />
+                <input type="text" class="infouser" id="card" name="card" value="{{ old('card', Auth::user()->card) }}" placeholder="Nhập chứng minh thư" />
               </div>
               <div class="form-groupuser">
                 <label>Số điện thoại</label>
-                <input type="text" class="infouser" id="phone" name="phone" value="" placeholder="Nhập số điện thoại" />
+                <input type="text" class="infouser" id="phone" name="phone" value="{{ old('phone', Auth::user()->phone) }}" placeholder="Nhập số điện thoại" />
               </div>
               <div class="form-groupuser">
                 <label>Ngày sinh</label>
-                <input type="text" class="infouser datepicker" id="birthday" name="birthday" value="05/06/2018" />
+                <input type="text" class="infouser datepicker" id="birthday" name="birthday" value="{{ old('birthday', Auth::user()->birthday) }}" />
               </div>
               <div class="form-groupuser">
                 <label>Chữ ký</label>
-                <textarea class="infouser" rows="3" name="sign" id="sign" placeholder="Nhập chữ ký"></textarea>
+                <textarea class="infouser" rows="3" name="sign" id="sign" placeholder="Nhập chữ ký">{{ old('sign', Auth::user()->sign) }}</textarea>
               </div>
               <button type="submit" class="button-submit">Cập nhật</button>
             </form>

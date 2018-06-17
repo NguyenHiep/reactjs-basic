@@ -73,6 +73,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="{{ asset('assets/frontend/plugins/slick/slick/slick.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/plugins/scrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/plugins/datetimepicker/build/jquery.datetimepicker.full.js') }}"></script>
 <script src="{{ asset('assets/frontend/main.js') }}"></script>
 </body>
 </html>

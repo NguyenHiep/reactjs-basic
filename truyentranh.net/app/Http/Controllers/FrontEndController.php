@@ -8,6 +8,12 @@ use App\Helpers\Helpers;
 
 class FrontEndController extends Controller
 {
+    const CTRL_MESSAGE_SUCCESS  = "success";
+    const CTRL_MESSAGE_INFO     = "info";
+    const CTRL_MESSAGE_WARNING  = "warning";
+    const CTRL_MESSAGE_ERROR    = "danger";
+    const AVATAR_PATH           = 'uploads/images/avatars/';
+    const AVATAR_THUMBNAIL_PATH = 'uploads/thumbnail/avatars/';
     public function index()
     {
         $data['categories'] = Categories::get_option_list();

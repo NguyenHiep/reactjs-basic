@@ -1,6 +1,6 @@
 <nav id="sidebar-profile">
   <h1 class="title-user">
-    @php $avatar = Auth::user()->avatar ?? 'http://cdn.truyentranh.net/upload//image/notification/default.png';@endphp
+    @php $avatar = (Auth::user()->avatar) ? asset("uploads/thumbnail/avatars/thumbnail_" . Auth::user()->avatar) : 'http://cdn.truyentranh.net/upload//image/notification/default.png';@endphp
     <span>
       <img src="{{ $avatar }}" alt="nguyenhiep" class="img-circle">
     </span> {{ Auth::user()->name ?? null }}</h1>

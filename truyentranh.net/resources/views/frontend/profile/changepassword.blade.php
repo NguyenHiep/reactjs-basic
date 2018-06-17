@@ -27,18 +27,20 @@
         <h3 class="title-control">Đổi mật khẩu</h3>
         <div class="row">
           <div class="col-md-12">
-            <form name="form" id="formResetPass" action="" method="POST">
+            @includeIf('frontend._includes.message')
+            <form name="form" id="formResetPass" action="{{ route('front.profile.changepassword_update') }}" method="POST">
+              {{ csrf_field() }}
               <div class="form-groupuser">
                 <label>Mật khẩu cũ</label>
-                <input type="password" class="infouser" name="oldpass" id="oldpass">
+                <input type="password" class="infouser" name="old_password" value="{{ old('old_password') }}" id="old_password" placeholder="Nhập mật khẩu cũ" />
               </div>
               <div class="form-groupuser">
                 <label>Mật khẩu mới</label>
-                <input type="password" class="infouser" name="newpass" id="newpass">
+                <input type="password" class="infouser" name="new_password" value="{{ old('new_password') }}" id="new_password" placeholder="Nhập mật khẩu mới" />
               </div>
               <div class="form-groupuser">
                 <label>Nhập lại mật khẩu mới</label>
-                <input type="password" class="infouser" name="newpass_conf" id="newpass_conf">
+                <input type="password" class="infouser" name="new_password_confirmation" id="new_password_confirmation" placeholder="Xác nhận mật khẩu" />
               </div>
               <button type="submit" class="button-submit">Hoàn tất</button>
             </form>

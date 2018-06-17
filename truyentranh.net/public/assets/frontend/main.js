@@ -82,12 +82,13 @@ $(document).ready(function () {
         }, 'json');
         return false;
     });
-    var datimepicker = window.datetimepicker();
-    var datimepicker = elemBody.find('.datepicker').datetimepicker({
-        lang: 'en',
-        timepicker: false,
-        format: 'm/d/Y'
+
+    elemBody.find('.datepicker').datetimepicker({
+      lang: 'vi',
+      timepicker: false,
+      format: 'd/m/Y'
     });
+
 });
 (function ($) {
     // Scroll bar in maga book
