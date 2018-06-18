@@ -42,6 +42,11 @@
           <i class="fa fa-wrench"></i> <span>Cấu hình</span>
         </a>
       </li>
+      <li class="list-group-item">
+        <a href="{{ route('getbookstool.index') }}">
+          <i class="fa fa-briefcase"></i> <span>Tool lấy truyện</span>
+        </a>
+      </li>
     </ul>
   </div>
 </div>

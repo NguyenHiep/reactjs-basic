@@ -41,6 +41,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
             Route::get('chapters/{chapter}/delete', 'ChaptersController@delete')->where('chapter', '[0-9]+')->name('chapters.delete');
             Route::post('chapters/batch', 'ChaptersController@batch')->name('chapters.batch');
             Route::resource('chapters', 'ChaptersController');
+
+            Route::get('getbookstool', 'GetBooksToolController@index')->name('getbookstool.index');
+            Route::get('getbookstool/preview', 'GetBooksToolController@preview')->name('getbookstool.preview');
+            Route::post('getbookstool', 'GetBooksToolController@store')->name('getbookstool.store');
         });
     });
 });
