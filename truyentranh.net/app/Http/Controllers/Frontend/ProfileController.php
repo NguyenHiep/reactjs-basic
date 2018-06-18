@@ -164,7 +164,7 @@ class ProfileController extends FrontEndController
             Log::error([$e->getMessage(), __METHOD__]);
         }
         return redirect()->route('front.profile.front.profile.changepassword')->withInput($inputs)->with([
-            'message' => __('system.message.errors', ['errors' => 'Update passord is failed']),
+            'message' => __('system.message.errors', ['errors' => 'Update password is failed']),
             'status'  => self::CTRL_MESSAGE_ERROR,
         ]);
     }
