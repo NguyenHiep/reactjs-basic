@@ -12,9 +12,9 @@
         {{ csrf_field() }}
         @php $key = 'url_domain'; @endphp
         <div class="form-group">
-          <label for="content" class="col-sm-2 control-label required">Nhập domain trang truyện cần lấy</label>
+          <label for="content" class="col-sm-2 control-label required">Nguồn leech truyện</label>
           <div class="col-sm-10">
-            {!! Form::text($key,  old($key), ['class' => 'form-control ', 'placeholder' => 'Nhập link domain']) !!}
+            {!! Form::select($key,__('selector.source'),old($key), ['class' => 'form-control ', 'placeholder' => 'Vui lòng chọn']) !!}
             @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
         </div>

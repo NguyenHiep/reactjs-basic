@@ -17,4 +17,11 @@ return [
         4 => 'Hay',
         5 => 'Tuyệt vời',
     ],
+    'source' => [
+        1 => 'truyentranh.net',
+        2 => 'hamtruyen.com',
+        3 => 'truyensieuhay.com',
+        4 => 'comicvn.net',
+        5 => 'nettruyen.com',
+    ]
 ];

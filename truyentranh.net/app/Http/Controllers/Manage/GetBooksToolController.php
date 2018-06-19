@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers\Manage;
 
+use App\Http\Controllers\AppBaseController;
+use App\Http\Controllers\ManageController;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Manage\SourceBooks\BooksDataFactory;
 
-class GetBooksToolController extends Controller
+class GetBooksToolController extends AppBaseController
 {
+    protected $book_data;
+
+    public function __construct(BooksDataFactory $book_data) {
+        $this->book_data = $book_data;
+    }
 
     public function index()
     {
@@ -21,27 +29,12 @@ class GetBooksToolController extends Controller
 
     public function store(Request $request)
     {
-        /*$wrappers = stream_get_wrappers();
-        echo 'openssl: ',  extension_loaded  ('openssl') ? 'yes':'no', "\n";
-        echo 'https wrapper: ', in_array('https', $wrappers) ? 'yes':'no', "\n";
-            echo 'wrappers: ', var_dump($wrappers);*/
-
-        //$data = file_get_contents($request->get('url_book'));
         // Create a user agent so websites don't block you
-        $html = $this->getDom($request->get('url_book'));
-        // Find content of a div with class = 'xyz'
-        $divDetail = $html->find('div[class=manga-detail]');
-        $divContent = $html->find('div[class=manga-content]');
-        $content = '';
-        foreach ($divContent as $content) {
-            $content = trim($content->plaintext);
-        }
-        // Get all list
-        $divChapter_total = $html->find('.total-chapter .content p a');
-        $list_chapter = [];
-        foreach ($divChapter_total as $link) {
-            $list_chapter[$link->href] = $link->plaintext;
-        }
+        $source = $this->book_data->getSource($request->get('url_domain'), $request->get('url_book'));
+        echo '<pre>';
+            var_dump($source->getList());
+        echo '</pre>';
+        die('Hiep123');
 
         // Loop through divData and grab all the links present in it
         /*foreach ($divDetail as $key => $value) {
@@ -64,7 +57,7 @@ class GetBooksToolController extends Controller
      *
      * @param $target_url
      */
-    protected function getDom($target_url)
+    /*protected function getDom($target_url)
     {
         $userAgent = 'Googlebot/2.1 (http://www.google.bot.com/bot.html)';
         // Initialize curl and following options
@@ -86,5 +79,5 @@ class GetBooksToolController extends Controller
         // Create DOM from URL or file
         $dom = str_get_html($content);
         return $dom;
-    }
+    }*/
 }
