@@ -10,4 +10,11 @@ class NetTruyenCom extends BooksDataBase implements BooksDataInterface
     {
         return "Get list net truyen com";
     }
+
+    public function getInfoBook($param) { }
+
+    public function getListChapters($param) { }
+
+    public function getDetailChapter($param) { }
+
 }

@@ -10,4 +10,11 @@ class HamTruyenCom extends BooksDataBase implements BooksDataInterface
     {
         return "Get list ham truyen com";
     }
+
+    public function getInfoBook($param) { }
+
+    public function getListChapters($param) { }
+
+    public function getDetailChapter($param) { }
+
 }

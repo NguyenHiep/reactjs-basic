@@ -10,4 +10,10 @@ class TruyenSieuHayCom extends BooksDataBase implements BooksDataInterface
     {
         return "Get list truyen sieu hay com";
     }
+
+    public function getInfoBook($param) { }
+
+    public function getListChapters($param) { }
+
+    public function getDetailChapter($param) { }
 }

@@ -11,4 +11,10 @@ interface  BooksDataInterface
     const NETTRUYEN_COM     = 5;
 
     public function getList();
+
+    public function getInfoBook($param);
+
+    public function getListChapters($param);
+
+    public function getDetailChapter($param);
 }

@@ -3,28 +3,22 @@
   <div id="main">
     <ol class="breadcrumb">
       <li><a href="{{ route('manage') }}"><i class="fa fa-home"></i> Trang quản trị</a></li>
-      <li class="active">Danh sách truyện leech</li>
+      <li class="active">Danh sách chương leech</li>
     </ol>
     <div class="col-xs-12">
       @include('manage._includes.message')
       <div class="col-xs-12">
         <div class="title-block">
-          <h2>Danh sách truyện leech</h2>
+          <h2>Danh sách chương leech</h2>
           <div class="right-area">
             <ul class="list-unstyled panel-layout btn-box-01">
               <li>
-                <a href="{{ route('getbookstool.chapters') }}" class="btn btn-primary"><small><i class="fa fa-list"></i></small> Danh sách chương leech</a>
-              </li>
-              <li>
                 <a class="btn btn-default" data-toggle="collapse" href="#search_advanced"><small><i class="fa fa-search"></i></small> Tìm kiếm</a>
-              </li>
-              <li>
-                <a href="{{ route('getbookstool.create') }}" class="btn btn-primary"><small><i class="fa fa-edit"></i></small> Leech truyện mới</a>
               </li>
             </ul>
             <div class="toggel-box">
               <div class="collapse toggel-btn-fade" id="search_advanced">
-                <form method="GET" action="{{ route('getbookstool.index') }}" role="form" class="clearfix">
+                <form method="GET" action="{{ route('getbookstool.chapters') }}" role="form" class="clearfix">
                   @php $key = 'search_id' @endphp
                   <div class="form-group clearfix">
                     <label class="control-label col-sm-3">Id:</label>
@@ -56,7 +50,7 @@
                   </div>
                   <div class="form-group clearfix text-right">
                     <a class="btn btn-default" data-toggle="collapse" data-parent="#accordion_toolbar" href="#search_advanced"><small><i class="fa fa-window-close"></i></small>Đóng lại</a>
-                    <a  class="btn btn-default" href="{{ route('getbookstool.index') }}">Reset</a>
+                    <a  class="btn btn-default" href="{{ route('getbookstool.chapters') }}">Reset</a>
                     <button class="btn btn-primary" type="submit"><small><i class="fa fa-search"></i></small>Tìm kiếm</button>
                   </div>
                 </form>
@@ -85,6 +79,7 @@
             
             <div class="block-pagination">
               <p class="number">
+                {{--<label>Hiển thị</label>--}}
                 <select name="display" id="display" class="form-control w-middle">
                   <option value="10">10</option>
                   <option value="20">20</option>
@@ -102,9 +97,9 @@
             <tr>
               <th><input id="check_all" type="checkbox"></th>
               <th class="hidden-xs">ID</th>
-              <th>Hình ảnh</th>
-              <th>Tiêu đề</th>
-              <th class="hidden-sm hidden-xs">Nội dung</th>
+              <th>Truyện</th>
+              <th>Tên chương</th>
+              <th class="hidden-xs">Nổi bật</th>
               <th>Tình trạng</th>
               <th>Ngày tạo</th>
               <th>Sửa</th>
@@ -120,26 +115,30 @@
                   </td>
                   <td class="hidden-xs">{{ $record->id }}</td>
                   <td>
-                    <a href="{{ route('books.edit',$record->id) }}">
-                      @if(!empty($record->image))
-                        <img class="img-thumbnail" src="{{ $record->image }}" alt="{{ $record->name }}" />
-                      @endif
-                    </a>
+                    @if(!empty($record->book_id))
+                      {{ array_get($books, $record->book_id) }}
+                    @endif
+                   </td>
+                   <td>{{ $record->name }}</td>
+                  <td class="hidden-xs">
+                    @if ($record->sticky == 1)
+                      {!! '<i class="fa fa-check  text-success" data-toggle="tooltip" data-placement="top" title="Đang hiển thị"></i>' !!}
+                    @else
+                      {!! '<i class="fa fa-check text-danger" data-toggle="tooltip" data-placement="top" title="Đã ẩn với người dùng"></i>' !!}
+                    @endif
                   </td>
-                  <td>{{ $record->name }}</td>
-                  <td class="hidden-sm hidden-xs">{!! Str::words($record->content, 10,'...')  !!}</td>
                   <td>
                     @if ($record->status == 1)
-                      {!! '<i class="fa fa-check  text-success" data-toggle="tooltip" data-placement="top" title="Đang hiển thị"></i>' !!}
+                    {!! '<i class="fa fa-check  text-success" data-toggle="tooltip" data-placement="top" title="Đang hiển thị"></i>' !!}
                     @else
                       {!! '<i class="fa fa-check text-danger" data-toggle="tooltip" data-placement="top" title="Đã ẩn với người dùng"></i>' !!}
                     @endif
                   </td>
                   <td>{{ $record->created_at }}</td>
                   <td>
-                    <a href="#"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="Sửa"></i></a>
+                    <a href="{{ route('chapters.edit',$record->id) }}"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="Sửa"></i></a>
                   </td>
-                  <td><a href="#" onclick="return confirm('Bạn thật sự muốn xóa?');"><i class="fa fa-trash-o" data-toggle="tooltip" data-placement="top" title="Xóa"></i></a></td>
+                  <td><a href="{{ route('chapters.delete',$record->id) }}" onclick="return confirm('Bạn thật sự muốn xóa?');"><i class="fa fa-trash-o" data-toggle="tooltip" data-placement="top" title="Xóa"></i></a></td>
                 </tr>
               @endforeach
             @endif

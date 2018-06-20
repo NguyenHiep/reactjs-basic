@@ -92,7 +92,7 @@ class CategoriesController extends AppBaseController
             Log::error([$e->getMessage(), __METHOD__]);
         }
         return redirect()->back()->withInput($inputs)->with([
-            'message' => __('system.message.errorss', ['errors' => 'Create categories is failed']),
+            'message' => __('system.message.errors', ['errors' => 'Create categories is failed']),
             'status'  => self::CTRL_MESSAGE_ERROR,
         ]);
     }

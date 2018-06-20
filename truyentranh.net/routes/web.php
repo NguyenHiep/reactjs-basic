@@ -43,8 +43,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
             Route::resource('chapters', 'ChaptersController');
 
             Route::get('getbookstool', 'GetBooksToolController@index')->name('getbookstool.index');
-            Route::get('getbookstool/preview', 'GetBooksToolController@preview')->name('getbookstool.preview');
-            Route::post('getbookstool', 'GetBooksToolController@store')->name('getbookstool.store');
+            Route::get('getbookstool/create', 'GetBooksToolController@create')->name('getbookstool.create');
+            Route::post('getbookstool/create', 'GetBooksToolController@store')->name('getbookstool.store');
+            Route::get('getbookstool/chapters', 'GetBooksToolController@chapters')->name('getbookstool.chapters');
         });
     });
 });

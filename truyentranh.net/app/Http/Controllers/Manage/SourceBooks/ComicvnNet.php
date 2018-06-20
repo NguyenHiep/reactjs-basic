@@ -10,4 +10,10 @@ class ComicvnNet extends BooksDataBase implements BooksDataInterface
     {
         return "Get list comicvn net";
     }
+
+    public function getInfoBook($param) { }
+
+    public function getListChapters($param) { }
+
+    public function getDetailChapter($param) { }
 }
