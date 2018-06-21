@@ -13,8 +13,6 @@ class TruyenTranhNet extends BooksDataBase implements BooksDataInterface
     public function getList()
     {
 
-        //$html = $this->getDom('http://truyentranh.net/linh-kiem-ton/Chap-045');
-        //return "Get list truyen tranh net";
     }
 
     /***
