@@ -41,46 +41,21 @@ class LeechChapters extends Command
      */
     public function handle()
     {
-        // TODO: Add new column save source leech
         $this->info('Begin process leech data');
         $book_data = new BooksDataFactory();
         do {
             $midModel = ChaptersLeech::where('status', ChaptersLeech::STATUS_OFF)->orderBy('id')->take(10)->get(['id', 'leech_source_id', 'leech_chapter_url']);
 
             foreach ($midModel as $chapter) {
-				/*$source    = $book_data->getSource($chapter->leech_source_id, $chapter->leech_chapter_url);
-				$mchapters = ChaptersLeech::find($chapter->id);
-							$mchapters->content = $source->getDetailChapter($source->getDom());
-							$mchapters->status  = ChaptersLeech::STATUS_ON;
-							$mchapters->flag_leech_content  = ChaptersLeech::STATUS_ON;
-							$mchapters->save();*/
                 $data                       = [];
                 $source                     = $book_data->getSource($chapter->leech_source_id, $chapter->leech_chapter_url);
                 $data['content']            = $source->getDetailChapter($source->getDom());
                 $data['status']             = ChaptersLeech::STATUS_ON;
                 $data['flag_leech_content'] = ChaptersLeech::STATUS_ON;
                 $chapter->update($data);
-
                 $this->info('--- Chapter id: ' . $chapter->id);
             }
         } while (count($midModel) > 0);
-
-       /* DB::table('chapters_leech')->where('status', ChaptersLeech::STATUS_OFF)->orderBy('id')->chunk(100,
-            function ($chapters_leech) {
-                $book_data = new BooksDataFactory();
-                if (!empty($chapters_leech)) {
-                    foreach ($chapters_leech as $key => $chapter) {
-                        $source    = $book_data->getSource($chapter->leech_source_id, $chapter->leech_chapter_url);
-                        $mchapters = ChaptersLeech::find($chapter->id);
-                        $mchapters->content = $source->getDetailChapter($source->getDom());
-                        $mchapters->status  = ChaptersLeech::STATUS_ON;
-                        $mchapters->flag_leech_content  = ChaptersLeech::STATUS_ON;
-                        $mchapters->save();
-                        $this->info('--- Chapter id: ' . $chapter->id);
-                    }
-                }
-
-            });*/
         $executionTime = microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"]; // >= php version PHP 5.4
         $this->info('Total time: ' . $executionTime . ' to execute.');
         $this->info('Complete leech data!');
