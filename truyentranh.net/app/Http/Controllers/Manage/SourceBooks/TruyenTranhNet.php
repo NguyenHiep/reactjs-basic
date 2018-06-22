@@ -24,14 +24,14 @@ class TruyenTranhNet extends BooksDataBase implements BooksDataInterface
     public function getInfoBook($html)
     {
         $books = [];
-        $node_detail      = $html->find('div[class=manga-detail]');
-        $divDetail        = array_shift($node_detail);
-        $node_image       = $divDetail->find('div[class=cover-detail] img');
-        $books['image']   = array_shift($node_image)->src ?? null;
-        $node_name        = $divDetail->find('h1[class=title-manga]');
-        $books['name']    = array_shift($node_name)->innertext ?? null;
-        $divContent       = $html->find('div[class=manga-content]');
-        $books['content'] = trim(array_shift($divContent)->plaintext) ?? null;
+        $node_detail         = $html->find('div[class=manga-detail]');
+        $divDetail           = array_shift($node_detail);
+        $node_image          = $divDetail->find('div[class=cover-detail] img');
+        $books['image_link'] = array_shift($node_image)->src ?? null;
+        $node_name           = $divDetail->find('h1[class=title-manga]');
+        $books['name']       = array_shift($node_name)->innertext ?? null;
+        $divContent          = $html->find('div[class=manga-content]');
+        $books['content']    = trim(array_shift($divContent)->innertext) ?? null;
         return $books;
     }
 

@@ -36,9 +36,8 @@ class GetBooksToolController extends AppBaseController
     protected static function validator(array $data)
     {
         return Validator::make($data, [
-            'url_domain'  => 'required|integer|min:1|max:5',
-            'url_book'    => 'required|url',
-            'url_chapter' => 'nullable|string|url',
+            'leech_source_id'  => 'required|integer|min:1|max:5',
+            'leech_book_url'   => 'required|url|unique:books_leech',
         ]);
     }
 
@@ -133,24 +132,12 @@ class GetBooksToolController extends AppBaseController
             return redirect()->back()->withErrors($validator)->withInput($inputs);
         }
 
-        // Create a user agent so websites don't block you
-        $source = $this->book_data->getSource($request->get('url_domain'), $request->get('url_book'));
-        $info_book_leach = $source->getInfoBook($source->getDom());
-        $info_book_leach['created_by'] = Auth::id();
-        $info_book_leach['slug']       = str_slug($info_book_leach['name']);
-
-        // TODO: How to don't working
-        $validator_leech = self::validator_books_leech($info_book_leach);
-        if ($validator_leech->fails()) {
-            // Write log error
-            $errors = $validator_leech->errors();
-            $list_message = '';
-            foreach ($errors->all() as $message) {
-                $list_message .= $message . PHP_EOL;
-            }
-            Log::error($list_message);
-            return redirect()->back()->withErrors($validator_leech)->withInput($info_book_leach);
-        }
+        $source = $this->book_data->getSource($inputs['leech_source_id'], $inputs['leech_book_url']);
+        $info_book_leach                    = $source->getInfoBook($source->getDom());
+        $info_book_leach['created_by']      = Auth::id();
+        $info_book_leach['slug']            = str_slug($info_book_leach['name']);
+        $info_book_leach['leech_source_id'] = $inputs['leech_source_id'];
+        $info_book_leach['leech_book_url']  = $inputs['leech_book_url'];
 
         try {
             DB::beginTransaction();
@@ -167,7 +154,9 @@ class GetBooksToolController extends AppBaseController
                 $chapters[$key]['name']        = $items;
                 $chapters[$key]['episodes']    = $episodes;
                 $chapters[$key]['slug']        = str_slug($items);
-                $chapters[$key]['source_book'] = $key;
+                $chapters[$key]['leech_source_id']    = $inputs['leech_source_id'];
+                $chapters[$key]['leech_chapter_url']  = $key;
+                $chapters[$key]['flag_leech_content'] = ChaptersLeech::STATUS_OFF;
                 $chapters[$key]['created_by']  = Auth::id();
             }
             $model_chapter::insert($chapters);

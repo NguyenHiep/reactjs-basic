@@ -5,7 +5,6 @@ namespace App;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
-use App\ChaptersLeech;
 
 class BooksLeech extends BaseModel
 {
@@ -14,12 +13,16 @@ class BooksLeech extends BaseModel
     protected $dates    = ['deleted_at'];
     protected $fillable = [
         'id',
+        'categories',
         'author',
         'name',
         'slug',
         'name_dif',
         'image',
+        'image_link',
         'content',
+        'leech_book_url',
+        'leech_source_id',
         'progress',
         'teams_translate',
         'sticky',
@@ -27,6 +30,10 @@ class BooksLeech extends BaseModel
         'reviews',
         'status',
         'created_by',
+        'seo_title',
+        'seo_slug',
+        'seo_description',
+        'seo_keywords',
         'created_at',
     ];
 

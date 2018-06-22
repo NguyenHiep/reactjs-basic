@@ -19,9 +19,9 @@ return [
     ],
     'source' => [
         1 => 'truyentranh.net',
-        2 => 'hamtruyen.com',
+       /* 2 => 'hamtruyen.com',
         3 => 'truyensieuhay.com',
         4 => 'comicvn.net',
-        5 => 'nettruyen.com',
+        5 => 'nettruyen.com',*/
     ]
 ];

@@ -121,8 +121,8 @@
                   <td class="hidden-xs">{{ $record->id }}</td>
                   <td>
                     <a href="{{ route('books.edit',$record->id) }}">
-                      @if(!empty($record->image))
-                        <img class="img-thumbnail" src="{{ $record->image }}" alt="{{ $record->name }}" />
+                      @if(!empty($record->image_link))
+                        <img class="img-thumbnail" src="{{ $record->image_link }}" alt="{{ $record->name }}" />
                       @endif
                     </a>
                   </td>
