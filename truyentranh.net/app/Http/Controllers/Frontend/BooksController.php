@@ -21,7 +21,7 @@ class BooksController extends FrontEndController
             [
                 'chapters' => function ($query) {
                     $query->where('status', '=', Chapters::STATUS_ON)
-                        ->orderBy('created_at', 'desc');
+                        ->orderBy('name', 'desc');
                 }
             ])
             ->where('slug', $book_slug)
@@ -37,7 +37,7 @@ class BooksController extends FrontEndController
             ->get();
         $data['book']         = $book;
         $data['book_related'] = $book_related;
-        $data['categories']   = Categories::get_option_list();
+        $data['categories']   = Categories::getListCategories();
         return view('books',$data );
     }
 

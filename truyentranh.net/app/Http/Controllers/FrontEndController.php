@@ -34,7 +34,7 @@ class FrontEndController extends Controller
             [
                 'chapters' => function ($query) {
                     $query->where('status', '=', Chapters::STATUS_ON)
-                        ->orderBy('created_at', 'desc');
+                        ->orderBy('name', 'desc');
                 }
             ])->where('status', Books::STATUS_ON)
             ->whereNotIn('id', $ids)

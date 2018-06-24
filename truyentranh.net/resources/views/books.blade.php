@@ -40,9 +40,15 @@
                 if(!empty($book->categories)){
                 $html = '';
                 foreach( $book->categories as $id){
-                  $html .= array_get($categories, $id).', ';
+                  foreach ($categories as $category){
+                    if($category->id == $id){
+                      $html .= '<a href="'.route('front.categories.show', ['cat_slug' => $category->slug]).'">'.$category->name.'</a>, ';
+                    }
+                  
+                  }
+                  
                 }
-                echo rtrim($html, ',');
+                echo rtrim($html, ', ');
                }
               @endphp
               <br>
@@ -72,7 +78,7 @@
               @foreach( $book->chapters as $chapter)
                 @if ($loop->iteration > 5) @break @endif
                 <p>
-                  <a href="{{ route('front.books.showdetail', ['chapter_slug' => $chapter->slug]) }}" title="{{$chapter->name}}" target="_blank">{{$chapter->name}} <span class="date-release">{{ $chapter->created_at }}</span>
+                  <a href="{{ route('front.books.showdetail', ['chapter_slug' => $chapter->slug]) }}" title="{{$chapter->name}}" target="_blank">{{ ucfirst($chapter->name) }} <span class="date-release">{{ $chapter->created_at }}</span>
                   </a>
                 </p>
               @endforeach
@@ -88,7 +94,7 @@
               @if(count($book->chapters) > 0)
                 @foreach( $book->chapters as $chapter)
                   <p>
-                    <a href="{{ route('front.books.showdetail', ['chapter_slug' => $chapter->slug]) }}" title="{{$chapter->name}}" target="_blank">{{$chapter->name}} <span class="date-release">{{ $chapter->created_at }}</span>
+                    <a href="{{ route('front.books.showdetail', ['chapter_slug' => $chapter->slug]) }}" title="{{$chapter->name}}" target="_blank">{{ ucfirst($chapter->name) }} <span class="date-release">{{ $chapter->created_at }}</span>
                     </a>
                   </p>
                 @endforeach
