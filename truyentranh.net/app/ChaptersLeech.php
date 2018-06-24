@@ -10,7 +10,7 @@ use App\BooksLeech;
 class ChaptersLeech extends BaseModel
 {
     use SoftDeletes;
-    protected $table    = 'chapters_leech';
+    protected $table    = 'chapters';
     protected $dates    = ['deleted_at'];
     protected $fillable = [
         'id',
@@ -62,12 +62,12 @@ class ChaptersLeech extends BaseModel
     }
 
     public static function get_option_list_by_book_id($book_id = null){
-        $chapters = Chapters::select('chapters_leech.name', 'chapters_leech.slug', 'books_leech.name as book_name', 'books_leech.slug as book_slug')
-            ->join('books_leech', 'books_leech.id', '=', 'chapters_leech.book_id')
-            ->where('books_leech.status', BooksLeech::STATUS_ON)
-            ->where('chapters_leech.status', ChaptersLeech::STATUS_ON)
-            ->where('chapters_leech.book_id', $book_id)
-            ->orderBy('chapters_leech.id', 'desc')
+        $chapters = ChaptersLeech::select('chapters.name', 'chapters.slug', 'books.name as book_name', 'books.slug as book_slug')
+            ->join('books', 'books.id', '=', 'chapters.book_id')
+            ->where('books.status', BooksLeech::STATUS_ON)
+            ->where('chapters.status', ChaptersLeech::STATUS_ON)
+            ->where('chapters.book_id', $book_id)
+            ->orderBy('chapters.id', 'desc')
             ->get();
         return $chapters;
     }

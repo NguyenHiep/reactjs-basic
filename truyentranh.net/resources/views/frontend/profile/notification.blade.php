@@ -27,58 +27,25 @@
         <h3 class="title-control">Thông báo</h3>
         <div class="row">
           <div class="col-md-12">
-            <div class="media media-followuser">
+            @if(!empty($notifications))
+              @foreach($notifications as $notification)
+                <div class="media media-followuser">
               <div class="media-left">
-                <a href="http://truyentranh.net/profile/fshare-register.html">
-                  <img src="http://storage.fshare.vn/Test-vechai/1436863505-fshare.jpg" alt="hott1" class="image_circle">
+                <a href="#">
+                  <img src="{{ asset(PATH_IMAGE_DEFAULT) }}" alt="hott1" class="image_circle">
                 </a>
               </div>
               <div class="media-body">
-                <a href="http://truyentranh.net/profile/fshare-register.html">
+                <a href="#">
                   <h4 class="manga-newest">Fshare.vn tặng các thành viên vechai.info 1GB dung lượng tải tốc độ cao miễn phí. Tham gia ngay!</h4>
                 </a>
                 <p class="description-user"><span>Cập nhật: </span>2018-06-16 20:12:21
                 </p></div>
             </div>
-            <div class="media media-followuser">
-              <div class="media-left">
-                <a href="http://truyentranh.net/profile/fshare-register.html">
-                  <img src="http://storage.fshare.vn/Test-vechai/1436863505-fshare.jpg" alt="hott1" class="image_circle">
-                </a>
-              </div>
-              <div class="media-body">
-                <a href="http://truyentranh.net/profile/fshare-register.html">
-                  <h4 class="manga-newest">Fshare.vn tặng các thành viên vechai.info 1GB dung lượng tải tốc độ cao miễn phí. Tham gia ngay!</h4>
-                </a>
-                <p class="description-user"><span>Cập nhật: </span>2018-06-14 22:51:18
-                </p></div>
-            </div>
-            <div class="media media-followuser">
-              <div class="media-left">
-                <a href="http://truyentranh.net/profile/fshare-register.html">
-                  <img src="http://storage.fshare.vn/Test-vechai/1436863505-fshare.jpg" alt="hott1" class="image_circle">
-                </a>
-              </div>
-              <div class="media-body">
-                <a href="http://truyentranh.net/profile/fshare-register.html">
-                  <h4 class="manga-newest">Fshare.vn tặng các thành viên vechai.info 1GB dung lượng tải tốc độ cao miễn phí. Tham gia ngay!</h4>
-                </a>
-                <p class="description-user"><span>Cập nhật: </span>2018-06-09 12:24:23
-                </p></div>
-            </div>
-            <div class="media media-followuser">
-              <div class="media-left">
-                <a href="http://truyentranh.net/profile/fshare-register.html">
-                  <img src="http://storage.fshare.vn/Test-vechai/1436863505-fshare.jpg" alt="hott1" class="image_circle">
-                </a>
-              </div>
-              <div class="media-body">
-                <a href="http://truyentranh.net/profile/fshare-register.html">
-                  <h4 class="manga-newest">Fshare.vn tặng các thành viên vechai.info 1GB dung lượng tải tốc độ cao miễn phí. Tham gia ngay!</h4>
-                </a>
-                <p class="description-user"><span>Cập nhật: </span>2018-06-05 13:31:08
-                </p></div>
-            </div>
+              @endforeach
+            @else
+              <p class="text-left">Hiện tại chưa có thông báo từ quản trị viên</p>
+            @endif
           </div>
         </div>
         <div class="row">

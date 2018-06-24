@@ -121,7 +121,7 @@
                   <td>
                     <a href="{{ route('books.edit',$record->id) }}">
                       @if(!empty($record->image))
-                        <img class="img-thumbnail" src="{!! asset("uploads/thumbnail/thumbnail_".$record->image) !!}" alt="{{ $record->name }}" />
+                        <img class="img-thumbnail" src="{!! asset(PATH_IMAGE_THUMBNAIL_BOOK.$record->image) !!}" alt="{{ $record->name }}" />
                       @endif
                     </a>
                   </td>

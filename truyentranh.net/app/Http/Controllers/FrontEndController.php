@@ -42,6 +42,7 @@ class FrontEndController extends Controller
             ->limit(20)
             ->get();
 
+
         $data['show_slider'] = Books::query()->with(
             [
                 'chapters' => function ($query) {

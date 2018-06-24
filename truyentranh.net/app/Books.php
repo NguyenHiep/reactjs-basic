@@ -19,7 +19,11 @@ class Books extends BaseModel
         'slug',
         'name_dif',
         'image',
+        'image_link',
         'content',
+        'leech_book_url',
+        'leech_source_id',
+        'flag_leech_image',
         'progress',
         'teams_translate',
         'sticky',
@@ -86,5 +90,10 @@ class Books extends BaseModel
         }
 
         return $data + ($deleted ? $deleted_data : []);
+    }
+
+    public static function getTotalBook()
+    {
+        return Books::where('status', Books::STATUS_ON)->count();
     }
 }

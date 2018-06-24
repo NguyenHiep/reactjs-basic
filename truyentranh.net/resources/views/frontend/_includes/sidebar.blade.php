@@ -5,7 +5,7 @@
         <h3 class="cate-title">Thể loại</h3>
       </div>
       <div class="col-6">
-        <div class="cate-total">{{--<a href="http://truyentranh.net/danh-sach.tall.html">Xem tất cả <span> (4382)</span></a>--}}</div>
+        <div class="cate-total"><a href="{{ route('front.categories.showall') }}">Xem tất cả <span> ({{ $total_book }})</span></a></div>
       </div>
     </div>
     <div class="category">
@@ -13,7 +13,7 @@
         @if (count($categories) > 0)
          @foreach($categories as $category)
             <div class="col-6">
-              <a href="{{ url("/the-loai/".$category->slug) }}" title="{{ $category->name }}"> {{ $category->name }}{{--<span> (2)</span>--}}</a>
+              <a href="{{ url("/the-loai/".$category->slug) }}" title="{{ $category->name }}"> {{ $category->name }}<span> ({{ $category->books_count }})</span></a>
             </div>
          @endforeach
         @endif

@@ -31,9 +31,9 @@
       <ul class="list-unstyled list-inline-item ml-2 my-2 my-lg-0">
         @auth
           <li class="dropdown">
-          <a href="javascript:void(0);" data-toggle="dropdown" class="user-circle" data-href="http://truyentranh.net/notification/topbar.json" data-hascontent="false" id="dLabel" aria-haspopup="true" aria-expanded="false">
-            @php $avatar = (Auth::user()->avatar) ? asset("uploads/thumbnail/avatars/thumbnail_" . Auth::user()->avatar) : 'http://cdn.truyentranh.net/upload//image/notification/default.png';@endphp
-            <img src="{{ $avatar }}" alt="{{ Auth::user()->name ?? null }}" class="img-circle">
+          <a href="javascript:void(0);" data-toggle="dropdown" class="user-circle" id="dLabel">
+            @php $avatar = (Auth::user()->avatar) ? asset(PATH_AVATAR_THUMBNAIL . Auth::user()->avatar) : asset(PATH_IMAGE_DEFAULT); @endphp
+            <img src="{{ $avatar }}" alt="{{ Auth::user()->fullname ?? Auth::user()->name }}" class="img-circle">
             {{--<b class="caret"></b><span class="norti-user">1</span>--}}
           </a>
           <ul class="usercontent dropdown-menu" id="noticePanel" role="menu" aria-labelledby="dLabel">
@@ -43,7 +43,7 @@
                   <div class="col-md-12">
                     <div class="welcome-contain">
                       <a href="{{ route('front.profile.edit') }}">
-                        <h3 class="username">{{ Auth::user()->name ?? null }}</h3>
+                        <h3 class="username">{{ Auth::user()->fullname ?? Auth::user()->namel }}</h3>
                       </a>
                       <span class="status-click">
                         <a title="Truyện theo dõi" href="{{ route('front.profile.follow') }}">Truyện theo dõi</a>
@@ -56,24 +56,36 @@
                     </div>
                   </div>
                 </div>
-          
+                
                 <div class="row">
                   <div class="col-md-12">
                     <div class="follower-status NotificationList" id="notification-content">
-                      <div class="media media-flowuser"><div class="media-left media-topfix"><a href="http://truyentranh.net/profile/fshare-register.html"><img src="http://storage.fshare.vn/Test-vechai/1436863505-fshare.jpg" alt="hott3" class="media-object"></a></div><div class="media-body"><a href="http://truyentranh.net/profile/fshare-register.html"><h4 class="manga-newest">Fshare.vn tặng các thành viên vechai.info 1GB dung lượng tải tốc độ cao miễn phí. Tham gia ngay!</h4></a><p class="description-flow"><span class="chapter">2018-06-16 20:12:21</span></p></div></div>
-                      <div class="media media-flowuser"><div class="media-left media-topfix"><a href="http://truyentranh.net/profile/fshare-register.html"><img src="http://storage.fshare.vn/Test-vechai/1436863505-fshare.jpg" alt="hott3" class="media-object"></a></div><div class="media-body"><a href="http://truyentranh.net/profile/fshare-register.html"><h4 class="manga-newest">Fshare.vn tặng các thành viên vechai.info 1GB dung lượng tải tốc độ cao miễn phí. Tham gia ngay!</h4></a><p class="description-flow"><span class="chapter">2018-06-16 20:12:21</span></p></div></div>
+                      @if(!empty($notification))
+                        <div class="media media-flowuser">
+                          <div class="media-left media-topfix">
+                            <a href="#"><img src="{{ asset(PATH_IMAGE_DEFAULT) }}" alt="hott3" class="media-object"></a>
+                          </div>
+                          <div class="media-body">
+                            <a href="#">
+                              <h4 class="manga-newest">Fshare.vn tặng các thành viên vechai.info 1GB dung lượng tải tốc độ cao miễn phí. Tham gia ngay!</h4>
+                            </a>
+                            <p class="description-flow"><span class="chapter">2018-06-16 20:12:21</span></p>
+                          </div>
+                        </div>
+                      @else
+                        <p class="text-center"> Hiện tại chưa có thông báo từ quản trị viên</p>
+                      @endif
                     </div>
                   </div>
                 </div>
-          
                 <div class="row">
                   <div class="col-md-12">
                     <div class="welcome-contain">
-                      <a href="{{ route('front.profile.notification') }}" class="view-allmess" title="Xem tất cả thông báo">Xem tất cả thông
-                        báo</a>
+                      <a href="{{ route('front.profile.notification') }}" class="view-allmess" title="Xem tất cả thông báo">Xem tất cả thông báo</a>
                     </div>
                   </div>
                 </div>
+                
               </div>
             </li>
           </ul>
@@ -93,7 +105,7 @@
     <div class="row">
       <div class="col-12">
         @foreach($chapters as $chapter)
-          <div class="post-stick"><a href="{{ url($chapter->book_slug.'/'.$chapter->slug) }}" title="{{ $chapter->name }}">{{ $chapter->book_name . $chapter->name }} <img src="http://cdn.truyentranh.net/frontend/images/hot.gif" /></a>
+          <div class="post-stick"><a href="{{ route('front.books.showdetail', ['chapter_slug' => $chapter->slug]) }}" title="{{ $chapter->name }}">{{$chapter->name }} <img src="{{ asset(PATH_IMAGE_FRONTEND.'hot.gif') }}" /></a>
           </div>
         @endforeach
       </div>

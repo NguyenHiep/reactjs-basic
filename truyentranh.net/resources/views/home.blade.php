@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('seo_title', 'Đọc truyện tranh online | yeutruyentranh.com')
-@section('seo_keywords', 'Đọc truyện tranh online, One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,...')
-@section('seo_description', 'Đọc truyện tranh online mới nhất, nhanh nhất như One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,..')
+@section('seo_title', 'Đọc truyện tranh online - Truyện gì cũng có - TruyentranhFc')
+@section('seo_keywords', 'Đọc truyện tranh online, Truyện tranh, Truyện hành động')
+@section('seo_description', '❶❶✅ Web đọc truyện tranh online lớn nhất được cập nhật liên tục mỗi ngày - Cùng tham gia đọc truyện và thảo luận với hơn ✅1 triệu thành viên tại TruyentranhFc')
 
 @section('sliders')
   @if(!empty($show_slider) && count($show_slider) > 0)
@@ -19,7 +19,7 @@
                 <div class="thumbnails">
                   <a href="{{ url($book->slug) }}" class="slick-item">
                     @if(!empty($book->image))
-                      <img class="pr-2" src="{!! asset("uploads/thumbnail/thumbnail_".$book->image) !!}" alt="{{ $book->name }}" />
+                      <img class="pr-2" src="{!! asset(PATH_IMAGE_THUMBNAIL_BOOK.$book->image) !!}" alt="{{ $book->name }}" />
                     @endif
                     <h3 class="manga-title">{{ $book->name }}</h3>
                   </a>
@@ -29,8 +29,8 @@
                       @if ($loop->iteration > 1)
                         @break
                       @endif
-                      <a href="{{ url($book->slug.'/'.$chapter->slug) }}" title="{{ $chapter->name }}" class="Chapter">
-                        <p class="chapter"><a href="{{ url($book->slug.'/'.$chapter->slug) }}">{{ $chapter->episodes }}</a> </p>
+                      <a href="{{ route('front.books.showdetail', ['chapter_slug' => $chapter->slug]) }}" title="{{ $chapter->name }}" class="Chapter">
+                        <p class="chapter"><a href="{{ route('front.books.showdetail', ['chapter_slug' => $chapter->slug]) }}">{{ $chapter->episodes }}</a> </p>
                       </a>
                     @endforeach
                 </div>
@@ -52,7 +52,7 @@
         <div class="media mainpage-manga mt-0">
           <a href="{{ url($book->slug) }}" class="tooltips">
             @if(!empty($book->image))
-              <img class="pr-2" src="{!! asset("uploads/thumbnail/thumbnail_".$book->image) !!}" alt="{{ $book->name }}" />
+              <img class="pr-2" src="{!! asset(PATH_IMAGE_THUMBNAIL_BOOK.$book->image) !!}" alt="{{ $book->name }}" />
             @endif
             <span>
               <img src="http://cdn.truyentranh.net/frontend/images/callout.gif" class="callout" />
@@ -100,11 +100,11 @@
   <h3 class="title-body">Truyện mới nhất</h3>
   <div class="row">
     @foreach($books_update as $book)
-      <div class="col-xs-12 col-md-6">
+      <div class="col-xs-12 col-lg-6">
         <div class="media mainpage-manga mt-0">
           <a href="{{ url($book->slug) }}" class="tooltips">
             @if(!empty($book->image))
-              <img class="pr-2" src="{!! asset("uploads/thumbnail/thumbnail_".$book->image) !!}" alt="{{ $book->name }}" />
+              <img class="pr-2" src="{!! asset(PATH_IMAGE_THUMBNAIL_BOOK.$book->image) !!}" alt="{{ $book->name }}" />
             @endif
             <span>
               <img src="http://cdn.truyentranh.net/frontend/images/callout.gif" class="callout"/>
@@ -126,6 +126,7 @@
               </p>
             </span>
           </a>
+          
           <div class="media-body">
             <h4 class="manga-newest"><a href="{{ url($book->slug) }}">{{ $book->name }}</a></h4>
             <div class="row">
@@ -136,7 +137,7 @@
                       @if ($loop->iteration > 8)
                         @break
                       @endif
-                      <li><a class="latest-chap" href="{{ url($book->slug.'/'.$chapter->slug) }}" target="_blank" title="{{$chapter->name}}">{{$chapter->episodes}}</a></li>
+                      <li><a class="latest-chap" href="{{ route('front.books.showdetail', ['chapter_slug' => $chapter->slug]) }}" target="_blank" title="{{$chapter->name}}">{{$chapter->episodes}}</a></li>
                     @endforeach
                   @endif
                 </ul>

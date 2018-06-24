@@ -9,6 +9,7 @@
         "barryvdh/laravel-cors": "^0.11.0",
         "fideloper/proxy": "~3.3",
         "geedmo/yamm3": "^1.1",
+        "htmlmin/htmlmin": "^5.6",
         "intervention/image": "^2.4",
         "laravel/framework": "5.5.*",
         "laravel/passport": "~4.0",

@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('seo_title', 'Tìm kiếm truyện | Đọc truyện tranh online | yeutruyentranh.com')
-@section('seo_keywords', 'Đọc truyện tranh online, One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,...')
-@section('seo_description', 'Đọc truyện tranh online mới nhất, nhanh nhất như One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,..')
+@section('seo_title', 'Tìm truyện: '. request()->get('q'))
+@section('seo_keywords', 'Đọc truyện tranh online, Truyện tranh, Truyện hành động')
+@section('seo_description', '❶❶✅ Web đọc truyện tranh online lớn nhất được cập nhật liên tục mỗi ngày - Cùng tham gia đọc truyện và thảo luận với hơn ✅1 triệu thành viên tại TruyentranhFc')
 
 @section('breadcrumb')
   <div class="breadcrumb-contain">
@@ -98,7 +98,7 @@
             <div class="media mainpage-manga mt-0">
               <a href="{{ url($book->slug) }}" class="tooltips">
                 @if(!empty($book->image))
-                  <img class="pr-2" src="{!! asset("uploads/thumbnail/thumbnail_".$book->image) !!}" alt="{{ $book->name }}" />
+                  <img class="pr-2" src="{!! asset(PATH_IMAGE_THUMBNAIL_BOOK.$book->image) !!}" alt="{{ $book->name }}" />
                 @endif
                 <span>
                   <img src="http://cdn.truyentranh.net/frontend/images/callout.gif" class="callout" />

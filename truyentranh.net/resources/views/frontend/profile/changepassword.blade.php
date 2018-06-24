@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @php $title_seo = 'Thay đổi mật khẩu' @endphp
-@section('seo_title', $title_seo.' | Đọc truyện tranh online | yeutruyentranh.com')
+@section('seo_title', $title_seo.' | Đọc truyện tranh online | truyentranhfc.com')
 @section('seo_keywords', $title_seo.', Đọc truyện tranh online, One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,...')
 @section('seo_description', $title_seo.', Đọc truyện tranh online mới nhất, nhanh nhất như One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,..')
 

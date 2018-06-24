@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\FrontEnd;
 
+use App\ChaptersLeech;
 use App\Http\Controllers\FrontEndController;
 use App\Books;
 use App\Categories;
@@ -40,30 +41,27 @@ class BooksController extends FrontEndController
         return view('books',$data );
     }
 
-    public function chapter_detail($book_slug, $chapter_slug)
+    public function chapter_detail($chapter_slug)
     {
-        if(empty($book_slug) || empty($chapter_slug) ){
+        if (empty($chapter_slug)) {
             return abort(404);
         }
-        $book = Books::where('slug', $book_slug)
-            ->where('status', Books::STATUS_ON)
+        $chapter = Chapters::select('chapters.*', 'books.name as book_name', 'books.slug as book_slug')
+            ->join('books', 'books.id', '=', 'chapters.book_id')
+            ->where('chapters.slug', $chapter_slug)
+            ->where('books.status', Books::STATUS_ON)
+            ->where('chapters.status', Chapters::STATUS_ON)
             ->first();
-        if(empty($book)){
+        if (empty($chapter)) {
             return abort(404);
         }
-        $chapter = $book->chapters()
-            ->where('slug', $chapter_slug)
-            ->where('status', Chapters::STATUS_ON)
-            ->first();
-        $data['book']          = $book;
         $data['chapter']       = $chapter;
-        $data['categories']    = Categories::get_option_list();
-        $data['list_chapters'] = Chapters::get_option_list_by_book_id($book->id);
-        $data = $data + $this->move($book->id, $chapter->id);
+        $data['list_chapters'] = Chapters::get_option_list_by_book_id($chapter->book_id);
+        $data = $data + $this->move_chapter($chapter->book_id, $chapter->id);
         return view('books-detail',$data );
     }
 
-    private function move($book_id, $chapter_id)
+    private function move_chapter($book_id, $chapter_id)
     {
         $result = [];
         $previous = DB::table('chapters')

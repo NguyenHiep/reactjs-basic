@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class BooksLeech extends BaseModel
 {
     use SoftDeletes;
-    protected $table    = 'books_leech';
+    protected $table    = 'books';
     protected $dates    = ['deleted_at'];
     protected $fillable = [
         'id',
@@ -23,6 +23,7 @@ class BooksLeech extends BaseModel
         'content',
         'leech_book_url',
         'leech_source_id',
+        'flag_leech_image',
         'progress',
         'teams_translate',
         'sticky',
@@ -69,7 +70,7 @@ class BooksLeech extends BaseModel
     {
         static $data, $deleted_data;
         if (empty($data)) {
-            $data = array_pluck(DB::table('books_leech')->select('id', 'name')
+            $data = array_pluck(DB::table('books')->select('id', 'name')
                 ->where('status', static::STATUS_ON)
                 ->where('deleted_at', null)
                 ->orderBy('name')
@@ -77,7 +78,7 @@ class BooksLeech extends BaseModel
                 ->toArray(), 'name', 'id');
         }
         if ($deleted && empty($deleted_data)) {
-            $deleted_data = array_pluck(DB::table('books_leech')->select('id', 'name')
+            $deleted_data = array_pluck(DB::table('books')->select('id', 'name')
                 ->where('status', static::STATUS_OFF)
                 ->orWhere('deleted_at', '!=', null)
                 ->orderBy('name')

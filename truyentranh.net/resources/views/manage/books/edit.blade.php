@@ -66,7 +66,7 @@
                   {!! Form::file($key, ['class' => 'form-control', 'accept' => 'image/*']) !!}
                   @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
                   @if(!empty($record->{$key}))
-                    <img class="img-thumbnail" src="{!! asset("uploads/images/".$record->{$key}) !!}" alt="{{ $record->name }}" />
+                    <img class="img-thumbnail" src="{!! asset(PATH_IMAGE_BOOK.$record->{$key}) !!}" alt="{{ $record->name }}" />
                   @endif
                 </div>
               </div>

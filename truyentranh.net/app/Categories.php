@@ -71,6 +71,12 @@ class Categories extends BaseModel
     }
 
     public static function getListCategories(){
-        return Categories::where('status', static::STATUS_ON)->get();
+        return Categories::where('status', static::STATUS_ON)
+            ->withCount([
+                'books' => function ($query) {
+                    $query->where('status', '=', Books::STATUS_ON);
+                }
+            ])->get();
     }
+
 }

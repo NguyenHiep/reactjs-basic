@@ -19,15 +19,17 @@ class MasterComposer
     public function compose(View $view)
     {
         $categories = Categories::getListCategories();
-        $chapters = Chapters::select('chapters.name','chapters.slug','books.name as book_name','books.slug as book_slug')
+        $total_book = Books::getTotalBook();
+        $chapters = Chapters::select('chapters.name','chapters.slug')
             ->join('books', 'books.id', '=', 'chapters.book_id')
             ->where('books.status', Books::STATUS_ON)
             ->where('chapters.status', Chapters::STATUS_ON)
             ->where('chapters.sticky', Chapters::STATUS_ON)
-            ->orderBy('chapters.created_at', 'desc')
+            ->orderBy('chapters.updated_at', 'desc')
             ->limit(3)
             ->get();
         $view->with('categories', $categories);
+        $view->with('total_book', $total_book);
         $view->with('chapters', $chapters);
     }
 

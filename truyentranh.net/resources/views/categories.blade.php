@@ -59,7 +59,7 @@
             <div class="media mainpage-manga mt-0">
               <a href="{{ url($book->slug) }}" class="tooltips">
                 @if(!empty($book->image))
-                  <img class="pr-2" src="{!! asset("uploads/thumbnail/thumbnail_".$book->image) !!}" alt="{{ $book->name }}" />
+                  <img class="pr-2" src="{!! asset(PATH_IMAGE_THUMBNAIL_BOOK.$book->image) !!}" alt="{{ $book->name }}" />
                 @endif
                 <span>
                 <img src="http://cdn.truyentranh.net/frontend/images/callout.gif" class="callout" />

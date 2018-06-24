@@ -68,14 +68,8 @@ Route::middleware(['auth'])->group(function () {
 
 
 Route::get('the-loai/{cat_slug}','Frontend\CategoriesController@show')->name('front.categories.show')->where('cat_slug','[a-zA-Z.-]+');
-Route::get('{book_slug}/{chapter}','Frontend\BooksController@chapter_detail')->name('front.books.showdetail')->where([
-    'book_slug'    => '[a-zA-Z0-9.-]+',
-    'chapter_slug' => '[a-zA-Z0-9.-]+',
-]);
-Route::post('{book_slug}/{chapter}', 'Frontend\ReportController@chapter')->name('front.report.chapter')->where([
-    'book_slug'    => '[a-zA-Z0-9.-]+',
-    'chapter_slug' => '[a-zA-Z0-9.-]+',
-]);;
+Route::get('doc-truyen/{chapter_slug}', 'Frontend\BooksController@chapter_detail')->name('front.books.showdetail')->where('chapter_slug', '[a-zA-Z0-9.-]+');
+Route::post('doc-truyen/{chapter_slug}', 'Frontend\ReportController@chapter')->name('front.report.chapter')->where('chapter_slug', '[a-zA-Z0-9.-]+');
 Route::get('{book_slug}','Frontend\BooksController@show')->name('front.books.show')->where('book_slug','[a-zA-Z0-9.-]+');
 
 

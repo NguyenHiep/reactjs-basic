@@ -4,12 +4,24 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title> @yield('seo_title')</title>
   <meta name="keywords" content="@yield('seo_keywords')" />
   <meta name="description" content="@yield('seo_description')" >
-  <script src='https://www.google.com/recaptcha/api.js?hl=vi'></script>
+  <meta name="author" content="Truyentranhfc" >
+  
+  <meta property="og:title" content="@yield('seo_title')" />
+  <meta property="og:description" content="@yield('seo_description')" />
+  <meta property="og:url" content="http://domain.com/page-title/" />
+  <meta property="og:image" content="/path/to/image.jpg" />
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@rapidweaver">
+  <meta name="twitter:creator" content="@twitter-username">
+  <meta name="twitter:title" content="@yield('seo_title')">
+  <meta name="twitter:description" content="@yield('seo_description')">
+  <meta name="twitter:image" content="/path/to/image.png">
+  
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link href="{{ asset('assets/frontend/plugins/slick/slick/slick.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/frontend/plugins/slick/slick/slick-theme.css') }}" rel="stylesheet">
@@ -74,6 +86,7 @@
 <script src="{{ asset('assets/frontend/plugins/slick/slick/slick.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/plugins/scrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/plugins/datetimepicker/build/jquery.datetimepicker.full.js') }}"></script>
+<script src='https://www.google.com/recaptcha/api.js?hl=vi'></script>
 <script src="{{ asset('assets/frontend/main.js') }}"></script>
 </body>
 </html>

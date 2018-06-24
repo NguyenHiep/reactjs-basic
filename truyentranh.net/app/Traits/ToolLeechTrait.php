@@ -36,7 +36,7 @@ trait ToolLeechTrait
         $ch = curl_init($Url);
         // Thiết lập giả lập trình duyệt
         // nghĩa là giả mạo đang gửi từ trình duyệt nào đó, ở đây tôi dùng Firefox
-        curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0");
+        curl_setopt($ch, CURLOPT_USERAGENT, "Googlebot/2.1 (http://www.google.bot.com/bot.html)");
         // Thiết lập trả kết quả về chứ không print ra
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         // Thời gian timeout
@@ -47,6 +47,8 @@ trait ToolLeechTrait
         $result = curl_exec($ch);
         // Đóng CURL
         curl_close($ch);
+        // Đóng file
+        fclose($fp);
 
         return $result;
     }

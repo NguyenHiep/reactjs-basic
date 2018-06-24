@@ -181,6 +181,7 @@ return [
         App\Providers\ComposerServiceProvider::class,
         App\Providers\ComponentsServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        HTMLMin\HTMLMin\HTMLMinServiceProvider::class
 
     ],
 
@@ -234,6 +235,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'HTMLMin' => HTMLMin\HTMLMin\Facades\HTMLMin::class,
     ],
 
 ];
