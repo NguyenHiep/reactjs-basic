@@ -11,6 +11,15 @@
       <form id="admin-form" class="form-horizontal col-xl-9 col-lg-10 col-md-12 col-sm-12" method="post" action="{{ route('books.update', [ 'id' => $record->id]) }}" enctype="multipart/form-data" role="form">
         {{ csrf_field() }}
         {{ Form::hidden('_method','PUT' ) }}
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <a class="btn btn-warning" href="{{ route('books.index') }}"><small><i class="fa fa-reply"></i></small> Trở về</a>
+            <a href="{{ route('chapters.index',['mode' => 'list_filter',  'book_id' => $record->id]) }}" class="btn btn-primary"><small><i class="fa fa-list"></i></small>Danh sách chương</a>
+            <a href="{{ route('chapters.create',['book_id' => $record->id]) }}" class="btn btn-primary"><small><i class="fa fa-plus"></i></small>Thêm chương mới</a>
+            <button type="submit" class="btn btn-submit"><small><i class="fa fa-plus"></i></small> Cập nhật</button>
+            <button type="submit" class="btn btn-danger"><small><i class="fa fa-save"></i></small>Lưu nháp</button>
+          </div>
+        </div>
         @php $key = 'name'; @endphp
         <div class="form-group">
           <label for="content" class="col-sm-2 control-label required">Tên truyện</label>
@@ -174,11 +183,11 @@
         </div>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-submit"><small><i class="fa fa-plus"></i></small> Thêm mới</button>
-            <button type="submit" class="btn btn-danger"><small><i class="fa fa-save"></i></small> Lưu nháp</button>
             <a class="btn btn-warning" href="{{ route('books.index') }}"><small><i class="fa fa-reply"></i></small> Trở về</a>
-            <a href="{{ route('chapters.index', ['book_id' => $record->id]) }}" class="btn btn-primary"><small><i class="fa fa-bars" data-original-title="" title=""></i></small>Danh sách các chương</a>
-           
+            <a href="{{ route('chapters.index',['mode' => 'list_filter',  'book_id' => $record->id]) }}" class="btn btn-primary"><small><i class="fa fa-list"></i></small>Danh sách chương</a>
+            <a href="{{ route('chapters.create',['book_id' => $record->id]) }}" class="btn btn-primary"><small><i class="fa fa-plus"></i></small>Thêm chương mới</a>
+            <button type="submit" class="btn btn-submit"><small><i class="fa fa-plus"></i></small> Cập nhật</button>
+            <button type="submit" class="btn btn-danger"><small><i class="fa fa-save"></i></small>Lưu nháp</button>
           </div>
         </div>
       </form>

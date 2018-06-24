@@ -46,7 +46,12 @@ class ChaptersController extends AppBaseController
             }
             $model = Chapters::SearchAdvanced($this->setSearch);
         }
-        $limit = 15;
+        if (!empty($get_params['mode']) && $get_params['mode'] === 'list_filter') {
+            $book_id = $get_params['book_id'];
+            $model->where('book_id', $book_id);
+        }
+
+        $limit = 100;
         $data['records']      = $model->orderBy('id', 'DESC')->paginate($limit);
         $data['page_total']   = $data['records']->total();
         $offset               = $limit;

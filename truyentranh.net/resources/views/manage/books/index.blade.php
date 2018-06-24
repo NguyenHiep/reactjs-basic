@@ -102,7 +102,7 @@
               <th class="hidden-xs">ID</th>
               <th>Hình ảnh</th>
               <th>Tiêu đề</th>
-              <th class="hidden-sm hidden-xs">Nội dung</th>
+              <th class="hidden-sm hidden-xs">Danh sách chương</th>
               <th class="hidden-xs">Thể loại</th>
               <th>Tình trạng</th>
               <th>Ngày tạo</th>
@@ -126,7 +126,9 @@
                     </a>
                   </td>
                   <td>{{ $record->name }}</td>
-                  <td class="hidden-sm hidden-xs">{!! Str::words($record->content, 10,'...')  !!}</td>
+                  <td class="hidden-sm hidden-xs">
+                    <a href="{{ route('chapters.index',['mode' => 'list_filter',  'book_id' => $record->id]) }}" class="btn btn-primary"><small><i class="fa fa-list"></i></small></a>
+                  </td>
                   <td class="hidden-xs">
                     @if(!empty($record->categories))
                       <ul class="text-left">
