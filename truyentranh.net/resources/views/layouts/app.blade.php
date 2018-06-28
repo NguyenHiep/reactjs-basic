@@ -60,7 +60,7 @@
                 <div class="col-md-12">
                   <div class="history-read">
                     <p class="save-manga">
-                      <a href="{{ url('/login') }}">
+                      <a href="{{ route('login', ['ref' => request()->fullUrl()]) }}">
                         <img src="http://cdn.truyentranh.net/frontend/images/clockfix.png"/>
                         Xem lịch sử đọc truyện của bạn
                       </a>

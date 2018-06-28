@@ -36,10 +36,10 @@
       <div id="collapseExample" class="list-watch collapse in" aria-expanded="true" style="">
         <div class="well">
           <p>
-            <a href="{{ route('front.books.search', ['q' => request()->get('q')]) }}" class=" Active" title="Tất cả">Tất cả</a>
+            <a href="{{ route('front.books.search', ['q' => request()->get('q')]) }}" class="{{ (empty(request()->query('fc'))) ? 'Active' : '' }}" title="Tất cả">Tất cả</a>
             @if(count($list_filter) > 0)
               @foreach($list_filter as $sort)
-                <a href="{{ route('front.books.search', ['fc' => $sort]) }}" class="" title="{{$sort}}">{{$sort}}</a>
+                <a href="{{ route('front.books.search', ['fc' => $sort]) }}" class="{{ (request()->query('fc') == $sort) ? 'Active' : '' }}" title="{{$sort}}">{{$sort}}</a>
               @endforeach
             @endif
           </p>
@@ -56,27 +56,27 @@
             <tr>
               <th>STT</th>
               <th>
-                <p class="place-order" id="comicname" data-order="name-desc" data-fc="fc-no" data-href="http://truyentranh.net/danh-sach.tall.html">Tên truyện
+                <p class="place-order" id="comicname" data-order="name-desc" data-fc="fc-no" data-href="{{ route('front.categories.showall') }}">Tên truyện
                   <span id="icon_comicname" class="glyphicon glyphicon-triangle-bottom"></span>
                 </p>
               </th>
               <th>
-                <p class="place-order" id="numberchap" data-order="chap-desc" data-fc="fc-no" data-href="http://truyentranh.net/danh-sach.tall.html">Số chương
+                <p class="place-order" id="numberchap" data-order="chap-desc" data-fc="fc-no" data-href="{{ route('front.categories.showall') }}">Số chương
                   <span id="icon_numberchap" class="glyphicon glyphicon-triangle-bottom"></span>
                 </p>
               </th>
               <th>
-                <p class="place-order" id="numberview" data-order="view-desc" data-fc="fc-no" data-href="http://truyentranh.net/danh-sach.tall.html">Lượt xem
+                <p class="place-order" id="numberview" data-order="view-desc" data-fc="fc-no" data-href="{{ route('front.categories.showall') }}">Lượt xem
                   <span id="icon_numberview" class="glyphicon glyphicon-triangle-bottom"></span>
                 </p>
               </th>
               <th>
-                <p class="place-order" id="numbervote" data-order="votepoint-desc" data-fc="fc-no" data-href="http://truyentranh.net/danh-sach.tall.html">Đánh giá
+                <p class="place-order" id="numbervote" data-order="votepoint-desc" data-fc="fc-no" data-href="{{ route('front.categories.showall') }}">Đánh giá
                   <span id="icon_numbervote" class="glyphicon glyphicon-triangle-bottom"></span>
                 </p>
               </th>
               <th>
-                <p class="place-order" id="comictime" data-order="time-desc" data-fc="fc-no" data-href="http://truyentranh.net/danh-sach.tall.html">Thời gian
+                <p class="place-order" id="comictime" data-order="time-desc" data-fc="fc-no" data-href="{{ route('front.categories.showall') }}">Thời gian
                   <span id="icon_comictime" class="glyphicon glyphicon-triangle-bottom"></span>
                 </p>
               </th>
@@ -84,7 +84,7 @@
             </thead>
             <tbody id="loader-list" style="display: none">
             <tr style="text-align: center !important">
-              <td colspan="6"> <img src="http://cdn.truyentranh.net/images/loading.gif"></td>
+              <td colspan="6"> <img src="{{ asset(PATH_IMAGE_FRONTEND.'loading.gif') }}"></td>
             </tr>
             </tbody>
           </table>
@@ -101,7 +101,7 @@
                   <img class="pr-2" src="{!! asset(PATH_IMAGE_THUMBNAIL_BOOK.$book->image) !!}" alt="{{ $book->name }}" />
                 @endif
                 <span>
-                  <img src="http://cdn.truyentranh.net/frontend/images/callout.gif" class="callout" />
+                  <img src="{{ asset(PATH_IMAGE_FRONTEND.'callout.gif') }}" class="callout" />
                   <p class="description">
                     <strong>Tác giả:</strong>{{ $book->author }}<br />
                     <strong>Nội dung:</strong>{!! Str::words($book->content, 40,'...') !!}

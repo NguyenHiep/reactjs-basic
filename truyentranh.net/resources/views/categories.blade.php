@@ -27,10 +27,10 @@
     <div class="row">
       <div class="col-md-12">
         <div class="cate-order"><span>Sắp xếp theo: </span>
-          <a role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample" class="active" title="A-Z">A-Z</a>
-          <a href="{{ route('front.categories.show', ['cat_slug' => $category->slug, 'sort' => 'most_view']) }}" class="" title="Xem nhiều nhất">Xem nhiều nhất</a>
-          <a href="{{ route('front.categories.show', ['cat_slug' => $category->slug, 'sort' => 'most_review']) }}" class="" title="Điểm cao nhất">Điểm cao nhất</a>
-          <a href="{{ route('front.categories.show', ['cat_slug' => $category->slug, 'sort' => 'most_new']) }}" class="" title="Mới nhất">Mới nhất</a>
+          <a role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample" class="{{ (empty(request()->query('sort'))) ? 'active' : '' }}" title="A-Z">A-Z</a>
+          <a href="{{ route('front.categories.show', ['cat_slug' => $category->slug, 'sort' => 'most_view']) }}" class="{{ (request()->query('sort') == 'most_view') ? 'active' : '' }}" title="Xem nhiều nhất">Xem nhiều nhất</a>
+          <a href="{{ route('front.categories.show', ['cat_slug' => $category->slug, 'sort' => 'most_review']) }}" class="{{ (request()->query('sort') == 'most_review') ? 'active' : '' }}" title="Điểm cao nhất">Điểm cao nhất</a>
+          <a href="{{ route('front.categories.show', ['cat_slug' => $category->slug, 'sort' => 'most_new']) }}" class="{{ (request()->query('sort') == 'most_new') ? 'active' : '' }}" title="Mới nhất">Mới nhất</a>
         </div>
       </div>
     </div>
@@ -40,10 +40,10 @@
       <div id="collapseExample" class="list-watch collapse in" aria-expanded="true" style="">
         <div class="well">
           <p>
-            <a href="{{ route('front.categories.show', ['cat_slug' => $category->slug]) }}" class=" Active" title="Tất cả">Tất cả</a>
+            <a href="{{ route('front.categories.show', ['cat_slug' => $category->slug]) }}" class=" {{ (empty(request()->query('fc'))) ? 'Active' : '' }}" title="Tất cả">Tất cả</a>
             @if(count($list_filter) > 0)
               @foreach($list_filter as $sort)
-                <a href="{{ route('front.categories.show', ['cat_slug' => $category->slug, 'fc' => $sort]) }}" class="" title="{{$sort}}">{{$sort}}</a>
+                <a href="{{ route('front.categories.show', ['cat_slug' => $category->slug, 'fc' => $sort]) }}" class="{{ (request()->query('fc') == $sort) ? 'Active' : '' }}" title="{{$sort}}">{{$sort}}</a>
               @endforeach
             @endif
           </p>

@@ -56,7 +56,7 @@
               <span>Nguồn truyện:</span> {{ $book->teams_translate }}<br>
               <span>Trạng thái:</span>  {{ __('selector.progress.'.$book->progress) }}<br>
               <span>Chương đang đọc:</span> Đang cập nhật<br>
-              <a href="{{ url('/login') }}" title="Theo dõi truyện" class="follow">Theo dõi truyện</a>
+              <a href="{{ route('login', ['ref' => request()->fullUrl() ]) }}" title="Theo dõi truyện" class="follow">Theo dõi truyện</a>
             </p>
           </div>
         </div>

@@ -7,18 +7,18 @@
     
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item {{ (Route::currentRouteName() == 'front.home') ? 'active' : '' }}">
           <a class="nav-link" href="{{ route('front.home') }}">Trang chủ <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url("/danh-sach-truyen") }}">Danh sách truyện</a>
+        <li class="nav-item {{ (Route::currentRouteName() == 'front.categories.showall') ? 'active' : '' }}">
+          <a class="nav-link" href="{{ route('front.categories.showall') }}">Danh sách truyện</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Thể loại</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             @if(count($categories) > 0)
               @foreach($categories as $category)
-                <a class="dropdown-item" href="{{ url("/the-loai/".$category->slug) }}">{{ $category->name }}</a>
+                <a class="dropdown-item" href="{{ route('front.categories.show', ['cat_slug' => $category->slug]) }}">{{ $category->name }}</a>
               @endforeach
             @endif
           </div>
@@ -92,7 +92,7 @@
         </li>
         @else
           <li>
-            <a href="{{ url('/login') }}" class="btn btn-success">Đăng nhập</a>
+            <a href="{{ route('login', ['ref' => request()->fullUrl() ]) }}" class="btn btn-success">Đăng nhập</a>
           </li>
         @endauth
       </ul>
