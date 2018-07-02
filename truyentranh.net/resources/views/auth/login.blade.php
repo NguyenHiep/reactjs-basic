@@ -26,6 +26,7 @@
           <div class="form-body">
             <form class="form-horizontal" method="POST" action="{{ route('login') }}">
               {{ csrf_field() }}
+              {{ Form::hidden('ref', request()->query('ref')) }}
               <div class="form-group row">
                 <label for="email" class="col-lg-3 col-form-label text-lg-left">E-Mail</label>
                 <div class="col-lg-9">

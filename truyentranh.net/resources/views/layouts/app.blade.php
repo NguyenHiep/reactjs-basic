@@ -57,16 +57,10 @@
             </div>
             <div class="col-xs-12 col-lg-4">
               <div class="row">
-                <div class="col-md-12">
-                  <div class="history-read">
-                    <p class="save-manga">
-                      <a href="{{ route('login', ['ref' => request()->fullUrl()]) }}">
-                        <img src="http://cdn.truyentranh.net/frontend/images/clockfix.png"/>
-                        Xem lịch sử đọc truyện của bạn
-                      </a>
-                    </p>
-                  </div>
-                </div>
+                @includeIf('frontend.block.donate')
+              </div>
+              <div class="row">
+                @includeIf('frontend.block.read-history')
               </div>
               <div class="row">
                 @include('frontend._includes.sidebar')
@@ -88,5 +82,6 @@
 <script src="{{ asset('assets/frontend/plugins/datetimepicker/build/jquery.datetimepicker.full.js') }}"></script>
 <script src='https://www.google.com/recaptcha/api.js?hl=vi'></script>
 <script src="{{ asset('assets/frontend/main.js') }}"></script>
+@stack('scripts')
 </body>
 </html>

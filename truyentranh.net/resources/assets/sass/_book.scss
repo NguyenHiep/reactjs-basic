@@ -19,17 +19,14 @@
     }
   }
   a.current{
-    color: #0e977f;
+    color: $second-color;
   }
   span{
-    color: #0e977f;
+    color: $second-color;
   }
 
 }
-.follow {
-  background-color: #14BEA0;
-  background-image: url(http://cdn.truyentranh.net/frontend/images/bookbig.png);
-  background-position: 165px 7px;
+.follow, .Following{
   padding: 3px;
   color: #fff !important;
   font-size: 18px;
@@ -40,13 +37,26 @@
   background-size: 30px 30px;
   transition: .3s;
   text-align: center;
+
+}
+.follow{
+  background-color: #14BEA0;
+  background-image: url(http://cdn.truyentranh.net/frontend/images/bookbig.png);
+  background-position: 165px 7px;
   &:hover{
-    background-color: #29C8AC;
+    background-color: $primary;
   }
 }
+.Following{
+  background-color: $primary;
+  background-image: url(http://cdn.truyentranh.net/frontend/images/bookchecked.png);
+  background-position: 182px 7px;
+  opacity: .7;
+}
+
 .collapse-contain {
-  border-bottom: 3px solid #0e977f;
-  color: #0e977f;
+  border-bottom: 3px solid $second-color;
+  color: $second-color;
   margin-bottom: 0;
   font-weight: 700;
 }
@@ -63,7 +73,7 @@
       color: #b1b1b1;
     }
     &:hover {
-      color: #29c6ab;
+      color: $primary;
     }
   }
   p {
@@ -95,10 +105,10 @@
   transition: .3s;
 }
 .content a:hover {
-  color: #29c6ab;
+  color: $primary;
 }
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-  background-color: #0e977f !important
+  background-color: $second-color !important
 }
 .caption-anime h4 {
   margin-top: 5px;
@@ -314,10 +324,10 @@
   padding-left: 0px !important;
 }
 .btn-green, .modal-header {
-  background-color: #0e977f;
+  background-color: $second-color;
 }
 .btn-green {
-  border-color: #0e977f;
+  border-color: $second-color;
   box-shadow: none;
 }
 
@@ -325,7 +335,7 @@
   color: #fff !important;
 }
 .btn-green, .modal-header {
-  background-color: #0e977f;
+  background-color: $second-color;
 }
 .btn-default, .btn-green, .button-login {
   transition: .3s;

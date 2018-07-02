@@ -56,8 +56,12 @@
               <span>Nguồn truyện:</span> {{ $book->teams_translate }}<br>
               <span>Trạng thái:</span>  {{ __('selector.progress.'.$book->progress) }}<br>
               <span>Chương đang đọc:</span> Đang cập nhật<br>
-              <a href="{{ route('login', ['ref' => request()->fullUrl() ]) }}" title="Theo dõi truyện" class="follow">Theo dõi truyện</a>
             </p>
+            @auth
+            <a href="javascript:void(0);" id="follow" data-href="{{ route('front.ajax.followbooks') }}" data-id="{{$book->id}}" data-text="Theo dõi truyện" title="Theo dõi truyện" class="follow">Theo dõi truyện</a>
+            @else
+              <a href="{{ route('login', ['ref' => request()->fullUrl() ]) }}" title="Theo dõi truyện" class="follow">Theo dõi truyện</a>
+            @endauth
           </div>
         </div>
       </div>
@@ -135,3 +139,27 @@
   </div>
 </div>
 @endsection
+@push('scripts')
+<script>
+
+	$('#follow').click(function () {
+		var item = $(this),
+			data = item.data();
+		item.text('Loading ...');
+		$.post(data.href, {id: data.id}, function (json) {
+			if (!json.status) {
+				alert('Error!');
+				item.text(data.text);
+			}
+			else {
+				item
+					.removeClass(json.oldclass)
+					.addClass(json.newclass)
+					.text(json.text)
+					.data('href', json.href);
+			}
+		}, 'json');
+	});
+
+</script>
+@endpush

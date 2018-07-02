@@ -15,7 +15,7 @@
           <div class="home-sliders col-md-12">
             @foreach($show_slider as $book)
               @if(count($book->chapters) > 0)
-              <div class="hot-manga">
+              <div class="hot-manga col-md-12 topfixpadd">
                 <div class="thumbnails">
                   <a href="{{ url($book->slug) }}" class="slick-item">
                     @if(!empty($book->image))

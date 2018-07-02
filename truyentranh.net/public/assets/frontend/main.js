@@ -1,5 +1,10 @@
 "use strict";
 $(document).ready(function () {
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
     var elemBody = $('body');
     var elemSlider = elemBody.find('.home-sliders').eq(0);
     // Slider page home
@@ -89,54 +94,54 @@ $(document).ready(function () {
       format: 'd/m/Y'
     });
 
-});
-(function ($) {
-    // Scroll bar in maga book
-    $(window).on("load", function () {
-        var elemBody = $('body');
-        var elemCustomScrollbar = elemBody.find('.mCustomScrollbar');
-        elemCustomScrollbar.mCustomScrollbar({
-            theme: "minimal"
-        });
-    });
-})(jQuery);
-
-$(document).ready(function () {
-
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-            $('.scrollup').fadeIn();
-        } else {
-            $('.scrollup').fadeOut();
-        }
-    });
-
-    $('.scrollup').click(function () {
-        $("html, body").animate({
-            scrollTop: 0
-        }, 600);
-        return false;
-    });
+    // Animation page
+	  customScrollBar();
+    scrollToUp();
+	  backToTop();
 
 });
-// hide #back-top first
-$("#back-top").hide();
+function scrollToUp(){
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 100) {
+			$('.scrollup').fadeIn();
+		} else {
+			$('.scrollup').fadeOut();
+		}
+	});
 
-// fade in #back-top
-$(function () {
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-            $('#back-top').fadeIn();
-        } else {
-            $('#back-top').fadeOut();
-        }
-    });
+	$('.scrollup').click(function () {
+		$("html, body").animate({
+			scrollTop: 0
+		}, 600);
+		return false;
+	});
+}
+function backToTop() {
+	// hide #back-top first
+	$("#back-top").hide();
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 100) {
+			$('#back-top').fadeIn();
+		} else {
+			$('#back-top').fadeOut();
+		}
+	});
+	// scroll body to 0px on click
+	$('#back-top a').click(function () {
+		$('body,html').animate({
+			scrollTop: 0
+		}, 800);
+		return false;
+	});
+}
+function customScrollBar() {
+	// Scroll bar in maga book
+	$(window).on("load", function () {
+		var elemBody = $('body');
+		var elemCustomScrollbar = elemBody.find('.mCustomScrollbar');
+		elemCustomScrollbar.mCustomScrollbar({
+			theme: "minimal"
+		});
+	});
+}
 
-    // scroll body to 0px on click
-    $('#back-top a').click(function () {
-        $('body,html').animate({
-            scrollTop: 0
-        }, 800);
-        return false;
-    });
-});
