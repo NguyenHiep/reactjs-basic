@@ -58,7 +58,11 @@
               <span>Chương đang đọc:</span> Đang cập nhật<br>
             </p>
             @auth
-            <a href="javascript:void(0);" id="follow" data-href="{{ route('front.ajax.followbooks') }}" data-id="{{$book->id}}" data-text="Theo dõi truyện" title="Theo dõi truyện" class="follow">Theo dõi truyện</a>
+              @if($book->isFollowedBy(Auth::id()))
+                <a href="javascript:void(0);" id="follow" data-href="{{ route('front.ajax.unfollowbooks') }}" data-id="{{$book->id}}" data-text="Bỏ theo dõi" title="Bỏ theo dõi" class="Following">Bỏ theo dõi</a>
+              @else
+                <a href="javascript:void(0);" id="follow" data-href="{{ route('front.ajax.followbooks') }}" data-id="{{$book->id}}" data-text="Theo dõi truyện" title="Theo dõi truyện" class="follow">Theo dõi truyện</a>
+              @endif
             @else
               <a href="{{ route('login', ['ref' => request()->fullUrl() ]) }}" title="Theo dõi truyện" class="follow">Theo dõi truyện</a>
             @endauth
@@ -147,16 +151,16 @@
 			data = item.data();
 		item.text('Loading ...');
 		$.post(data.href, {id: data.id}, function (json) {
-			if (!json.status) {
+			if (!json.data.status) {
 				alert('Error!');
 				item.text(data.text);
 			}
 			else {
 				item
-					.removeClass(json.oldclass)
-					.addClass(json.newclass)
-					.text(json.text)
-					.data('href', json.href);
+					.removeClass(json.data.oldclass)
+					.addClass(json.data.newclass)
+					.text(json.data.text)
+					.data('href', json.data.href);
 			}
 		}, 'json');
 	});

@@ -59,4 +59,14 @@ class User extends Authenticatable
     {
         return $query->where('level', 3);
     }
+
+    public function book_follow()
+    {
+        return $this->belongsToMany(Books::class, 'user_follow_books', 'user_id', 'book_id')->withTimestamps();
+    }
+
+    public function list_book_follow()
+    {
+        return  $this->book_follow()->orderBy('created_at', 'desc')->paginate(5);
+    }
 }

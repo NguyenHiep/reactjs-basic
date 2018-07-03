@@ -27,41 +27,60 @@
         <h3 class="title-control">Truyện theo dõi</h3>
         <div class="row">
           <div class="col-md-12">
-            <div class="media media-followuser">
-              <div class="media-left">
-                <a href="http://truyentranh.net/Quy-Sai"><img src="http://cdn.truyentranh.net/upload/image/comic/20180321/Quy-Sai-5ab256ef6fc5f-thumbnail-176x264.jpg" alt="Quỷ Sai" class="image_follow"></a>
-              </div>
-              <div class="media-body">
-                <a href="http://truyentranh.net/Quy-Sai" title="Quỷ Sai">
-                  <h4 class="manga-newest">Quỷ Sai</h4></a>
-                <p class="description-user">
-                  <span>Tên khác:</span> Quy-Sai<br>
-                  <span>Thể loại:</span> <a href="http://truyentranh.net/the-loai/Manhua.48.html" title="Manhua" class="CateName">Manhua</a><br>
-                  <span>Tác giả:</span> Đang Cập Nhật...<br>
-                  <span>Cập nhật:</span><a href="http://truyentranh.net/Quy-Sai/Chap-053"> Quỷ Sai Chap 053 </a>
-                </p>
-              </div>
-            </div>
-            <div class="media media-followuser">
-              <div class="media-left">
-                <a href="http://truyentranh.net/Linh-Nhan-Truyen-Thuyet"><img src="http://cdn.truyentranh.net/upload/image/comic/20180314/Linh-Nhan-Truyen-Thuyet-5aa94aebee9ee-thumbnail-176x264.jpg" alt="Linh Nhận Truyền Thuyết" class="image_follow"></a>
-              </div>
-              <div class="media-body">
-                <a href="http://truyentranh.net/Linh-Nhan-Truyen-Thuyet" title="Linh Nhận Truyền Thuyết">
-                  <h4 class="manga-newest">Linh Nhận Truyền Thuyết</h4></a>
-                <p class="description-user">
-                  <span>Tên khác:</span> Linh-Nhan-Truyen-Thuyet<br>
-                  <span>Thể loại:</span> <a href="http://truyentranh.net/the-loai/Manhua.48.html" title="Manhua" class="CateName">Manhua</a>, <a href="http://truyentranh.net/the-loai/Supernatural.39.html" title="Supernatural" class="CateName">Supernatural</a>, <a href="http://truyentranh.net/the-loai/Shounen.32.html" title="Shounen" class="CateName">Shounen</a>, <a href="http://truyentranh.net/the-loai/Mystery.23.html" title="Mystery" class="CateName">Mystery</a>, <a href="http://truyentranh.net/the-loai/Fantasy.11.html" title="Fantasy" class="CateName">Fantasy</a><br>
-                  <span>Tác giả:</span> Đang cập nhật<br>
-                  <span>Cập nhật:</span><a href="http://truyentranh.net/Linh-Nhan-Truyen-Thuyet/Chap-214"> Linh Nhận Truyền Thuyết Chap 214 </a>
-                </p>
-              </div>
-            </div>
+            @if(!empty($books))
+              @foreach($books as $book)
+                <div class="media media-followuser">
+                  @if(!empty($book->image))
+                    <div class="media-left">
+                      <a href="{{ route('front.books.show', ['book_slug' => $book->slug]) }}"><img src="{!! asset(PATH_IMAGE_THUMBNAIL_BOOK.$book->image) !!}" alt="{{ $book->name }}" class="image_follow"/></a>
+    
+                    </div>
+                  @endif
+                  <div class="media-body">
+                    <a href="{{ route('front.books.show', ['book_slug' => $book->slug]) }}" title="{{ $book->name }}">
+                      <h4 class="manga-newest">{{ $book->name }}</h4></a>
+                    <div class="description-user">
+                      <span>Tên khác:</span> {{ $book->name_dif }}<br>
+                      <span>Thể loại:</span>
+                      @php
+                        if(!empty($book->categories)){
+                        $html = '';
+                        foreach( $book->categories as $id){
+                          foreach ($categories as $category){
+                            if($category->id == $id){
+                              $html .= '<a href="'.route('front.categories.show', ['cat_slug' => $category->slug]).'">'.$category->name.'</a>, ';
+                            }
+                          }
+                          
+                        }
+                        echo rtrim($html, ', ');
+                       }
+                      @endphp
+                      <br>
+                      <span>Tác giả:</span> {{ $book->author }}<br/>
+                      <span>Cập nhật:</span>
+                      @if(count($book->chapters) > 0)
+                        @foreach( $book->chapters as $chapter)
+                          @if ($loop->iteration > 1) @break @endif
+                          <a href="{{ route('front.books.showdetail', ['chapter_slug' => $chapter->slug]) }}" title="{{$chapter->name}}" target="_blank">{{ ucfirst($chapter->name) }}
+                          </a>
+                        @endforeach
+                      @else
+                        <span>Đang cập nhật</span>
+                      @endif
+                    </div>
+                  </div>
+                </div>
+              @endforeach
+            @else
+              <p>Hiện tại chưa có truyện theo dõi</p>
+            @endif
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
-            <div class="pagelist">
+            <div class="pagelistcate pull-left">
+              {{ $books->appends(request()->query())->links()  }}
             </div>
           </div>
         </div>

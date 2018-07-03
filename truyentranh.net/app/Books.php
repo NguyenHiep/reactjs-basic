@@ -96,4 +96,14 @@ class Books extends BaseModel
     {
         return Books::where('status', Books::STATUS_ON)->count();
     }
+
+    public function user_follow()
+    {
+        return $this->belongsToMany(User::class, 'user_follow_books', 'book_id', 'user_id')->withTimestamps();
+    }
+
+    public function isFollowedBy($user_id)
+    {
+        return  !! $this->user_follow()->where('user_id', $user_id)->count();
+    }
 }

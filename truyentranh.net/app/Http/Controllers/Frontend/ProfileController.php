@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Categories;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\FrontEndController;
@@ -112,7 +113,9 @@ class ProfileController extends FrontEndController
      */
     public function follow_book(Request $request)
     {
-        return view('frontend.profile.follow');
+        $data['books']      = Auth::user()->list_book_follow();
+        $data['categories'] = Categories::getListCategories();
+        return view('frontend.profile.follow', $data);
     }
 
     public function changepassword()

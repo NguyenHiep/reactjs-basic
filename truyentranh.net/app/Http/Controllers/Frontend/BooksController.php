@@ -8,6 +8,7 @@ use App\Books;
 use App\Categories;
 use App\Chapters;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class BooksController extends FrontEndController

@@ -6,12 +6,8 @@ use App\Categories;
 use App\Chapters;
 use App\Helpers\Helpers;
 
-class FrontEndController extends Controller
+class FrontEndController extends AppBaseController
 {
-    const CTRL_MESSAGE_SUCCESS  = "success";
-    const CTRL_MESSAGE_INFO     = "info";
-    const CTRL_MESSAGE_WARNING  = "warning";
-    const CTRL_MESSAGE_ERROR    = "danger";
     const AVATAR_PATH           = 'uploads/images/avatars/';
     const AVATAR_THUMBNAIL_PATH = 'uploads/thumbnail/avatars/';
     public function index()

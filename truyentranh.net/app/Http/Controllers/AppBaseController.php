@@ -13,4 +13,22 @@ class AppBaseController extends Controller
     const UPLOAD_IMG           = "uploads/images";
     const UPLOAD_IMG_THUMBNAIL = "uploads/thumbnail";
     protected $search_prefix   = "search_";
+
+    protected $AJAX_RESULT = [
+        'SUCCESS' => 'success',
+        'FAIL'    => 'fail',
+        'ERROR'   => [
+            'error' => 'error',
+            'code'  => ''
+        ]
+    ];
+    protected function responseJsonAjax($result, $message = '', $data = [])
+    {
+        return response()
+            ->json([
+                'result'  => $result,
+                'message' => $message,
+                'data'    => $data
+            ]);
+    }
 }
