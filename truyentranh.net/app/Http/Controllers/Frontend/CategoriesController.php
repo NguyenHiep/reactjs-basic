@@ -59,7 +59,7 @@ class CategoriesController extends FrontEndController
         }
         $data['category'] = $category;
         $data['books']    = $books;
-        return view('categories', $data);
+        return view('frontend.categories.detail', $data);
     }
 
     public function showall()
@@ -81,7 +81,7 @@ class CategoriesController extends FrontEndController
                 ->paginate(20);
         }
         $data['books'] = $books;
-        return view('allcategories',$data );
+        return view('frontend.categories.list',$data );
     }
 
 }

@@ -59,7 +59,7 @@
             </p>
             @auth
               @if($book->isFollowedBy(Auth::id()))
-                <a href="javascript:void(0);" id="follow" data-href="{{ route('front.ajax.unfollowbooks') }}" data-id="{{$book->id}}" data-text="Bỏ theo dõi" title="Bỏ theo dõi" class="Following">Bỏ theo dõi</a>
+                <a href="javascript:void(0);" id="follow" data-href="{{ route('front.ajax.followbooks') }}" data-id="{{$book->id}}" data-text="Bỏ theo dõi" title="Bỏ theo dõi" class="Following">Bỏ theo dõi</a>
               @else
                 <a href="javascript:void(0);" id="follow" data-href="{{ route('front.ajax.followbooks') }}" data-id="{{$book->id}}" data-text="Theo dõi truyện" title="Theo dõi truyện" class="follow">Theo dõi truyện</a>
               @endif
@@ -131,7 +131,7 @@
             </a>
           </div>
           <div class="caption-anime">
-            <a href="{{ route('front.books.show', ['book_slug' => $book->slug]) }}" title="{{ $book->name }}s">
+            <a href="{{ route('front.books.show', ['book_slug' => $book->slug]) }}" title="{{ $book->name }}">
               <h4>{{ $book->name }}</h4>
             </a>
           </div>

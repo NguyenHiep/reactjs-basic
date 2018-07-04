@@ -4,7 +4,7 @@
     <div class="history-read">
       <p class="save-manga">
         <a role="button" data-toggle="collapse" href="#collapsehistory" aria-expanded="true" aria-controls="collapsehistory" class="">
-          <img src="{{ PATH_IMAGE_FRONTEND . 'clockfix.png' }}"> Xem lịch sử đọc truyện của bạn
+          <img src="{{ asset(PATH_IMAGE_FRONTEND . 'clockfix.png') }}"> Xem lịch sử đọc truyện của bạn
         </a>
       </p>
     </div>

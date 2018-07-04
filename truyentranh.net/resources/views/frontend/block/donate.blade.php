@@ -2,7 +2,7 @@
   <div class="block-history">
     <div class="history-read">
       <p class="save-manga">
-        <a href="javascript:;"><img src="{{ PATH_IMAGE_FRONTEND . 'clockfix.png' }}"/>Donate - Ủng hộ nhóm truyện</a>
+        <a href="javascript:;"><img src="{{ asset(PATH_IMAGE_FRONTEND . 'clockfix.png') }}"/>Donate - Ủng hộ nhóm truyện</a>
       </p>
       <div class="show-info-banking">
         <ul class="list-unstyled">

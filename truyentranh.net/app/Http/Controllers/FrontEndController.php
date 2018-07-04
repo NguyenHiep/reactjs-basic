@@ -50,6 +50,6 @@ class FrontEndController extends AppBaseController
             ->orderBy('updated_at', 'desc')
             ->limit(12)
             ->get();
-        return view('home', $data);
+        return view('frontend.home', $data);
     }
 }

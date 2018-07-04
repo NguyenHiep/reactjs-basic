@@ -57,27 +57,27 @@
               <th>STT</th>
               <th>
                 <p class="place-order" id="comicname" data-order="name-desc" data-fc="fc-no" data-href="{{ route('front.categories.showall') }}">Tên truyện
-                  <span id="icon_comicname" class="glyphicon glyphicon-triangle-bottom"></span>
+                  <span id="icon_comicname" class="fa fa-caret-down"></span>
                 </p>
               </th>
               <th>
                 <p class="place-order" id="numberchap" data-order="chap-desc" data-fc="fc-no" data-href="{{ route('front.categories.showall') }}">Số chương
-                  <span id="icon_numberchap" class="glyphicon glyphicon-triangle-bottom"></span>
+                  <span id="icon_numberchap" class="fa fa-caret-down"></span>
                 </p>
               </th>
               <th>
                 <p class="place-order" id="numberview" data-order="view-desc" data-fc="fc-no" data-href="{{ route('front.categories.showall') }}">Lượt xem
-                  <span id="icon_numberview" class="glyphicon glyphicon-triangle-bottom"></span>
+                  <span id="icon_numberview" class="fa fa-caret-down"></span>
                 </p>
               </th>
               <th>
                 <p class="place-order" id="numbervote" data-order="votepoint-desc" data-fc="fc-no" data-href="{{ route('front.categories.showall') }}">Đánh giá
-                  <span id="icon_numbervote" class="glyphicon glyphicon-triangle-bottom"></span>
+                  <span id="icon_numbervote" class="fa fa-caret-down"></span>
                 </p>
               </th>
               <th>
                 <p class="place-order" id="comictime" data-order="time-desc" data-fc="fc-no" data-href="{{ route('front.categories.showall') }}">Thời gian
-                  <span id="icon_comictime" class="glyphicon glyphicon-triangle-bottom"></span>
+                  <span id="icon_comictime" class="fa fa-caret-down"></span>
                 </p>
               </th>
             </tr>

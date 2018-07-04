@@ -27,7 +27,7 @@
         <h3 class="title-control">Truyện theo dõi</h3>
         <div class="row">
           <div class="col-md-12">
-            @if(!empty($books))
+            @if(count($books) > 0)
               @foreach($books as $book)
                 <div class="media media-followuser">
                   @if(!empty($book->image))

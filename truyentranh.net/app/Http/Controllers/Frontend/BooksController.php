@@ -39,7 +39,7 @@ class BooksController extends FrontEndController
         $data['book']         = $book;
         $data['book_related'] = $book_related;
         $data['categories']   = Categories::getListCategories();
-        return view('books',$data );
+        return view('frontend.books.index   ',$data );
     }
 
     public function chapter_detail($chapter_slug)
@@ -59,7 +59,7 @@ class BooksController extends FrontEndController
         $data['chapter']       = $chapter;
         $data['list_chapters'] = Chapters::get_option_list_by_book_id($chapter->book_id);
         $data = $data + $this->move_chapter($chapter->book_id, $chapter->id);
-        return view('books-detail',$data );
+        return view('frontend.books.chapters-detail',$data );
     }
 
     private function move_chapter($book_id, $chapter_id)
@@ -101,6 +101,6 @@ class BooksController extends FrontEndController
                 ->paginate(20);
         }
         $data['books'] = $books;
-        return view('search', $data);
+        return view('frontend.result-search', $data);
     }
 }
