@@ -9,6 +9,7 @@ use App\Categories;
 use App\Chapters;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
 
 class BooksController extends FrontEndController
@@ -56,6 +57,8 @@ class BooksController extends FrontEndController
         if (empty($chapter)) {
             return abort(404);
         }
+
+        $cookie = $this->setCookieChapterRecent(['id' => $chapter->id]);
         $data['chapter']       = $chapter;
         $data['list_chapters'] = Chapters::get_option_list_by_book_id($chapter->book_id);
         $data = $data + $this->move_chapter($chapter->book_id, $chapter->id);
@@ -102,5 +105,29 @@ class BooksController extends FrontEndController
         }
         $data['books'] = $books;
         return view('frontend.result-search', $data);
+    }
+
+    public function show_history_read()
+    {
+        $ids = $this->getCookieChapterRecent();
+
+    }
+    public function setCookieChapterRecent(array $data)
+    {
+        if (!empty($data)) {
+            $cookie = Cookie::forever('ids', $data);
+            return response('Cookie chapters')->withCookie($cookie);
+        }
+        return false;
+    }
+
+    public function getCookieChapterRecent()
+    {
+        return Cookie::get('ids');
+    }
+
+    public function deleteCookieChapterRecent($key)
+    {
+
     }
 }

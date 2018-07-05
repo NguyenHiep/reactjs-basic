@@ -6,10 +6,10 @@
       </p>
       <div class="show-info-banking">
         <ul class="list-unstyled">
-          <li>Tài khoản VPBank</li>
-          <li>Số tài khoản: <strong>Đang cập nhật</strong></li>
+          <li>Tài khoản <strong>VPBank</strong></li>
+          <li>Số tài khoản: <strong>131711891</strong></li>
           <li>Chủ TK: <strong>Nguyễn Minh Hiệp</strong></li>
-          <li>Chi nhánh Quận 7, Phú Mỹ Hưng﻿</li>
+          <li>Chi nhánh Quận 7, Phú Mỹ Hưng﻿, TP. Hồ Chí Minh</li>
         </ul>
       </div>
     </div>

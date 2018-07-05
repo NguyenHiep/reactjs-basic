@@ -6,6 +6,8 @@ define('PATH_IMAGE_DEFAULT', 'assets/frontend/images/default.jpg');
 define('PATH_AVATAR_THUMBNAIL', 'uploads/thumbnail/avatars/thumbnail_');
 define('PATH_AVATAR', 'uploads/thumbnail/avatars/');
 define('PATH_CSS_FRONTEND', 'uploads/books/');
+define('VERSION_CSS', '1.0.1');
+define('VERSION_JS', '1.0.1');
 //define('PATH_IMAGE_THUMBNAIL_BOOK','uploads/thumbnail/thumbnail_');
 return [
     //'api_key' => env('GOOGLE_API_KEY', 'AIzaSyDwbI7Ag__FrwSncvrM8DDk1FTeTQbgdV4'),

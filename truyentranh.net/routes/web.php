@@ -42,10 +42,13 @@ Route::middleware(['auth', 'admin'])->group(function () {
             Route::post('chapters/batch', 'ChaptersController@batch')->name('chapters.batch');
             Route::resource('chapters', 'ChaptersController');
 
-            Route::get('getbookstool', 'GetBooksToolController@index')->name('getbookstool.index');
-            Route::get('getbookstool/create', 'GetBooksToolController@create')->name('getbookstool.create');
-            Route::post('getbookstool/create', 'GetBooksToolController@store')->name('getbookstool.store');
-            Route::get('getbookstool/chapters', 'GetBooksToolController@chapters')->name('getbookstool.chapters');
+            Route::prefix('getbookstool')->group(function () {
+                Route::get('/', 'GetBooksToolController@index')->name('getbookstool.index');
+                Route::get('create', 'GetBooksToolController@create')->name('getbookstool.create');
+                Route::post('create', 'GetBooksToolController@store')->name('getbookstool.store');
+                Route::get('chapters', 'GetBooksToolController@chapters')->name('getbookstool.chapters');
+            });
+
         });
     });
 });
@@ -53,15 +56,19 @@ Route::middleware(['auth', 'admin'])->group(function () {
 Route::get('/', 'FrontEndController@index')->name('front.home');
 Route::get('tim-kiem','Frontend\BooksController@search')->name('front.books.search');
 Route::get('danh-sach-truyen','Frontend\CategoriesController@showall')->name('front.categories.showall');
+Route::get('lich-su-doc-truyen','Frontend\BooksController@show_history_read')->name('front.books.history');
 
 Route::middleware(['auth'])->group(function () {
     Route::prefix('profile')->group(function () {
-        Route::get('/','Frontend\ProfileController@edit')->name('front.profile.edit');
-        Route::post('/','Frontend\ProfileController@update')->name('front.profile.update');
-        Route::get('follow','Frontend\ProfileController@follow_book')->name('front.profile.follow');
-        Route::get('changepassword','Frontend\ProfileController@changepassword')->name('front.profile.changepassword');
-        Route::post('changepassword','Frontend\ProfileController@changepassword_update')->name('front.profile.changepassword_update');
-        Route::get('notification','Frontend\ProfileController@notification')->name('front.profile.notification');
+        Route::namespace('Frontend')->group(function () {
+            Route::get('/','ProfileController@edit')->name('front.profile.edit');
+            Route::post('/','ProfileController@update')->name('front.profile.update');
+            Route::get('follow','ProfileController@follow_book')->name('front.profile.follow');
+            Route::get('changepassword','ProfileController@changepassword')->name('front.profile.changepassword');
+            Route::post('changepassword','ProfileController@changepassword_update')->name('front.profile.changepassword_update');
+            Route::get('notification','ProfileController@notification')->name('front.profile.notification');
+        });
+
     });
 
 });

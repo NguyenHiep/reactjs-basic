@@ -95,9 +95,9 @@ $(document).ready(function () {
     });
 
     // Animation page
-	  customScrollBar();
+    customScrollBar();
     scrollToUp();
-	  backToTop();
+    backToTop();
 
 });
 function scrollToUp(){
@@ -143,5 +143,8 @@ function customScrollBar() {
 			theme: "minimal"
 		});
 	});
+}
+function historyReadBooks() {
+    
 }
 
