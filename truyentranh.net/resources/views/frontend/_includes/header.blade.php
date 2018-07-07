@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light navigation-menu">
+<nav class="yamm navbar navbar-expand-lg navbar-light navigation-menu">
   <div class="container">
     <a class="navbar-brand" href="{{ route('front.home') }}"><img src="{{ asset('logo.png') }}" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,13 +15,39 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Thể loại</a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            @if(count($categories) > 0)
-              @foreach($categories as $category)
-                <a class="dropdown-item" href="{{ route('front.categories.show', ['cat_slug' => $category->slug]) }}">{{ $category->name }}</a>
-              @endforeach
-            @endif
-          </div>
+          <ul class="dropdown-menu hoverblock">
+            <li>
+              <div class="yamm-content">
+                <div class="row">
+                  @php
+                      $html = '';
+                      $count = 0;
+                      $total = count($categories);
+                      foreach ($categories as $category){
+                          if($count % 11 == 0){
+                              $html .= '<ul class="col-sm-2 list-unstyled">';
+                          }
+                          $html .= '<li><a href="'.route('front.categories.show', ['cat_slug' => $category->slug]).'" title="'.$category->name.'">'.$category->name.'</a></li>';
+                          $count++;
+                          if($count % 11 == 0){
+                              $html .= '</ul>';
+                          }
+                      }
+                      if($count % 11 != 0){
+                        $html .= '</ul>';
+                      }
+                      echo $html;
+                  @endphp
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item {{ (Route::currentRouteName() == 'front.categories.showall') ? 'active' : '' }}">
+          <a class="nav-link" href="#">Blog</a>
+        </li>
+        <li class="nav-item {{ (Route::currentRouteName() == 'front.categories.showall') ? 'active' : '' }}">
+          <a class="nav-link" href="#">Hàng sale</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0" method="GET" action="{{ route('front.books.search') }}">
@@ -49,10 +75,10 @@
                         <a title="Truyện theo dõi" href="{{ route('front.profile.follow') }}">Truyện theo dõi</a>
                         <a href="{{ route('front.profile.edit') }}" title="Chỉnh sửa">Chỉnh sửa</a>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" title="Thoát">Thoát</a>
+                      </span>
                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                       </form>
-                      </span>
                     </div>
                   </div>
                 </div>
@@ -105,7 +131,7 @@
     <div class="row">
       <div class="col-12">
         @foreach($chapters as $chapter)
-          <div class="post-stick"><a href="{{ route('front.books.showdetail', ['chapter_slug' => $chapter->slug]) }}" title="{{ $chapter->name }}">{{$chapter->name }} <img src="{{ asset(PATH_IMAGE_FRONTEND.'hot.gif') }}" /></a>
+          <div class="post-stick"><h4><a href="{{ route('front.books.showdetail', ['chapter_slug' => $chapter->slug]) }}" title="{{ $chapter->name }}">{{$chapter->name }} <img src="{{ asset(PATH_IMAGE_FRONTEND.'hot.gif') }}" alt="{{$chapter->name }}" title="{{$chapter->name }}"/></a></h4>
           </div>
         @endforeach
       </div>

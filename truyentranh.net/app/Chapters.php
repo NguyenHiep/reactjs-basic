@@ -70,4 +70,17 @@ class Chapters extends BaseModel
             ->get();
         return $chapters;
     }
+
+    public static function getTopChapters()
+    {
+        $chapters = Chapters::select('chapters.name','chapters.slug')
+            ->join('books', 'books.id', '=', 'chapters.book_id')
+            ->where('books.status', Books::STATUS_ON)
+            ->where('chapters.status', Chapters::STATUS_ON)
+            ->where('chapters.sticky', Chapters::STATUS_ON)
+            ->orderBy('chapters.updated_at', 'desc')
+            ->limit(3)
+            ->get();
+        return $chapters;
+    }
 }

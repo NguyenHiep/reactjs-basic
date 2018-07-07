@@ -6,6 +6,7 @@ use Illuminate\Contracts\View\View;
 use App\Categories;
 use App\Chapters;
 use App\Books;
+use Illuminate\Support\Facades\Cookie;
 
 class MasterComposer
 {
@@ -20,17 +21,16 @@ class MasterComposer
     {
         $categories = Categories::getListCategories();
         $total_book = Books::getTotalBook();
-        $chapters = Chapters::select('chapters.name','chapters.slug')
-            ->join('books', 'books.id', '=', 'chapters.book_id')
-            ->where('books.status', Books::STATUS_ON)
-            ->where('chapters.status', Chapters::STATUS_ON)
-            ->where('chapters.sticky', Chapters::STATUS_ON)
-            ->orderBy('chapters.updated_at', 'desc')
-            ->limit(3)
-            ->get();
+        $chapters   = Chapters::getTopChapters();
+        $book_id    = Cookie::get('ids');
+        $book_history = false;
+        if (!empty($book_id)) {
+            $book_history = Books::getBookHistory($book_id, 5);
+        }
         $view->with('categories', $categories);
         $view->with('total_book', $total_book);
         $view->with('chapters', $chapters);
+        $view->with('book_history', $book_history);
     }
 
 }

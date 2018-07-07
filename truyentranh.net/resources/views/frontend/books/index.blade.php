@@ -32,7 +32,7 @@
           @endif
           <div class="media-body">
             <h1 class="title-manga">{{ $book->name }}</h1>
-            <p class="description-update">
+            <div class="description-update">
               <span>Lượt xem:</span>{{ $book->views }}<br>
               <span>Tên khác:</span>{{ $book->name_dif }}<br>
               <span>Thể loại: </span>
@@ -56,7 +56,7 @@
               <span>Nguồn truyện:</span> {{ $book->teams_translate }}<br>
               <span>Trạng thái:</span>  {{ __('selector.progress.'.$book->progress) }}<br>
               <span>Chương đang đọc:</span> Đang cập nhật<br>
-            </p>
+            </div>
             @auth
               @if($book->isFollowedBy(Auth::id()))
                 <a href="javascript:void(0);" id="follow" data-href="{{ route('front.ajax.followbooks') }}" data-id="{{$book->id}}" data-text="Bỏ theo dõi" title="Bỏ theo dõi" class="Following">Bỏ theo dõi</a>
@@ -74,13 +74,13 @@
     <div class="row">
       <div class="col-md-12 mar-top">
         <div class="total-chapter">
-          <p class="collapse-contain"><span class="text-left">Nội dung</span></p>
+          <h4 class="collapse-contain text-left">Nội dung</h4>
         </div>
         <div class="manga-content">
           <p id="example2" class="manga-collapse">{!! $book->content !!}</p>
         </div>
         <div class="total-chapter">
-          <p class="collapse-contain"><span class="text-left">Chương mới</span></p>
+          <h4 class="collapse-contain text-left">Chương mới</h4>
           <div class="chapter-list">
             @if(count($book->chapters) > 0)
               @foreach( $book->chapters as $chapter)
@@ -96,7 +96,7 @@
           </div>
         </div>
         <div class="total-chapter">
-          <p class="collapse-contain"><span class="text-left">Danh sách chương</span></p>
+          <h4 class="collapse-contain text-left">Danh sách chương</h4>
           <section id="examples">
             <div class="content mCustomScrollbar">
               @if(count($book->chapters) > 0)

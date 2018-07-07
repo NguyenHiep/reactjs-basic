@@ -102,18 +102,18 @@
                 @endif
                 <span>
                   <img src="{{ asset(PATH_IMAGE_FRONTEND.'callout.gif') }}" class="callout" />
-                  <p class="description">
+                  <div class="description">
                     <strong>Tác giả:</strong>{{ $book->author }}<br />
                     <strong>Nội dung:</strong>{!! Str::words($book->content, 40,'...') !!}
-                  </p>
+                  </div>
                  </span>
               </a>
               <div class="media-body">
                 <h4 class="manga-newest"><a href="{{ url($book->slug) }}">{{ $book->name }}</a></h4>
-                <p class="description">
+                <div class="description">
                   <strong>Tác giả:</strong>{{ $book->author }}<br />
                   <strong>Nội dung:</strong>{!!  Str::words($book->content, 20,'...') !!}
-                </p>
+                </div>
               </div>
             </div>
           </div>

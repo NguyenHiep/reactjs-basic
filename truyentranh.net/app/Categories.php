@@ -76,7 +76,7 @@ class Categories extends BaseModel
                 'books' => function ($query) {
                     $query->where('status', '=', Books::STATUS_ON);
                 }
-            ])->get();
+            ])->orderBy('name')->get();
     }
 
 }

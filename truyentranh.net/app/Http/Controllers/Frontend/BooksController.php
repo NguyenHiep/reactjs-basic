@@ -58,7 +58,7 @@ class BooksController extends FrontEndController
             return abort(404);
         }
 
-        $cookie = $this->setCookieChapterRecent(['id' => $chapter->id]);
+        $this->setCookieChapterRecent([$chapter->id]);
         $data['chapter']       = $chapter;
         $data['list_chapters'] = Chapters::get_option_list_by_book_id($chapter->book_id);
         $data = $data + $this->move_chapter($chapter->book_id, $chapter->id);
@@ -109,14 +109,26 @@ class BooksController extends FrontEndController
 
     public function show_history_read()
     {
-        $ids = $this->getCookieChapterRecent();
-
+        $ids   = $this->getCookieChapterRecent();
+        $books = Books::getBookHistory($ids);
+        $data['books']      = $books;
+        $data['categories'] = Categories::getListCategories();
+        return view('frontend.read-history', $data);
     }
+
     public function setCookieChapterRecent(array $data)
     {
         if (!empty($data)) {
+            if(Cookie::get('ids')){
+                $cookie  = Cookie::get('ids');
+                $book_id = array_shift($data);
+                if (!in_array($book_id, $cookie)) {
+                    array_push($cookie, $book_id);
+                }
+                $data = $cookie;
+            }
             $cookie = Cookie::forever('ids', $data);
-            return response('Cookie chapters')->withCookie($cookie);
+            return Cookie::queue($cookie);
         }
         return false;
     }
@@ -126,8 +138,9 @@ class BooksController extends FrontEndController
         return Cookie::get('ids');
     }
 
-    public function deleteCookieChapterRecent($key)
+    public function deleteCookieChapterRecent()
     {
-
+        $cookie = Cookie::forget('ids');
+        return Cookie::queue($cookie);
     }
 }

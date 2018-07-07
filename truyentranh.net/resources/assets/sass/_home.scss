@@ -1,4 +1,8 @@
 /** Style page home */
+body{
+  font-size: 0.9em;
+  font-family: 'Roboto Condensed', sans-serif !important;
+}
 .required{
   color: $danger;
 }
@@ -69,11 +73,10 @@ a.tooltips span, a.tooltips-anime span {
   z-index: 10;
   padding: 14px 20px;
 }
+
 a.tooltips:hover span {
   display: block;
   position: absolute;
-}
-a.tooltips:hover span {
   color: #111;
   border: 1px solid #DCA;
   background: #fffAF0;
@@ -88,11 +91,13 @@ a.tooltips:hover span {
 .manga-newest > a{
   color: #222;
   text-transform: capitalize;
+  &:hover{
+    color: #543C67;
+  }
 }
-.manga-newest > a:hover {
-  color: #543C67;
-}
-.mainpage-manga, .searchlist-items {
+
+.mainpage-manga,
+.searchlist-items {
   margin-bottom: 10px;
 }
 .mainpage-manga {
@@ -128,7 +133,8 @@ a.tooltips:hover span {
   margin-right: 5px;
   top: 6px;
 }
-.hotup-list a.recently, .hotup-list a:hover {
+.hotup-list a.recently,
+.hotup-list a:hover {
   color: $primary;
   text-decoration: none;
 }
@@ -137,7 +143,9 @@ a.tooltips:hover span {
   display: flex;
   float: left;
 }
-.description font, .description span, .descriptionhot font {
+.description font,
+.description span,
+.descriptionhot font {
   color: $second-color;
 }
 .description strong {
@@ -147,14 +155,11 @@ a.tooltips:hover span {
 .description a {
   color: #222;
   transition: .3s;
+  &:hover{
+    color: #a1a1a1;
+  }
 }
-.description a:hover {
-  color: #a1a1a1;
-}
-body{
-  font-size: 0.9em;
-  font-family: 'Roboto Condensed', sans-serif !important;
-}
+
 header{
   background-color: #372d3f;
   border-bottom: 2px solid #931cf3;
@@ -173,7 +178,10 @@ header{
   color: $primary;
   cursor: pointer;
 }
-.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link{
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link{
   color: $primary;
 }
 .user-circle img {
@@ -218,13 +226,14 @@ header{
 .status-click {
   float: right;
   margin-top: 6px;
+  a{
+    color: #FFF;
+    margin-right: 8px;
+    border-right: 1px solid #fff;
+    padding-right: 8px;
+  }
 }
-.status-click a {
-  color: #FFF;
-  margin-right: 8px;
-  border-right: 1px solid #fff;
-  padding-right: 8px;
-}
+
 .follower-status {
   padding: 5px;
   background-color: #fff;
@@ -368,12 +377,21 @@ header{
   }
 }
 
-.save-manga:active:before, .save-manga:focus:before, .save-manga:hover:before {
+.save-manga:active:before,
+.save-manga:focus:before,
+.save-manga:hover:before {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
 
-.ads-tiki, .list-watch p:last-child, .list-watched p:last-child, .pagelist, .pagelistaninews, .pagelistcate, .save-manga, .social-icon {
+.ads-tiki,
+.list-watch p:last-child,
+.list-watched p:last-child,
+.pagelist,
+.pagelistaninews,
+.pagelistcate,
+.save-manga,
+.social-icon {
   text-align: center;
 }
 .save-manga a {
@@ -397,26 +415,27 @@ header{
   margin-top: 10px;
   text-align: right;
 }
-.cate-total a, .cate-total a:hover {
+.cate-total a,
+.cate-total a:hover {
   color: $second-color;
 }
 .category {
   border: 1px solid #d2d2d2;
   background-color: #f0f0f0;
   padding: 10px;
-}
-.category a {
-  color: #222;
-  width: 100%;
-  margin-bottom: 5px;
-  display: block;
-  transition: .3s;
-}
-.category a:hover {
-  color: $primary;
-}
-.category a span {
-  color: #7c7c7c;
+  a{
+    color: #222;
+    width: 100%;
+    margin-bottom: 5px;
+    display: block;
+    transition: .3s;
+    &:hover{
+      color: $primary;
+    }
+  }
+  span{
+    color: #7c7c7c;
+  }
 }
 
 /** Begin footer */
@@ -431,46 +450,77 @@ header{
 }
 .viewmore-button {
   text-align: right;
-}
-.viewmore-button a {
-  color: $second-color;
+  a{
+    color: $second-color;
+  }
 }
 .social-icon {
   margin-top: 7px;
+  span{
+    color: #222;
+    border-bottom: 1px dashed #222;
+  }
 }
-.social-icon span {
-  color: #222;
-  border-bottom: 1px dashed #222;
-}
+
 .app-download{
   margin-top: 0;
+  a{
+    display: inline-block;
+    width: 120px;
+  }
+  img{
+    width: 100%;
+  }
 }
-.app-download a {
-  display: inline-block;
-  width: 120px;
-}
-.app-download img {
-  width: 100%;
-}
+
 footer {
-  border-bottom: 3px solid #0e977f;
+  border-bottom: 3px solid $second-color;
 }
 #back-top {
   position: fixed;
   bottom: 0;
   right: 15px;
   z-index: 999;
+  span{
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 7px;
+    background: url(./images/scroll-topfix.png) center no-repeat;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    background-size: 40px 40px;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+  }
 }
-#back-top span {
-  width: 50px;
-  height: 50px;
+.history-manga{
+  padding: 0 5px;
+  border: 2px solid $second-color;
+  margin-bottom: 10px;
+  p.description{
+    margin-bottom: 0;
+  }
+}
+.manga-newest .chapter{
+  font-weight: 400;
+  color: #7c7c7c;
+  transition: .3s;
+}
+.history-more {
+  background-color: $primary;
+  color: #fff !important;
+  width: 100%;
   display: block;
-  margin-bottom: 7px;
-  background: url(http://cdn.truyentranh.net/frontend/images/scroll-topfix.png) center no-repeat;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  background-size: 40px 40px;
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  transition: 1s;
+  font-weight: 700;
+  padding: 10px;
+  margin-top: 7px;
+  margin-bottom: 5px;
+  opacity: 1;
+  transition: .3s;
+  text-align: center;
+  &:hover {
+    opacity: .8;
+  }
 }

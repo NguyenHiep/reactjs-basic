@@ -25,14 +25,13 @@
                   </a>
                 </div>
                 <div class="caption">
-                    @foreach($book->chapters as $chapter)
-                      @if ($loop->iteration > 1)
-                        @break
-                      @endif
-                      <a href="{{ route('front.books.showdetail', ['chapter_slug' => $chapter->slug]) }}" title="{{ $chapter->name }}" class="Chapter">
-                        <p class="chapter"><a href="{{ route('front.books.showdetail', ['chapter_slug' => $chapter->slug]) }}">{{ $chapter->episodes }}</a> </p>
-                      </a>
-                    @endforeach
+                  @foreach($book->chapters as $chapter)
+                    @if ($loop->iteration > 1)
+                      @break
+                    @endif
+                    <p class="chapter">
+                      <a href="{{ route('front.books.showdetail', ['chapter_slug' => $chapter->slug]) }}" title="{{ $chapter->name }}" class="Chapter">{{ $chapter->episodes }}</a></p>
+                  @endforeach
                 </div>
               </div>
               @endif
@@ -55,8 +54,8 @@
               <img class="pr-2" src="{!! asset(PATH_IMAGE_THUMBNAIL_BOOK.$book->image) !!}" alt="{{ $book->name }}" />
             @endif
             <span>
-              <img src="http://cdn.truyentranh.net/frontend/images/callout.gif" class="callout" />
-              <p class="description">
+              <img src="{{ PATH_IMAGE_FRONTEND.'callout.gif' }}" class="callout" alt="callout"/>
+              <div class="description">
                 <strong>Tên khác:</strong>{{ $book->name_dif }}<br />
                 <strong>Thể loại: </strong>
                 @php
@@ -71,7 +70,7 @@
                 <br />
                 <strong>Tác giả:</strong>{{ $book->author }}<br />
                 <strong>Nội dung:</strong>{!! Str::words($book->content, 40,'...') !!}
-              </p>
+              </div>
              </span>
           </a>
           <div class="media-body">
@@ -107,8 +106,8 @@
               <img class="pr-2" src="{!! asset(PATH_IMAGE_THUMBNAIL_BOOK.$book->image) !!}" alt="{{ $book->name }}" />
             @endif
             <span>
-              <img src="http://cdn.truyentranh.net/frontend/images/callout.gif" class="callout"/>
-              <p class="description">
+              <img src="{{ PATH_IMAGE_FRONTEND.'callout.gif' }}" class="callout" alt="callout"/>
+              <div class="description">
                 <strong>Tên khác:</strong>{{ $book->name_dif }}<br />
                 <strong>Thể loại: </strong>
                 @php
@@ -123,7 +122,7 @@
                 <br />
                 <strong>Tác giả:</strong>{{ $book->author }}<br />
                 <strong>Nội dung:</strong>{!!  Str::words($book->content, 20,'...') !!}
-              </p>
+              </div>
             </span>
           </a>
           
@@ -147,6 +146,11 @@
         </div>
       </div>
     @endforeach
+      <div class="col-12">
+        <div class="viewmore-button">
+          <a href="{{ route('front.categories.showall') }}" title="Xem thêm">Xem thêm <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
   </div>
 </div>
 @endsection
