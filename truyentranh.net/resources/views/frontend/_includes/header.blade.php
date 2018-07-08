@@ -13,41 +13,45 @@
         <li class="nav-item {{ (Route::currentRouteName() == 'front.categories.showall') ? 'active' : '' }}">
           <a class="nav-link" href="{{ route('front.categories.showall') }}">Danh sách truyện</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown {{ (Route::currentRouteName() == 'front.categories.show') ? 'active' : '' }}">
           <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Thể loại</a>
           <ul class="dropdown-menu hoverblock">
             <li>
               <div class="yamm-content">
                 <div class="row">
                   @php
-                      $html = '';
-                      $count = 0;
-                      $total = count($categories);
-                      foreach ($categories as $category){
-                          if($count % 11 == 0){
-                              $html .= '<ul class="col-sm-2 list-unstyled">';
-                          }
-                          $html .= '<li><a href="'.route('front.categories.show', ['cat_slug' => $category->slug]).'" title="'.$category->name.'">'.$category->name.'</a></li>';
-                          $count++;
-                          if($count % 11 == 0){
-                              $html .= '</ul>';
-                          }
+                    $html = '';
+                    $count = 0;
+                    $total = count($categories);
+                    foreach ($categories as $category){
+                      $active = '';
+                      if(request()->route('cat_slug') === $category->slug){
+                        $active = 'class="active"';
                       }
-                      if($count % 11 != 0){
-                        $html .= '</ul>';
+                      if($count % 11 == 0){
+                          $html .= '<ul class="col-sm-2 list-unstyled">';
                       }
-                      echo $html;
+                      $html .= '<li '.$active.'><a href="'.route('front.categories.show', ['cat_slug' => $category->slug]).'" title="'.$category->name.'">'.$category->name.'</a></li>';
+                      $count++;
+                      if($count % 11 == 0){
+                          $html .= '</ul>';
+                      }
+                    }
+                    if($count % 11 != 0){
+                      $html .= '</ul>';
+                    }
+                    echo $html;
                   @endphp
                 </div>
               </div>
             </li>
           </ul>
         </li>
-        <li class="nav-item {{ (Route::currentRouteName() == 'front.categories.showall') ? 'active' : '' }}">
-          <a class="nav-link" href="#">Blog</a>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:;">Blog</a>
         </li>
-        <li class="nav-item {{ (Route::currentRouteName() == 'front.categories.showall') ? 'active' : '' }}">
-          <a class="nav-link" href="#">Hàng sale</a>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:;">Hàng sale</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0" method="GET" action="{{ route('front.books.search') }}">
@@ -60,7 +64,7 @@
           <a href="javascript:void(0);" data-toggle="dropdown" class="user-circle" id="dLabel">
             @php $avatar = (Auth::user()->avatar) ? asset(PATH_AVATAR_THUMBNAIL . Auth::user()->avatar) : asset(PATH_IMAGE_DEFAULT); @endphp
             <img src="{{ $avatar }}" alt="{{ Auth::user()->fullname ?? Auth::user()->name }}" class="img-circle">
-            {{--<b class="caret"></b><span class="norti-user">1</span>--}}
+            <strong class="caret"></strong><span class="norti-user">1</span>
           </a>
           <ul class="usercontent dropdown-menu" id="noticePanel" role="menu" aria-labelledby="dLabel">
             <li>
@@ -72,6 +76,9 @@
                         <h3 class="username">{{ Auth::user()->fullname ?? Auth::user()->namel }}</h3>
                       </a>
                       <span class="status-click">
+                        @if(Auth::user()->level == 3)
+                          <a title="Quản trị" href="{{ route('manage') }}">Quản trị</a>
+                        @endif
                         <a title="Truyện theo dõi" href="{{ route('front.profile.follow') }}">Truyện theo dõi</a>
                         <a href="{{ route('front.profile.edit') }}" title="Chỉnh sửa">Chỉnh sửa</a>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" title="Thoát">Thoát</a>

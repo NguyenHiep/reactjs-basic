@@ -78,8 +78,8 @@ class RegisterController extends Controller
      */
     protected function registered(Request $request, $user)
     {
-        if ($user->isAdmin()->count() == 1) {
-            return redirect()->route('manage');
+        if (!empty($request->get('ref'))) {
+            return redirect($request->get('ref'));
         }
         return redirect('/');
     }
