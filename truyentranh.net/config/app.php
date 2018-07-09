@@ -181,8 +181,8 @@ return [
         App\Providers\ComposerServiceProvider::class,
         App\Providers\ComponentsServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
-        HTMLMin\HTMLMin\HTMLMinServiceProvider::class
-
+        HTMLMin\HTMLMin\HTMLMinServiceProvider::class,
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
     ],
 
     /*
