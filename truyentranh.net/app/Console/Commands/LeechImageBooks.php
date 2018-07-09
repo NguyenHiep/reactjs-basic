@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\BooksLeech;
+use App\Models\BooksLeech;
 use Illuminate\Console\Command;
 use App\Http\Controllers\Manage\SourceBooks\BooksDataFactory;
 use App\Traits\ToolLeechTrait;

@@ -2,10 +2,10 @@
 
 namespace App\Http\Composers;
 
+use App\Models\Categories;
+use App\Models\Chapters;
+use App\Models\Books;
 use Illuminate\Contracts\View\View;
-use App\Categories;
-use App\Chapters;
-use App\Books;
 use Illuminate\Support\Facades\Cookie;
 
 class MasterComposer

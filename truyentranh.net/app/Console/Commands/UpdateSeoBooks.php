@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Books;
+use App\Models\Books;
 use Illuminate\Console\Command;
 
 class UpdateSeoBooks extends Command

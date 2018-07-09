@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Apis;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
-use App\Article;
 use App\Http\Controllers\AppBaseController;
 
 class ArticleController extends AppBaseController

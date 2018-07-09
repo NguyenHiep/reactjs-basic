@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\FrontEnd;
 
+use App\Models\Books;
+use App\Models\Categories;
+use App\Models\Chapters;
 use App\Http\Controllers\FrontEndController;
-use App\Books;
-use App\Categories;
-use App\Chapters;
 
 class CategoriesController extends FrontEndController
 {

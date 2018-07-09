@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\FrontEnd;
 
-use App\ChaptersLeech;
+use App\Models\ChaptersLeech;
+use App\Models\Books;
+use App\Models\Categories;
+use App\Models\Chapters;
 use App\Http\Controllers\FrontEndController;
-use App\Books;
-use App\Categories;
-use App\Chapters;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;

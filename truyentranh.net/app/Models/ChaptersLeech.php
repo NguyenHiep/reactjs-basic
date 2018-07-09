@@ -1,12 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
+use App\Models\BooksLeech;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
-class Chapters extends BaseModel
+class ChaptersLeech extends BaseModel
 {
     use SoftDeletes;
     protected $table    = 'chapters';
@@ -34,7 +35,7 @@ class Chapters extends BaseModel
 
     public function books()
     {
-        return $this->belongsTo('App\Books');
+        return $this->belongsTo(BooksLeech::class);
     }
 
     public function getCreatedAtAttribute($value)
@@ -61,25 +62,12 @@ class Chapters extends BaseModel
     }
 
     public static function get_option_list_by_book_id($book_id = null){
-        $chapters = Chapters::select('chapters.name', 'chapters.slug', 'books.name as book_name', 'books.slug as book_slug')
+        $chapters = ChaptersLeech::select('chapters.name', 'chapters.slug', 'books.name as book_name', 'books.slug as book_slug')
             ->join('books', 'books.id', '=', 'chapters.book_id')
-            ->where('books.status', Books::STATUS_ON)
-            ->where('chapters.status', Chapters::STATUS_ON)
+            ->where('books.status', BooksLeech::STATUS_ON)
+            ->where('chapters.status', ChaptersLeech::STATUS_ON)
             ->where('chapters.book_id', $book_id)
             ->orderBy('chapters.id', 'desc')
-            ->get();
-        return $chapters;
-    }
-
-    public static function getTopChapters()
-    {
-        $chapters = Chapters::select('chapters.name','chapters.slug')
-            ->join('books', 'books.id', '=', 'chapters.book_id')
-            ->where('books.status', Books::STATUS_ON)
-            ->where('chapters.status', Chapters::STATUS_ON)
-            ->where('chapters.sticky', Chapters::STATUS_ON)
-            ->orderBy('chapters.updated_at', 'desc')
-            ->limit(3)
             ->get();
         return $chapters;
     }

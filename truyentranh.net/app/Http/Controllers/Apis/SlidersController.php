@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Apis;
 
+use App\Models\Sliders;
 use Illuminate\Http\Request;
-use App\Sliders;
 use App\Http\Controllers\AppBaseController;
 
 class SlidersController extends AppBaseController

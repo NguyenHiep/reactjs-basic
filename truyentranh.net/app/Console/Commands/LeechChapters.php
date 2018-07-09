@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use App\BooksLeech;
-use App\ChaptersLeech;
+use App\Models\BooksLeech;
+use App\Models\ChaptersLeech;
 use Illuminate\Console\Command;
 use App\Http\Controllers\Manage\SourceBooks\BooksDataFactory;
 use Illuminate\Support\Facades\DB;

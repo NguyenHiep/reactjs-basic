@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
@@ -20,7 +20,7 @@ class Categories extends BaseModel
 
     public function books()
     {
-        return $this->belongsToMany('App\Books');
+        return $this->belongsToMany(Books::class);
     }
 
     public function getCreatedAtAttribute($value)

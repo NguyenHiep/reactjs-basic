@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Manage;
 
-use App\Books_Categories;
-use App\Categories;
+use App\Models\Books_Categories;
+use App\Models\Categories;
+use App\Models\Books;
 use App\Http\Requests\BoooksRequest;
 use App\Http\Controllers\AppBaseController;
-use App\Books;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;

@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Books;
-use App\Categories;
-use App\Chapters;
+use App\Models\Books;
+use App\Models\Categories;
+use App\Models\Chapters;
 use App\Helpers\Helpers;
 
 class FrontEndController extends AppBaseController

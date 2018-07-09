@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Chapters;
+use App\Models\Chapters;
 
 class UpdateSeoChapters extends Command
 {

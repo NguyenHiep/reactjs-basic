@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Manage;
 
 use App\Http\Requests\CategoriesRequest;
 use App\Http\Controllers\AppBaseController;
-use App\Categories;
+use App\Models\Categories;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;

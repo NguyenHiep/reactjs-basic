@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Manage;
 
-use App\BooksLeech;
-use App\ChaptersLeech;
+use App\Models\BooksLeech;
+use App\Models\ChaptersLeech;
 use App\Http\Controllers\AppBaseController;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;

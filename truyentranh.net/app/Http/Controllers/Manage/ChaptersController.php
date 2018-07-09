@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Manage;
 
 use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\ChaptersRequest;
-use App\Books;
-use App\Chapters;
+use App\Models\Books;
+use App\Models\Chapters;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;

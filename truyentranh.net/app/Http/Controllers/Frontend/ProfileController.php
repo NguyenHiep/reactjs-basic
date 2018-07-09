@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Categories;
+use App\Models\Categories;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\FrontEndController;

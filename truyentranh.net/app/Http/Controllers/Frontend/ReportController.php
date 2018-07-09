@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\FrontEnd;
 
+use App\Models\Books;
+use App\Models\Reports;
 use App\Http\Controllers\FrontEndController;
-use App\Books;
-use App\Reports;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
