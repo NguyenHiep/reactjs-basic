@@ -12,7 +12,7 @@ class SlidersRepository extends BaseRepository
      *
      * @return string
      */
-    function model()
+    public function model()
     {
         return Sliders::class;
     }

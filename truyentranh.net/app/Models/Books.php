@@ -107,9 +107,9 @@ class Books extends BaseModel
         return  !! $this->user_follow()->where('user_id', $user_id)->count();
     }
 
-    public static function getBookHistory( array $ids, $limit = 12)
+    public static function getBookHistory($ids, $limit = 12)
     {
-        if(!empty($ids)){
+        if (!empty($ids) && is_array($ids)) {
             $books = Books::select('books.*', 'chapters.name as chapter_name', 'chapters.slug as chapter_slug')
                 ->join('chapters', 'books.id', '=', 'chapters.book_id')
                 ->whereIn('chapters.id', $ids)
@@ -118,6 +118,6 @@ class Books extends BaseModel
                 ->paginate($limit);
             return $books;
         }
-        return false;
+        return [];
     }
 }

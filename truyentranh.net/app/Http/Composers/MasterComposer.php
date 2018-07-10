@@ -23,7 +23,7 @@ class MasterComposer
         $total_book = Books::getTotalBook();
         $chapters   = Chapters::getTopChapters();
         $book_id    = Cookie::get('ids');
-        $book_history = false;
+        $book_history = [];
         if (!empty($book_id)) {
             $book_history = Books::getBookHistory($book_id, 5);
         }
