@@ -183,7 +183,9 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         HTMLMin\HTMLMin\HTMLMinServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
-        Yajra\Datatables\DatatablesServiceProvider::class
+        // Database
+        Yajra\DataTables\FractalServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
     ],
 
     /*

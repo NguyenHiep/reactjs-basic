@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Transformers;
+
 use League\Fractal\TransformerAbstract;
 use App\Models\Sliders;
-class UserTransformer extends TransformerAbstract
+
+class SlidersTransformer extends TransformerAbstract
 {
     /***
      *

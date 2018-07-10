@@ -19,6 +19,7 @@
         "laravelnews/laravel-twbs4": "^1.3",
         "prettus/l5-repository": "^2.6",
         "spatie/laravel-fractal": "^5.3",
+        "yajra/laravel-datatables-fractal": "^1.0",
         "yajra/laravel-datatables-oracle": "^8.7"
     },
     "require-dev": {

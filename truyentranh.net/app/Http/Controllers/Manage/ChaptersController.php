@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Manage;
 
+use App\DataTables\ChaptersDataTable;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Controllers\ManageController;
 use App\Http\Requests\ChaptersRequest;
 use App\Models\Books;
 use App\Models\Chapters;
+use App\Repositories\ChaptersRepository;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -16,11 +18,13 @@ use Yajra\DataTables\Facades\DataTables;
 
 class ChaptersController extends ManageController
 {
+    protected $repository;
     protected $chapters;
     protected $fileds_seach = [];
 
-    public function __construct(Chapters $chapters)
+    public function __construct(ChaptersRepository $repository, Chapters $chapters)
     {
+        $this->repository = $repository;
         $this->chapters = $chapters;
 
         foreach ($this->chapters->getFillable() as $filed) {
@@ -35,39 +39,10 @@ class ChaptersController extends ManageController
      */
     public function index()
     {
-        // Get all books
-        /*$data['books'] = Books::get_option_list();
-        $get_params = request()->query();
-        $model      = Chapters::query();
-        if (!empty($get_params)) {
-            $this->setSearch = [];
-            foreach ($get_params as $key => $val) {
-                if (in_array($key, $this->fileds_seach)) {
-                    $key = substr($key, strlen($this->search_prefix));
-                    $this->setSearch[$key] = $val;
-                }
-            }
-            $model = Chapters::SearchAdvanced($this->setSearch);
-        }
-        if (!empty($get_params['mode']) && $get_params['mode'] === 'list_filter') {
-            $book_id = $get_params['book_id'];
-            $model->where('book_id', $book_id);
-        }
-
-        $limit = 100;
-        $data['records']      = $model->orderBy('id', 'DESC')->paginate($limit);
-        $data['page_total']   = $data['records']->total();
-        $offset               = $limit;
-        $data['display_to']   = $offset;
-        $data['display_from'] = 1;
-        if($data['records']->currentPage() > 1)
-        {
-            $offset = min($limit * $data['records']->currentPage(), $data['page_total']) ;
-            $data['display_to']   = min($offset +  $data['records']->perPage(), $data['page_total']);
-            $data['display_from'] = min($offset , $data['display_to']);
-        }*/
         if(request()->ajax()){
-            return Datatables::of(Chapters::query())->make(true);
+            $chaptersCollection = $this->repository->getAllChapters();
+            $dataTables         = new ChaptersDataTable($chaptersCollection);
+            return $dataTables->getTransformerData();
         }
         return view('manage.chapters.datatable');
 

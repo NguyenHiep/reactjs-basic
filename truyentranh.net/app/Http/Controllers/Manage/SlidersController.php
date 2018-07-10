@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Manage;
 
 use App\Http\Requests\Sliders as Request;
 use App\Http\Controllers\ManageController;
-use App\Models\Sliders;
 use App\Repositories\SlidersRepository;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
