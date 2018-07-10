@@ -16,6 +16,8 @@
     <link href="{{ asset('assets/manage/css/introjs.min.css') }}" rel="stylesheet">
     <script type="text/javascript" src="{{ asset('assets/manage/js/jquery-1.10.2.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/manage/js/bootstrap.min.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.2/b-html5-1.5.2/r-2.2.2/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.2/b-html5-1.5.2/r-2.2.2/datatables.min.js"></script>
     <script type="text/javascript" src="{{ asset('assets/manage/js/intro.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/manage/js/admin.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/manage/js/actions.js') }}"></script>

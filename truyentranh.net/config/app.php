@@ -183,6 +183,7 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         HTMLMin\HTMLMin\HTMLMinServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class
     ],
 
     /*
@@ -236,6 +237,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'HTMLMin' => HTMLMin\HTMLMin\Facades\HTMLMin::class,
+        'Datatables' => yajra\Datatables\Datatables::class,
     ],
 
 ];

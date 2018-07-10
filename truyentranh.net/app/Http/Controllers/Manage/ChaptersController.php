@@ -3,15 +3,18 @@
 namespace App\Http\Controllers\Manage;
 
 use App\Http\Controllers\AppBaseController;
+use App\Http\Controllers\ManageController;
 use App\Http\Requests\ChaptersRequest;
 use App\Models\Books;
 use App\Models\Chapters;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Yajra\DataTables\Facades\DataTables;
 
-class ChaptersController extends AppBaseController
+class ChaptersController extends ManageController
 {
     protected $chapters;
     protected $fileds_seach = [];
@@ -33,7 +36,7 @@ class ChaptersController extends AppBaseController
     public function index()
     {
         // Get all books
-        $data['books'] = Books::get_option_list();
+        /*$data['books'] = Books::get_option_list();
         $get_params = request()->query();
         $model      = Chapters::query();
         if (!empty($get_params)) {
@@ -62,9 +65,12 @@ class ChaptersController extends AppBaseController
             $offset = min($limit * $data['records']->currentPage(), $data['page_total']) ;
             $data['display_to']   = min($offset +  $data['records']->perPage(), $data['page_total']);
             $data['display_from'] = min($offset , $data['display_to']);
+        }*/
+        if(request()->ajax()){
+            return Datatables::of(Chapters::query())->make(true);
         }
+        return view('manage.chapters.datatable');
 
-        return view('manage.chapters.index', $data);
     }
 
     /**

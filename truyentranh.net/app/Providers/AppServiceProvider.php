@@ -27,19 +27,31 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->loadToolbarDebug();
+        $this->loadHelpers();
+        $this->loadTraits();
+        // Register repositories
+        $this->app->register(\Prettus\Repository\Providers\LumenRepositoryServiceProvider::class);
+    }
+
+    private function loadHelpers()
+    {
+        foreach (glob(app_path() . '/Helpers/*.php') as $filename) {
+            require_once($filename);
+        }
+    }
+
+    private function loadTraits()
+    {
+        foreach (glob(app_path() . '/Traits/*.php') as $filename) {
+            require_once($filename);
+        }
+    }
+
+    private function loadToolbarDebug()
+    {
         if ($this->app->environment() !== 'production') {
             $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
         }
-
-        // register helpers
-        foreach (glob(app_path().'/Helpers/*.php') as $filename){
-            require_once($filename);
-        }
-
-        // register trait
-        foreach (glob(app_path().'/Traits/*.php') as $filename){
-            require_once($filename);
-        }
-
     }
 }

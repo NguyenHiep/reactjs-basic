@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Manage;
 
 use App\Http\Requests\Sliders as Request;
-use App\Http\Controllers\AppBaseController;
+use App\Http\Controllers\ManageController;
 use App\Models\Sliders;
+use App\Repositories\SlidersRepository;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -12,19 +13,17 @@ use Illuminate\Support\Facades\Log;
 use App\Helpers\Helpers;
 use App\Helpers\Uploads;
 
-
-class SlidersController extends AppBaseController
+class SlidersController extends ManageController
 {
+    protected $repository;
     protected $sliders;
-    protected $fileds_seach = [];
 
-    public function __construct(Sliders $sliders) {
-        $this->sliders      = $sliders;
-
-        foreach ($this->sliders->getFillable() as $filed)
-        {
-            $this->fileds_seach[] = $this->search_prefix.$filed;
+    public function __construct(SlidersRepository $repository) {
+        $this->repository = $repository;
+        foreach ($this->repository->getFieldsSearchable() as $field) {
+            $search_key[] = $this->search_prefix . $field;
         }
+        $this->fields_seach = $search_key ?? null;
     }
 
     /**
@@ -35,32 +34,11 @@ class SlidersController extends AppBaseController
     public function index()
     {
         $get_params = request()->query();
-        $model      = Sliders::query();
-        if (!empty($get_params)) {
-            $this->setSearch = [];
-            foreach ($get_params as $key => $val) {
-                if (in_array($key, $this->fileds_seach)) {
-                    $key = substr($key, strlen($this->search_prefix));
-                    $this->setSearch[$key] = $val;
-                }
-            }
-            $model = Sliders::SearchAdvanced($this->setSearch);
-        }
-        $limit = 15;
-        $data['records']      = $model->orderBy('id', 'DESC')->paginate($limit);
-        $data['page_total']   = $data['records']->total();
-        $offset               = $limit;
-        $data['display_to']   = $offset;
-        $data['display_from'] = 1;
-        if($data['records']->currentPage() > 1)
-        {
-            $offset = min($limit * $data['records']->currentPage(), $data['page_total']) ;
-            $data['display_to']   = min($offset +  $data['records']->perPage(), $data['page_total']);
-            $data['display_from'] = min($offset , $data['display_to']);
-        }
-
+        $params     = $this->getKeySearch($get_params);
+        $data       = $this->repository->getListAll($params);
         return view('manage.sliders.index', $data);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -87,8 +65,7 @@ class SlidersController extends AppBaseController
         }
         try {
             DB::beginTransaction();
-            $this->sliders->fill($inputs);
-            $this->sliders->save();
+            $this->repository->create($inputs);
             DB::commit();
             return redirect()->route('sliders.index')->with([
                 'message' => __('system.message.create'),
@@ -124,7 +101,7 @@ class SlidersController extends AppBaseController
      */
     public function edit($id)
     {
-        $data['record'] = $this->sliders->find($id);
+        $data['record'] = $this->repository->find($id);
         if(empty($data['record']))
         {
             return abort(404);
@@ -141,7 +118,7 @@ class SlidersController extends AppBaseController
      */
     public function update(Request $request, $id)
     {
-        $slider = Sliders::find($id);
+        $slider = $this->repository->find($id);
         if (empty($slider)) {
             return abort(404);
         }
@@ -156,7 +133,7 @@ class SlidersController extends AppBaseController
         }
         try {
             DB::beginTransaction();
-            $slider->update($inputs);
+            $this->repository->update($inputs, $id);
             DB::commit();
             return redirect()->route('sliders.index')->with([
                 'message' => __('system.message.update'),
@@ -190,45 +167,14 @@ class SlidersController extends AppBaseController
                 Log::warning('The requested method '.request()->method().' is not allowed for the URL.', __METHOD__);
                 throw new \Exception('Method is not allowed for the URL', self::CTRL_MESSAGE_ERROR);
             }
-            $inputs = request()->all();
+            $inputs    = request()->all();
             $validator = static::validate_batch($inputs);
             if ($validator->fails()) {
                 return redirect()->back()->withErrors($validator)->withInput($inputs);
             }
-            $ids = request()->get('ids');
-            if (empty($ids))
-            {
-                throw new \Exception('Vui lòng chọn items');
-            }
-
             DB::beginTransaction();
-            switch (request()->get('batch_actions'))
-            {
-                case 'status_publish':
-                    DB::table('sliders')
-                        ->whereIn('id', $ids)
-                        ->update(['status' => Sliders::STATUS_ON, 'updated_at' => Carbon::now()]);
-                    break;
-
-                case 'status_unpublish':
-                    DB::table('sliders')
-                        ->whereIn('id', $ids)
-                        ->update(['status' => Sliders::STATUS_OFF, 'updated_at' => Carbon::now()]);
-                    break;
-
-                case 'delete':
-                    DB::table('sliders')
-                        ->whereIn('id', $ids)
-                        ->update(['deleted_at' => Carbon::now()]);
-                    break;
-
-                default:
-                    throw new \Exception(__('Action được chọn không có trong danh sách'));
-                    break;
-            }
+            $this->repository->batch_action($inputs['batch_actions'], $inputs['ids']);
             DB::commit();
-
-
             return redirect()->route('sliders.index')->with([
                 'message' => __('system.message.update'),
                 'status'  => self::CTRL_MESSAGE_SUCCESS,
@@ -247,14 +193,14 @@ class SlidersController extends AppBaseController
 
     public function delete($id)
     {
-        $slider = Sliders::find($id);
+        $slider = $this->repository->find($id);
         if (empty($slider)) {
             return abort(404);
         }
 
         try {
             DB::beginTransaction();
-            $slider->delete();
+            $this->repository->delete($id);
             DB::commit();
             return redirect()->route('sliders.index')->with([
                 'message' => __('system.message.delete'),
@@ -273,7 +219,7 @@ class SlidersController extends AppBaseController
     public static function validate_batch($data){
         return Validator::make($data, [
             'batch_actions' => 'required',
-            'ids'           => 'nullable|array',
+            'ids'           => 'required|array',
         ]);
     }
 }
