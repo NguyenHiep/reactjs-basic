@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Manage;
 
 use App\DataTables\ChaptersDataTable;
-use App\Http\Controllers\AppBaseController;
 use App\Http\Controllers\ManageController;
 use App\Http\Requests\ChaptersRequest;
 use App\Models\Books;
@@ -14,22 +13,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Yajra\DataTables\Facades\DataTables;
 
 class ChaptersController extends ManageController
 {
     protected $repository;
     protected $chapters;
-    protected $fileds_seach = [];
 
     public function __construct(ChaptersRepository $repository, Chapters $chapters)
     {
         $this->repository = $repository;
-        $this->chapters = $chapters;
-
-        foreach ($this->chapters->getFillable() as $filed) {
-            $this->fileds_seach[] = $this->search_prefix . $filed;
-        }
+        $this->chapters   = $chapters;
     }
 
     /**
@@ -44,7 +37,6 @@ class ChaptersController extends ManageController
             $dataTables         = new ChaptersDataTable($chaptersCollection);
             return $dataTables->getTransformerData();
         }
-        // set Columns in datatable.
         $fields = [
             'id'         => [
                 'label' => 'ID',

@@ -21,7 +21,7 @@ class SlidersController extends ManageController
         foreach ($this->repository->getFieldsSearchable() as $field) {
             $search_key[] = $this->search_prefix . $field;
         }
-        $this->fields_seach = $search_key ?? null;
+        $this->fields_search = $search_key ?? null;
     }
 
     /**

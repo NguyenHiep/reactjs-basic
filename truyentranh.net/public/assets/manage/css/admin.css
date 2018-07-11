@@ -96,10 +96,13 @@ text-align: center;
  width: auto;
  }
 .pagination{margin-top:0;font-size: 11px;}
-.pagination li a{color: #1d9977 !important;}
+.pagination li a{color: #1d9977; outline: none}
 .pagination .active span:hover{background: #16775c; cursor: pointer;}
 .pagination>li:last-child>a, .pagination>li:last-child>span, .pagination>li:first-child>a, .pagination>li:first-child>span{border-radius: 0;}
-
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
+  background-color: #1d9977;
+  border-color: #16775c;
+}
 /*New - Flat Style*/
 .btn {
   font-weight: 500;
@@ -234,68 +237,7 @@ img.img-thumbnail{
   max-width: 80px;
 	max-height: 80px;
 }
-
-.dropdown-menu.show {
-  display: block;
-  position: absolute;
-  top: 36px;
-  left: -40px;
-  will-change: top, left;
-}
-.dropdown-grid, .dropdown-menu {
-  color: #4d5259;
-  border-radius: 2px;
-  font-size: 13px;
-  border-color: #f1f2f3;
-  padding: 0;
-  -webkit-box-shadow: 0 0 4px rgba(0,0,0,.06);
-  box-shadow: 0 0 4px rgba(0,0,0,.06);
-  z-index: 992;
-}
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-  display: none;
-  float: left;
-  min-width: 10rem;
-  padding: .5rem 0;
-  margin: .125rem 0 0;
-  font-size: 1rem;
-  color: #212529;
-  text-align: left;
-  list-style: none;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.15);
-  border-radius: .25rem;
-}
-
-.dropdown-grid a, .dropdown-menu a {
-  color: #4d5259;
-}
-.show>a {
-  outline: 0;
-}
-.dropdown-item {
-  color: #60666f;
-  font-weight: 400;
-  padding: 4px 12px;
-  width: auto;
-  margin: 4px;
-  -webkit-transition: .15s linear;
-  transition: .15s linear;
-}
-.dropdown-item {
-  display: block;
-  width: 100%;
-  padding: .25rem 1.5rem;
-  clear: both;
-  font-weight: 400;
-  color: #212529;
-  text-align: inherit;
-  white-space: nowrap;
-  background: 0 0;
-  border: 0;
+.action-group button{
+  padding-left: 20px;
+  padding-right: 20px;
 }

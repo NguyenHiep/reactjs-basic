@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Manage;
 
+use App\Http\Controllers\ManageController;
 use App\Models\BooksLeech;
 use App\Models\ChaptersLeech;
-use App\Http\Controllers\AppBaseController;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Manage\SourceBooks\BooksDataFactory;
@@ -13,23 +13,22 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 
-class GetBooksToolController extends AppBaseController
+class GetBooksToolController extends ManageController
 {
     protected $book_data;
     protected $book_leech;
     protected $chapters_leech;
-    protected $fileds_seach = [];
-    protected $fileds_seach_chapters = [];
+    protected $fileds_search_chapters = [];
 
     public function __construct(BooksDataFactory $book_data, BooksLeech $books_leech, ChaptersLeech $chapters_leech) {
         $this->book_data  = $book_data;
         $this->book_leech = $books_leech;
         foreach ($this->book_leech->getFillable() as $filed) {
-            $this->fileds_seach[] = $this->search_prefix . $filed;
+            $this->fields_search[] = $this->search_prefix . $filed;
         }
         $this->chapters_leech = $chapters_leech;
         foreach ($this->chapters_leech->getFillable() as $filed) {
-            $this->fileds_seach_chapters[] = $this->search_prefix . $filed;
+            $this->fileds_search_chapters[] = $this->search_prefix . $filed;
         }
     }
 
@@ -58,7 +57,7 @@ class GetBooksToolController extends AppBaseController
         if (!empty($get_params)) {
             $this->setSearch = [];
             foreach ($get_params as $key => $val) {
-                if (in_array($key, $this->fileds_seach)) {
+                if (in_array($key, $this->fields_search)) {
                     $key = substr($key, strlen($this->search_prefix));
                     $this->setSearch[$key] = $val;
                 }
@@ -95,7 +94,7 @@ class GetBooksToolController extends AppBaseController
         if (!empty($get_params)) {
             $this->setSearch = [];
             foreach ($get_params as $key => $val) {
-                if (in_array($key, $this->fileds_seach_chapters)) {
+                if (in_array($key, $this->fileds_search_chapters)) {
                     $key = substr($key, strlen($this->search_prefix));
                     $this->setSearch[$key] = $val;
                 }

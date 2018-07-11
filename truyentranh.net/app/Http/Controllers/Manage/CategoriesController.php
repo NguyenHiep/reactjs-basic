@@ -2,26 +2,25 @@
 
 namespace App\Http\Controllers\Manage;
 
+use App\DataTables\CategoriesDataTable;
 use App\Http\Requests\CategoriesRequest;
-use App\Http\Controllers\AppBaseController;
+use App\Http\Controllers\ManageController;
 use App\Models\Categories;
+use App\Repositories\CategoriesRepository;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
-class CategoriesController extends AppBaseController
+class CategoriesController extends ManageController
 {
+    protected $repository;
     protected $categories;
-    protected $fileds_seach = [];
 
-    public function __construct(Categories $categories)
+    public function __construct(CategoriesRepository $repository,Categories $categories)
     {
+        $this->repository = $repository;
         $this->categories = $categories;
-
-        foreach ($this->categories->getFillable() as $filed) {
-            $this->fileds_seach[] = $this->search_prefix . $filed;
-        }
     }
 
     /**
@@ -31,31 +30,38 @@ class CategoriesController extends AppBaseController
      */
     public function index()
     {
-        $get_params = request()->query();
-        $model      = Categories::query();
-        if (!empty($get_params)) {
-            $this->setSearch = [];
-            foreach ($get_params as $key => $val) {
-                if (in_array($key, $this->fileds_seach)) {
-                    $key = substr($key, strlen($this->search_prefix));
-                    $this->setSearch[$key] = $val;
-                }
-            }
-            $model = Categories::SearchAdvanced($this->setSearch);
-        }
-        $limit = 15;
-        $data['records']    = $model->orderBy('id', 'DESC')->paginate($limit);
-        $data['page_total'] = $data['records']->total();
-        $offset = $limit;
-        $data['display_to'] = $offset;
-        $data['display_from'] = 1;
-        if ($data['records']->currentPage() > 1) {
-            $offset = min($limit * $data['records']->currentPage(), $data['page_total']);
-            $data['display_to']   = min($offset + $data['records']->perPage(), $data['page_total']);
-            $data['display_from'] = min($offset, $data['display_to']);
+        if(request()->ajax()){
+            $categoriesCollection = $this->repository->getAllCategories();
+            $dataTables         = new CategoriesDataTable($categoriesCollection);
+            return $dataTables->getTransformerData();
         }
 
-        return view('manage.categories.index', $data);
+        $fields = [
+            'id'         => [
+                'label' => 'ID',
+            ],
+            'name'       => [
+                'label' => 'Tên thể loại',
+            ],
+            'status'     => [
+                'label' => 'Trạng thái',
+            ],
+            'created_at' => [
+                'label' => 'Ngày tạo',
+            ],
+            'actions'    => [
+                'label'      => 'Action',
+                'searchable' => false,
+                'orderable'  => false,
+            ],
+        ];
+        $dtColumns = CategoriesDataTable::getColumns($fields);
+        $withData = [
+            'fields'  => $fields,
+            'columns' => $dtColumns,
+        ];
+
+        return view('manage.categories.datatable')->with($withData);
     }
 
     /**
@@ -164,7 +170,29 @@ class CategoriesController extends AppBaseController
      */
     public function destroy($id)
     {
-        //
+        $model = $this->repository->find($id);
+        if (empty($model)) {
+            return $this->responseJsonAjax(
+                $this->AJAX_RESULT['FAIL'],
+                'Id ' . $id . ' items not found'
+            );
+        }
+        try {
+            DB::beginTransaction();
+            $this->repository->delete($id);
+            DB::commit();
+            return $this->responseJsonAjax(
+                $this->AJAX_RESULT['SUCCESS'],
+                'Delete id ' . $id . ' items success'
+            );
+        } catch (\Exception $e) {
+            DB::rollBack();
+            Log::error([$e->getMessage(), __METHOD__]);
+        }
+        return $this->responseJsonAjax(
+            $this->AJAX_RESULT['FAIL'],
+            'Delete categories failed'
+        );
     }
 
     public function batch()

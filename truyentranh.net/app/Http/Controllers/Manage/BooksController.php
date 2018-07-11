@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Manage;
 
+use App\DataTables\BooksDataTable;
+use App\Repositories\BooksRepository;
 use App\Models\Books_Categories;
 use App\Models\Categories;
 use App\Models\Books;
 use App\Http\Requests\BoooksRequest;
-use App\Http\Controllers\AppBaseController;
+use App\Http\Controllers\ManageController;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -14,18 +16,15 @@ use Illuminate\Support\Facades\Log;
 use App\Helpers\Helpers;
 use App\Helpers\Uploads;
 
-class BooksController extends AppBaseController
+class BooksController extends ManageController
 {
+    protected $repository;
     protected $books;
-    protected $fileds_seach = [];
 
-    public function __construct(Books $books)
+    public function __construct(BooksRepository $repository,Books $books)
     {
+        $this->repository = $repository;
         $this->books = $books;
-
-        foreach ($this->books->getFillable() as $filed) {
-            $this->fileds_seach[] = $this->search_prefix . $filed;
-        }
     }
 
     /**
@@ -35,35 +34,52 @@ class BooksController extends AppBaseController
      */
     public function index()
     {
-        // Get all category
-        $data['categories'] = Categories::get_option_list();
-
-        $get_params = request()->query();
-        $model      = Books::query();
-        if (!empty($get_params)) {
-            $this->setSearch = [];
-            foreach ($get_params as $key => $val) {
-                if (in_array($key, $this->fileds_seach)) {
-                    $key = substr($key, strlen($this->search_prefix));
-                    $this->setSearch[$key] = $val;
-                }
-            }
-            $model = Books::SearchAdvanced($this->setSearch);
-        }
-        $limit = 15;
-        $data['records']      = $model->orderBy('id', 'DESC')->paginate($limit);
-        $data['page_total']   = $data['records']->total();
-        $offset               = $limit;
-        $data['display_to']   = $offset;
-        $data['display_from'] = 1;
-        if($data['records']->currentPage() > 1)
-        {
-            $offset = min($limit * $data['records']->currentPage(), $data['page_total']) ;
-            $data['display_to']   = min($offset +  $data['records']->perPage(), $data['page_total']);
-            $data['display_from'] = min($offset , $data['display_to']);
+        if(request()->ajax()){
+            $booksCollection = $this->repository->getAllBooks();
+            $dataTables         = new BooksDataTable($booksCollection);
+            return $dataTables->getTransformerData();
         }
 
-        return view('manage.books.index', $data);
+        $fields = [
+            'id'         => [
+                'label' => 'ID',
+            ],
+            'image'       => [
+                'label' => 'Hình ảnh',
+                'searchable' => false,
+                'orderable'  => false,
+            ],
+            'name'     => [
+                'label' => 'Tên truyện',
+            ],
+            'chapters'     => [
+                'label' => 'Chương',
+                'searchable' => false,
+                'orderable'  => false,
+            ],
+            'categories'     => [
+                'label' => 'Thể loại',
+                'searchable' => false,
+                'orderable'  => false,
+            ],
+            'status'     => [
+                'label' => 'Trạng thái',
+            ],
+            'created_at' => [
+                'label' => 'Ngày tạo',
+            ],
+            'actions'    => [
+                'label'      => 'Action',
+                'searchable' => false,
+                'orderable'  => false,
+            ],
+        ];
+        $dtColumns = BooksDataTable::getColumns($fields);
+        $withData = [
+            'fields'  => $fields,
+            'columns' => $dtColumns,
+        ];
+        return view('manage.books.datatable')->with($withData);
     }
 
     /**
@@ -211,7 +227,29 @@ class BooksController extends AppBaseController
      */
     public function destroy($id)
     {
-        //
+        $model = $this->repository->find($id);
+        if (empty($model)) {
+            return $this->responseJsonAjax(
+                $this->AJAX_RESULT['FAIL'],
+                'Id ' . $id . ' items not found'
+            );
+        }
+        try {
+            DB::beginTransaction();
+            $this->repository->delete($id);
+            DB::commit();
+            return $this->responseJsonAjax(
+                $this->AJAX_RESULT['SUCCESS'],
+                'Delete id ' . $id . ' items success'
+            );
+        } catch (\Exception $e) {
+            DB::rollBack();
+            Log::error([$e->getMessage(), __METHOD__]);
+        }
+        return $this->responseJsonAjax(
+            $this->AJAX_RESULT['FAIL'],
+            'Delete books failed'
+        );
     }
 
     public function batch()
