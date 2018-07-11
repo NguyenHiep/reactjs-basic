@@ -14,10 +14,15 @@
     <link href="{{ asset('assets/manage/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/manage/css/admin.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/manage/css/introjs.min.css') }}" rel="stylesheet">
-    <script type="text/javascript" src="{{ asset('assets/manage/js/jquery-1.10.2.min.js') }}"></script>
+{{--    <script type="text/javascript" src="{{ asset('assets/manage/js/jquery-1.10.2.min.js') }}"></script>--}}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="{{ asset('assets/manage/js/bootstrap.min.js') }}"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.2/b-html5-1.5.2/r-2.2.2/datatables.min.css"/>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.2/b-html5-1.5.2/r-2.2.2/datatables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+    {{--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.css"/>--}}
+
+   {{-- <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.js"></script>--}}
     <script type="text/javascript" src="{{ asset('assets/manage/js/intro.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/manage/js/admin.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/manage/js/actions.js') }}"></script>

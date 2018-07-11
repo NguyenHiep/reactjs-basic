@@ -2,10 +2,9 @@
 
 namespace App\Transformers;
 
-use League\Fractal\TransformerAbstract;
 use App\Models\Sliders;
 
-class SlidersTransformer extends TransformerAbstract
+class SlidersTransformer extends BaseTransformer
 {
     /***
      *

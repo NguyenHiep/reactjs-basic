@@ -44,7 +44,36 @@ class ChaptersController extends ManageController
             $dataTables         = new ChaptersDataTable($chaptersCollection);
             return $dataTables->getTransformerData();
         }
-        return view('manage.chapters.datatable');
+        // set Columns in datatable.
+        $fields = [
+            'id'         => [
+                'label' => 'ID',
+            ],
+            'name'       => [
+                'label' => 'Tên chương',
+            ],
+            'sticky'     => [
+                'label' => 'Nổi bật',
+            ],
+            'status'     => [
+                'label' => 'Tình trạng',
+            ],
+            'created_at' => [
+                'label' => 'Ngày tạo',
+            ],
+            'actions'    => [
+                'label'      => 'Action',
+                'searchable' => false,
+                'orderable'  => false,
+            ],
+        ];
+        $dtColumns = ChaptersDataTable::getColumns($fields);
+        $withData = [
+            'fields'  => $fields,
+            'columns' => $dtColumns,
+        ];
+
+        return view('manage.chapters.datatable')->with($withData);
 
     }
 
@@ -158,7 +187,30 @@ class ChaptersController extends ManageController
      */
     public function destroy($id)
     {
-        //
+        $model = $this->repository->find($id);
+        if (empty($model)) {
+            return $this->responseJsonAjax(
+                $this->AJAX_RESULT['FAIL'],
+                'Id ' . $id . ' items not found'
+            );
+        }
+        try {
+            DB::beginTransaction();
+            $this->repository->delete($id);
+            DB::commit();
+            return $this->responseJsonAjax(
+                $this->AJAX_RESULT['SUCCESS'],
+                'Delete id ' . $id . ' items success'
+            );
+        } catch (\Exception $e) {
+            DB::rollBack();
+            Log::error([$e->getMessage(), __METHOD__]);
+        }
+        return $this->responseJsonAjax(
+            $this->AJAX_RESULT['FAIL'],
+            'Delete chapters failed'
+        );
+
     }
 
     public function batch()

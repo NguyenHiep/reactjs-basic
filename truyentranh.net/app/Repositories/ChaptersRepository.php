@@ -41,7 +41,8 @@ class ChaptersRepository extends BaseRepository
 
     public function getAllChapters()
     {
-        return $this->all();
+        $model = $this->makeModel();
+        return $model::query();
     }
 
     public function batch_action($action, $ids)
