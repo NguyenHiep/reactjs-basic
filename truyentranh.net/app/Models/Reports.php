@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
 
 class Reports extends BaseModel
 {
@@ -16,4 +15,18 @@ class Reports extends BaseModel
         'status',
     ];
 
+    public function getCreatedAtAttribute($value)
+    {
+        return Carbon::parse($value)->format('d/m/Y');
+    }
+
+    public function books()
+    {
+        return $this->belongsTo(Books::class, 'book_id', 'id');
+    }
+
+    public function chapters()
+    {
+        return $this->belongsTo(Chapters::class, 'chapter_id', 'id');
+    }
 }

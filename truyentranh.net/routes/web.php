@@ -41,6 +41,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
             Route::get('chapters/{chapter}/delete', 'ChaptersController@delete')->where('chapter', '[0-9]+')->name('chapters.delete');
             Route::post('chapters/batch', 'ChaptersController@batch')->name('chapters.batch');
             Route::resource('chapters', 'ChaptersController');
+            Route::resource('reports', 'ReportsController');
 
             Route::prefix('getbookstool')->group(function () {
                 Route::get('/', 'GetBooksToolController@index')->name('getbookstool.index');

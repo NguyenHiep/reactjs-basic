@@ -50,6 +50,10 @@ class Books extends BaseModel
     {
         return Carbon::parse($value)->format('d/m/Y');
     }
+    public function reports()
+    {
+        return $this->hasMany(Reports::class, 'book_id', 'id');
+    }
 
     public function scopeSearchAdvanced($model, $searchs)
     {

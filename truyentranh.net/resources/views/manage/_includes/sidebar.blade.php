@@ -23,8 +23,8 @@
         </a>
       </li>
       <li class="list-group-item">
-        <a href="contact.html">
-          <i class="fa fa-envelope-o"></i> <span>Phản hồi<span class="badge pull-right">1</span></span>
+        <a href="{{ route('reports.index') }}">
+          <i class="fa fa-envelope-o"></i> <span>Danh sách lỗi<span class="badge pull-right">1</span></span>
         </a>
       </li>
       <li class="list-group-item">

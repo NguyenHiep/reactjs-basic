@@ -37,6 +37,11 @@ class Chapters extends BaseModel
         return $this->belongsTo(Books::class);
     }
 
+    public function reports()
+    {
+        return $this->hasMany(Reports::class, 'chapter_id', 'id');
+    }
+
     public function getCreatedAtAttribute($value)
     {
         return Carbon::parse($value)->format('d/m/Y');

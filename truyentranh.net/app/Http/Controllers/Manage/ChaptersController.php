@@ -48,7 +48,7 @@ class ChaptersController extends ManageController
                 'label' => 'Nổi bật',
             ],
             'status'     => [
-                'label' => 'Tình trạng',
+                'label' => 'Trạng thái',
             ],
             'created_at' => [
                 'label' => 'Ngày tạo',

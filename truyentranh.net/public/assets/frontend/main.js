@@ -93,13 +93,30 @@ $(document).ready(function () {
       timepicker: false,
       format: 'd/m/Y'
     });
+	// Next and prev when key board
+	var elemNext = elemBody.find('.RightArrow'),
+        elemPrev = elemBody.find('.LeftArrow');
+    elemNext.click(function () {
+        window.location.href = $(this).attr('href');
+    });
+    elemPrev.click(function () {
+        window.location.href = $(this).attr('href');
+    });
+    $(document).keydown(function (e) {
+        if (e.which == '37') {
+            elemPrev.click();
+        }
+        if (e.which == '39') {
+            elemNext.click();
+        }
+    });
 
     // Animation page
     customScrollBar();
     scrollToUp();
     backToTop();
-
 });
+
 function scrollToUp(){
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 100) {
@@ -143,8 +160,5 @@ function customScrollBar() {
 			theme: "minimal"
 		});
 	});
-}
-function historyReadBooks() {
-    
 }
 
