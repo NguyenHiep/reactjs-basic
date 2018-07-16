@@ -29,7 +29,7 @@ class ProfileController extends FrontEndController
             'card'     => 'nullable|numeric|digits:11',
             'phone'    => 'nullable|numeric|digits_between:10,15',
             'birthday' => 'nullable|date_format:d/m/Y',
-            "sign"     => "nullable|string",
+            'sign'     => 'nullable|string',
         ]);
     }
 

@@ -6,7 +6,7 @@ use App\DataTables\UsersDataTable;
 use App\Http\Controllers\ManageController;
 use App\Http\Requests\UsersRequest;
 use App\Repositories\UsersRepository;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -93,7 +93,12 @@ class UsersController extends ManageController
      */
     public function store(UsersRequest $request)
     {
-        $inputs = $request->all();
+        $inputs     = $request->all();
+        $image_path = Uploads::upload($request, 'avatar', self::AVATAR_PATH, self::AVATAR_THUMBNAIL_PATH);
+        if ($image_path) {
+            $inputs['avatar'] = $image_path;
+        }
+
         try {
             DB::beginTransaction();
             $this->repository->create($inputs);
@@ -153,7 +158,18 @@ class UsersController extends ManageController
         if (empty($user)) {
             return abort(404);
         }
-        $inputs = $request->all();
+        $inputs     = $request->all();
+        $image_path = Uploads::upload($request, 'avatar', self::AVATAR_PATH, self::AVATAR_THUMBNAIL_PATH);
+        if ($image_path) {
+            $inputs['avatar'] = $image_path;
+            if (!empty($user->avatar)) {
+                Helpers::delete_image(public_path(PATH_AVATAR . $user->avatar));
+                Helpers::delete_image(public_path(PATH_AVATAR_THUMBNAIL . $user->avatar));
+            }
+        }
+        if(!empty($inputs['new_password'])){
+            $inputs['password'] = Hash::make($inputs['new_password']);
+        }
         try {
             DB::beginTransaction();
             $this->repository->update($inputs, $id);

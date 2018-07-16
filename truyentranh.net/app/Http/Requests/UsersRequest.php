@@ -23,12 +23,16 @@ class UsersRequest extends FormRequest
      */
     public function rules()
     {
+        $level_required = 'required';
+        if ($this->route('user') === '1') {
+            $level_required = 'nullable';
+        }
         return [
             'name'         => 'required|string|max:255',
             'email'        => 'required|string|email|max:255|unique:users,email' . (($this->method() === 'PUT') ? ',' . $this->route()->parameter('user') : ''),
-            'new_password' => 'nullable|string|min:6|confirmed',
+            'new_password' => 'nullable|string|min:6',
             'avatar'       => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048|dimensions:min_width=100,min_height=200',
-            'level'        => 'required|integer|max:4',
+            'level'        => $level_required . '|integer|max:4',
             'fullname'     => 'required|string|max:191',
             'card'         => 'nullable|numeric|digits:11',
             'phone'        => 'nullable|numeric|digits_between:10,15',

@@ -12,6 +12,7 @@
                   action="{{ route('users.update', [ 'id' => $record->id]) }}" enctype="multipart/form-data" role="form">
                 {{ csrf_field() }}
                 {{ Form::hidden('_method','PUT' ) }}
+                @if($record->level < 3)
                 @php $key = 'level'; @endphp
                 <div class="form-group">
                     <label for="content" class="col-sm-2 control-label required">Cấp bậc</label>
@@ -20,12 +21,16 @@
                         @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
                     </div>
                 </div>
+                @endif
                 @php $key = 'avatar'; @endphp
                 <div class="form-group">
                     <label for="content" class="col-sm-2 control-label">Ảnh đại diện</label>
                     <div class="col-sm-10">
-                        {!! Form::file($key) !!}
+                        {!! Form::file($key, ['class' => 'form-control', 'accept' => 'image/*']) !!}
                         @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
+                        @if(!empty($record->{$key}))
+                            <img class="img-thumbnail" src="{!! asset(PATH_AVATAR_THUMBNAIL.$record->{$key}) !!}" alt="{{ $record->name }}" />
+                        @endif
                     </div>
                 </div>
                 @php $key = 'name'; @endphp

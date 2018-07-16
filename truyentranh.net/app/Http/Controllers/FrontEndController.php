@@ -8,8 +8,6 @@ use App\Helpers\Helpers;
 
 class FrontEndController extends AppBaseController
 {
-    const AVATAR_PATH           = 'uploads/images/avatars/';
-    const AVATAR_THUMBNAIL_PATH = 'uploads/thumbnail/avatars/';
     public function index()
     {
         $data['categories'] = Categories::get_option_list();
