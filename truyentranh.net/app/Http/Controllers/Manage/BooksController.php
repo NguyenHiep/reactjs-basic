@@ -79,7 +79,7 @@ class BooksController extends ManageController
             'fields'  => $fields,
             'columns' => $dtColumns,
         ];
-        return view('manage.books.datatable')->with($withData);
+        return view('manage.books.index')->with($withData);
     }
 
     /**

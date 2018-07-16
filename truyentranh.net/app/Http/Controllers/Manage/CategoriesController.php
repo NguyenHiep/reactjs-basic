@@ -61,7 +61,7 @@ class CategoriesController extends ManageController
             'columns' => $dtColumns,
         ];
 
-        return view('manage.categories.datatable')->with($withData);
+        return view('manage.categories.index')->with($withData);
     }
 
     /**

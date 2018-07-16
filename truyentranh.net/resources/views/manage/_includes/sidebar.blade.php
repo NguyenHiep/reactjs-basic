@@ -33,7 +33,7 @@
         </a>
       </li>
       <li class="list-group-item">
-        <a href="user.html">
+        <a href="{{ route('users.index') }}">
           <i class="fa fa-user"></i> <span>Tài khoản</span>
         </a>
       </li>

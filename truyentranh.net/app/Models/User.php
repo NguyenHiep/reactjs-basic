@@ -20,13 +20,13 @@ class User extends Authenticatable
         'email',
         'password',
         'avatar',
-        'level',
-        'avatar',
         'fullname',
         'card',
         'phone',
         'birthday',
-        "sign",
+        'sign',
+        'level',
+        'status'
     ];
 
     /**
@@ -35,8 +35,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'level'
+        'password', 'remember_token'
     ];
+
+    public function getCreatedAtAttribute($value)
+    {
+        return Carbon::parse($value)->format('d/m/Y');
+    }
 
     public function setBirthdayAttribute($value)
     {

@@ -65,7 +65,7 @@ class ChaptersController extends ManageController
             'columns' => $dtColumns,
         ];
 
-        return view('manage.chapters.datatable')->with($withData);
+        return view('manage.chapters.index')->with($withData);
 
     }
 

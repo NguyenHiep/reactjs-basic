@@ -55,3 +55,5 @@ Then, open your command line in this directory and run following commands:
 
 1. Install project dependencies with `npm install`.
 2. Run Grunt with `grunt`.
+```
+### Use tool get manga

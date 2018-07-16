@@ -2,19 +2,22 @@
 
 namespace App\Http\Controllers\Manage;
 
-use App\DataTables\ReportsDataTable;
+use App\DataTables\UsersDataTable;
 use App\Http\Controllers\ManageController;
-use App\Http\Requests\ReportsRequest;
-use App\Repositories\ReportsRepository;
+use App\Http\Requests\UsersRequest;
+use App\Repositories\UsersRepository;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use App\Helpers\Helpers;
+use App\Helpers\Uploads;
 
-class ReportsController extends ManageController
+class UsersController extends ManageController
 {
     protected $repository;
 
-    public function __construct(ReportsRepository $repository) {
+    public function __construct(UsersRepository $repository) {
         $this->repository = $repository;
     }
 
@@ -26,8 +29,8 @@ class ReportsController extends ManageController
     public function index()
     {
         if (request()->ajax()) {
-            $reportsCollection = $this->repository->getAllReports();
-            $dataTables        = new ReportsDataTable($reportsCollection);
+            $usersCollection = $this->repository->getListUsers();
+            $dataTables      = new UsersDataTable($usersCollection);
             return $dataTables->getTransformerData();
         }
 
@@ -35,18 +38,21 @@ class ReportsController extends ManageController
             'id'           => [
                 'label' => 'ID',
             ],
-            'book_name'    => [
-                'label'      => 'Tên truyện',
+            'avatar'    => [
+                'label'      => 'Ảnh đại diện',
                 'searchable' => false,
                 'orderable'  => false,
             ],
-            'chapter_name' => [
-                'label'      => 'Tên chương',
+            'name' => [
+                'label'      => 'Tên tài khoản',
                 'searchable' => false,
                 'orderable'  => false,
             ],
-            'content'      => [
-                'label' => 'Nội dung report',
+            'email'      => [
+                'label' => 'Email',
+            ],
+            'level'      => [
+                'label' => 'Cấp bậc',
             ],
             'status'       => [
                 'label' => 'Trạng thái',
@@ -60,12 +66,12 @@ class ReportsController extends ManageController
                 'orderable'  => false,
             ],
         ];
-        $dtColumns = ReportsDataTable::getColumns($fields);
+        $dtColumns = UsersDataTable::getColumns($fields);
         $withData = [
             'fields'  => $fields,
             'columns' => $dtColumns,
         ];
-        return view('manage.reports.index')->with($withData);
+        return view('manage.users.index')->with($withData);
     }
 
 
@@ -76,7 +82,7 @@ class ReportsController extends ManageController
      */
     public function create()
     {
-
+        return view('manage.users.create');
     }
 
     /**
@@ -85,9 +91,26 @@ class ReportsController extends ManageController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ReportsRequest $request)
+    public function store(UsersRequest $request)
     {
+        $inputs = $request->all();
+        try {
+            DB::beginTransaction();
+            $this->repository->create($inputs);
+            DB::commit();
+            return redirect()->route('users.index')->with([
+                'message' => __('system.message.create'),
+                'status'  => self::CTRL_MESSAGE_SUCCESS,
+            ]);
 
+        } catch (\Exception $e) {
+            DB::rollBack();
+            Log::error([$e->getMessage(), __METHOD__]);
+        }
+        return redirect()->back()->withInput($inputs)->with([
+            'message' => __('system.message.errorss', ['errors' => 'Create user is failed']),
+            'status'  => self::CTRL_MESSAGE_ERROR,
+        ]);
     }
 
     /**
@@ -98,7 +121,7 @@ class ReportsController extends ManageController
      */
     public function show($id)
     {
-
+        //
     }
 
     /**
@@ -109,30 +132,33 @@ class ReportsController extends ManageController
      */
     public function edit($id)
     {
-        $data['record'] = $this->repository->getReportsById($id);
-        if (empty($data['record'])) {
+        $data['record'] = $this->repository->find($id);
+        if(empty($data['record']))
+        {
             return abort(404);
         }
-        return view('manage.reports.edit', $data);
+        return view('manage.users.edit', $data);
     }
 
-    /***
-     * @param ReportsRequest $request
-     * @param $id
-     * @return \Illuminate\Http\RedirectResponse|void
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function update(ReportsRequest $request, $id)
+    public function update(UsersRequest $request, $id)
     {
-        $record = $this->repository->find($id);
-        if (empty($record)) {
+        $user = $this->repository->find($id);
+        if (empty($user)) {
             return abort(404);
         }
-        $inputs     = $request->all();
+        $inputs = $request->all();
         try {
             DB::beginTransaction();
             $this->repository->update($inputs, $id);
             DB::commit();
-            return redirect()->route('reports.index')->with([
+            return redirect()->route('users.index')->with([
                 'message' => __('system.message.update'),
                 'status'  => self::CTRL_MESSAGE_SUCCESS,
             ]);
@@ -140,8 +166,8 @@ class ReportsController extends ManageController
             DB::rollBack();
             Log::error([$e->getMessage(), __METHOD__]);
         }
-        return redirect()->route('reports.edit', ['id' => $record->id])->withInput($inputs)->with([
-            'message' => __('system.message.errors', ['errors' => 'Update report is failed']),
+        return redirect()->route('users.edit', ['id' => $user->id])->withInput($inputs)->with([
+            'message' => __('system.message.errors', ['errors' => 'Update user is failed']),
             'status'  => self::CTRL_MESSAGE_ERROR,
         ]);
     }
@@ -194,7 +220,7 @@ class ReportsController extends ManageController
             DB::beginTransaction();
             $this->repository->batch_action($inputs['batch_actions'], $inputs['ids']);
             DB::commit();
-            return redirect()->route('reports.index')->with([
+            return redirect()->route('users.index')->with([
                 'message' => __('system.message.update'),
                 'status'  => self::CTRL_MESSAGE_SUCCESS,
             ]);
@@ -203,15 +229,14 @@ class ReportsController extends ManageController
             DB::rollBack();
             Log::error([$e->getMessage(), __METHOD__]);
         }
-        return redirect()->route('reports.index')->withInput($inputs)->with([
-            'message' => __('system.message.errors', ['errors' => 'Batch action reports is failed']),
+        return redirect()->route('users.index')->withInput($inputs)->with([
+            'message' => __('system.message.errors', ['errors' => 'Batch action user is failed']),
             'status'  => self::CTRL_MESSAGE_ERROR,
         ]);
 
     }
 
-    public static function validate_batch($data)
-    {
+    public static function validate_batch($data){
         return Validator::make($data, [
             'batch_actions' => 'required',
             'ids'           => 'required|array',

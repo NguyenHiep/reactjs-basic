@@ -8,21 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Quản trị hệ thống') }}</title>
+    <title>@yield('title_page')</title>
     <link rel="shortcut icon" href="{{ asset('assets/manage/favicon.png') }}">
     <link href="{{ asset('assets/manage/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/manage/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/manage/css/admin.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/manage/css/introjs.min.css') }}" rel="stylesheet">
-{{--    <script type="text/javascript" src="{{ asset('assets/manage/js/jquery-1.10.2.min.js') }}"></script>--}}
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="{{ asset('assets/manage/js/bootstrap.min.js') }}"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css"/>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
-    {{--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.css"/>--}}
 
-   {{-- <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.js"></script>--}}
     <script type="text/javascript" src="{{ asset('assets/manage/js/intro.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/manage/js/admin.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/manage/js/actions.js') }}"></script>
@@ -33,7 +30,7 @@
     <![endif]-->
 </head>
 <body>
-    <nav class="navbar navbar-inverse" role="navigation">
+<nav class="navbar navbar-inverse" role="navigation">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
@@ -46,39 +43,42 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          @guest
-          @else
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {{ Auth::user()->name }}<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#"><i class="fa fa-user"></i> Chỉnh sửa tài khoản</a></li>
-                  
-                    <li>
-                      <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-power-off"></i> Đăng xuất</a>
-                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                      </form>
-                    </li>
-                </ul>
-            </li>
-          @endguest
+            @guest
+            @else
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {{ Auth::user()->name }}<b
+                            class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-user"></i> Chỉnh sửa tài khoản</a></li>
+
+                        <li>
+                            <a href="{{ route('logout') }}"
+                               onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
+                                    class="fa fa-power-off"></i> Đăng xuất</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+                @endguest
         </ul>
     </div>
     <!-- /.navbar-collapse -->
 </nav>
-    <div class="clearfix">
-      <div id="sidebar-bg"></div>
-      @include('manage._includes.sidebar')
-      @yield('content')
-      <!--END #main-->
-    </div>
-    <script type="text/javascript" src="{{ asset('assets/manage/plugins/ckeditor/ckeditor.js') }}"></script>
-    {{--<script type="text/javascript" src="{{ asset('assets/manage/plugins/ckfinder/ckfinder.js') }}"></script>--}}
-    <script>
-			if (document.getElementsByClassName("ckeditor").length > 0) {
-				CKEDITOR.replaceClass = 'ckeditor';
-			}
-			
-    </script>
+<div class="clearfix">
+    <div id="sidebar-bg"></div>
+@include('manage._includes.sidebar')
+@yield('content')
+<!--END #main-->
+</div>
+<script type="text/javascript" src="{{ asset('assets/manage/plugins/ckeditor/ckeditor.js') }}"></script>
+{{--<script type="text/javascript" src="{{ asset('assets/manage/plugins/ckfinder/ckfinder.js') }}"></script>--}}
+<script>
+    if (document.getElementsByClassName("ckeditor").length > 0) {
+        CKEDITOR.replaceClass = 'ckeditor';
+    }
+
+</script>
 </body>
 </html>

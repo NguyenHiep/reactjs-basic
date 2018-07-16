@@ -1,5 +1,5 @@
 @extends('layouts.manage')
-
+@section('title_page', 'Danh mục quản lý | Trang quản trị')
 @section('content')
   <div id="main"><!--Phần chứa nội dung chính-->
     <ol class="breadcrumb">
@@ -19,13 +19,13 @@
         <a href="{{ route('categories.index') }}" class="col-md-2 col-sm-5 col-xs-5">
           <i class="fa fa-bars"></i><br> <span>Thể loại</span>
         </a>
-        <a href="contact.html" class="col-md-2 col-sm-5 col-xs-5">
-          <i class="fa fa-envelope-o"></i><br> <span>Phản hồi</span>
+        <a href="{{ route('reports.index') }}" class="col-md-2 col-sm-5 col-xs-5">
+          <i class="fa fa-envelope-o"></i><br> <span>Danh sách lỗi</span>
         </a>
         <a href="{{ route('sliders.index') }}" class="col-md-2 col-sm-5 col-xs-5">
           <i class="fa fa-picture-o"></i><br> <span>Slider</span>
         </a>
-        <a href="user.html" class="col-md-2 col-sm-5 col-xs-5">
+        <a href="{{ route('users.index') }}" class="col-md-2 col-sm-5 col-xs-5">
           <i class="fa fa-user"></i><br> <span>Tài khoản</span>
         </a>
         <a href="setting.html" class="col-md-2 col-sm-5 col-xs-5">
