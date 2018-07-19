@@ -8,46 +8,26 @@ use App\Helpers\Helpers;
 
 class FrontEndController extends AppBaseController
 {
+    protected $books;
+    public function __construct(Books $books) {
+        $this->books = $books;
+    }
+
     public function index()
     {
-        $data['categories'] = Categories::get_option_list();
-        $data['books_new'] = Books::query()
-            ->where('status', Books::STATUS_ON)
-            ->where('sticky', Books::STATUS_ON)
-            ->orderBy('updated_at', 'desc')
-            ->limit(2)
-            ->get();
+        $books_new = $this->books->getBooksNew();
         $ids = [];
-        if (!empty($data['books_new'])) {
-            foreach ($data['books_new'] as $book) {
+        if (!empty($books_new)) {
+            foreach ($books_new as $book) {
                 $ids[] = $book->id;
             }
         }
-
-        $data['books_update'] = Books::query()->with(
-            [
-                'chapters' => function ($query) {
-                    $query->where('status', '=', Chapters::STATUS_ON)
-                        ->orderBy('name', 'desc');
-                }
-            ])->where('status', Books::STATUS_ON)
-            ->whereNotIn('id', $ids)
-            ->orderBy('created_at', 'desc')
-            ->limit(20)
-            ->get();
-
-
-        $data['show_slider'] = Books::query()->with(
-            [
-                'chapters' => function ($query) {
-                    $query->where('status', '=', Chapters::STATUS_ON)
-                        ->where('sticky', Chapters::STATUS_ON)
-                        ->orderBy('name', 'desc');
-                }
-            ])->where('status', Books::STATUS_ON)
-            ->orderBy('updated_at', 'desc')
-            ->limit(12)
-            ->get();
+        $data = [
+            'categories'   => Categories::get_option_list(),
+            'books_new'    => $books_new,
+            'books_update' => $this->books->getBooksUpdate($ids),
+            'show_slider'  => $this->books->getBooksShowSlider(),
+        ];
         return view('frontend.home', $data);
     }
 }

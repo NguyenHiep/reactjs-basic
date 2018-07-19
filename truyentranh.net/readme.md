@@ -57,3 +57,9 @@ Then, open your command line in this directory and run following commands:
 2. Run Grunt with `grunt`.
 ```
 ### Use tool get manga
+```
+1. Run: php artisan leech:chapters    --> Get book and chapter
+2. Run: php artisan leech:imagebooks --> Download and update image book
+3. Run: php artisan seo:books        --> Update seo books
+4. Run: php artisan seo:chapters     --> Update seo chapters
+```

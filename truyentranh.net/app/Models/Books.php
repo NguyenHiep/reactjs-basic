@@ -50,6 +50,7 @@ class Books extends BaseModel
     {
         return Carbon::parse($value)->format('d/m/Y');
     }
+
     public function reports()
     {
         return $this->hasMany(Reports::class, 'book_id', 'id');
@@ -123,5 +124,53 @@ class Books extends BaseModel
             return $books;
         }
         return [];
+    }
+
+    public function getBooksNew()
+    {
+        return $this->query()
+            ->where('status', Books::STATUS_ON)
+            ->where('sticky', Books::STATUS_ON)
+            ->orderBy('updated_at', 'desc')
+            ->limit(2)
+            ->get();
+    }
+
+    /***
+     * Show list book update not in list ids
+     * @param array $ids
+     * @return \Illuminate\Support\Collection
+     */
+    public function getBooksUpdate(array $ids, int $limit = 20)
+    {
+        return $this->query()->with([
+            'chapters' => function ($query) {
+                $query->where('status', '=', Chapters::STATUS_ON)
+                    ->orderBy('name', 'desc');
+            }
+        ])->where('status', Books::STATUS_ON)
+            ->whereNotIn('id', $ids)
+            ->orderBy('created_at', 'desc')
+            ->limit($limit)
+            ->get();
+    }
+
+    /***
+     * Show books items sliders
+     * @param int $limit
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function getBooksShowSlider(int $limit = 12)
+    {
+        return $this->query()->with([
+            'chapters' => function ($query) {
+                $query->where('status', '=', Chapters::STATUS_ON)
+                    ->where('sticky', Chapters::STATUS_ON)
+                    ->orderBy('name', 'desc');
+            }
+        ])->where('status', Books::STATUS_ON)
+            ->orderBy('updated_at', 'desc')
+            ->limit($limit)
+            ->get();
     }
 }

@@ -79,7 +79,7 @@ Route::middleware(['auth'])->group(function () {
 Route::match(['get', 'post'], 'follow.json', 'FrontEnd\AjaxController@follow_books')->name('front.ajax.followbooks');
 Route::match(['get', 'post'], 'unfollow.json', 'FrontEnd\AjaxController@unfollow_books')->name('front.ajax.unfollowbooks');
 
-Route::get('the-loai/{cat_slug}','Frontend\CategoriesController@show')->name('front.categories.show')->where('cat_slug','[a-zA-Z.-]+');
+Route::get('the-loai/{cat_slug}','Frontend\CategoriesController@show')->name('front.categories.show')->where('cat_slug','[a-zA-Z0-9.-]+');
 Route::get('doc-truyen/{chapter_slug}', 'Frontend\BooksController@chapter_detail')->name('front.books.showdetail')->where('chapter_slug', '[a-zA-Z0-9.-]+');
 Route::post('doc-truyen/{chapter_slug}', 'Frontend\ReportController@chapter')->name('front.report.chapter')->where('chapter_slug', '[a-zA-Z0-9.-]+');
 Route::get('{book_slug}','Frontend\BooksController@show')->name('front.books.show')->where('book_slug','[a-zA-Z0-9.-]+');

@@ -36,7 +36,7 @@ class GetBooksToolController extends ManageController
     {
         return Validator::make($data, [
             'leech_source_id'  => 'required|integer|min:1|max:5',
-            'leech_book_url'   => 'required|url|unique:books_leech',
+            'leech_book_url'   => 'required|url|unique:books',
         ]);
     }
 
