@@ -41,7 +41,7 @@ class UpdateSeoBooks extends Command
         $this->info('Begin process update seo books');
         // Do some thing
         do {
-            $midModel = Books::where('status', Books::STATUS_OFF)->orderBy('id')->take(10)->get(['id', 'name']);
+            $midModel = Books::where('flag_seo_book', Books::STATUS_OFF)->orderBy('id')->take(10)->get(['id', 'name']);
 
             foreach ($midModel as $books) {
                 $keywords                = $books->name.', '.$books->name.' mới, '.$books->name.' tiếng việt, truyentranhfc '.$books->name;
@@ -51,7 +51,7 @@ class UpdateSeoBooks extends Command
                 $data['seo_title']       = $books->name.' Tiếng Việt - TruyenTranhFc';
                 $data['seo_description'] = '❶❶✅ Đọc truyện tranh '.$books->name.' Tiếng Việt bản dịch Full mới nhất, ảnh đẹp chất lượng cao, cập nhật nhanh và sớm nhất tại TruyenTranhFc';
                 $data['seo_keywords']    = (strlen($keywords) < 255) ? $keywords : $books->name.', '.$books->name.' mới';
-                $data['status']          = Books::STATUS_ON;
+                $data['flag_seo_book']   = Books::STATUS_ON;
                 $books->update($data);
                 $this->info('--- Books id: ' . $books->id);
             }

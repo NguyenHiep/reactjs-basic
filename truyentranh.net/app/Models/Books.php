@@ -30,6 +30,7 @@ class Books extends BaseModel
         'views',
         'reviews',
         'status',
+        'flag_seo_book',
         'created_by',
         'seo_title',
         'seo_slug',

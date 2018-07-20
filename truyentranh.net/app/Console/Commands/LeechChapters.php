@@ -44,7 +44,7 @@ class LeechChapters extends Command
         $this->info('Begin process leech data');
         $book_data = new BooksDataFactory();
         do {
-            $midModel = ChaptersLeech::where('status', ChaptersLeech::STATUS_OFF)->orderBy('id')->take(10)->get(['id', 'leech_source_id', 'leech_chapter_url']);
+            $midModel = ChaptersLeech::where('flag_leech_content', ChaptersLeech::STATUS_OFF)->orderBy('id')->take(10)->get(['id', 'leech_source_id', 'leech_chapter_url']);
 
             foreach ($midModel as $chapter) {
                 $data                       = [];
