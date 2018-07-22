@@ -6,17 +6,6 @@ $(document).ready(function() {
     $('#check_all').change(function(){
         $('.table input:checkbox').prop('checked', this.checked);
     });
-    /*$('#task').change(function(){
-        var check = true;
-        if ($(this).val()=="delete") {
-            check = confirm('Có chắc bạn muốn xóa?');
-        }
-        if (check) {
-            $('#post_form').submit();
-        } else {
-            $('#task option:first-child').prop('selected', true);
-        }
-    });*/
     $('#search').keyup(function(e){
         if (e.which==13) {
             $('#post_form').submit();

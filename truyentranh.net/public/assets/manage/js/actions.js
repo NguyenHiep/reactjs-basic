@@ -1,11 +1,56 @@
 "use strict";
-
 $(document).ready(function () {
   ajaxSetup();
   var elemBody    = $('body'),
       datatables  = getSelector('datatables'),
 	  objDataTables = elemBody.find(datatables).eq(0);
       loadDatatables(objDataTables);
+      getBooksTool();
+    $(document).on('change', 'input[name=leech_type]', function () {
+        getBooksTool();
+    });
+    $(document).on('change', 'select[name=book_id]', function () {
+        var self = $(this);
+        var url = self.data('ajax-url');
+        $.ajax({
+            type: 'GET',
+            url: url,
+            data: {
+              book_id : self.val()
+            },
+            dataType: 'json',
+            success: function (res) {
+                if (res.result === 'success') {
+                    var resutl = $('#info-books-ajax');
+                    var html = '<div class="media media-followuser">'+
+                                    '<div class="media-left">'+
+                                        '<a href="javascript:;">'+
+                                            '<img src="'+ BASE_URL + '/'+PATH_IMAGE_THUMBNAIL_BOOK + res.data.image+'" alt="'+res.data.name+'" class="image_follow" />'+
+                                        '</a>'+
+                                    '</div>'+
+                                    '<div class="media-body">'+
+                                        '<a href="javascript:;" title="'+res.data.name+'">'+
+                                        '<h4 class="manga-newest">'+res.data.name+'</h4>'+
+                                        '</a>'+
+                                        '<div class="description-user">'+
+                                            '<span>Tên khác:</span> '+res.data.name_dif+'<br/>'+
+                                            '<span>Tác giả:</span> '+res.data.author+'<br/>'+
+                                            '<div><strong>Nội dung:</strong> '+res.data.content+' </div><br/>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>';
+                    resutl.html(html);
+                }
+            },
+            error: function (res) {
+                var mess = 'Book items errors';
+                if (res.responseJSON.message != 'undefined') {
+                    mess = res.responseJSON.message;
+                }
+                alert(mess);
+            }
+        });
+    });
 });
 function ajaxSetup() {
     $.ajaxSetup({
@@ -21,7 +66,6 @@ function getSelector(str) {
     }
     return selector;
 }
-
 function loadDatatables(obj) {
     var self  = $('#' + obj.attr('id')),
         limit = $(self).data('pagelength'),
@@ -43,7 +87,6 @@ function loadDatatables(obj) {
         });
     }
 }
-
 function deleteItem (that) {
     var $this = $(that),
         tr    = $this.parents('tr'),
@@ -54,7 +97,6 @@ function deleteItem (that) {
     if (typeof type === 'undefined') {
         mess = 'Are you sure to delete this record?';
     }
-    console.log(tr);
     if (confirm(mess)) {
         $.ajax({
             type: 'DELETE',
@@ -80,4 +122,18 @@ function deleteItem (that) {
             }
         });
     }
-};
+}
+function getBooksTool() {
+    var elemBody        = $('body'),
+        leech_type      = parseInt(elemBody.find('input[name=leech_type]:checked').val()),
+        content_chapter = elemBody.find('.content-chapters').eq(0),
+        content_books   = elemBody.find('.content-books').eq(0);
+        content_chapter.addClass('hide');
+        content_books.addClass('hide');
+        switch (leech_type){
+            case 1:
+                content_chapter.removeClass('hide');
+                break;
+            case 2: content_books.removeClass('hide');
+        }
+}

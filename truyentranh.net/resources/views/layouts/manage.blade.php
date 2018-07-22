@@ -14,20 +14,6 @@
     <link href="{{ asset('assets/manage/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/manage/css/admin.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/manage/css/introjs.min.css') }}" rel="stylesheet">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="{{ asset('assets/manage/js/bootstrap.min.js') }}"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css"/>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
-
-    <script type="text/javascript" src="{{ asset('assets/manage/js/intro.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/manage/js/admin.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/manage/js/actions.js') }}"></script>
-    <!--Hỗ trợ IE nhận dạng thẻ HTML5-->
-    <!--[if lt IE 9]>
-    <script src="{{ asset('assets/manage/js/html5shiv.min.js') }}"></script>
-    <script src="{{ asset('assets/manage/js/respond.min.js') }}"></script>
-    <![endif]-->
 </head>
 <body>
 <nav class="navbar navbar-inverse" role="navigation">
@@ -72,13 +58,31 @@
 @yield('content')
 <!--END #main-->
 </div>
+<script>
+    var BASE_URL                  = "{{ route('front.home') }}",
+        PATH_IMAGE_BOOK           = "{{ PATH_IMAGE_BOOK }}",
+        PATH_IMAGE_THUMBNAIL_BOOK = "{{ PATH_IMAGE_THUMBNAIL_BOOK }}";
+</script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="{{ asset('assets/manage/js/bootstrap.min.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css"/>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+
+<script type="text/javascript" src="{{ asset('assets/manage/js/intro.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/manage/js/admin.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/manage/js/actions.js') }}"></script>
+<!--Hỗ trợ IE nhận dạng thẻ HTML5-->
+<!--[if lt IE 9]>
+<script src="{{ asset('assets/manage/js/html5shiv.min.js') }}"></script>
+<script src="{{ asset('assets/manage/js/respond.min.js') }}"></script>
+<![endif]-->
 <script type="text/javascript" src="{{ asset('assets/manage/plugins/ckeditor/ckeditor.js') }}"></script>
 {{--<script type="text/javascript" src="{{ asset('assets/manage/plugins/ckfinder/ckfinder.js') }}"></script>--}}
 <script>
     if (document.getElementsByClassName("ckeditor").length > 0) {
         CKEDITOR.replaceClass = 'ckeditor';
     }
-
 </script>
 </body>
 </html>

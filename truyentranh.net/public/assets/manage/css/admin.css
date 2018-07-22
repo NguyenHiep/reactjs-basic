@@ -241,3 +241,19 @@ img.img-thumbnail{
   padding-left: 20px;
   padding-right: 20px;
 }
+.manga-newest {
+  margin-top: 5px;
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #222;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+.image_follow{
+  width: 78px;
+  height: 117px;
+}
+.description-user span {
+  color: #0e977f;
+}

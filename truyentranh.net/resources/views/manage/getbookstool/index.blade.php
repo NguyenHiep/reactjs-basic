@@ -1,4 +1,5 @@
 @extends('layouts.manage')
+@section('title_page', 'Công cụ lấy truyện')
 @section('content')
   <div id="main">
     <ol class="breadcrumb">

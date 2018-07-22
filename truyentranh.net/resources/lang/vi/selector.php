@@ -17,11 +17,18 @@ return [
         4 => 'Hay',
         5 => 'Tuyệt vời',
     ],
-    'source' => [
-        1 => 'truyentranh.net',
-       /* 2 => 'hamtruyen.com',
-        3 => 'truyensieuhay.com',
-        4 => 'comicvn.net',
-        5 => 'nettruyen.com',*/
+    'leech' => [
+        'source' => [
+            1 => 'truyentranh.net',
+            /* 2 => 'hamtruyen.com',
+             3 => 'truyensieuhay.com',
+             4 => 'comicvn.net',
+             5 => 'nettruyen.com',*/
+        ],
+        'type' => [
+            1 => 'Leech theo chương',
+            2 => 'Leech theo tên truyện',
+            3 => 'Leech tất tả',
+        ]
     ]
 ];

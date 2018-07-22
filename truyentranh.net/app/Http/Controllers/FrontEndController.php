@@ -9,8 +9,10 @@ use App\Helpers\Helpers;
 class FrontEndController extends AppBaseController
 {
     protected $books;
-    public function __construct(Books $books) {
-        $this->books = $books;
+    protected $categories;
+    public function __construct(Books $books, Categories $categories) {
+        $this->books      = $books;
+        $this->categories = $categories;
     }
 
     public function index()
@@ -23,7 +25,7 @@ class FrontEndController extends AppBaseController
             }
         }
         $data = [
-            'categories'   => Categories::get_option_list(),
+            'categories'   => $this->categories->get_option_list(),
             'books_new'    => $books_new,
             'books_update' => $this->books->getBooksUpdate($ids),
             'show_slider'  => $this->books->getBooksShowSlider(),

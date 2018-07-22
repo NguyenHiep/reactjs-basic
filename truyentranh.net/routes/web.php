@@ -51,6 +51,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
                 Route::get('create', 'GetBooksToolController@create')->name('getbookstool.create');
                 Route::post('create', 'GetBooksToolController@store')->name('getbookstool.store');
                 Route::get('chapters', 'GetBooksToolController@chapters')->name('getbookstool.chapters');
+                Route::get('inputlink', 'GetBooksToolController@createLinkAll')->name('getbookstool.createlinkall');
+                Route::post('inputlink', 'GetBooksToolController@storelinkall')->name('getbookstool.storelinkall');
+                Route::get('ajax-book-tool', 'GetBooksToolController@ajaxShowInfoBook')->name('getbookstool.ajaxbooks');
             });
 
         });

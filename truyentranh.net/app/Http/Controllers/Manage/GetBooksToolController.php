@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Manage;
 use App\Http\Controllers\ManageController;
 use App\Models\BooksLeech;
 use App\Models\ChaptersLeech;
+use App\Traits\ToolLeechTrait;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Manage\SourceBooks\BooksDataFactory;
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Auth;
 
 class GetBooksToolController extends ManageController
 {
+    use ToolLeechTrait;
     protected $book_data;
     protected $book_leech;
     protected $chapters_leech;
@@ -82,7 +84,8 @@ class GetBooksToolController extends ManageController
 
     public function create()
     {
-        return view('manage.getbookstool.create');
+        $data['books'] = $this->book_leech->get_option_list();
+        return view('manage.getbookstool.create', $data);
     }
 
     public function chapters()
@@ -175,4 +178,59 @@ class GetBooksToolController extends ManageController
         ]);
     }
 
+    public function createLinkAll()
+    {
+
+        $files_link = fopen("list_link.txt", "w");
+        $list_link = [];
+        for ($i = 1; $i <= 155; $i++) {
+            $list_link[] = 'http://truyentranh.net/danh-sach.tall.html?p=' . $i;
+        }
+        $data_range = range(1,155);
+        //$collection_link = collect($data_range);
+        //$midData = $collection_link->chunk(10)->toArray();
+        $tags_link = [];
+        foreach ($data_range as $range) {
+            $link = 'http://truyentranh.net/danh-sach.tall.html?p='.$range;
+            $html = $this->getDom($link);
+            foreach ($html->find('#loadlist a') as $element) {
+                if (in_array($element->href, $tags_link)) {
+                    continue;
+                }
+                $tags_link[] = $element->href;
+                $tag_a = $element->href . PHP_EOL;
+                fwrite($files_link, $tag_a);
+            }
+
+        }
+        fclose($files_link);
+        //return view('manage.getbookstool.input-link');
+    }
+
+    public function storelinkall(Request $request)
+    {
+
+    }
+
+    public function ajaxShowInfoBook(Request $request)
+    {
+        if($request->ajax()){
+            $book_id = intval($request->book_id);
+            $model = $this->book_leech->where('id', $book_id)
+                ->orderBy('name', 'desc')
+                ->first();
+            if (empty($model)) {
+                return $this->responseJsonAjax(
+                    $this->AJAX_RESULT['FAIL'],
+                    'Id ' . $book_id . ' items not found'
+                );
+            }
+            return $this->responseJsonAjax(
+                $this->AJAX_RESULT['SUCCESS'],
+                'Get id ' . $book_id . ' items success',
+                $model
+            );
+        }
+
+    }
 }

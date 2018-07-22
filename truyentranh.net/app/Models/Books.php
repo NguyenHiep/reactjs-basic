@@ -133,7 +133,7 @@ class Books extends BaseModel
             ->where('status', Books::STATUS_ON)
             ->where('sticky', Books::STATUS_ON)
             ->orderBy('updated_at', 'desc')
-            ->limit(2)
+            ->limit(4)
             ->get();
     }
 
@@ -142,7 +142,7 @@ class Books extends BaseModel
      * @param array $ids
      * @return \Illuminate\Support\Collection
      */
-    public function getBooksUpdate(array $ids, int $limit = 20)
+    public function getBooksUpdate(array $ids = [], int $limit = 20)
     {
         return $this->query()->with([
             'chapters' => function ($query) {

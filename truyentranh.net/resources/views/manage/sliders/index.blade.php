@@ -1,4 +1,5 @@
 @extends('layouts.manage')
+@section('title_page', 'Quản lý slider')
 @section('content')
   <div id="main">
     <ol class="breadcrumb">
