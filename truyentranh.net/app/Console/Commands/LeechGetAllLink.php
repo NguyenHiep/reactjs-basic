@@ -8,6 +8,12 @@ use Illuminate\Console\Command;
 class LeechGetAllLink extends Command
 {
     use ToolLeechTrait;
+    const FILE_NAME     = 'list_link.txt';
+    const URL_BOOKS     = 'http://truyentranh.net/danh-sach.tall.html';
+    const TOTAL_PAGE    = 155;
+    const QUERY_PARAM   = '?p=';
+    const NUMBER_CHUCK  = 3;
+    const SELECTOR_HTML = '#loadlist a';
     /**
      * The name and signature of the console command.
      *
@@ -39,19 +45,24 @@ class LeechGetAllLink extends Command
      */
     public function handle()
     {
+        $this->getAllLinkOnServer();
+    }
+
+    protected function getAllLinkOnServer()
+    {
         $this->info('Begin process leech all link books');
         // Do some thing
-        $files_link = fopen("list_link.txt", "w");
-        $data_range = range(1,155);
+        $files_link = fopen(static::FILE_NAME, "w");
+        $data_range = range(1,static::TOTAL_PAGE);
         $tags_link  = [];
         $count = 0;
         do {
-            $new_range = array_chunk($data_range, 3);
+            $new_range = array_chunk($data_range, static::NUMBER_CHUCK);
             foreach ($new_range as $ranges) {
                 foreach ($ranges as $range) {
-                    $link = 'http://truyentranh.net/danh-sach.tall.html?p=' . $range;
+                    $link = static::URL_BOOKS . static::QUERY_PARAM . $range;
                     $html = $this->getDom($link);
-                    foreach ($html->find('#loadlist a') as $element) {
+                    foreach ($html->find(static::SELECTOR_HTML) as $element) {
                         if (in_array($element->href, $tags_link)) {
                             continue;
                         }
@@ -69,11 +80,6 @@ class LeechGetAllLink extends Command
         $executionTime = microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"]; // >= php version PHP 5.4
         $this->info('Total time: ' . $executionTime . ' to execute.');
         $this->info('Complete Get all link!');
-    }
-
-    protected function getAllLink()
-    {
-
     }
 
 }

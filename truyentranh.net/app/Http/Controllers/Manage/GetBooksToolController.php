@@ -212,6 +212,20 @@ class GetBooksToolController extends ManageController
 
     }
 
+    public function getFileResults()
+    {
+        $data       = file_get_contents('list.txt');
+        $data       = explode("\n", $data);
+        $data_old   = file_get_contents('old-book.txt');
+        $data_old   = explode("\n", $data_old);
+        $results    = array_diff($data,$data_old);
+        $files_link = fopen("list_link.txt", "w");
+        foreach ($results as $link){
+            fwrite($files_link, $link);
+        }
+        fclose($files_link);
+    }
+
     public function ajaxShowInfoBook(Request $request)
     {
         if($request->ajax()){
