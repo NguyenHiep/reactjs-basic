@@ -180,8 +180,49 @@ class GetBooksToolController extends ManageController
 
     public function createLinkAll()
     {
+        $book_data      = new BooksDataFactory();
+        $book_leech     = new BooksLeech();
+        $files = file_get_contents('list_link.txt');
+        if ($files == false || empty($files)) {
+            //$this->error('Link not found');
+            return 'Link not found';
+        }
+        //$datas = explode(PHP_EOL, $files);
+        $datas  = preg_split("/\R/", $files);
+        $chucks = array_chunk($datas, 40);
+        $total  = count($chucks);
+        try {
+            DB::beginTransaction();
+            $info_book_leach = [];
+            do{
+                $chucks = array_chunk($datas, 40);
+                foreach ($chucks as $items){
+                    foreach ($items as $key => $book_link){
+                        // Do some things
+                        $source     = $book_data->getSource(1, $book_link);
+                        $book_leach = $source->getInfoBook($source->getDom());
+                        $info_book_leach[$key]['image_link']      = $book_leach['image_link'];
+                        $info_book_leach[$key]['name']            = $book_leach['name'];
+                        $info_book_leach[$key]['content']         = $book_leach['content'];
+                        $info_book_leach[$key]['created_by']      = Auth::id();
+                        $info_book_leach[$key]['slug']            = str_slug($book_leach['name']);
+                        $info_book_leach[$key]['leech_source_id'] = 1;
+                        $info_book_leach[$key]['leech_book_url']  = $book_link;
+                        //$this->info('--- No: ' . $key);
+                    }
+                }
+                $total--;
+            }while($total > 0);
 
-        $files_link = fopen("list_link.txt", "w");
+            $book_leech::insert($info_book_leach);
+            DB::commit();
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            Log::error([$e->getMessage(), __METHOD__]);
+        }
+
+        /*$files_link = fopen("list_link.txt", "w");
         $list_link = [];
         for ($i = 1; $i <= 155; $i++) {
             $list_link[] = 'http://truyentranh.net/danh-sach.tall.html?p=' . $i;
@@ -203,7 +244,7 @@ class GetBooksToolController extends ManageController
             }
 
         }
-        fclose($files_link);
+        fclose($files_link);*/
         //return view('manage.getbookstool.input-link');
     }
 
