@@ -5,7 +5,7 @@ namespace App\Console\Commands;
 use App\Traits\ToolLeechTrait;
 use Illuminate\Console\Command;
 
-class LeechGetAllLink extends Command
+class LeechAllGetLink extends Command
 {
     use ToolLeechTrait;
     const FILE_NAME     = 'list_link.txt';
@@ -55,9 +55,10 @@ class LeechGetAllLink extends Command
         $files_link = fopen(static::FILE_NAME, "w");
         $data_range = range(1,static::TOTAL_PAGE);
         $tags_link  = [];
-        $count = 0;
+        $count      = 1;
+        $new_range  = array_chunk($data_range, static::NUMBER_CHUCK);
+        $total      = count($new_range);
         do {
-            $new_range = array_chunk($data_range, static::NUMBER_CHUCK);
             foreach ($new_range as $ranges) {
                 foreach ($ranges as $range) {
                     $link = static::URL_BOOKS . static::QUERY_PARAM . $range;
@@ -67,15 +68,15 @@ class LeechGetAllLink extends Command
                             continue;
                         }
                         $tags_link[] = $element->href;
-                        $tag_a = $element->href . PHP_EOL;
+                        $tag_a       = $element->href . PHP_EOL;
                         fwrite($files_link, $tag_a);
-                        $count++;
                         $this->info('--- No: ' . $count);
+                        $count++;
                     }
                 }
-
+                $total--;
             }
-        } while (count($new_range) > 0);
+        } while ($total > 0);
         fclose($files_link);
         $executionTime = microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"]; // >= php version PHP 5.4
         $this->info('Total time: ' . $executionTime . ' to execute.');

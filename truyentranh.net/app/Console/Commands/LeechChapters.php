@@ -43,6 +43,7 @@ class LeechChapters extends Command
     {
         $this->info('Begin process leech data');
         $book_data = new BooksDataFactory();
+        $count = 0;
         do {
             $midModel = ChaptersLeech::where('flag_leech_content', ChaptersLeech::STATUS_OFF)->orderBy('id')->take(10)->get(['id', 'leech_source_id', 'leech_chapter_url']);
 
@@ -55,6 +56,7 @@ class LeechChapters extends Command
                 $chapter->update($data);
                 $this->info('--- Chapter id: ' . $chapter->id);
             }
+            $count++;
         } while (count($midModel) > 0);
         $executionTime = microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"]; // >= php version PHP 5.4
         $this->info('Total time: ' . $executionTime . ' to execute.');
