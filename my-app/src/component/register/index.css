@@ -1,16 +1,19 @@
 /** Style login */
-.login-socical .btn{
-	width: 70%;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	color: #fff !important;
+.login-socical .btn {
+    width: 70%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff !important;
 }
-.btn-facebook{
-	background: #0000F0 !important;
+
+.btn-facebook {
+    background: #0000F0 !important;
 }
-.btn-google-plus{
-	background: red !important;
+
+.btn-google-plus {
+    background: red !important;
 }
-.btn-twitter{
-	background: lightblue !important;
+
+.btn-twitter {
+    background: lightblue !important;
 }

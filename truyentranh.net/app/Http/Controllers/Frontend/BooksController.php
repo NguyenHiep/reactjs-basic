@@ -36,7 +36,7 @@ class BooksController extends FrontEndController
             ->where('status', Books::STATUS_ON)
             ->inRandomOrder()
             ->limit(4)
-            ->get();
+            ->get(['id', 'slug', 'image', 'name']);
         $data['book']         = $book;
         $data['book_related'] = $book_related;
         $data['categories']   = Categories::getListCategories();
@@ -86,7 +86,8 @@ class BooksController extends FrontEndController
     public function search(Request $request)
     {
         $search_key = $request->query('q');
-        $books = Books::where('status', Books::STATUS_ON)
+        $books = Books::select(['id', 'slug', 'image', 'name', 'content', 'author'])
+            ->where('status', Books::STATUS_ON)
             ->where('name', 'like', '%' . $search_key . '%')
             ->orderBy('name', 'asc')
             ->paginate(20);

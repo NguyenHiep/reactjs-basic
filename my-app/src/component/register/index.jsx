@@ -2,16 +2,17 @@ import React from 'react';
 import './index.css';
 class Register extends React.Component {
   // State create
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {value: ''}
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   handleChange(event) {
     this.setState({value: event.target.value});
   }
-  
+
   handleSubmit(event) {
     alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
@@ -28,7 +29,8 @@ class Register extends React.Component {
                 <div className="login-form">
                   <div className="form-group">
                     <label htmlFor="email">Email</label>
-                    <input type="email" className="form-control" id="email" value={this.state.value} onChange={this.handleChange} placeholder="VD: truyentranh@gmail.com"/>
+                    <input type="email" className="form-control" id="email" value={this.state.value}
+                           onChange={this.handleChange} placeholder="VD: truyentranh@gmail.com"/>
                   </div>
                   <div className="form-group">
                     <label htmlFor="username">Tên đăng nhập</label>
@@ -36,16 +38,17 @@ class Register extends React.Component {
                   </div>
                   <div className="form-group">
                     <label htmlFor="pwd">Mật khẩu:</label>
-                    <input type="password" className="form-control" id="pwd" />
+                    <input type="password" className="form-control" id="pwd"/>
                   </div>
                   <div className="form-group">
                     <label htmlFor="repwd">Nhập lại khẩu:</label>
-                    <input type="password" className="form-control" id="repwd" />
+                    <input type="password" className="form-control" id="repwd"/>
                   </div>
                   <button type="submit" className="btn btn-primary">Đăng ký</button>
                 </div>
               </form>
-							<p className="link-register"> Bạn có tài khoản rồi? <a href="/login"> Đăng nhập</a> / <a href="">Quên mật khẩu</a></p>
+              <p className="link-register"> Bạn có tài khoản rồi? <a href="/login"> Đăng nhập</a> / <a href="">Quên mật
+                khẩu</a></p>
             </div>
             <div className="col-xs-12 col-lg-6">
               <h2 className="title-body">Đăng nhập nhanh</h2>

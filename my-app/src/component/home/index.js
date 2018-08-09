@@ -1,19 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 import './index.css';
 import SidebarHome from '../include/sidebarhome';
 import SliderHome from '../include/slider';
 import ItemsNew from './items_new';
 import ItemsHot from './items_hot';
+import {
+  BASE_URL,
+  API
+} from '../../config'
 
 class Home extends React.Component {
-	
-	// State create
-  constructor(props){
-		super(props);
-		this.state = {
-      items_new : [
+
+  // State create
+  constructor(props) {
+    super(props);
+    this.state = {
+      items_new: [
         {
           id: 1,
           image: 'http://cdn.truyentranh.net/upload/image/comic/20180321/Quy-Sai-5ab256ef6fc5f-thumbnail-176x264.jpg',
@@ -37,7 +41,7 @@ class Home extends React.Component {
           status: true
         },
       ],
-      items_hot : [
+      items_hot: [
         {
           id: 1,
           image: 'http://cdn.truyentranh.net/upload/image/comic/20180321/Quy-Sai-5ab256ef6fc5f-thumbnail-176x264.jpg',
@@ -153,7 +157,7 @@ class Home extends React.Component {
               title: 'Chap 023',
               url: 'http://truyentranh.net/Quy-Sai/Chap-023'
             },
-    
+
           ],
           url: 'http://truyentranh.net/Quy-Sai',
           type: 'Slice of Life, Shoujo Ai, Gender bender, Fantasy, Comedy ',
@@ -260,7 +264,7 @@ class Home extends React.Component {
               title: 'Chap 545',
               url: 'http://truyentranh.net/hiep-khach-giang-ho/Chap-545'
             },
-    
+
           ],
           url: 'http://truyentranh.net/hiep-khach-giang-ho',
           type: 'Manhwa, Action',
@@ -314,7 +318,7 @@ class Home extends React.Component {
               title: 'Chap 023',
               url: 'http://truyentranh.net/Quy-Sai/Chap-023'
             },
-    
+
           ],
           url: 'http://truyentranh.net/Quy-Sai',
           type: 'Slice of Life, Shoujo Ai, Gender bender, Fantasy, Comedy ',
@@ -368,7 +372,7 @@ class Home extends React.Component {
               title: 'Chap 023',
               url: 'http://truyentranh.net/Quy-Sai/Chap-023'
             },
-    
+
           ],
           url: 'http://truyentranh.net/Quy-Sai',
           type: 'Slice of Life, Shoujo Ai, Gender bender, Fantasy, Comedy ',
@@ -475,7 +479,7 @@ class Home extends React.Component {
               title: 'Chap 545',
               url: 'http://truyentranh.net/hiep-khach-giang-ho/Chap-545'
             },
-    
+
           ],
           url: 'http://truyentranh.net/hiep-khach-giang-ho',
           type: 'Manhwa, Action',
@@ -529,7 +533,7 @@ class Home extends React.Component {
               title: 'Chap 023',
               url: 'http://truyentranh.net/Quy-Sai/Chap-023'
             },
-    
+
           ],
           url: 'http://truyentranh.net/Quy-Sai',
           type: 'Slice of Life, Shoujo Ai, Gender bender, Fantasy, Comedy ',
@@ -583,7 +587,7 @@ class Home extends React.Component {
               title: 'Chap 023',
               url: 'http://truyentranh.net/Quy-Sai/Chap-023'
             },
-    
+
           ],
           url: 'http://truyentranh.net/Quy-Sai',
           type: 'Slice of Life, Shoujo Ai, Gender bender, Fantasy, Comedy ',
@@ -690,7 +694,7 @@ class Home extends React.Component {
               title: 'Chap 545',
               url: 'http://truyentranh.net/hiep-khach-giang-ho/Chap-545'
             },
-    
+
           ],
           url: 'http://truyentranh.net/hiep-khach-giang-ho',
           type: 'Manhwa, Action',
@@ -744,7 +748,7 @@ class Home extends React.Component {
               title: 'Chap 023',
               url: 'http://truyentranh.net/Quy-Sai/Chap-023'
             },
-    
+
           ],
           url: 'http://truyentranh.net/Quy-Sai',
           type: 'Slice of Life, Shoujo Ai, Gender bender, Fantasy, Comedy ',
@@ -798,7 +802,7 @@ class Home extends React.Component {
               title: 'Chap 023',
               url: 'http://truyentranh.net/Quy-Sai/Chap-023'
             },
-    
+
           ],
           url: 'http://truyentranh.net/Quy-Sai',
           type: 'Slice of Life, Shoujo Ai, Gender bender, Fantasy, Comedy ',
@@ -808,58 +812,72 @@ class Home extends React.Component {
         },
       ]
     }
-  
-    this.getListSlider = this.getListSlider.bind(this);
-	}
 
-	getListSlider(){
-    axios.get('http://api.dev.nguyenhiep/api/sliders')
-    .then(response => {
-      console.log(response.data)
-    })
+    this.getListSlider = this.getListSlider.bind(this);
+    this.getBooksNew   = this.getBooksNew.bind(this);
   }
-  
+
+  getListSlider() {
+    axios.get(API.articles)
+      .then(response => {
+        console.log(response.data)
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+  }
+
+  getBooksNew() {
+    axios.get(API.articles)
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  }
+
   componentDidMount() {
     this.getListSlider();
+    this.getBooksNew();
   }
 
-	render() {
-		let elements_new = this.state.items_new.map( ( items, index) => {
-		  let result = '';
-		  if(items.status)
-      {
+  render() {
+    let elements_new = this.state.items_new.map((items, index) => {
+      let result = '';
+      if (items.status) {
         result = <ItemsNew
-          key					 ={ items.id}
-          image				 ={ items.image}
-          title				 ={ items.title}
-          title_en		 ={ items.title_en}
-          url					 ={ items.url}
-          type				 ={ items.type}
-          author			 ={ items.author}
-          description	 ={ items.description}
+          key={ items.id}
+          image={ items.image}
+          title={ items.title}
+          title_en={ items.title_en}
+          url={ items.url}
+          type={ items.type}
+          author={ items.author}
+          description={ items.description}
         >{ items.title}</ItemsNew>
       }
-			return  result;
-		});
-		let elements     = this.state.items_hot.map( (items, index) => {
+      return result;
+    });
+    let elements = this.state.items_hot.map((items, index) => {
       let result = '';
-		  if(items.status)
-      {
+      if (items.status) {
         result = <ItemsHot
-          key					 ={ items.id}
-          image				 ={ items.image}
-          title				 ={ items.title}
-          title_en		 ={ items.title_en}
-          list_chapter ={ items.list_chapter}
-          url					 ={ items.url}
-          type				 ={ items.type}
-          author			 ={ items.author}
-          description	 ={ items.description}
+          key={ items.id}
+          image={ items.image}
+          title={ items.title}
+          title_en={ items.title_en}
+          list_chapter={ items.list_chapter}
+          url={ items.url}
+          type={ items.type}
+          author={ items.author}
+          description={ items.description}
         >{ items.title}</ItemsHot>
       }
-			return result;
-		});
-		return (
+      return result;
+    });
+    return (
       <article>
         <SliderHome/>
         <main id="content">
@@ -868,11 +886,12 @@ class Home extends React.Component {
               <div className="col-xs-12 col-lg-8">
                 <h3 className="title-body">Truyện mới đăng</h3>
                 <div className="row">
-									{ elements_new}
-                </div> {/* end truyện mới đăng */}
+                  { elements_new}
+                </div>
+                {/* end truyện mới đăng */}
                 <h3 className="title-body">Truyện mới nhất</h3>
                 <div className="row">
-									{ elements}
+                  { elements}
                 </div>
               </div>
               <div className="col-xs-12 col-lg-4">
@@ -881,7 +900,8 @@ class Home extends React.Component {
                     <div className="history-read">
                       <p className="save-manga">
                         <Link to='/login'>
-                          <img src="http://cdn.truyentranh.net/frontend/images/clockfix.png" /> Xem lịch sử đọc truyện của bạn</Link>
+                          <img src="http://cdn.truyentranh.net/frontend/images/clockfix.png"/>
+                          Xem lịch sử đọc truyện của bạn</Link>
                       </p>
                     </div>
                   </div>
@@ -894,8 +914,8 @@ class Home extends React.Component {
           </div>
         </main>
       </article>
-		);
-	}
+    );
+  }
 }
 export default Home;
 

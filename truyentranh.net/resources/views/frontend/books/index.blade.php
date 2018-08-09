@@ -73,12 +73,8 @@
     
     <div class="row">
       <div class="col-md-12 mar-top">
-        <div class="total-chapter">
-          <h4 class="collapse-contain text-left">Nội dung</h4>
-        </div>
-        <div class="manga-content">
-          <p id="example2" class="manga-collapse">{!! $book->content !!}</p>
-        </div>
+        <div class="total-chapter"><h4 class="collapse-contain text-left">Nội dung</h4></div>
+        <div class="manga-content">{!! $book->content !!}</div>
         <div class="total-chapter">
           <h4 class="collapse-contain text-left">Chương mới</h4>
           <div class="chapter-list">

@@ -127,4 +127,52 @@ class  Helpers
         }
         return $data;
     }
+
+    public static function StripUnclosedTags($input) {
+        // Close <br> tags
+        $buffer = str_ireplace("<br>", "<br/>", $input);
+        // Find all matching open/close HTML tags (using recursion)
+        $pattern = "/<([\w]+)([^>]*?) (([\s]*\/>)| (>((([^<]*?|<\!\-\-.*?\-\->)| (?R))*)<\/\\1[\s]*>))/ixsm";
+        preg_match_all($pattern, $buffer, $matches, PREG_OFFSET_CAPTURE);
+        // Mask matching open/close tag sequences in the buffer
+        foreach ($matches[0] as $match) {
+            $ofs = $match[1];
+            for ($i = 0; $i < strlen($match[0]); $i++, $ofs++)
+                $buffer[$ofs] = "#";
+        }
+        // Remove unclosed tags
+        $buffer = preg_replace("/<.*$/", "", $buffer);
+        // Put back content of matching open/close tag sequences to the buffer
+        foreach ($matches[0] as $match) {
+            $ofs = $match[1];
+            for ($i = 0; $i < strlen($match[0]) && $ofs < strlen($buffer); $i++, $ofs++)
+                $buffer[$ofs] = $match[0][$i];
+        }
+        return $buffer;
+    }
+
+    public static function closetags($html) {
+        preg_match_all('#<([a-z]+)(?: .*)?(?<![/|/ ])>#iU', $html, $result);
+        $openedtags = $result[1];
+        preg_match_all('#</([a-z]+)>#iU', $html, $result);
+        $closedtags = $result[1];
+        $len_opened = count($openedtags);
+        if (count($closedtags) == $len_opened) {
+            return $html;
+        }
+        $openedtags = array_reverse($openedtags);
+        for ($i=0; $i < $len_opened; $i++) {
+            if (!in_array($openedtags[$i], $closedtags)) {
+                $html .= '</'.$openedtags[$i].'>';
+            } else {
+                unset($closedtags[array_search($openedtags[$i], $closedtags)]);
+            }
+        }
+        return $html;
+    }
+
+    public static function removeImageContent($content)
+    {
+        return preg_replace("/<img[^>]+\>/i", "", $content);
+    }
 }

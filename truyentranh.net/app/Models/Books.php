@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Helpers\Helpers;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -50,6 +51,12 @@ class Books extends BaseModel
     public function getCreatedAtAttribute($value)
     {
         return Carbon::parse($value)->format('d/m/Y');
+    }
+
+    public function getContentAttribute($value)
+    {
+        $data = strip_tags($value, '<p><a><br>');
+        return Helpers::removeImageContent($data);
     }
 
     public function reports()
@@ -116,7 +123,10 @@ class Books extends BaseModel
     public static function getBookHistory($ids, $limit = 12)
     {
         if (!empty($ids) && is_array($ids)) {
-            $books = Books::select('books.*', 'chapters.name as chapter_name', 'chapters.slug as chapter_slug')
+            $books = Books::select(
+                'books.id','books.slug','books.name','books.name_dif','books.categories','books.author',
+                'chapters.name as chapter_name', 'chapters.slug as chapter_slug'
+            )
                 ->join('chapters', 'books.id', '=', 'chapters.book_id')
                 ->whereIn('chapters.id', $ids)
                 ->where('books.status', Books::STATUS_ON)
@@ -134,7 +144,7 @@ class Books extends BaseModel
             ->where('sticky', Books::STATUS_ON)
             ->orderBy('updated_at', 'desc')
             ->limit(4)
-            ->get();
+            ->get(['id', 'slug', 'image', 'name', 'name_dif', 'categories', 'author', 'content']);
     }
 
     /***
@@ -153,7 +163,7 @@ class Books extends BaseModel
             ->whereNotIn('id', $ids)
             ->orderBy('created_at', 'desc')
             ->limit($limit)
-            ->get();
+            ->get(['id', 'slug', 'image', 'name', 'name_dif', 'categories', 'author', 'content']);
     }
 
     /***
