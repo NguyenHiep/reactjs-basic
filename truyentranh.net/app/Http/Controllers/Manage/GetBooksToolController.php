@@ -20,9 +20,13 @@ class GetBooksToolController extends ManageController
     protected $book_data;
     protected $book_leech;
     protected $chapters_leech;
-    protected $fileds_search_chapters = [];
+    protected $fields_search_chapters = [];
+    const GET_ALL_CHAPTERS = 1;
+    const GET_ALL_BOOKS    = 2;
+    const GET_ALL_SITE     = 3;
 
-    public function __construct(BooksDataFactory $book_data, BooksLeech $books_leech, ChaptersLeech $chapters_leech) {
+    public function __construct(BooksDataFactory $book_data, BooksLeech $books_leech, ChaptersLeech $chapters_leech)
+    {
         $this->book_data  = $book_data;
         $this->book_leech = $books_leech;
         foreach ($this->book_leech->getFillable() as $filed) {
@@ -30,16 +34,41 @@ class GetBooksToolController extends ManageController
         }
         $this->chapters_leech = $chapters_leech;
         foreach ($this->chapters_leech->getFillable() as $filed) {
-            $this->fileds_search_chapters[] = $this->search_prefix . $filed;
+            $this->fields_search_chapters[] = $this->search_prefix . $filed;
         }
     }
 
+    /**
+     * @param array $data
+     * @return bool|\Illuminate\Validation\Validator
+     */
     protected static function validator(array $data)
     {
-        return Validator::make($data, [
-            'leech_source_id'  => 'required|integer|min:1|max:5',
-            'leech_book_url'   => 'required|url|unique:books',
-        ]);
+        $leech_type = $data['leech_type'];
+        switch ($leech_type) {
+            case self::GET_ALL_CHAPTERS :
+                return Validator::make($data, [
+                    'leech_source_id'        => 'required|integer|min:1|max:5',
+                    'chapter_leech_book_url' => 'required|url',
+                    'book_id'                => 'required|integer',
+                    'leech_chapter_url'      => 'required|string',
+                ]);
+                break;
+            case self::GET_ALL_BOOKS :
+                return Validator::make($data, [
+                    'leech_source_id' => 'required|integer|min:1|max:5',
+                    'leech_book_url'  => 'required|url|unique:books',
+                ]);
+            case self::GET_ALL_SITE :
+                return Validator::make($data, [
+                    'leech_source_id' => 'required|integer|min:1|max:5',
+                    'leech_book_url'  => 'required|url|unique:books',
+                ]);
+                break;
+            default:
+                return false;
+        }
+        return false;
     }
 
     protected static function validator_books_leech(array $data){
@@ -92,12 +121,12 @@ class GetBooksToolController extends ManageController
     {
         // Get all books
         $data['books'] = BooksLeech::get_option_list(true);
-        $get_params = request()->query();
-        $model      = ChaptersLeech::query();
+        $get_params    = request()->query();
+        $model         = ChaptersLeech::query();
         if (!empty($get_params)) {
             $this->setSearch = [];
             foreach ($get_params as $key => $val) {
-                if (in_array($key, $this->fileds_search_chapters)) {
+                if (in_array($key, $this->fields_search_chapters)) {
                     $key = substr($key, strlen($this->search_prefix));
                     $this->setSearch[$key] = $val;
                 }
@@ -121,11 +150,11 @@ class GetBooksToolController extends ManageController
 
     public function store(Request $request)
     {
-        $inputs = $request->all();
+        $inputs    = $request->all();
         $validator = self::validator($inputs);
         if ($validator->fails()) {
             // Write log error
-            $errors = $validator->errors();
+            $errors       = $validator->errors();
             $list_message = '';
             foreach ($errors->all() as $message) {
                 $list_message .= $message . PHP_EOL;
@@ -133,47 +162,31 @@ class GetBooksToolController extends ManageController
             Log::error($list_message);
             return redirect()->back()->withErrors($validator)->withInput($inputs);
         }
-
-        $source = $this->book_data->getSource($inputs['leech_source_id'], $inputs['leech_book_url']);
-        $info_book_leach                    = $source->getInfoBook($source->getDom());
-        $info_book_leach['created_by']      = Auth::id();
-        $info_book_leach['slug']            = str_slug($info_book_leach['name']);
-        $info_book_leach['leech_source_id'] = $inputs['leech_source_id'];
-        $info_book_leach['leech_book_url']  = $inputs['leech_book_url'];
-
-        try {
-            DB::beginTransaction();
-            $this->book_leech->fill($info_book_leach);
-            $this->book_leech->save();
-            // Begin insert chapters
-            $model_chapter = new ChaptersLeech();
-            $list_chapters = $source->getListChapters($source->getDom());
-            $chapters = [];
-            foreach ($list_chapters as $key => $items) {
-                $arr_episodes = explode('/', $key);
-                $episodes     = str_replace('-', ' ', end($arr_episodes));
-                $chapters[$key]['book_id']     = $this->book_leech->id;
-                $chapters[$key]['name']        = $items;
-                $chapters[$key]['episodes']    = $episodes;
-                $chapters[$key]['slug']        = str_slug($items);
-                $chapters[$key]['leech_source_id']    = $inputs['leech_source_id'];
-                $chapters[$key]['leech_chapter_url']  = $key;
-                $chapters[$key]['flag_leech_content'] = ChaptersLeech::STATUS_OFF;
-                $chapters[$key]['created_by']  = Auth::id();
-            }
-            $model_chapter::insert($chapters);
-            DB::commit();
-            return redirect()->route('getbookstool.index')->with([
-                'message' => __('system.message.create'),
-                'status'  => self::CTRL_MESSAGE_SUCCESS,
-            ]);
-
-        } catch (\Exception $e) {
-            DB::rollBack();
-            Log::error([$e->getMessage(), __METHOD__]);
+        $leech_type = $inputs['leech_type'];
+        switch ($leech_type) {
+            case self::GET_ALL_CHAPTERS :
+                $result = $this->storeChapters($inputs);
+                if ($result) {
+                    return redirect()->route('getbookstool.index')->with([
+                        'message' => __('system.message.create'),
+                        'status'  => self::CTRL_MESSAGE_SUCCESS,
+                    ]);
+                }
+                return redirect()->back()->withInput($inputs)->with([
+                    'message' => __('system.message.errors', ['errors' => 'Save chapters is failed']),
+                    'status'  => self::CTRL_MESSAGE_ERROR,
+                ]);
+                break;
+            case self::GET_ALL_BOOKS :
+                $this->storeBooks($inputs);
+            case self::GET_ALL_SITE :
+                $this->storeAllSite($inputs);
+                break;
+            default:
+                return false;
         }
         return redirect()->back()->withInput($inputs)->with([
-            'message' => __('system.message.errors', ['errors' => 'Save books is failed']),
+            'message' => __('system.message.errors', ['errors' => 'Leech data is failed']),
             'status'  => self::CTRL_MESSAGE_ERROR,
         ]);
     }
@@ -184,10 +197,8 @@ class GetBooksToolController extends ManageController
         $book_leech     = new BooksLeech();
         $files = file_get_contents('list_link.txt');
         if ($files == false || empty($files)) {
-            //$this->error('Link not found');
             return 'Link not found';
         }
-        //$datas = explode(PHP_EOL, $files);
         $datas  = preg_split("/\R/", $files);
         $chucks = array_chunk($datas, 40);
         $total  = count($chucks);
@@ -208,7 +219,6 @@ class GetBooksToolController extends ManageController
                         $info_book_leach[$key]['slug']            = str_slug($book_leach['name']);
                         $info_book_leach[$key]['leech_source_id'] = 1;
                         $info_book_leach[$key]['leech_book_url']  = $book_link;
-                        //$this->info('--- No: ' . $key);
                     }
                 }
                 $total--;
@@ -221,31 +231,6 @@ class GetBooksToolController extends ManageController
             DB::rollBack();
             Log::error([$e->getMessage(), __METHOD__]);
         }
-
-        /*$files_link = fopen("list_link.txt", "w");
-        $list_link = [];
-        for ($i = 1; $i <= 155; $i++) {
-            $list_link[] = 'http://truyentranh.net/danh-sach.tall.html?p=' . $i;
-        }
-        $data_range = range(1,155);
-        //$collection_link = collect($data_range);
-        //$midData = $collection_link->chunk(10)->toArray();
-        $tags_link = [];
-        foreach ($data_range as $range) {
-            $link = 'http://truyentranh.net/danh-sach.tall.html?p='.$range;
-            $html = $this->getDom($link);
-            foreach ($html->find('#loadlist a') as $element) {
-                if (in_array($element->href, $tags_link)) {
-                    continue;
-                }
-                $tags_link[] = $element->href;
-                $tag_a = $element->href . PHP_EOL;
-                fwrite($files_link, $tag_a);
-            }
-
-        }
-        fclose($files_link);*/
-        //return view('manage.getbookstool.input-link');
     }
 
     public function storelinkall(Request $request)
@@ -259,9 +244,9 @@ class GetBooksToolController extends ManageController
         $data       = explode("\n", $data);
         $data_old   = file_get_contents('old-book.txt');
         $data_old   = explode("\n", $data_old);
-        $results    = array_diff($data,$data_old);
+        $results    = array_diff($data, $data_old);
         $files_link = fopen("list_link.txt", "w");
-        foreach ($results as $link){
+        foreach ($results as $link) {
             fwrite($files_link, $link);
         }
         fclose($files_link);
@@ -269,9 +254,15 @@ class GetBooksToolController extends ManageController
 
     public function ajaxShowInfoBook(Request $request)
     {
-        if($request->ajax()){
+        if ($request->ajax()) {
             $book_id = intval($request->book_id);
-            $model = $this->book_leech->where('id', $book_id)
+            $model   = $this->book_leech->with([
+                'chapters' => function ($query) {
+                    $query->orderBy('name', 'desc')->limit(10);
+                }
+            ])
+                ->select('id', 'image', 'name', 'name_dif', 'author', 'content', 'leech_book_url')
+                ->where('id', $book_id)
                 ->orderBy('name', 'desc')
                 ->first();
             if (empty($model)) {
@@ -280,6 +271,7 @@ class GetBooksToolController extends ManageController
                     'Id ' . $book_id . ' items not found'
                 );
             }
+            $model->chapters = $model->chapters();
             return $this->responseJsonAjax(
                 $this->AJAX_RESULT['SUCCESS'],
                 'Get id ' . $book_id . ' items success',
@@ -287,5 +279,82 @@ class GetBooksToolController extends ManageController
             );
         }
 
+    }
+
+    private function storeChapters($inputs)
+    {
+        $source                                   = $this->book_data->getSource($inputs['leech_source_id'],
+            $inputs['leech_chapter_url']);
+        $info_chapter_leech                       = $source->getInfoChapters($source->getDom());
+        $arr_episodes                             = explode('/', $inputs['leech_chapter_url']);
+        $episodes                                 = ucfirst(str_replace('-', ' ', end($arr_episodes)));
+        $info_chapter_leech['book_id']            = $inputs['book_id'];
+        $info_chapter_leech['episodes']           = $episodes;
+        $info_chapter_leech['leech_source_id']    = $inputs['leech_source_id'];
+        $info_chapter_leech['leech_chapter_url']  = $inputs['leech_chapter_url'];
+        $info_chapter_leech['flag_leech_content'] = ChaptersLeech::STATUS_ON;
+        $info_chapter_leech['created_by']         = Auth::id();
+        try {
+            DB::beginTransaction();
+            $this->chapters_leech->fill($info_chapter_leech);
+            $this->chapters_leech->save();
+            DB::commit();
+            return true;
+        } catch (\Exception $e) {
+            DB::rollBack();
+            Log::error([$e->getMessage(), __METHOD__]);
+        }
+        return false;
+    }
+
+    private function storeBooks($inputs)
+    {
+        $source = $this->book_data->getSource($inputs['leech_source_id'], $inputs['leech_book_url']);
+        $info_book_leach                    = $source->getInfoBook($source->getDom());
+        $info_book_leach['created_by']      = Auth::id();
+        $info_book_leach['slug']            = str_slug($info_book_leach['name']);
+        $info_book_leach['leech_source_id'] = $inputs['leech_source_id'];
+        $info_book_leach['leech_book_url']  = $inputs['leech_book_url'];
+
+        try {
+            DB::beginTransaction();
+            $this->book_leech->fill($info_book_leach);
+            $this->book_leech->save();
+            // Begin insert chapters
+            $model_chapter = new ChaptersLeech();
+            $list_chapters = $source->getListChapters($source->getDom());
+            $chapters      = [];
+            foreach ($list_chapters as $key => $items) {
+                $arr_episodes                         = explode('/', $key);
+                $episodes                             = str_replace('-', ' ', end($arr_episodes));
+                $chapters[$key]['book_id']            = $this->book_leech->id;
+                $chapters[$key]['name']               = $items;
+                $chapters[$key]['episodes']           = $episodes;
+                $chapters[$key]['slug']               = str_slug($items);
+                $chapters[$key]['leech_source_id']    = $inputs['leech_source_id'];
+                $chapters[$key]['leech_chapter_url']  = $key;
+                $chapters[$key]['flag_leech_content'] = ChaptersLeech::STATUS_OFF;
+                $chapters[$key]['created_by']         = Auth::id();
+            }
+            $model_chapter::insert($chapters);
+            DB::commit();
+            return redirect()->route('getbookstool.index')->with([
+                'message' => __('system.message.create'),
+                'status'  => self::CTRL_MESSAGE_SUCCESS,
+            ]);
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            Log::error([$e->getMessage(), __METHOD__]);
+        }
+        return redirect()->back()->withInput($inputs)->with([
+            'message' => __('system.message.errors', ['errors' => 'Save books is failed']),
+            'status'  => self::CTRL_MESSAGE_ERROR,
+        ]);
+    }
+
+    private function storeAllSite($inputs)
+    {
+        return $inputs;
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Helpers\Helpers;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -46,6 +47,12 @@ class BooksLeech extends BaseModel
     public function getCreatedAtAttribute($value)
     {
         return Carbon::parse($value)->format('d/m/Y');
+    }
+
+    public function getContentAttribute($value)
+    {
+        $data = strip_tags($value, '<br>');
+        return Helpers::removeImageContent($data);
     }
 
     public function scopeSearchAdvanced($model, $searchs)

@@ -1,0 +1,24 @@
+{
+  "name": "nguyenhiep/leechtruyen",
+  "description": "This leechtruyen package",
+  "authors": [
+    {
+      "name": "Nguyen Hiep",
+      "email": "minhhiep.q@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "NguyenHiep\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "NguyenHiep\\LeechTruyen\\LeechTruyenServiceProvider"
+      ]
+    }
+  }
+}

@@ -17,4 +17,6 @@ interface  BooksDataInterface
     public function getListChapters($param);
 
     public function getDetailChapter($param);
+
+    public function getInfoChapters($param);
 }

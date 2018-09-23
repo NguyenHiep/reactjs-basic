@@ -44,16 +44,22 @@ class CategoriesController extends FrontEndController
                 default:
                     $column = 'name';
             }
-            $books = $category->books()->where('status', Books::STATUS_ON)
+            $books = $category->books()
+                //->select('id', 'image', 'slug', 'name', 'name_dif', 'author', 'content')
+                ->where('status', Books::STATUS_ON)
                 ->orderBy($column, 'desc')
                 ->paginate(20);
         } else if (!empty($filter_key) && in_array($filter_key, $data['list_filter'] )){
-            $books = $category->books()->where('status', Books::STATUS_ON)
+            $books = $category->books()
+                //->select('id', 'image', 'slug', 'name', 'name_dif', 'author', 'content')
+                ->where('status', Books::STATUS_ON)
                 ->where('name', 'like', $filter_key . '%')
                 ->orderBy('name', 'asc')
                 ->paginate(20);
         }else {
-            $books = $category->books()->where('status', Books::STATUS_ON)
+            $books = $category->books()
+                //->select('id', 'image', 'slug', 'name', 'name_dif', 'author', 'content')
+                ->where('status', Books::STATUS_ON)
                 ->orderBy('name', 'asc')
                 ->paginate(20);
         }
@@ -71,12 +77,14 @@ class CategoriesController extends FrontEndController
         ];
         $filter_key = request()->query('fc');
         if (!empty($filter_key) && in_array($filter_key, $data['list_filter'] )){
-            $books = Books::where('status', Books::STATUS_ON)
+            $books = Books::select('id', 'image', 'slug', 'name', 'name_dif', 'author', 'content')
+                ->where('status', Books::STATUS_ON)
                 ->where('name', 'like', $filter_key . '%')
                 ->orderBy('name', 'asc')
                 ->paginate(20);
         }else {
-            $books = Books::where('status', Books::STATUS_ON)
+            $books = Books::select('id', 'image', 'slug', 'name', 'name_dif', 'author', 'content')
+                 ->where('status', Books::STATUS_ON)
                 ->orderBy('name', 'asc')
                 ->paginate(20);
         }

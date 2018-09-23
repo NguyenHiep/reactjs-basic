@@ -10,6 +10,12 @@ namespace App\Http\Controllers\Manage\SourceBooks;
 
 class BooksDataFactory extends AbstractFactory
 {
+
+    /***
+     * @param $source
+     * @param $url
+     * @return ComicvnNet|HamTruyenCom|NetTruyenCom|TruyenSieuHayCom|TruyenTranhNet|null
+     */
     public function getSource($source, $url)
     {
         // TODO: Implement getSource() method.
@@ -31,8 +37,6 @@ class BooksDataFactory extends AbstractFactory
                 break;
             default:
                 return null;
-                break;
         }
-        return null;
     }
 }

@@ -44,9 +44,9 @@
                     if($category->id == $id){
                       $html .= '<a href="'.route('front.categories.show', ['cat_slug' => $category->slug]).'">'.$category->name.'</a>, ';
                     }
-                  
+
                   }
-                  
+
                 }
                 echo rtrim($html, ', ');
                }
@@ -70,7 +70,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="row">
       <div class="col-md-12 mar-top">
         <div class="total-chapter"><h4 class="collapse-contain text-left">Nội dung</h4></div>
@@ -78,8 +78,8 @@
         <div class="total-chapter">
           <h4 class="collapse-contain text-left">Chương mới</h4>
           <div class="chapter-list">
-            @if(count($book->chapters) > 0)
-              @foreach( $book->chapters as $chapter)
+            @if(count($chapters) > 0)
+              @foreach( $chapters as $chapter)
                 @if ($loop->iteration > 5) @break @endif
                 <p>
                   <a href="{{ route('front.books.showdetail', ['chapter_slug' => $chapter->slug]) }}" title="{{$chapter->name}}" target="_blank">{{ ucfirst($chapter->name) }} <span class="date-release">{{ $chapter->created_at }}</span>
@@ -95,8 +95,8 @@
           <h4 class="collapse-contain text-left">Danh sách chương</h4>
           <section id="examples">
             <div class="content mCustomScrollbar">
-              @if(count($book->chapters) > 0)
-                @foreach( $book->chapters as $chapter)
+              @if(count($chapters) > 0)
+                @foreach( $chapters as $chapter)
                   <p>
                     <a href="{{ route('front.books.showdetail', ['chapter_slug' => $chapter->slug]) }}" title="{{$chapter->name}}" target="_blank">{{ ucfirst($chapter->name) }} <span class="date-release">{{ $chapter->created_at }}</span>
                     </a>
@@ -110,7 +110,7 @@
         </div>
       </div>
     </div>
-    
+
     @if(count($book_related) > 0)
     <div class="row">
       <div class="col-md-12">
@@ -141,25 +141,24 @@
 @endsection
 @push('scripts')
 <script>
-
-	$('#follow').click(function () {
-		var item = $(this),
-			data = item.data();
-		item.text('Loading ...');
-		$.post(data.href, {id: data.id}, function (json) {
-			if (!json.data.status) {
-				alert('Error!');
-				item.text(data.text);
-			}
-			else {
-				item
-					.removeClass(json.data.oldclass)
-					.addClass(json.data.newclass)
-					.text(json.data.text)
-					.data('href', json.data.href);
-			}
-		}, 'json');
-	});
+  $('#follow').click(function () {
+    var item = $(this),
+        data = item.data();
+    item.text('Loading ...');
+    $.post(data.href, {id: data.id}, function (json) {
+      if (!json.data.status) {
+        alert('Error!');
+        item.text(data.text);
+      }
+      else {
+        item
+        .removeClass(json.data.oldclass)
+        .addClass(json.data.newclass)
+        .text(json.data.text)
+        .data('href', json.data.href);
+      }
+    }, 'json');
+  });
 
 </script>
 @endpush

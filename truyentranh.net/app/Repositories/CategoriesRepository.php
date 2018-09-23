@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use App\Models\Categories;
+use App\Models\Books;
 use Carbon\Carbon;
 
 class CategoriesRepository extends BaseRepository
@@ -52,5 +53,37 @@ class CategoriesRepository extends BaseRepository
                 throw new \Exception(__('Action not found!'));
                 break;
         }
+    }
+
+    public static function get_option_list($deleted = false)
+    {
+        //static $data, $deleted_data;
+        if (empty($data)) {
+            $data = array_pluck(Categories::select('id', 'name')
+                ->where('status', Categories::STATUS_ON)
+                ->where('deleted_at', null)
+                ->orderBy('name')
+                ->get()
+                ->toArray(), 'name', 'id');
+        }
+        if ($deleted && empty($deleted_data)) {
+            $deleted_data = array_pluck(Categories::select('id', 'name')
+                ->where('status', Categories::STATUS_OFF)
+                ->orWhere('deleted_at', '!=', null)
+                ->orderBy('name')
+                ->get()
+                ->toArray(), 'name', 'id');
+        }
+        return $data + ($deleted ? $deleted_data : []);
+    }
+
+    public static function getListCategories()
+    {
+        return Categories::where('status', Categories::STATUS_ON)
+            ->withCount([
+                'books' => function ($query) {
+                    $query->where('status', '=', Books::STATUS_ON);
+                }
+            ])->orderBy('name')->get();
     }
 }

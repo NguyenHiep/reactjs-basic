@@ -11,6 +11,14 @@
       <div class="col-xs-12">
         <div class="title-block">
           <h2>Danh sách tài khoản</h2>
+          <div class="right-area">
+            <ul class="list-unstyled panel-layout btn-box-01">
+              <li>
+                <a href="{{ route('users.create') }}" class="btn btn-primary">
+                  <i class="fa fa-plus-circle"></i> Thêm tài khoản mới</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="col-xs-12" style="margin-top: 15px">

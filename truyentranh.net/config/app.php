@@ -186,6 +186,10 @@ return [
         // Database
         Yajra\DataTables\FractalServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
+        // Swagger api
+        L5Swagger\L5SwaggerServiceProvider::class,
+        // LeechTruyen
+        NguyenHiep\LeechTruyen\LeechTruyenServiceProvider::class
     ],
 
     /*

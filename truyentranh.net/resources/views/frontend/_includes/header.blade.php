@@ -54,11 +54,11 @@
           <a class="nav-link" href="javascript:;">Hàng sale</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0" method="GET" action="{{ route('front.books.search') }}">
+      <form class="form-top-search form-inline my-2 my-lg-0" method="GET" action="{{ route('front.books.search') }}">
         <input class="form-control mr-sm-2" name="q" type="search" placeholder="Nhập tên truyện" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
       </form>
-      <ul class="list-unstyled list-inline-item ml-2 my-2 my-lg-0">
+      <ul class="list-unstyled list-inline-item ml-sm-0 ml-lg-2 my-2 my-lg-0">
         @auth
           <li class="dropdown">
           <a href="javascript:void(0);" data-toggle="dropdown" class="user-circle" id="dLabel">

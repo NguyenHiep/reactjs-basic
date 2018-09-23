@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('seo_title', 'Danh sách truyện | Đọc truyện tranh online | yeutruyentranh.com')
-@section('seo_keywords', 'Đọc truyện tranh online, One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,...')
-@section('seo_description', 'Đọc truyện tranh online mới nhất, nhanh nhất như One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,..')
+@section('seo_title', '💯 ✅ Danh sách truyện | Đọc truyện tranh online | yeutruyentranh.com')
+@section('seo_keywords', '✅ Đọc truyện tranh online, One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,...')
+@section('seo_description', '💯 ✅ Đọc truyện tranh online mới nhất, nhanh nhất như One Piece, Hiệp khách giang hồ, Fairy Tail, Naruto, Bleach, Toriko,..')
 
 @section('breadcrumb')
   <div class="breadcrumb-contain">
@@ -26,14 +26,14 @@
     <div class="row">
       <div class="col-md-12">
         <div class="cate-order"><span>Sắp xếp theo: </span>
-          <a role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample" class="active" title="A-Z">A-Z</a>
+          <a role="button" data-toggle="collapse" href="#collapseExample" class="active" title="A-Z">A-Z</a>
         </div>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
-      <div id="collapseExample" class="list-watch collapse in" aria-expanded="true">
+      <div id="collapseExample" class="list-watch collapse in">
         <div class="well">
           <p>
             <a href="{{ route('front.categories.showall') }}" class="{{ (request()->query('fc') == null) ? 'Active' : '' }}" title="Tất cả">Tất cả</a>
@@ -100,13 +100,13 @@
                 @if(!empty($book->image))
                   <img class="pr-2" src="{!! asset(PATH_IMAGE_THUMBNAIL_BOOK.$book->image) !!}" alt="{{ $book->name }}" />
                 @endif
-                <span>
+                <div class="siblings-tooltips">
                   <img src="{{ asset(PATH_IMAGE_FRONTEND.'callout.gif') }}" class="callout"  alt="callout"/>
                   <div class="description">
                     <strong>Tác giả:</strong>{{ $book->author }}<br />
                     <strong>Nội dung:</strong>{!! Str::words($book->content, 40,'...') !!}
                   </div>
-                 </span>
+                </div>
               </a>
               <div class="media-body">
                 <h4 class="manga-newest"><a href="{{ url($book->slug) }}">{{ $book->name }}</a></h4>

@@ -33,7 +33,7 @@ class AjaxController extends FrontEndController
             $validator = self::validate_id($inputs);
             if ($validator->fails()) {
                 // Write log error
-                $errors = $validator->errors();
+                $errors       = $validator->errors();
                 $list_message = '';
                 foreach ($errors->all() as $message) {
                     $list_message .= $message . PHP_EOL;
@@ -89,7 +89,7 @@ class AjaxController extends FrontEndController
             $validator = self::validate_id($inputs);
             if ($validator->fails()) {
                 // Write log error
-                $errors = $validator->errors();
+                $errors       = $validator->errors();
                 $list_message = '';
                 foreach ($errors->all() as $message) {
                     $list_message .= $message . PHP_EOL;
@@ -104,7 +104,7 @@ class AjaxController extends FrontEndController
             $user_id = Auth::id();
             $book_id = $inputs['id'];
             // Begin follow books
-            $result = User_Follow_Books::where('user_id', $user_id)->where('book_id', $book_id)->delete();
+            $result  = User_Follow_Books::where('user_id', $user_id)->where('book_id', $book_id)->delete();
             if ($result) {
                 return $this->responseJsonAjax(
                     $this->AJAX_RESULT['SUCCESS'],

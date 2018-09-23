@@ -1,0 +1,47 @@
+@media (max-width: 575.98px) {
+  .post-stick {
+    width: 100%;
+    margin-bottom: 7px;
+  }
+  .slick-slide .slick-item {
+    display: block;
+    img {
+      margin: auto;
+    }
+  }
+  .slick-prev {
+    left: 15px !important;
+  }
+  .slick-next {
+    right: 15px !important;
+  }
+  .mainpage-manga img {
+    width: 60px;
+  }
+  .hot-manga .thumbnails {
+    margin: auto;
+    width: 200px;
+  }
+  // Header
+  .form-top-search button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+@media (min-width: 1200px) {
+  .navigation-menu {
+    padding: 0;
+  }
+}

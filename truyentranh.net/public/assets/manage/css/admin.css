@@ -257,3 +257,12 @@ img.img-thumbnail{
 .description-user span {
   color: #0e977f;
 }
+a.chapter{
+  display: inline-block;
+  background: #1d9977;
+  border-radius: 15px;
+  padding: 5px 10px;
+  color: #FFF;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}

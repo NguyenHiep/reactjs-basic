@@ -1,16 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Books;
-use App\Models\Categories;
-use App\Models\Chapters;
-use App\Helpers\Helpers;
+use App\Repositories\BooksRepository;
+use App\Repositories\CategoriesRepository;
 
 class FrontEndController extends AppBaseController
 {
     protected $books;
     protected $categories;
-    public function __construct(Books $books, Categories $categories) {
+    public function __construct(BooksRepository $books, CategoriesRepository $categories) {
         $this->books      = $books;
         $this->categories = $categories;
     }

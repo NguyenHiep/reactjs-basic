@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\FrontEnd;
 
-use App\Models\ChaptersLeech;
 use App\Models\Books;
 use App\Models\Categories;
 use App\Models\Chapters;
 use App\Http\Controllers\FrontEndController;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
 
@@ -16,31 +14,32 @@ class BooksController extends FrontEndController
 {
     public function show($book_slug)
     {
-        if(empty($book_slug)){
+        if (empty($book_slug)) {
             return abort(404);
         }
-        $book = Books::with(
-            [
-                'chapters' => function ($query) {
-                    $query->where('status', '=', Chapters::STATUS_ON)
-                        ->orderBy('name', 'desc');
-                }
-            ])
-            ->where('slug', $book_slug)
+        $book = Books::where('slug', $book_slug)
             ->where('status', Books::STATUS_ON)
-            ->first();
-        if(empty($book)){
+            ->first([
+                'id', 'slug', 'image', 'name', 'content', 'views', 'name_dif',
+                'categories', 'author', 'teams_translate', 'progress', 'seo_title',
+                'seo_slug', 'seo_description', 'seo_keywords'
+            ]);
+        if (empty($book)) {
             return abort(404);
         }
-        $book_related = Books::where('id', '!=', $book->id)
+        $book_related         = Books::where('id', '!=', $book->id)
             ->where('status', Books::STATUS_ON)
             ->inRandomOrder()
             ->limit(4)
             ->get(['id', 'slug', 'image', 'name']);
-        $data['book']         = $book;
+        $data['book'] = $book;
         $data['book_related'] = $book_related;
-        $data['categories']   = Categories::getListCategories();
-        return view('frontend.books.index   ',$data );
+        $data['categories'] = Categories::getListCategories();
+        $data['chapters'] = $book->chapters()
+                            ->where('status', '=', Chapters::STATUS_ON)
+                            ->orderBy('name', 'desc')
+                            ->get(['id', 'slug', 'name', 'created_at']);
+        return view('frontend.books.index   ', $data);
     }
 
     public function chapter_detail($chapter_slug)
@@ -57,12 +56,11 @@ class BooksController extends FrontEndController
         if (empty($chapter)) {
             return abort(404);
         }
-
-        $this->setCookieChapterRecent([$chapter->id]);
+        //$this->setCookieChapterRecent([$chapter->id]);
         $data['chapter']       = $chapter;
         $data['list_chapters'] = Chapters::get_option_list_by_book_id($chapter->book_id);
-        $data = $data + $this->move_chapter($chapter->book_id, $chapter->id);
-        return view('frontend.books.chapters-detail',$data );
+        $data                  = $data + $this->move_chapter($chapter->book_id, $chapter->id);
+        return view('frontend.books.chapters-detail', $data);
     }
 
     private function move_chapter($book_id, $chapter_id)
@@ -86,7 +84,7 @@ class BooksController extends FrontEndController
     public function search(Request $request)
     {
         $search_key = $request->query('q');
-        $books = Books::select(['id', 'slug', 'image', 'name', 'content', 'author'])
+        $books      = Books::select(['id', 'slug', 'image', 'name', 'content', 'author'])
             ->where('status', Books::STATUS_ON)
             ->where('name', 'like', '%' . $search_key . '%')
             ->orderBy('name', 'asc')
@@ -96,7 +94,6 @@ class BooksController extends FrontEndController
             'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
             'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
         ];
-
         $filter_key = $request->query('fc');
         if (!empty($filter_key) && in_array($filter_key, $data['list_filter'])) {
             $books = Books::where('status', Books::STATUS_ON)
@@ -110,8 +107,8 @@ class BooksController extends FrontEndController
 
     public function show_history_read()
     {
-        $ids   = $this->getCookieChapterRecent();
-        $books = Books::getBookHistory($ids);
+        $ids                = $this->getCookieChapterRecent();
+        $books              = Books::getBookHistory($ids);
         $data['books']      = $books;
         $data['categories'] = Categories::getListCategories();
         return view('frontend.read-history', $data);
@@ -120,7 +117,7 @@ class BooksController extends FrontEndController
     public function setCookieChapterRecent(array $data)
     {
         if (!empty($data)) {
-            if(Cookie::get('ids')){
+            if (Cookie::get('ids')) {
                 $cookie  = Cookie::get('ids');
                 $book_id = array_shift($data);
                 if (!in_array($book_id, $cookie)) {

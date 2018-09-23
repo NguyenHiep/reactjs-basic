@@ -42,7 +42,7 @@ class ChaptersRepository extends BaseRepository
     public function getAllChapters()
     {
         $model = $this->makeModel();
-        return $model::query();
+        return $model::query()->orderBy('id', 'DESC');
     }
 
     public function batch_action($action, $ids)

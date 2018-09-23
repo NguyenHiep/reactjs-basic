@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "Yamm": "github:geedmo/yamm3",
-        "jquery-datetimepicker": "^2.5.20"
+        "jquery-datetimepicker": "^2.5.20",
+        "normalize-scss": "^7.0.1"
     }
 }

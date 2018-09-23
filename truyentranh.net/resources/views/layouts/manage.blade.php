@@ -14,6 +14,7 @@
     <link href="{{ asset('assets/manage/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/manage/css/admin.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/manage/css/introjs.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/manage/plugins/select2/dist/css/select2.min.css') }}" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-inverse" role="navigation">
@@ -68,6 +69,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css"/>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
 
 <script type="text/javascript" src="{{ asset('assets/manage/js/intro.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/manage/js/admin.js') }}"></script>
@@ -78,6 +80,7 @@
 <script src="{{ asset('assets/manage/js/respond.min.js') }}"></script>
 <![endif]-->
 <script type="text/javascript" src="{{ asset('assets/manage/plugins/ckeditor/ckeditor.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/manage/plugins/select2/dist/js/select2.min.js') }}"></script>
 {{--<script type="text/javascript" src="{{ asset('assets/manage/plugins/ckfinder/ckfinder.js') }}"></script>--}}
 <script>
     if (document.getElementsByClassName("ckeditor").length > 0) {

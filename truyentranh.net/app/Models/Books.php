@@ -55,7 +55,7 @@ class Books extends BaseModel
 
     public function getContentAttribute($value)
     {
-        $data = strip_tags($value, '<p><a><br>');
+        $data = strip_tags($value, '<br>');
         return Helpers::removeImageContent($data);
     }
 
@@ -124,8 +124,8 @@ class Books extends BaseModel
     {
         if (!empty($ids) && is_array($ids)) {
             $books = Books::select(
-                'books.id','books.slug','books.name','books.name_dif','books.categories','books.author',
-                'chapters.name as chapter_name', 'chapters.slug as chapter_slug'
+                'books.id', 'books.image', 'books.slug', 'books.name', 'books.name_dif', 'books.categories',
+                'books.author', 'chapters.name as chapter_name', 'chapters.slug as chapter_slug'
             )
                 ->join('chapters', 'books.id', '=', 'chapters.book_id')
                 ->whereIn('chapters.id', $ids)
@@ -135,53 +135,5 @@ class Books extends BaseModel
             return $books;
         }
         return [];
-    }
-
-    public function getBooksNew()
-    {
-        return $this->query()
-            ->where('status', Books::STATUS_ON)
-            ->where('sticky', Books::STATUS_ON)
-            ->orderBy('updated_at', 'desc')
-            ->limit(4)
-            ->get(['id', 'slug', 'image', 'name', 'name_dif', 'categories', 'author', 'content']);
-    }
-
-    /***
-     * Show list book update not in list ids
-     * @param array $ids
-     * @return \Illuminate\Support\Collection
-     */
-    public function getBooksUpdate(array $ids = [], int $limit = 20)
-    {
-        return $this->query()->with([
-            'chapters' => function ($query) {
-                $query->where('status', '=', Chapters::STATUS_ON)
-                    ->orderBy('name', 'desc');
-            }
-        ])->where('status', Books::STATUS_ON)
-            ->whereNotIn('id', $ids)
-            ->orderBy('created_at', 'desc')
-            ->limit($limit)
-            ->get(['id', 'slug', 'image', 'name', 'name_dif', 'categories', 'author', 'content']);
-    }
-
-    /***
-     * Show books items sliders
-     * @param int $limit
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
-     */
-    public function getBooksShowSlider(int $limit = 12)
-    {
-        return $this->query()->with([
-            'chapters' => function ($query) {
-                $query->where('status', '=', Chapters::STATUS_ON)
-                    ->where('sticky', Chapters::STATUS_ON)
-                    ->orderBy('name', 'desc');
-            }
-        ])->where('status', Books::STATUS_ON)
-            ->orderBy('updated_at', 'desc')
-            ->limit($limit)
-            ->get();
     }
 }

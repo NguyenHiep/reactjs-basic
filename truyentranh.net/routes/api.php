@@ -16,10 +16,21 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('home', 'Apis\BooksController@index');
-Route::group(['middleware' => 'auth:api'], function () {
-
+Route::group(['prefix' => 'v1', 'namespace' => 'Apis', 'middleware' => 'auth:api'], function () {
+  Route::get('getbookupdate', 'BooksController@getBooksUpdate')->name('api.books.listupdate');
+  Route::get('getbooknew', 'BooksController@getBooksNew')->name('api.books.listnew');
+  Route::get('getbookhot', 'BooksController@getBooksHot')->name('api.books.listhot');
 });
+/*Route::namespace('Apis')->group(function () {
+    Route::get('getbookupdate', 'BooksController@getBooksUpdate')->name('api.books.listupdate');
+    Route::get('getbooknew', 'BooksController@getBooksNew')->name('api.books.listnew');
+    Route::get('getbookhot', 'BooksController@getBooksHot')->name('api.books.listhot');
+});*/
+
+
+/*Route::group(['middleware' => 'auth:api'], function () {
+
+});*/
 
 Route::post('register', 'Auth\RegisterController@register');
 Route::post('login', 'Auth\LoginApiController@login');

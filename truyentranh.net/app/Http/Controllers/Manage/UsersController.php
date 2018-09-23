@@ -98,7 +98,9 @@ class UsersController extends ManageController
         if ($image_path) {
             $inputs['avatar'] = $image_path;
         }
-
+        if (!empty($inputs['new_password'])) {
+            $inputs['password'] = Hash::make($inputs['new_password']);
+        }
         try {
             DB::beginTransaction();
             $this->repository->create($inputs);
@@ -113,7 +115,7 @@ class UsersController extends ManageController
             Log::error([$e->getMessage(), __METHOD__]);
         }
         return redirect()->back()->withInput($inputs)->with([
-            'message' => __('system.message.errorss', ['errors' => 'Create user is failed']),
+            'message' => __('system.message.errors', ['errors' => 'Create user is failed']),
             'status'  => self::CTRL_MESSAGE_ERROR,
         ]);
     }

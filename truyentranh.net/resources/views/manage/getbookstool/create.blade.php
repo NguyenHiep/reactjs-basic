@@ -14,7 +14,7 @@
         <div class="form-group">
           <label for="content" class="col-sm-2 control-label required">Chọn web</label>
           <div class="col-sm-10">
-            {!! Form::select($key,__('selector.leech.source'),old($key), ['class' => 'form-control ', 'placeholder' => 'Vui lòng chọn site truyện']) !!}
+            {!! Form::select($key,__('selector.leech.source'),old($key), ['class' => 'form-control', 'placeholder' => 'Vui lòng chọn site truyện']) !!}
             @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
           </div>
         </div>
@@ -38,11 +38,18 @@
         <div class="content-chapters hide">
             @php $key = 'book_id'; @endphp
             <div class="form-group">
-                <label for="content" class="col-sm-2 control-label required">Chọn truyện</label>
-                <div class="col-sm-10">
-                    {!! Form::select($key,$books,old($key), ['data-ajax-url' => route('getbookstool.ajaxbooks'),'class' => 'form-control ', 'placeholder' => 'Vui lòng chọn truyện']) !!}
-                    @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
-                </div>
+              <label for="content" class="col-sm-2 control-label required">Chọn truyện</label>
+              <div class="col-sm-10">
+                {!! Form::select($key,$books,old($key), [
+                'data-books-url' => route('getbookstool.ajaxbooks'),
+                'class'         => 'form-control js-action-select-books',
+                'id'            => 'select_books_id',
+                'placeholder'   => 'Vui lòng chọn truyện',
+                'style'         => 'width: 100%'
+                ])
+                !!}
+                @if ($errors->has($key)) <span class="help-block">{{$errors->first($key)}}</span>  @endif
+              </div>
             </div>
             <div class="form-group" >
                 <div class="col-sm-2"></div>

@@ -7,7 +7,7 @@ use App\Models\Categories;
 use App\Models\Chapters;
 use App\Helpers\Helpers;
 
-class FrontEndController extends AppBaseController
+class FrontEndCacheController extends AppBaseController
 {
     protected $cache_time = 30;
 

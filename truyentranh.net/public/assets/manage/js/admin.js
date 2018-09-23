@@ -12,8 +12,8 @@ $(document).ready(function() {
         }
     });
     $('i').hover(function(){
-			$(this).tooltip('show')
-		});
+      $(this).tooltip('show')
+    });
     //Intro
     $('#start-intro').click(function(){
         var intro = introJs();
@@ -50,5 +50,12 @@ $(document).ready(function() {
           });
 
           intro.start();
+    });
+    $('.js-action-select-books').select2();
+    // Select2 select box js
+    $('.js-action-select').select2();
+    // Show tag
+    $('.js-action-select-tags').select2({
+      tags: true
     });
 });

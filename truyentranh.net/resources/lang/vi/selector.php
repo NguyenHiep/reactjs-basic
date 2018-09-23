@@ -26,9 +26,9 @@ return [
              5 => 'nettruyen.com',*/
         ],
         'type' => [
-            1 => 'Leech theo chương',
-            2 => 'Leech theo tên truyện',
-            3 => 'Leech tất tả',
+            1 => 'Leech theo link chương',
+            2 => 'Leech theo link truyện',
+            3 => 'Leech tất tả truyện',
         ]
     ]
 ];

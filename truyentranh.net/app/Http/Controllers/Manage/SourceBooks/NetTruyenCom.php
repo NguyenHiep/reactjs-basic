@@ -17,4 +17,6 @@ class NetTruyenCom extends BooksDataBase implements BooksDataInterface
 
     public function getDetailChapter($param) { }
 
+    public function getInfoChapters($param) { }
+
 }
