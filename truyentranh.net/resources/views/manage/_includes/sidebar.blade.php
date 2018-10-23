@@ -38,7 +38,7 @@
         </a>
       </li>
       <li class="list-group-item">
-        <a href="setting.html">
+        <a href="{{ route('configsystem.index') }}">
           <i class="fa fa-wrench"></i> <span>Cấu hình</span>
         </a>
       </li>

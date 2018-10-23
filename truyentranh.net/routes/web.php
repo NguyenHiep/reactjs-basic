@@ -56,6 +56,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
                 Route::get('ajax-book-tool', 'GetBooksToolController@ajaxShowInfoBook')->name('getbookstool.ajaxbooks');
             });
 
+            Route::get('configsystem', 'ConfigSystemController@index')->name('configsystem.index');
+            Route::post('configsystem', 'ConfigSystemController@store')->name('configsystem.store');
         });
     });
 });
