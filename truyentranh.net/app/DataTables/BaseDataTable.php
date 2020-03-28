@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use Yajra\DataTables\Facades\Datatables;
+use Yajra\DataTables\DataTables;
 
 class BaseDataTable
 {

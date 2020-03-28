@@ -63,11 +63,11 @@
         PATH_IMAGE_BOOK           = "{{ PATH_IMAGE_BOOK }}",
         PATH_IMAGE_THUMBNAIL_BOOK = "{{ PATH_IMAGE_THUMBNAIL_BOOK }}";
 </script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="{{ asset('assets/manage/js/jquery-3.3.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/manage/js/bootstrap.min.js') }}"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css"/>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/manage/plugins/datatable/1.10.19/css/dataTables.bootstrap.min.css') }}"/>
+<script type="text/javascript" src="{{ asset('assets/manage/plugins/datatable/1.10.19/js/jquery.dataTables.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/manage/plugins/datatable/1.10.19/js/dataTables.bootstrap.min.js') }}"></script>
 
 <script type="text/javascript" src="{{ asset('assets/manage/js/intro.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/manage/js/admin.js') }}"></script>
